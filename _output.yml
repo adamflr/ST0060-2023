@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      collapse: section
+      before: |
+        <li><a href="./">R-anvisningar</a></li>
+    download: ["pdf"]
+    fontsettings:
+      theme: sepia
+      family: serif
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+    after_body: afterbody.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes

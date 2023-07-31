@@ -1,0 +1,71 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Installation av R och RStudio {-}
+
+## Inledning
+
+För att köra R-kod på sin dator krävs en installation av programspråket R. För att effektivt arbeta i R används ofta en utvecklingsmiljö (ett tilläggsprogram som på flera sätt förenklar arbetet) och här ges anvisningar till den vanligaste utvecklingsmiljön för R, som är RStudio. För att komma ingång måste man alltså installera R och RStudio.
+
+**2022-08-11.** RStudio har nyligen annonserat ett namnbyte till *Posit*. Om du läser det här bortom slutet av 2022 kommer det som sägs om RStudio alltså istället gälla Posit.
+
+## Installation av R
+
+Programspråket R kan laddas ner från https://www.r-project.org/ med följande steg:
+
+1. Klicka på *CRAN* längst upp till vänster.
+2. Klicka på den översta länken under 0-Cloud.
+3. Välj en nedladdning beroende på operativsystem.
+4. För Windows, välj *base*. För macOS, välj den senaste tillgängliga versionen.
+5. Installera R från den nedladdade filen. Installation sker som för andra nedladdade program.
+
+## Installation av RStudio
+
+RStudio kan laddas ner från https://www.rstudio.com/ med följande steg:
+
+1. Klicka på *Download* uppe till höger.
+2. Scrolla nedåt och välj *Download* under *RStudio Desktop*.
+3. Klicka på nedladdningsknappen.
+4. Installera RStudio från den nedladdade filen. Installation sker som för andra nedladdade program.
+
+## Gränssnittet i RStudio
+
+När man nu öppnar RStudio ser man att fönstret är uppdelat i fyra delar och att varje del består av en eller flera flikar. De viktigaste är i nuläget
+
+- *Console* där kod körs och resultat skrivs ut, 
+- *Environment* där man ser skapade objekt,
+- *History* där man ser tidigare körd kod,
+- *Plots* där man ser skapade grafer, och
+- *Help* där man ser hjälpsidor för funktioner.
+
+Ofta skriver man inte sin kod direkt i konsollen, utan i ett separat *skript* - en vanlig textfil som innehåller den kod man vill köra. Genom att organisera sin kod i ett skript kan man lätt strukturera och dokumentera sitt arbete. I RStudio kan man öppna ett nytt skript genom att gå till *File > New File > R Script* eller genom att klicka *Ctrl + Shift + N*. Ett tomt skript öppnar sig då i det övre vänstra delfönstret. Om man skriver 
+
+```{r}
+a <- 5
+```
+
+i skriptet och trycker *Ctrl + Enter* bör man se att koden i skriptet körs i konsollen. Om man tittar i fliken *Environment* ska man också se att det nu skapats ett objekt *a*.
+
+## Paket i R
+
+En av de stora styrkorna med R är att språket kan byggas ut av dess användare. De här tilläggen kan sedan samlas i paket (*packages*) och delas med andra. Rs officiella bibliotek för paket kallas för *CRAN* (*Comprehensive R Archive Network*) och består av mer än 18 000 uppladdade paket som innehåller allt från fritt tillgänglig data till avancerade statistiska modeller. 
+
+För att använda ett specifikt paket måste det först installeras. Om man vet namnet på paketet man vill installera kan man köra 
+
+```{r, eval=F}
+install.packages("tidyverse")
+```
+
+I det här fallet installeras paketet `tidyverse`, vilket innehåller funktioner för hantering av data.
+
+I RStudio kan man också installera paket från *Packages*-fliken.
+
+Paket måste också laddas för varje ny session. Innan man kan använda innehållet i ett paket måste man därför köra
+
+```{r}
+library(tidyverse)
+```
+

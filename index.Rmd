@@ -1,0 +1,41 @@
+--- 
+title: "R-anvisningar till *Grundläggande statistik*"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+editor_options: 
+  chunk_output_type: console
+---
+
+# Introduktion {-}
+
+Detta dokument är en kort introduktion till R för en kurs i grundläggande statistik.
+
+```{r, echo = F}
+knitr::opts_chunk$set(eval = T, message = F, warning = F, error = F, fig.height = 3.5, fig.align = "center")
+```
+
+```{r, echo = F}
+rm(list = ls())
+library(tidyverse)
+select <- dplyr::select
+```
+
+```{r, echo = F}
+library(knitr)
+library(kableExtra)
+
+kable <- function(x, digits = 4){
+  x %>% 
+    kbl(booktabs = T, digits = digits) %>% 
+    kable_styling(full_width = F)
+}
+```
+
+```{r, echo = F}
+theme_set(theme_bw() + 
+            theme(plot.background = element_rect(fill = "#f3eacb", color = "#f3eacb"),
+                  text = element_text(family = "serif"),
+                  legend.background = element_rect(fill = "#f3eacb", color = "#f3eacb"),
+                  legend.key = element_rect(fill = "#f3eacb", color = "#f3eacb")))
+```

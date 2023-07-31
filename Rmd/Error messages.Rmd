@@ -1,0 +1,31 @@
+> install.packages("NoSuchPackage")
+Warning in install.packages :
+  package ‘NoSuchPackage’ is not available for this version of R
+
+> library(NoSuchPackage)
+Error in library(PackageName) : 
+  there is no package called ‘PackageName’
+
+> ObjectName
+Error: object 'ObjectName' not found
+
+> FunctionName()
+Error in FunctionName() : could not find function "FunctionName"
+
+> ggplot(dat, aes(x = VariableName, y = VariableName)) + geom_point()
+Error in FUN(X[[i]], ...) : object 'VariableName' not found
+
+> ggplot(dat, aes(x = VariableName, y = VariableName)) %>%  geom_point()
+Error in `validate_mapping()`:
+! `mapping` must be created by `aes()`
+Did you use %>% instead of +?
+
+> ggplot(dat, aes(x = VariableName)) + geom_point()
+Error in `check_required_aesthetics()`:
+! geom_point requires the following missing aesthetics: y
+
+> tab <- data.frame(x = c(1,2,3))
+> vector <- c(1,2)
+> ggplot(tab, aes(x, vector)) + geom_point()
+Error in `check_aesthetics()`:
+! Aesthetics must be either length 1 or the same as the data (3): y

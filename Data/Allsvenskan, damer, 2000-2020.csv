@@ -1,0 +1,2751 @@
+sasong,hemma,borta,hemmamal,bortamal,resultat
+2000,BK Astrio,BK Kenty,0,4,Bortaseger
+2000,BK Astrio,Bälinge IF,0,6,Bortaseger
+2000,BK Astrio,Djurgårdens IF,4,5,Bortaseger
+2000,BK Astrio,Hammarby IF,0,3,Bortaseger
+2000,BK Astrio,Kopparbergs/Landvetter IF,1,0,Hemmaseger
+2000,BK Astrio,Kristianstad/Wä DFF,2,5,Bortaseger
+2000,BK Astrio,Malmö FF,1,3,Bortaseger
+2000,BK Astrio,Sundbybergs IK,1,3,Bortaseger
+2000,BK Astrio,Umeå IK,0,6,Bortaseger
+2000,BK Astrio,Älvsjö AIK,0,1,Bortaseger
+2000,BK Astrio,Östers IF,2,0,Hemmaseger
+2000,BK Kenty,BK Astrio,1,3,Bortaseger
+2000,BK Kenty,Bälinge IF,2,1,Hemmaseger
+2000,BK Kenty,Djurgårdens IF,1,1,Oavgjort
+2000,BK Kenty,Hammarby IF,3,3,Oavgjort
+2000,BK Kenty,Kopparbergs/Landvetter IF,1,1,Oavgjort
+2000,BK Kenty,Kristianstad/Wä DFF,0,0,Oavgjort
+2000,BK Kenty,Malmö FF,0,2,Bortaseger
+2000,BK Kenty,Sundbybergs IK,2,2,Oavgjort
+2000,BK Kenty,Umeå IK,1,2,Bortaseger
+2000,BK Kenty,Älvsjö AIK,1,1,Oavgjort
+2000,BK Kenty,Östers IF,0,2,Bortaseger
+2000,Bälinge IF,BK Astrio,2,1,Hemmaseger
+2000,Bälinge IF,BK Kenty,2,0,Hemmaseger
+2000,Bälinge IF,Djurgårdens IF,1,1,Oavgjort
+2000,Bälinge IF,Hammarby IF,1,3,Bortaseger
+2000,Bälinge IF,Kopparbergs/Landvetter IF,0,3,Bortaseger
+2000,Bälinge IF,Kristianstad/Wä DFF,2,2,Oavgjort
+2000,Bälinge IF,Malmö FF,0,5,Bortaseger
+2000,Bälinge IF,Sundbybergs IK,3,0,Hemmaseger
+2000,Bälinge IF,Umeå IK,2,2,Oavgjort
+2000,Bälinge IF,Älvsjö AIK,2,2,Oavgjort
+2000,Bälinge IF,Östers IF,4,3,Hemmaseger
+2000,Djurgårdens IF,BK Astrio,4,0,Hemmaseger
+2000,Djurgårdens IF,BK Kenty,5,1,Hemmaseger
+2000,Djurgårdens IF,Bälinge IF,3,2,Hemmaseger
+2000,Djurgårdens IF,Hammarby IF,2,1,Hemmaseger
+2000,Djurgårdens IF,Kopparbergs/Landvetter IF,2,0,Hemmaseger
+2000,Djurgårdens IF,Kristianstad/Wä DFF,4,0,Hemmaseger
+2000,Djurgårdens IF,Malmö FF,0,3,Bortaseger
+2000,Djurgårdens IF,Sundbybergs IK,2,0,Hemmaseger
+2000,Djurgårdens IF,Umeå IK,1,1,Oavgjort
+2000,Djurgårdens IF,Älvsjö AIK,2,3,Bortaseger
+2000,Djurgårdens IF,Östers IF,3,0,Hemmaseger
+2000,Hammarby IF,BK Astrio,5,1,Hemmaseger
+2000,Hammarby IF,BK Kenty,4,0,Hemmaseger
+2000,Hammarby IF,Bälinge IF,1,0,Hemmaseger
+2000,Hammarby IF,Djurgårdens IF,1,2,Bortaseger
+2000,Hammarby IF,Kopparbergs/Landvetter IF,3,4,Bortaseger
+2000,Hammarby IF,Kristianstad/Wä DFF,4,0,Hemmaseger
+2000,Hammarby IF,Malmö FF,0,1,Bortaseger
+2000,Hammarby IF,Sundbybergs IK,5,1,Hemmaseger
+2000,Hammarby IF,Umeå IK,0,3,Bortaseger
+2000,Hammarby IF,Älvsjö AIK,0,4,Bortaseger
+2000,Hammarby IF,Östers IF,0,1,Bortaseger
+2000,Kopparbergs/Landvetter IF,BK Astrio,5,0,Hemmaseger
+2000,Kopparbergs/Landvetter IF,BK Kenty,2,3,Bortaseger
+2000,Kopparbergs/Landvetter IF,Bälinge IF,1,0,Hemmaseger
+2000,Kopparbergs/Landvetter IF,Djurgårdens IF,1,3,Bortaseger
+2000,Kopparbergs/Landvetter IF,Hammarby IF,4,3,Hemmaseger
+2000,Kopparbergs/Landvetter IF,Kristianstad/Wä DFF,4,1,Hemmaseger
+2000,Kopparbergs/Landvetter IF,Malmö FF,1,3,Bortaseger
+2000,Kopparbergs/Landvetter IF,Sundbybergs IK,3,1,Hemmaseger
+2000,Kopparbergs/Landvetter IF,Umeå IK,2,2,Oavgjort
+2000,Kopparbergs/Landvetter IF,Älvsjö AIK,1,2,Bortaseger
+2000,Kopparbergs/Landvetter IF,Östers IF,0,1,Bortaseger
+2000,Kristianstad/Wä DFF,BK Astrio,2,1,Hemmaseger
+2000,Kristianstad/Wä DFF,BK Kenty,0,0,Oavgjort
+2000,Kristianstad/Wä DFF,Bälinge IF,3,3,Oavgjort
+2000,Kristianstad/Wä DFF,Djurgårdens IF,1,4,Bortaseger
+2000,Kristianstad/Wä DFF,Hammarby IF,3,3,Oavgjort
+2000,Kristianstad/Wä DFF,Kopparbergs/Landvetter IF,1,3,Bortaseger
+2000,Kristianstad/Wä DFF,Malmö FF,1,0,Hemmaseger
+2000,Kristianstad/Wä DFF,Sundbybergs IK,0,0,Oavgjort
+2000,Kristianstad/Wä DFF,Umeå IK,1,5,Bortaseger
+2000,Kristianstad/Wä DFF,Älvsjö AIK,0,3,Bortaseger
+2000,Kristianstad/Wä DFF,Östers IF,2,2,Oavgjort
+2000,Malmö FF,BK Astrio,9,0,Hemmaseger
+2000,Malmö FF,BK Kenty,3,1,Hemmaseger
+2000,Malmö FF,Bälinge IF,4,1,Hemmaseger
+2000,Malmö FF,Djurgårdens IF,2,1,Hemmaseger
+2000,Malmö FF,Hammarby IF,2,0,Hemmaseger
+2000,Malmö FF,Kopparbergs/Landvetter IF,3,0,Hemmaseger
+2000,Malmö FF,Kristianstad/Wä DFF,2,2,Oavgjort
+2000,Malmö FF,Sundbybergs IK,2,0,Hemmaseger
+2000,Malmö FF,Umeå IK,0,1,Bortaseger
+2000,Malmö FF,Älvsjö AIK,3,3,Oavgjort
+2000,Malmö FF,Östers IF,5,0,Hemmaseger
+2000,Sundbybergs IK,BK Astrio,4,2,Hemmaseger
+2000,Sundbybergs IK,BK Kenty,0,1,Bortaseger
+2000,Sundbybergs IK,Bälinge IF,2,1,Hemmaseger
+2000,Sundbybergs IK,Djurgårdens IF,0,0,Oavgjort
+2000,Sundbybergs IK,Hammarby IF,1,0,Hemmaseger
+2000,Sundbybergs IK,Kopparbergs/Landvetter IF,2,5,Bortaseger
+2000,Sundbybergs IK,Kristianstad/Wä DFF,0,3,Bortaseger
+2000,Sundbybergs IK,Malmö FF,1,2,Bortaseger
+2000,Sundbybergs IK,Umeå IK,1,3,Bortaseger
+2000,Sundbybergs IK,Älvsjö AIK,1,2,Bortaseger
+2000,Sundbybergs IK,Östers IF,0,2,Bortaseger
+2000,Umeå IK,BK Astrio,4,0,Hemmaseger
+2000,Umeå IK,BK Kenty,5,0,Hemmaseger
+2000,Umeå IK,Bälinge IF,2,0,Hemmaseger
+2000,Umeå IK,Djurgårdens IF,2,0,Hemmaseger
+2000,Umeå IK,Hammarby IF,3,2,Hemmaseger
+2000,Umeå IK,Kopparbergs/Landvetter IF,0,0,Oavgjort
+2000,Umeå IK,Kristianstad/Wä DFF,4,0,Hemmaseger
+2000,Umeå IK,Malmö FF,1,1,Oavgjort
+2000,Umeå IK,Sundbybergs IK,2,0,Hemmaseger
+2000,Umeå IK,Älvsjö AIK,0,2,Bortaseger
+2000,Umeå IK,Östers IF,3,2,Hemmaseger
+2000,Älvsjö AIK,BK Astrio,11,1,Hemmaseger
+2000,Älvsjö AIK,BK Kenty,5,0,Hemmaseger
+2000,Älvsjö AIK,Bälinge IF,2,0,Hemmaseger
+2000,Älvsjö AIK,Djurgårdens IF,1,2,Bortaseger
+2000,Älvsjö AIK,Hammarby IF,6,1,Hemmaseger
+2000,Älvsjö AIK,Kopparbergs/Landvetter IF,2,2,Oavgjort
+2000,Älvsjö AIK,Kristianstad/Wä DFF,5,0,Hemmaseger
+2000,Älvsjö AIK,Malmö FF,0,0,Oavgjort
+2000,Älvsjö AIK,Sundbybergs IK,5,0,Hemmaseger
+2000,Älvsjö AIK,Umeå IK,1,2,Bortaseger
+2000,Älvsjö AIK,Östers IF,5,1,Hemmaseger
+2000,Östers IF,BK Astrio,3,2,Hemmaseger
+2000,Östers IF,BK Kenty,2,0,Hemmaseger
+2000,Östers IF,Bälinge IF,0,2,Bortaseger
+2000,Östers IF,Djurgårdens IF,1,9,Bortaseger
+2000,Östers IF,Hammarby IF,3,2,Hemmaseger
+2000,Östers IF,Kopparbergs/Landvetter IF,0,3,Bortaseger
+2000,Östers IF,Kristianstad/Wä DFF,0,0,Oavgjort
+2000,Östers IF,Malmö FF,0,3,Bortaseger
+2000,Östers IF,Sundbybergs IK,3,2,Hemmaseger
+2000,Östers IF,Umeå IK,1,5,Bortaseger
+2000,Östers IF,Älvsjö AIK,0,5,Bortaseger
+2001,Bälinge IF,Djurgårdens IF,2,4,Bortaseger
+2001,Bälinge IF,Hammarby IF,1,1,Oavgjort
+2001,Bälinge IF,Holmalunds IF,6,1,Hemmaseger
+2001,Bälinge IF,Kopparbergs/Landvetter,2,0,Hemmaseger
+2001,Bälinge IF,Kristianstad/Wä,2,1,Hemmaseger
+2001,Bälinge IF,Mallbackens IF,3,1,Hemmaseger
+2001,Bälinge IF,Malmö FF,0,2,Bortaseger
+2001,Bälinge IF,Sunnanå SK,1,3,Bortaseger
+2001,Bälinge IF,Umeå IK,1,1,Oavgjort
+2001,Bälinge IF,Älvsjö AIK,1,2,Bortaseger
+2001,Bälinge IF,Östers IF,6,0,Hemmaseger
+2001,Djurgårdens IF,Bälinge IF,1,0,Hemmaseger
+2001,Djurgårdens IF,Hammarby IF,2,1,Hemmaseger
+2001,Djurgårdens IF,Holmalunds IF,5,0,Hemmaseger
+2001,Djurgårdens IF,Kopparbergs/Landvetter,0,0,Oavgjort
+2001,Djurgårdens IF,Kristianstad/Wä,3,0,Hemmaseger
+2001,Djurgårdens IF,Mallbackens IF,0,0,Oavgjort
+2001,Djurgårdens IF,Malmö FF,2,2,Oavgjort
+2001,Djurgårdens IF,Sunnanå SK,3,1,Hemmaseger
+2001,Djurgårdens IF,Umeå IK,0,3,Bortaseger
+2001,Djurgårdens IF,Älvsjö AIK,0,1,Bortaseger
+2001,Djurgårdens IF,Östers IF,4,0,Hemmaseger
+2001,Hammarby IF,Bälinge IF,1,1,Oavgjort
+2001,Hammarby IF,Djurgårdens IF,0,2,Bortaseger
+2001,Hammarby IF,Holmalunds IF,7,2,Hemmaseger
+2001,Hammarby IF,Kopparbergs/Landvetter,2,4,Bortaseger
+2001,Hammarby IF,Kristianstad/Wä,0,0,Oavgjort
+2001,Hammarby IF,Mallbackens IF,2,1,Hemmaseger
+2001,Hammarby IF,Malmö FF,1,4,Bortaseger
+2001,Hammarby IF,Sunnanå SK,0,1,Bortaseger
+2001,Hammarby IF,Umeå IK,0,3,Bortaseger
+2001,Hammarby IF,Älvsjö AIK,0,5,Bortaseger
+2001,Hammarby IF,Östers IF,6,2,Hemmaseger
+2001,Holmalunds IF,Bälinge IF,2,2,Oavgjort
+2001,Holmalunds IF,Djurgårdens IF,1,3,Bortaseger
+2001,Holmalunds IF,Hammarby IF,1,1,Oavgjort
+2001,Holmalunds IF,Kopparbergs/Landvetter,0,1,Bortaseger
+2001,Holmalunds IF,Kristianstad/Wä,3,0,Hemmaseger
+2001,Holmalunds IF,Mallbackens IF,4,1,Hemmaseger
+2001,Holmalunds IF,Malmö FF,0,2,Bortaseger
+2001,Holmalunds IF,Sunnanå SK,1,1,Oavgjort
+2001,Holmalunds IF,Umeå IK,0,5,Bortaseger
+2001,Holmalunds IF,Älvsjö AIK,1,3,Bortaseger
+2001,Holmalunds IF,Östers IF,1,5,Bortaseger
+2001,Kopparbergs/Landvetter,Bälinge IF,7,0,Hemmaseger
+2001,Kopparbergs/Landvetter,Djurgårdens IF,4,1,Hemmaseger
+2001,Kopparbergs/Landvetter,Hammarby IF,4,0,Hemmaseger
+2001,Kopparbergs/Landvetter,Holmalunds IF,6,1,Hemmaseger
+2001,Kopparbergs/Landvetter,Kristianstad/Wä,1,1,Oavgjort
+2001,Kopparbergs/Landvetter,Mallbackens IF,0,1,Bortaseger
+2001,Kopparbergs/Landvetter,Malmö FF,1,4,Bortaseger
+2001,Kopparbergs/Landvetter,Sunnanå SK,4,0,Hemmaseger
+2001,Kopparbergs/Landvetter,Umeå IK,1,3,Bortaseger
+2001,Kopparbergs/Landvetter,Älvsjö AIK,4,4,Oavgjort
+2001,Kopparbergs/Landvetter,Östers IF,4,0,Hemmaseger
+2001,Kristianstad/Wä,Bälinge IF,1,1,Oavgjort
+2001,Kristianstad/Wä,Djurgårdens IF,1,2,Bortaseger
+2001,Kristianstad/Wä,Hammarby IF,2,1,Hemmaseger
+2001,Kristianstad/Wä,Holmalunds IF,2,2,Oavgjort
+2001,Kristianstad/Wä,Kopparbergs/Landvetter,0,3,Bortaseger
+2001,Kristianstad/Wä,Mallbackens IF,0,0,Oavgjort
+2001,Kristianstad/Wä,Malmö FF,3,6,Bortaseger
+2001,Kristianstad/Wä,Sunnanå SK,1,2,Bortaseger
+2001,Kristianstad/Wä,Umeå IK,0,1,Bortaseger
+2001,Kristianstad/Wä,Älvsjö AIK,0,6,Bortaseger
+2001,Kristianstad/Wä,Östers IF,2,0,Hemmaseger
+2001,Mallbackens IF,Bälinge IF,1,3,Bortaseger
+2001,Mallbackens IF,Djurgårdens IF,4,1,Hemmaseger
+2001,Mallbackens IF,Hammarby IF,2,1,Hemmaseger
+2001,Mallbackens IF,Holmalunds IF,4,1,Hemmaseger
+2001,Mallbackens IF,Kopparbergs/Landvetter,1,2,Bortaseger
+2001,Mallbackens IF,Kristianstad/Wä,2,0,Hemmaseger
+2001,Mallbackens IF,Malmö FF,1,4,Bortaseger
+2001,Mallbackens IF,Sunnanå SK,2,1,Hemmaseger
+2001,Mallbackens IF,Umeå IK,0,5,Bortaseger
+2001,Mallbackens IF,Älvsjö AIK,4,2,Hemmaseger
+2001,Mallbackens IF,Östers IF,2,0,Hemmaseger
+2001,Malmö FF,Bälinge IF,6,0,Hemmaseger
+2001,Malmö FF,Djurgårdens IF,2,2,Oavgjort
+2001,Malmö FF,Hammarby IF,6,1,Hemmaseger
+2001,Malmö FF,Holmalunds IF,5,0,Hemmaseger
+2001,Malmö FF,Kopparbergs/Landvetter,3,2,Hemmaseger
+2001,Malmö FF,Kristianstad/Wä,2,0,Hemmaseger
+2001,Malmö FF,Mallbackens IF,0,0,Oavgjort
+2001,Malmö FF,Sunnanå SK,1,0,Hemmaseger
+2001,Malmö FF,Umeå IK,1,1,Oavgjort
+2001,Malmö FF,Älvsjö AIK,4,1,Hemmaseger
+2001,Malmö FF,Östers IF,7,0,Hemmaseger
+2001,Sunnanå SK,Bälinge IF,2,0,Hemmaseger
+2001,Sunnanå SK,Djurgårdens IF,2,3,Bortaseger
+2001,Sunnanå SK,Hammarby IF,1,3,Bortaseger
+2001,Sunnanå SK,Holmalunds IF,3,1,Hemmaseger
+2001,Sunnanå SK,Kopparbergs/Landvetter,1,1,Oavgjort
+2001,Sunnanå SK,Kristianstad/Wä,0,1,Bortaseger
+2001,Sunnanå SK,Mallbackens IF,2,2,Oavgjort
+2001,Sunnanå SK,Malmö FF,0,3,Bortaseger
+2001,Sunnanå SK,Umeå IK,0,7,Bortaseger
+2001,Sunnanå SK,Älvsjö AIK,1,5,Bortaseger
+2001,Sunnanå SK,Östers IF,4,0,Hemmaseger
+2001,Umeå IK,Bälinge IF,5,0,Hemmaseger
+2001,Umeå IK,Djurgårdens IF,6,0,Hemmaseger
+2001,Umeå IK,Hammarby IF,4,1,Hemmaseger
+2001,Umeå IK,Holmalunds IF,3,0,Hemmaseger
+2001,Umeå IK,Kopparbergs/Landvetter,6,1,Hemmaseger
+2001,Umeå IK,Kristianstad/Wä,2,0,Hemmaseger
+2001,Umeå IK,Mallbackens IF,6,1,Hemmaseger
+2001,Umeå IK,Malmö FF,2,0,Hemmaseger
+2001,Umeå IK,Sunnanå SK,6,0,Hemmaseger
+2001,Umeå IK,Älvsjö AIK,3,0,Hemmaseger
+2001,Umeå IK,Östers IF,1,1,Oavgjort
+2001,Älvsjö AIK,Bälinge IF,1,1,Oavgjort
+2001,Älvsjö AIK,Djurgårdens IF,2,1,Hemmaseger
+2001,Älvsjö AIK,Hammarby IF,5,0,Hemmaseger
+2001,Älvsjö AIK,Holmalunds IF,5,0,Hemmaseger
+2001,Älvsjö AIK,Kopparbergs/Landvetter,1,1,Oavgjort
+2001,Älvsjö AIK,Kristianstad/Wä,5,1,Hemmaseger
+2001,Älvsjö AIK,Mallbackens IF,2,1,Hemmaseger
+2001,Älvsjö AIK,Malmö FF,1,0,Hemmaseger
+2001,Älvsjö AIK,Sunnanå SK,4,1,Hemmaseger
+2001,Älvsjö AIK,Umeå IK,1,5,Bortaseger
+2001,Älvsjö AIK,Östers IF,3,0,Hemmaseger
+2001,Östers IF,Bälinge IF,1,2,Bortaseger
+2001,Östers IF,Djurgårdens IF,1,6,Bortaseger
+2001,Östers IF,Hammarby IF,1,2,Bortaseger
+2001,Östers IF,Holmalunds IF,0,0,Oavgjort
+2001,Östers IF,Kopparbergs/Landvetter,0,4,Bortaseger
+2001,Östers IF,Kristianstad/Wä,0,1,Bortaseger
+2001,Östers IF,Mallbackens IF,1,0,Hemmaseger
+2001,Östers IF,Malmö FF,0,2,Bortaseger
+2001,Östers IF,Sunnanå SK,1,0,Hemmaseger
+2001,Östers IF,Umeå IK,0,2,Bortaseger
+2001,Östers IF,Älvsjö AIK,1,10,Bortaseger
+2002,Alviks IK,BK Kenty,4,0,Hemmaseger
+2002,Alviks IK,Bälinge IF,0,1,Bortaseger
+2002,Alviks IK,Djurgårdens IF,0,4,Bortaseger
+2002,Alviks IK,Hammarby IF,1,3,Bortaseger
+2002,Alviks IK,IF Trion,1,1,Oavgjort
+2002,Alviks IK,Kopparbergs/Landvetter,1,4,Bortaseger
+2002,Alviks IK,Mallbackens IF,2,3,Bortaseger
+2002,Alviks IK,Malmö FF,0,8,Bortaseger
+2002,Alviks IK,Sunnanå SK,1,1,Oavgjort
+2002,Alviks IK,Umeå IK,0,6,Bortaseger
+2002,Alviks IK,Älvsjö AIK,1,1,Oavgjort
+2002,BK Kenty,Alviks IK,0,2,Bortaseger
+2002,BK Kenty,Bälinge IF,0,1,Bortaseger
+2002,BK Kenty,Djurgårdens IF,1,0,Hemmaseger
+2002,BK Kenty,Hammarby IF,3,1,Hemmaseger
+2002,BK Kenty,IF Trion,0,3,Bortaseger
+2002,BK Kenty,Kopparbergs/Landvetter,0,1,Bortaseger
+2002,BK Kenty,Mallbackens IF,0,2,Bortaseger
+2002,BK Kenty,Malmö FF,0,9,Bortaseger
+2002,BK Kenty,Sunnanå SK,2,1,Hemmaseger
+2002,BK Kenty,Umeå IK,1,9,Bortaseger
+2002,BK Kenty,Älvsjö AIK,2,7,Bortaseger
+2002,Bälinge IF,Alviks IK,0,3,Bortaseger
+2002,Bälinge IF,BK Kenty,2,0,Hemmaseger
+2002,Bälinge IF,Djurgårdens IF,2,1,Hemmaseger
+2002,Bälinge IF,Hammarby IF,2,0,Hemmaseger
+2002,Bälinge IF,IF Trion,0,0,Oavgjort
+2002,Bälinge IF,Kopparbergs/Landvetter,0,0,Oavgjort
+2002,Bälinge IF,Mallbackens IF,1,0,Hemmaseger
+2002,Bälinge IF,Malmö FF,0,0,Oavgjort
+2002,Bälinge IF,Sunnanå SK,1,1,Oavgjort
+2002,Bälinge IF,Umeå IK,0,3,Bortaseger
+2002,Bälinge IF,Älvsjö AIK,3,3,Oavgjort
+2002,Djurgårdens IF,Alviks IK,1,0,Hemmaseger
+2002,Djurgårdens IF,BK Kenty,3,1,Hemmaseger
+2002,Djurgårdens IF,Bälinge IF,4,0,Hemmaseger
+2002,Djurgårdens IF,Hammarby IF,4,0,Hemmaseger
+2002,Djurgårdens IF,IF Trion,0,0,Oavgjort
+2002,Djurgårdens IF,Kopparbergs/Landvetter,0,0,Oavgjort
+2002,Djurgårdens IF,Mallbackens IF,3,1,Hemmaseger
+2002,Djurgårdens IF,Malmö FF,0,0,Oavgjort
+2002,Djurgårdens IF,Sunnanå SK,3,1,Hemmaseger
+2002,Djurgårdens IF,Umeå IK,0,1,Bortaseger
+2002,Djurgårdens IF,Älvsjö AIK,0,3,Bortaseger
+2002,Hammarby IF,Alviks IK,5,1,Hemmaseger
+2002,Hammarby IF,BK Kenty,4,1,Hemmaseger
+2002,Hammarby IF,Bälinge IF,6,1,Hemmaseger
+2002,Hammarby IF,Djurgårdens IF,2,2,Oavgjort
+2002,Hammarby IF,IF Trion,3,0,Hemmaseger
+2002,Hammarby IF,Kopparbergs/Landvetter,0,2,Bortaseger
+2002,Hammarby IF,Mallbackens IF,3,3,Oavgjort
+2002,Hammarby IF,Malmö FF,0,3,Bortaseger
+2002,Hammarby IF,Sunnanå SK,5,1,Hemmaseger
+2002,Hammarby IF,Umeå IK,0,5,Bortaseger
+2002,Hammarby IF,Älvsjö AIK,1,1,Oavgjort
+2002,IF Trion,Alviks IK,2,3,Bortaseger
+2002,IF Trion,BK Kenty,0,1,Bortaseger
+2002,IF Trion,Bälinge IF,3,1,Hemmaseger
+2002,IF Trion,Djurgårdens IF,0,5,Bortaseger
+2002,IF Trion,Hammarby IF,3,2,Hemmaseger
+2002,IF Trion,Kopparbergs/Landvetter,1,2,Bortaseger
+2002,IF Trion,Mallbackens IF,0,2,Bortaseger
+2002,IF Trion,Malmö FF,0,5,Bortaseger
+2002,IF Trion,Sunnanå SK,0,0,Oavgjort
+2002,IF Trion,Umeå IK,0,2,Bortaseger
+2002,IF Trion,Älvsjö AIK,2,1,Hemmaseger
+2002,Kopparbergs/Landvetter,Alviks IK,1,0,Hemmaseger
+2002,Kopparbergs/Landvetter,BK Kenty,5,0,Hemmaseger
+2002,Kopparbergs/Landvetter,Bälinge IF,1,1,Oavgjort
+2002,Kopparbergs/Landvetter,Djurgårdens IF,1,3,Bortaseger
+2002,Kopparbergs/Landvetter,Hammarby IF,1,1,Oavgjort
+2002,Kopparbergs/Landvetter,IF Trion,0,0,Oavgjort
+2002,Kopparbergs/Landvetter,Mallbackens IF,1,1,Oavgjort
+2002,Kopparbergs/Landvetter,Malmö FF,1,2,Bortaseger
+2002,Kopparbergs/Landvetter,Sunnanå SK,1,0,Hemmaseger
+2002,Kopparbergs/Landvetter,Umeå IK,0,3,Bortaseger
+2002,Kopparbergs/Landvetter,Älvsjö AIK,3,2,Hemmaseger
+2002,Mallbackens IF,Alviks IK,2,1,Hemmaseger
+2002,Mallbackens IF,BK Kenty,2,1,Hemmaseger
+2002,Mallbackens IF,Bälinge IF,1,1,Oavgjort
+2002,Mallbackens IF,Djurgårdens IF,0,0,Oavgjort
+2002,Mallbackens IF,Hammarby IF,1,2,Bortaseger
+2002,Mallbackens IF,IF Trion,0,3,Bortaseger
+2002,Mallbackens IF,Kopparbergs/Landvetter,0,1,Bortaseger
+2002,Mallbackens IF,Malmö FF,0,2,Bortaseger
+2002,Mallbackens IF,Sunnanå SK,0,2,Bortaseger
+2002,Mallbackens IF,Umeå IK,1,11,Bortaseger
+2002,Mallbackens IF,Älvsjö AIK,1,1,Oavgjort
+2002,Malmö FF,Alviks IK,6,0,Hemmaseger
+2002,Malmö FF,BK Kenty,7,0,Hemmaseger
+2002,Malmö FF,Bälinge IF,4,1,Hemmaseger
+2002,Malmö FF,Djurgårdens IF,5,1,Hemmaseger
+2002,Malmö FF,Hammarby IF,5,2,Hemmaseger
+2002,Malmö FF,IF Trion,2,0,Hemmaseger
+2002,Malmö FF,Kopparbergs/Landvetter,6,0,Hemmaseger
+2002,Malmö FF,Mallbackens IF,1,0,Hemmaseger
+2002,Malmö FF,Sunnanå SK,6,0,Hemmaseger
+2002,Malmö FF,Umeå IK,1,0,Hemmaseger
+2002,Malmö FF,Älvsjö AIK,2,2,Oavgjort
+2002,Sunnanå SK,Alviks IK,1,0,Hemmaseger
+2002,Sunnanå SK,BK Kenty,2,2,Oavgjort
+2002,Sunnanå SK,Bälinge IF,0,1,Bortaseger
+2002,Sunnanå SK,Djurgårdens IF,1,4,Bortaseger
+2002,Sunnanå SK,Hammarby IF,1,5,Bortaseger
+2002,Sunnanå SK,IF Trion,3,0,Hemmaseger
+2002,Sunnanå SK,Kopparbergs/Landvetter,0,0,Oavgjort
+2002,Sunnanå SK,Mallbackens IF,3,1,Hemmaseger
+2002,Sunnanå SK,Malmö FF,0,3,Bortaseger
+2002,Sunnanå SK,Umeå IK,2,7,Bortaseger
+2002,Sunnanå SK,Älvsjö AIK,2,3,Bortaseger
+2002,Umeå IK,Alviks IK,6,0,Hemmaseger
+2002,Umeå IK,BK Kenty,5,0,Hemmaseger
+2002,Umeå IK,Bälinge IF,6,1,Hemmaseger
+2002,Umeå IK,Djurgårdens IF,6,1,Hemmaseger
+2002,Umeå IK,Hammarby IF,5,0,Hemmaseger
+2002,Umeå IK,IF Trion,5,0,Hemmaseger
+2002,Umeå IK,Kopparbergs/Landvetter,2,1,Hemmaseger
+2002,Umeå IK,Mallbackens IF,6,0,Hemmaseger
+2002,Umeå IK,Malmö FF,2,2,Oavgjort
+2002,Umeå IK,Sunnanå SK,8,3,Hemmaseger
+2002,Umeå IK,Älvsjö AIK,3,1,Hemmaseger
+2002,Älvsjö AIK,Alviks IK,9,0,Hemmaseger
+2002,Älvsjö AIK,BK Kenty,3,1,Hemmaseger
+2002,Älvsjö AIK,Bälinge IF,3,0,Hemmaseger
+2002,Älvsjö AIK,Djurgårdens IF,6,2,Hemmaseger
+2002,Älvsjö AIK,Hammarby IF,5,1,Hemmaseger
+2002,Älvsjö AIK,IF Trion,4,0,Hemmaseger
+2002,Älvsjö AIK,Kopparbergs/Landvetter,1,2,Bortaseger
+2002,Älvsjö AIK,Mallbackens IF,2,0,Hemmaseger
+2002,Älvsjö AIK,Malmö FF,0,2,Bortaseger
+2002,Älvsjö AIK,Sunnanå SK,1,1,Oavgjort
+2002,Älvsjö AIK,Umeå IK,1,3,Bortaseger
+2003,Bälinge IF,Djurgården/Älvsjö,1,3,Bortaseger
+2003,Bälinge IF,Hammarby IF,2,2,Oavgjort
+2003,Bälinge IF,IF Trion,3,1,Hemmaseger
+2003,Bälinge IF,Karlslunds IF,1,1,Oavgjort
+2003,Bälinge IF,Kopparbergs/Landvetter,2,0,Hemmaseger
+2003,Bälinge IF,Mallbackens IF,0,0,Oavgjort
+2003,Bälinge IF,Malmö FF,0,2,Bortaseger
+2003,Bälinge IF,Stattena IF,7,0,Hemmaseger
+2003,Bälinge IF,Sunnanå SK,4,0,Hemmaseger
+2003,Bälinge IF,Umeå IK,2,2,Oavgjort
+2003,Bälinge IF,Östers IF,5,1,Hemmaseger
+2003,Djurgården/Älvsjö,Bälinge IF,2,0,Hemmaseger
+2003,Djurgården/Älvsjö,Hammarby IF,2,0,Hemmaseger
+2003,Djurgården/Älvsjö,IF Trion,8,1,Hemmaseger
+2003,Djurgården/Älvsjö,Karlslunds IF,8,1,Hemmaseger
+2003,Djurgården/Älvsjö,Kopparbergs/Landvetter,5,1,Hemmaseger
+2003,Djurgården/Älvsjö,Mallbackens IF,6,1,Hemmaseger
+2003,Djurgården/Älvsjö,Malmö FF,4,2,Hemmaseger
+2003,Djurgården/Älvsjö,Stattena IF,5,0,Hemmaseger
+2003,Djurgården/Älvsjö,Sunnanå SK,3,1,Hemmaseger
+2003,Djurgården/Älvsjö,Umeå IK,1,1,Oavgjort
+2003,Djurgården/Älvsjö,Östers IF,6,1,Hemmaseger
+2003,Hammarby IF,Bälinge IF,4,2,Hemmaseger
+2003,Hammarby IF,Djurgården/Älvsjö,2,1,Hemmaseger
+2003,Hammarby IF,IF Trion,4,0,Hemmaseger
+2003,Hammarby IF,Karlslunds IF,2,1,Hemmaseger
+2003,Hammarby IF,Kopparbergs/Landvetter,3,1,Hemmaseger
+2003,Hammarby IF,Mallbackens IF,4,2,Hemmaseger
+2003,Hammarby IF,Malmö FF,1,3,Bortaseger
+2003,Hammarby IF,Stattena IF,1,0,Hemmaseger
+2003,Hammarby IF,Sunnanå SK,3,1,Hemmaseger
+2003,Hammarby IF,Umeå IK,0,2,Bortaseger
+2003,Hammarby IF,Östers IF,3,0,Hemmaseger
+2003,IF Trion,Bälinge IF,1,5,Bortaseger
+2003,IF Trion,Djurgården/Älvsjö,2,9,Bortaseger
+2003,IF Trion,Hammarby IF,2,5,Bortaseger
+2003,IF Trion,Karlslunds IF,0,0,Oavgjort
+2003,IF Trion,Kopparbergs/Landvetter,0,5,Bortaseger
+2003,IF Trion,Mallbackens IF,0,0,Oavgjort
+2003,IF Trion,Malmö FF,0,6,Bortaseger
+2003,IF Trion,Stattena IF,0,2,Bortaseger
+2003,IF Trion,Sunnanå SK,0,2,Bortaseger
+2003,IF Trion,Umeå IK,0,3,Bortaseger
+2003,IF Trion,Östers IF,1,1,Oavgjort
+2003,Karlslunds IF,Bälinge IF,1,1,Oavgjort
+2003,Karlslunds IF,Djurgården/Älvsjö,0,3,Bortaseger
+2003,Karlslunds IF,Hammarby IF,3,1,Hemmaseger
+2003,Karlslunds IF,IF Trion,6,0,Hemmaseger
+2003,Karlslunds IF,Kopparbergs/Landvetter,0,3,Bortaseger
+2003,Karlslunds IF,Mallbackens IF,1,1,Oavgjort
+2003,Karlslunds IF,Malmö FF,1,4,Bortaseger
+2003,Karlslunds IF,Stattena IF,3,1,Hemmaseger
+2003,Karlslunds IF,Sunnanå SK,1,1,Oavgjort
+2003,Karlslunds IF,Umeå IK,1,3,Bortaseger
+2003,Karlslunds IF,Östers IF,3,4,Bortaseger
+2003,Kopparbergs/Landvetter,Bälinge IF,0,3,Bortaseger
+2003,Kopparbergs/Landvetter,Djurgården/Älvsjö,3,5,Bortaseger
+2003,Kopparbergs/Landvetter,Hammarby IF,3,3,Oavgjort
+2003,Kopparbergs/Landvetter,IF Trion,5,0,Hemmaseger
+2003,Kopparbergs/Landvetter,Karlslunds IF,4,1,Hemmaseger
+2003,Kopparbergs/Landvetter,Mallbackens IF,4,0,Hemmaseger
+2003,Kopparbergs/Landvetter,Malmö FF,1,2,Bortaseger
+2003,Kopparbergs/Landvetter,Stattena IF,1,0,Hemmaseger
+2003,Kopparbergs/Landvetter,Sunnanå SK,6,1,Hemmaseger
+2003,Kopparbergs/Landvetter,Umeå IK,1,1,Oavgjort
+2003,Kopparbergs/Landvetter,Östers IF,3,1,Hemmaseger
+2003,Mallbackens IF,Bälinge IF,2,1,Hemmaseger
+2003,Mallbackens IF,Djurgården/Älvsjö,1,6,Bortaseger
+2003,Mallbackens IF,Hammarby IF,0,0,Oavgjort
+2003,Mallbackens IF,IF Trion,2,3,Bortaseger
+2003,Mallbackens IF,Karlslunds IF,3,0,Hemmaseger
+2003,Mallbackens IF,Kopparbergs/Landvetter,0,2,Bortaseger
+2003,Mallbackens IF,Malmö FF,2,4,Bortaseger
+2003,Mallbackens IF,Stattena IF,0,1,Bortaseger
+2003,Mallbackens IF,Sunnanå SK,1,1,Oavgjort
+2003,Mallbackens IF,Umeå IK,0,5,Bortaseger
+2003,Mallbackens IF,Östers IF,0,0,Oavgjort
+2003,Malmö FF,Bälinge IF,0,0,Oavgjort
+2003,Malmö FF,Djurgården/Älvsjö,2,3,Bortaseger
+2003,Malmö FF,Hammarby IF,1,0,Hemmaseger
+2003,Malmö FF,IF Trion,6,0,Hemmaseger
+2003,Malmö FF,Karlslunds IF,5,0,Hemmaseger
+2003,Malmö FF,Kopparbergs/Landvetter,3,0,Hemmaseger
+2003,Malmö FF,Mallbackens IF,1,0,Hemmaseger
+2003,Malmö FF,Stattena IF,5,0,Hemmaseger
+2003,Malmö FF,Sunnanå SK,5,0,Hemmaseger
+2003,Malmö FF,Umeå IK,0,2,Bortaseger
+2003,Malmö FF,Östers IF,4,0,Hemmaseger
+2003,Stattena IF,Bälinge IF,0,4,Bortaseger
+2003,Stattena IF,Djurgården/Älvsjö,0,4,Bortaseger
+2003,Stattena IF,Hammarby IF,3,6,Bortaseger
+2003,Stattena IF,IF Trion,3,2,Hemmaseger
+2003,Stattena IF,Karlslunds IF,1,1,Oavgjort
+2003,Stattena IF,Kopparbergs/Landvetter,2,2,Oavgjort
+2003,Stattena IF,Mallbackens IF,3,3,Oavgjort
+2003,Stattena IF,Malmö FF,0,5,Bortaseger
+2003,Stattena IF,Sunnanå SK,1,1,Oavgjort
+2003,Stattena IF,Umeå IK,1,3,Bortaseger
+2003,Stattena IF,Östers IF,1,3,Bortaseger
+2003,Sunnanå SK,Bälinge IF,1,3,Bortaseger
+2003,Sunnanå SK,Djurgården/Älvsjö,1,2,Bortaseger
+2003,Sunnanå SK,Hammarby IF,1,4,Bortaseger
+2003,Sunnanå SK,IF Trion,4,2,Hemmaseger
+2003,Sunnanå SK,Karlslunds IF,4,4,Oavgjort
+2003,Sunnanå SK,Kopparbergs/Landvetter,2,2,Oavgjort
+2003,Sunnanå SK,Mallbackens IF,0,3,Bortaseger
+2003,Sunnanå SK,Malmö FF,0,3,Bortaseger
+2003,Sunnanå SK,Stattena IF,3,1,Hemmaseger
+2003,Sunnanå SK,Umeå IK,1,0,Hemmaseger
+2003,Sunnanå SK,Östers IF,4,1,Hemmaseger
+2003,Umeå IK,Bälinge IF,2,1,Hemmaseger
+2003,Umeå IK,Djurgården/Älvsjö,4,1,Hemmaseger
+2003,Umeå IK,Hammarby IF,4,1,Hemmaseger
+2003,Umeå IK,IF Trion,5,0,Hemmaseger
+2003,Umeå IK,Karlslunds IF,3,0,Hemmaseger
+2003,Umeå IK,Kopparbergs/Landvetter,7,0,Hemmaseger
+2003,Umeå IK,Mallbackens IF,5,0,Hemmaseger
+2003,Umeå IK,Malmö FF,2,0,Hemmaseger
+2003,Umeå IK,Stattena IF,3,0,Hemmaseger
+2003,Umeå IK,Sunnanå SK,1,0,Hemmaseger
+2003,Umeå IK,Östers IF,8,0,Hemmaseger
+2003,Östers IF,Bälinge IF,2,3,Bortaseger
+2003,Östers IF,Djurgården/Älvsjö,0,7,Bortaseger
+2003,Östers IF,Hammarby IF,1,5,Bortaseger
+2003,Östers IF,IF Trion,0,1,Bortaseger
+2003,Östers IF,Karlslunds IF,0,1,Bortaseger
+2003,Östers IF,Kopparbergs/Landvetter,2,2,Oavgjort
+2003,Östers IF,Mallbackens IF,0,1,Bortaseger
+2003,Östers IF,Malmö FF,0,1,Bortaseger
+2003,Östers IF,Stattena IF,1,2,Bortaseger
+2003,Östers IF,Sunnanå SK,2,4,Bortaseger
+2003,Östers IF,Umeå IK,0,4,Bortaseger
+2004,Bälinge IF,Djurgården/Älvsjö,1,3,Bortaseger
+2004,Bälinge IF,Hammarby IF,0,2,Bortaseger
+2004,Bälinge IF,Karlslunds IF,5,3,Hemmaseger
+2004,Bälinge IF,Kopparbergs/Landvetter,0,3,Bortaseger
+2004,Bälinge IF,Linköpings FC,0,0,Oavgjort
+2004,Bälinge IF,Mallbackens IF,2,0,Hemmaseger
+2004,Bälinge IF,Malmö FF,1,5,Bortaseger
+2004,Bälinge IF,Själevads IK,0,2,Bortaseger
+2004,Bälinge IF,Stattena IF,1,1,Oavgjort
+2004,Bälinge IF,Sunnanå SK,2,2,Oavgjort
+2004,Bälinge IF,Umeå IK,0,4,Bortaseger
+2004,Djurgården/Älvsjö,Bälinge IF,5,1,Hemmaseger
+2004,Djurgården/Älvsjö,Hammarby IF,6,0,Hemmaseger
+2004,Djurgården/Älvsjö,Karlslunds IF,2,0,Hemmaseger
+2004,Djurgården/Älvsjö,Kopparbergs/Landvetter,1,1,Oavgjort
+2004,Djurgården/Älvsjö,Linköpings FC,7,1,Hemmaseger
+2004,Djurgården/Älvsjö,Mallbackens IF,2,0,Hemmaseger
+2004,Djurgården/Älvsjö,Malmö FF,4,0,Hemmaseger
+2004,Djurgården/Älvsjö,Själevads IK,4,2,Hemmaseger
+2004,Djurgården/Älvsjö,Stattena IF,3,1,Hemmaseger
+2004,Djurgården/Älvsjö,Sunnanå SK,6,1,Hemmaseger
+2004,Djurgården/Älvsjö,Umeå IK,2,6,Bortaseger
+2004,Hammarby IF,Bälinge IF,5,2,Hemmaseger
+2004,Hammarby IF,Djurgården/Älvsjö,3,4,Bortaseger
+2004,Hammarby IF,Karlslunds IF,3,1,Hemmaseger
+2004,Hammarby IF,Kopparbergs/Landvetter,2,2,Oavgjort
+2004,Hammarby IF,Linköpings FC,4,0,Hemmaseger
+2004,Hammarby IF,Mallbackens IF,3,1,Hemmaseger
+2004,Hammarby IF,Malmö FF,0,3,Bortaseger
+2004,Hammarby IF,Själevads IK,0,1,Bortaseger
+2004,Hammarby IF,Stattena IF,4,0,Hemmaseger
+2004,Hammarby IF,Sunnanå SK,2,0,Hemmaseger
+2004,Hammarby IF,Umeå IK,0,1,Bortaseger
+2004,Karlslunds IF,Bälinge IF,4,0,Hemmaseger
+2004,Karlslunds IF,Djurgården/Älvsjö,1,4,Bortaseger
+2004,Karlslunds IF,Hammarby IF,3,2,Hemmaseger
+2004,Karlslunds IF,Kopparbergs/Landvetter,1,0,Hemmaseger
+2004,Karlslunds IF,Linköpings FC,3,1,Hemmaseger
+2004,Karlslunds IF,Mallbackens IF,2,1,Hemmaseger
+2004,Karlslunds IF,Malmö FF,1,6,Bortaseger
+2004,Karlslunds IF,Själevads IK,2,0,Hemmaseger
+2004,Karlslunds IF,Stattena IF,1,1,Oavgjort
+2004,Karlslunds IF,Sunnanå SK,1,1,Oavgjort
+2004,Karlslunds IF,Umeå IK,0,6,Bortaseger
+2004,Kopparbergs/Landvetter,Bälinge IF,0,0,Oavgjort
+2004,Kopparbergs/Landvetter,Djurgården/Älvsjö,0,1,Bortaseger
+2004,Kopparbergs/Landvetter,Hammarby IF,1,0,Hemmaseger
+2004,Kopparbergs/Landvetter,Karlslunds IF,3,0,Hemmaseger
+2004,Kopparbergs/Landvetter,Linköpings FC,0,1,Bortaseger
+2004,Kopparbergs/Landvetter,Mallbackens IF,3,0,Hemmaseger
+2004,Kopparbergs/Landvetter,Malmö FF,1,7,Bortaseger
+2004,Kopparbergs/Landvetter,Själevads IK,1,0,Hemmaseger
+2004,Kopparbergs/Landvetter,Stattena IF,2,1,Hemmaseger
+2004,Kopparbergs/Landvetter,Sunnanå SK,5,2,Hemmaseger
+2004,Kopparbergs/Landvetter,Umeå IK,0,4,Bortaseger
+2004,Linköpings FC,Bälinge IF,1,1,Oavgjort
+2004,Linköpings FC,Djurgården/Älvsjö,0,3,Bortaseger
+2004,Linköpings FC,Hammarby IF,2,2,Oavgjort
+2004,Linköpings FC,Karlslunds IF,2,1,Hemmaseger
+2004,Linköpings FC,Kopparbergs/Landvetter,4,0,Hemmaseger
+2004,Linköpings FC,Mallbackens IF,2,1,Hemmaseger
+2004,Linköpings FC,Malmö FF,2,3,Bortaseger
+2004,Linköpings FC,Själevads IK,1,2,Bortaseger
+2004,Linköpings FC,Stattena IF,0,2,Bortaseger
+2004,Linköpings FC,Sunnanå SK,1,3,Bortaseger
+2004,Linköpings FC,Umeå IK,2,2,Oavgjort
+2004,Mallbackens IF,Bälinge IF,1,0,Hemmaseger
+2004,Mallbackens IF,Djurgården/Älvsjö,0,4,Bortaseger
+2004,Mallbackens IF,Hammarby IF,2,3,Bortaseger
+2004,Mallbackens IF,Karlslunds IF,2,0,Hemmaseger
+2004,Mallbackens IF,Kopparbergs/Landvetter,0,0,Oavgjort
+2004,Mallbackens IF,Linköpings FC,0,2,Bortaseger
+2004,Mallbackens IF,Malmö FF,1,1,Oavgjort
+2004,Mallbackens IF,Själevads IK,1,0,Hemmaseger
+2004,Mallbackens IF,Stattena IF,2,0,Hemmaseger
+2004,Mallbackens IF,Sunnanå SK,1,0,Hemmaseger
+2004,Mallbackens IF,Umeå IK,0,5,Bortaseger
+2004,Malmö FF,Bälinge IF,0,1,Bortaseger
+2004,Malmö FF,Djurgården/Älvsjö,1,1,Oavgjort
+2004,Malmö FF,Hammarby IF,3,0,Hemmaseger
+2004,Malmö FF,Karlslunds IF,6,2,Hemmaseger
+2004,Malmö FF,Kopparbergs/Landvetter,4,1,Hemmaseger
+2004,Malmö FF,Linköpings FC,1,0,Hemmaseger
+2004,Malmö FF,Mallbackens IF,0,0,Oavgjort
+2004,Malmö FF,Själevads IK,4,0,Hemmaseger
+2004,Malmö FF,Stattena IF,7,1,Hemmaseger
+2004,Malmö FF,Sunnanå SK,3,0,Hemmaseger
+2004,Malmö FF,Umeå IK,1,0,Hemmaseger
+2004,Själevads IK,Bälinge IF,2,2,Oavgjort
+2004,Själevads IK,Djurgården/Älvsjö,0,3,Bortaseger
+2004,Själevads IK,Hammarby IF,1,3,Bortaseger
+2004,Själevads IK,Karlslunds IF,2,2,Oavgjort
+2004,Själevads IK,Kopparbergs/Landvetter,0,3,Bortaseger
+2004,Själevads IK,Linköpings FC,0,2,Bortaseger
+2004,Själevads IK,Mallbackens IF,2,2,Oavgjort
+2004,Själevads IK,Malmö FF,2,2,Oavgjort
+2004,Själevads IK,Stattena IF,1,0,Hemmaseger
+2004,Själevads IK,Sunnanå SK,1,1,Oavgjort
+2004,Själevads IK,Umeå IK,0,4,Bortaseger
+2004,Stattena IF,Bälinge IF,1,1,Oavgjort
+2004,Stattena IF,Djurgården/Älvsjö,1,4,Bortaseger
+2004,Stattena IF,Hammarby IF,1,3,Bortaseger
+2004,Stattena IF,Karlslunds IF,0,3,Bortaseger
+2004,Stattena IF,Kopparbergs/Landvetter,0,2,Bortaseger
+2004,Stattena IF,Linköpings FC,0,3,Bortaseger
+2004,Stattena IF,Mallbackens IF,0,2,Bortaseger
+2004,Stattena IF,Malmö FF,0,4,Bortaseger
+2004,Stattena IF,Själevads IK,0,1,Bortaseger
+2004,Stattena IF,Sunnanå SK,1,4,Bortaseger
+2004,Stattena IF,Umeå IK,1,4,Bortaseger
+2004,Sunnanå SK,Bälinge IF,1,2,Bortaseger
+2004,Sunnanå SK,Djurgården/Älvsjö,1,2,Bortaseger
+2004,Sunnanå SK,Hammarby IF,2,2,Oavgjort
+2004,Sunnanå SK,Karlslunds IF,2,1,Hemmaseger
+2004,Sunnanå SK,Kopparbergs/Landvetter,0,1,Bortaseger
+2004,Sunnanå SK,Linköpings FC,0,1,Bortaseger
+2004,Sunnanå SK,Mallbackens IF,1,4,Bortaseger
+2004,Sunnanå SK,Malmö FF,1,0,Hemmaseger
+2004,Sunnanå SK,Själevads IK,3,0,Hemmaseger
+2004,Sunnanå SK,Stattena IF,1,1,Oavgjort
+2004,Sunnanå SK,Umeå IK,0,2,Bortaseger
+2004,Umeå IK,Bälinge IF,10,1,Hemmaseger
+2004,Umeå IK,Djurgården/Älvsjö,2,3,Bortaseger
+2004,Umeå IK,Hammarby IF,6,1,Hemmaseger
+2004,Umeå IK,Karlslunds IF,5,0,Hemmaseger
+2004,Umeå IK,Kopparbergs/Landvetter,5,0,Hemmaseger
+2004,Umeå IK,Linköpings FC,2,0,Hemmaseger
+2004,Umeå IK,Mallbackens IF,9,0,Hemmaseger
+2004,Umeå IK,Malmö FF,4,2,Hemmaseger
+2004,Umeå IK,Själevads IK,9,0,Hemmaseger
+2004,Umeå IK,Stattena IF,8,0,Hemmaseger
+2004,Umeå IK,Sunnanå SK,8,4,Hemmaseger
+2005,AIK,Djurgården/Älvsjö,1,1,Oavgjort
+2005,AIK,Hammarby IF,0,2,Bortaseger
+2005,AIK,KIF Örebro,0,1,Bortaseger
+2005,AIK,Kopparbergs/Göteborg,2,0,Hemmaseger
+2005,AIK,Linköpings FC,1,2,Bortaseger
+2005,AIK,Mallbackens IF,1,0,Hemmaseger
+2005,AIK,Malmö FF,0,2,Bortaseger
+2005,AIK,QBIK,1,0,Hemmaseger
+2005,AIK,Själevads IK,2,1,Hemmaseger
+2005,AIK,Sunnanå SK,0,2,Bortaseger
+2005,AIK,Umeå IK,0,6,Bortaseger
+2005,Djurgården/Älvsjö,AIK,6,0,Hemmaseger
+2005,Djurgården/Älvsjö,Hammarby IF,1,1,Oavgjort
+2005,Djurgården/Älvsjö,KIF Örebro,3,0,Hemmaseger
+2005,Djurgården/Älvsjö,Kopparbergs/Göteborg,1,3,Bortaseger
+2005,Djurgården/Älvsjö,Linköpings FC,0,1,Bortaseger
+2005,Djurgården/Älvsjö,Mallbackens IF,3,1,Hemmaseger
+2005,Djurgården/Älvsjö,Malmö FF,1,0,Hemmaseger
+2005,Djurgården/Älvsjö,QBIK,3,2,Hemmaseger
+2005,Djurgården/Älvsjö,Själevads IK,1,0,Hemmaseger
+2005,Djurgården/Älvsjö,Sunnanå SK,2,1,Hemmaseger
+2005,Djurgården/Älvsjö,Umeå IK,0,1,Bortaseger
+2005,Hammarby IF,AIK,4,0,Hemmaseger
+2005,Hammarby IF,Djurgården/Älvsjö,0,2,Bortaseger
+2005,Hammarby IF,KIF Örebro,0,0,Oavgjort
+2005,Hammarby IF,Kopparbergs/Göteborg,2,2,Oavgjort
+2005,Hammarby IF,Linköpings FC,0,2,Bortaseger
+2005,Hammarby IF,Mallbackens IF,3,3,Oavgjort
+2005,Hammarby IF,Malmö FF,1,1,Oavgjort
+2005,Hammarby IF,QBIK,3,2,Hemmaseger
+2005,Hammarby IF,Själevads IK,5,0,Hemmaseger
+2005,Hammarby IF,Sunnanå SK,0,1,Bortaseger
+2005,Hammarby IF,Umeå IK,0,3,Bortaseger
+2005,KIF Örebro,AIK,1,1,Oavgjort
+2005,KIF Örebro,Djurgården/Älvsjö,0,2,Bortaseger
+2005,KIF Örebro,Hammarby IF,0,2,Bortaseger
+2005,KIF Örebro,Kopparbergs/Göteborg,1,1,Oavgjort
+2005,KIF Örebro,Linköpings FC,2,1,Hemmaseger
+2005,KIF Örebro,Mallbackens IF,5,1,Hemmaseger
+2005,KIF Örebro,Malmö FF,0,1,Bortaseger
+2005,KIF Örebro,QBIK,0,0,Oavgjort
+2005,KIF Örebro,Själevads IK,1,0,Hemmaseger
+2005,KIF Örebro,Sunnanå SK,2,0,Hemmaseger
+2005,KIF Örebro,Umeå IK,2,7,Bortaseger
+2005,Kopparbergs/Göteborg,AIK,3,2,Hemmaseger
+2005,Kopparbergs/Göteborg,Djurgården/Älvsjö,0,0,Oavgjort
+2005,Kopparbergs/Göteborg,Hammarby IF,1,0,Hemmaseger
+2005,Kopparbergs/Göteborg,KIF Örebro,4,2,Hemmaseger
+2005,Kopparbergs/Göteborg,Linköpings FC,1,0,Hemmaseger
+2005,Kopparbergs/Göteborg,Mallbackens IF,0,1,Bortaseger
+2005,Kopparbergs/Göteborg,Malmö FF,1,5,Bortaseger
+2005,Kopparbergs/Göteborg,QBIK,3,1,Hemmaseger
+2005,Kopparbergs/Göteborg,Själevads IK,9,0,Hemmaseger
+2005,Kopparbergs/Göteborg,Sunnanå SK,1,2,Bortaseger
+2005,Kopparbergs/Göteborg,Umeå IK,0,3,Bortaseger
+2005,Linköpings FC,AIK,2,1,Hemmaseger
+2005,Linköpings FC,Djurgården/Älvsjö,2,1,Hemmaseger
+2005,Linköpings FC,Hammarby IF,4,0,Hemmaseger
+2005,Linköpings FC,KIF Örebro,3,3,Oavgjort
+2005,Linköpings FC,Kopparbergs/Göteborg,0,2,Bortaseger
+2005,Linköpings FC,Mallbackens IF,5,1,Hemmaseger
+2005,Linköpings FC,Malmö FF,0,1,Bortaseger
+2005,Linköpings FC,QBIK,5,1,Hemmaseger
+2005,Linköpings FC,Själevads IK,1,0,Hemmaseger
+2005,Linköpings FC,Sunnanå SK,2,3,Bortaseger
+2005,Linköpings FC,Umeå IK,0,2,Bortaseger
+2005,Mallbackens IF,AIK,4,0,Hemmaseger
+2005,Mallbackens IF,Djurgården/Älvsjö,0,2,Bortaseger
+2005,Mallbackens IF,Hammarby IF,2,0,Hemmaseger
+2005,Mallbackens IF,KIF Örebro,1,3,Bortaseger
+2005,Mallbackens IF,Kopparbergs/Göteborg,2,0,Hemmaseger
+2005,Mallbackens IF,Linköpings FC,1,1,Oavgjort
+2005,Mallbackens IF,Malmö FF,0,5,Bortaseger
+2005,Mallbackens IF,QBIK,0,1,Bortaseger
+2005,Mallbackens IF,Själevads IK,4,2,Hemmaseger
+2005,Mallbackens IF,Sunnanå SK,2,2,Oavgjort
+2005,Mallbackens IF,Umeå IK,1,3,Bortaseger
+2005,Malmö FF,AIK,5,1,Hemmaseger
+2005,Malmö FF,Djurgården/Älvsjö,1,0,Hemmaseger
+2005,Malmö FF,Hammarby IF,6,0,Hemmaseger
+2005,Malmö FF,KIF Örebro,8,1,Hemmaseger
+2005,Malmö FF,Kopparbergs/Göteborg,5,1,Hemmaseger
+2005,Malmö FF,Linköpings FC,2,1,Hemmaseger
+2005,Malmö FF,Mallbackens IF,5,0,Hemmaseger
+2005,Malmö FF,QBIK,5,1,Hemmaseger
+2005,Malmö FF,Själevads IK,5,1,Hemmaseger
+2005,Malmö FF,Sunnanå SK,2,0,Hemmaseger
+2005,Malmö FF,Umeå IK,2,2,Oavgjort
+2005,QBIK,AIK,2,1,Hemmaseger
+2005,QBIK,Djurgården/Älvsjö,0,5,Bortaseger
+2005,QBIK,Hammarby IF,4,1,Hemmaseger
+2005,QBIK,KIF Örebro,0,6,Bortaseger
+2005,QBIK,Kopparbergs/Göteborg,0,4,Bortaseger
+2005,QBIK,Linköpings FC,1,3,Bortaseger
+2005,QBIK,Mallbackens IF,0,1,Bortaseger
+2005,QBIK,Malmö FF,0,2,Bortaseger
+2005,QBIK,Själevads IK,2,1,Hemmaseger
+2005,QBIK,Sunnanå SK,0,2,Bortaseger
+2005,QBIK,Umeå IK,0,4,Bortaseger
+2005,Själevads IK,AIK,3,3,Oavgjort
+2005,Själevads IK,Djurgården/Älvsjö,0,3,Bortaseger
+2005,Själevads IK,Hammarby IF,3,2,Hemmaseger
+2005,Själevads IK,KIF Örebro,1,1,Oavgjort
+2005,Själevads IK,Kopparbergs/Göteborg,1,1,Oavgjort
+2005,Själevads IK,Linköpings FC,1,1,Oavgjort
+2005,Själevads IK,Mallbackens IF,2,1,Hemmaseger
+2005,Själevads IK,Malmö FF,0,5,Bortaseger
+2005,Själevads IK,QBIK,1,2,Bortaseger
+2005,Själevads IK,Sunnanå SK,2,1,Hemmaseger
+2005,Själevads IK,Umeå IK,0,3,Bortaseger
+2005,Sunnanå SK,AIK,5,0,Hemmaseger
+2005,Sunnanå SK,Djurgården/Älvsjö,0,4,Bortaseger
+2005,Sunnanå SK,Hammarby IF,1,0,Hemmaseger
+2005,Sunnanå SK,KIF Örebro,3,4,Bortaseger
+2005,Sunnanå SK,Kopparbergs/Göteborg,0,0,Oavgjort
+2005,Sunnanå SK,Linköpings FC,1,4,Bortaseger
+2005,Sunnanå SK,Mallbackens IF,1,1,Oavgjort
+2005,Sunnanå SK,Malmö FF,2,3,Bortaseger
+2005,Sunnanå SK,QBIK,2,0,Hemmaseger
+2005,Sunnanå SK,Själevads IK,6,0,Hemmaseger
+2005,Sunnanå SK,Umeå IK,0,1,Bortaseger
+2005,Umeå IK,AIK,7,0,Hemmaseger
+2005,Umeå IK,Djurgården/Älvsjö,7,0,Hemmaseger
+2005,Umeå IK,Hammarby IF,5,0,Hemmaseger
+2005,Umeå IK,KIF Örebro,4,1,Hemmaseger
+2005,Umeå IK,Kopparbergs/Göteborg,2,1,Hemmaseger
+2005,Umeå IK,Linköpings FC,3,1,Hemmaseger
+2005,Umeå IK,Mallbackens IF,6,1,Hemmaseger
+2005,Umeå IK,Malmö FF,3,1,Hemmaseger
+2005,Umeå IK,QBIK,7,0,Hemmaseger
+2005,Umeå IK,Själevads IK,8,0,Hemmaseger
+2005,Umeå IK,Sunnanå SK,7,1,Hemmaseger
+2006,Bälinge IF,Djurgården/Älvsjö,0,3,Bortaseger
+2006,Bälinge IF,Hammarby IF,1,3,Bortaseger
+2006,Bälinge IF,Jitex BK,1,0,Hemmaseger
+2006,Bälinge IF,KIF Örebro,1,1,Oavgjort
+2006,Bälinge IF,Kopparbergs/Göteborg,2,6,Bortaseger
+2006,Bälinge IF,Linköpings FC,1,5,Bortaseger
+2006,Bälinge IF,Mallbackens IF,2,0,Hemmaseger
+2006,Bälinge IF,Malmö FF,0,2,Bortaseger
+2006,Bälinge IF,QBIK,0,0,Oavgjort
+2006,Bälinge IF,Sunnanå SK,0,2,Bortaseger
+2006,Bälinge IF,Umeå IK,0,3,Bortaseger
+2006,Djurgården/Älvsjö,Bälinge IF,1,0,Hemmaseger
+2006,Djurgården/Älvsjö,Hammarby IF,5,1,Hemmaseger
+2006,Djurgården/Älvsjö,Jitex BK,5,1,Hemmaseger
+2006,Djurgården/Älvsjö,KIF Örebro,1,0,Hemmaseger
+2006,Djurgården/Älvsjö,Kopparbergs/Göteborg,2,3,Bortaseger
+2006,Djurgården/Älvsjö,Linköpings FC,6,2,Hemmaseger
+2006,Djurgården/Älvsjö,Mallbackens IF,3,0,Hemmaseger
+2006,Djurgården/Älvsjö,Malmö FF,1,1,Oavgjort
+2006,Djurgården/Älvsjö,QBIK,7,0,Hemmaseger
+2006,Djurgården/Älvsjö,Sunnanå SK,3,0,Hemmaseger
+2006,Djurgården/Älvsjö,Umeå IK,0,1,Bortaseger
+2006,Hammarby IF,Bälinge IF,1,1,Oavgjort
+2006,Hammarby IF,Djurgården/Älvsjö,0,4,Bortaseger
+2006,Hammarby IF,Jitex BK,4,0,Hemmaseger
+2006,Hammarby IF,KIF Örebro,3,0,Hemmaseger
+2006,Hammarby IF,Kopparbergs/Göteborg,4,1,Hemmaseger
+2006,Hammarby IF,Linköpings FC,3,0,Hemmaseger
+2006,Hammarby IF,Mallbackens IF,2,0,Hemmaseger
+2006,Hammarby IF,Malmö FF,2,0,Hemmaseger
+2006,Hammarby IF,QBIK,2,2,Oavgjort
+2006,Hammarby IF,Sunnanå SK,1,1,Oavgjort
+2006,Hammarby IF,Umeå IK,0,2,Bortaseger
+2006,Jitex BK,Bälinge IF,1,1,Oavgjort
+2006,Jitex BK,Djurgården/Älvsjö,0,6,Bortaseger
+2006,Jitex BK,Hammarby IF,2,2,Oavgjort
+2006,Jitex BK,KIF Örebro,0,3,Bortaseger
+2006,Jitex BK,Kopparbergs/Göteborg,2,2,Oavgjort
+2006,Jitex BK,Linköpings FC,0,0,Oavgjort
+2006,Jitex BK,Mallbackens IF,1,0,Hemmaseger
+2006,Jitex BK,Malmö FF,0,2,Bortaseger
+2006,Jitex BK,QBIK,1,1,Oavgjort
+2006,Jitex BK,Sunnanå SK,1,1,Oavgjort
+2006,Jitex BK,Umeå IK,0,6,Bortaseger
+2006,KIF Örebro,Bälinge IF,3,1,Hemmaseger
+2006,KIF Örebro,Djurgården/Älvsjö,2,2,Oavgjort
+2006,KIF Örebro,Hammarby IF,3,1,Hemmaseger
+2006,KIF Örebro,Jitex BK,1,0,Hemmaseger
+2006,KIF Örebro,Kopparbergs/Göteborg,1,4,Bortaseger
+2006,KIF Örebro,Linköpings FC,1,2,Bortaseger
+2006,KIF Örebro,Mallbackens IF,2,0,Hemmaseger
+2006,KIF Örebro,Malmö FF,0,0,Oavgjort
+2006,KIF Örebro,QBIK,1,1,Oavgjort
+2006,KIF Örebro,Sunnanå SK,3,0,Hemmaseger
+2006,KIF Örebro,Umeå IK,1,2,Bortaseger
+2006,Kopparbergs/Göteborg,Bälinge IF,0,1,Bortaseger
+2006,Kopparbergs/Göteborg,Djurgården/Älvsjö,1,2,Bortaseger
+2006,Kopparbergs/Göteborg,Hammarby IF,4,0,Hemmaseger
+2006,Kopparbergs/Göteborg,Jitex BK,3,0,Hemmaseger
+2006,Kopparbergs/Göteborg,KIF Örebro,3,2,Hemmaseger
+2006,Kopparbergs/Göteborg,Linköpings FC,2,1,Hemmaseger
+2006,Kopparbergs/Göteborg,Mallbackens IF,3,0,Hemmaseger
+2006,Kopparbergs/Göteborg,Malmö FF,3,3,Oavgjort
+2006,Kopparbergs/Göteborg,QBIK,3,1,Hemmaseger
+2006,Kopparbergs/Göteborg,Sunnanå SK,1,0,Hemmaseger
+2006,Kopparbergs/Göteborg,Umeå IK,2,3,Bortaseger
+2006,Linköpings FC,Bälinge IF,0,0,Oavgjort
+2006,Linköpings FC,Djurgården/Älvsjö,1,1,Oavgjort
+2006,Linköpings FC,Hammarby IF,1,0,Hemmaseger
+2006,Linköpings FC,Jitex BK,4,0,Hemmaseger
+2006,Linköpings FC,KIF Örebro,3,2,Hemmaseger
+2006,Linköpings FC,Kopparbergs/Göteborg,3,0,Hemmaseger
+2006,Linköpings FC,Mallbackens IF,3,0,Hemmaseger
+2006,Linköpings FC,Malmö FF,2,2,Oavgjort
+2006,Linköpings FC,QBIK,3,0,Hemmaseger
+2006,Linköpings FC,Sunnanå SK,2,0,Hemmaseger
+2006,Linköpings FC,Umeå IK,0,1,Bortaseger
+2006,Mallbackens IF,Bälinge IF,1,1,Oavgjort
+2006,Mallbackens IF,Djurgården/Älvsjö,0,4,Bortaseger
+2006,Mallbackens IF,Hammarby IF,4,1,Hemmaseger
+2006,Mallbackens IF,Jitex BK,1,2,Bortaseger
+2006,Mallbackens IF,KIF Örebro,2,3,Bortaseger
+2006,Mallbackens IF,Kopparbergs/Göteborg,0,2,Bortaseger
+2006,Mallbackens IF,Linköpings FC,1,3,Bortaseger
+2006,Mallbackens IF,Malmö FF,0,2,Bortaseger
+2006,Mallbackens IF,QBIK,2,0,Hemmaseger
+2006,Mallbackens IF,Sunnanå SK,0,2,Bortaseger
+2006,Mallbackens IF,Umeå IK,0,3,Bortaseger
+2006,Malmö FF,Bälinge IF,1,0,Hemmaseger
+2006,Malmö FF,Djurgården/Älvsjö,4,1,Hemmaseger
+2006,Malmö FF,Hammarby IF,1,1,Oavgjort
+2006,Malmö FF,Jitex BK,6,1,Hemmaseger
+2006,Malmö FF,KIF Örebro,2,0,Hemmaseger
+2006,Malmö FF,Kopparbergs/Göteborg,3,0,Hemmaseger
+2006,Malmö FF,Linköpings FC,2,2,Oavgjort
+2006,Malmö FF,Mallbackens IF,0,1,Bortaseger
+2006,Malmö FF,QBIK,3,1,Hemmaseger
+2006,Malmö FF,Sunnanå SK,2,0,Hemmaseger
+2006,Malmö FF,Umeå IK,0,4,Bortaseger
+2006,QBIK,Bälinge IF,1,1,Oavgjort
+2006,QBIK,Djurgården/Älvsjö,1,1,Oavgjort
+2006,QBIK,Hammarby IF,2,1,Hemmaseger
+2006,QBIK,Jitex BK,1,1,Oavgjort
+2006,QBIK,KIF Örebro,2,2,Oavgjort
+2006,QBIK,Kopparbergs/Göteborg,0,0,Oavgjort
+2006,QBIK,Linköpings FC,0,3,Bortaseger
+2006,QBIK,Mallbackens IF,2,0,Hemmaseger
+2006,QBIK,Malmö FF,0,3,Bortaseger
+2006,QBIK,Sunnanå SK,1,3,Bortaseger
+2006,QBIK,Umeå IK,2,5,Bortaseger
+2006,Sunnanå SK,Bälinge IF,0,2,Bortaseger
+2006,Sunnanå SK,Djurgården/Älvsjö,3,2,Hemmaseger
+2006,Sunnanå SK,Hammarby IF,1,2,Bortaseger
+2006,Sunnanå SK,Jitex BK,3,1,Hemmaseger
+2006,Sunnanå SK,KIF Örebro,0,2,Bortaseger
+2006,Sunnanå SK,Kopparbergs/Göteborg,2,0,Hemmaseger
+2006,Sunnanå SK,Linköpings FC,1,2,Bortaseger
+2006,Sunnanå SK,Mallbackens IF,2,0,Hemmaseger
+2006,Sunnanå SK,Malmö FF,2,2,Oavgjort
+2006,Sunnanå SK,QBIK,3,0,Hemmaseger
+2006,Sunnanå SK,Umeå IK,0,1,Bortaseger
+2006,Umeå IK,Bälinge IF,7,0,Hemmaseger
+2006,Umeå IK,Djurgården/Älvsjö,2,1,Hemmaseger
+2006,Umeå IK,Hammarby IF,8,0,Hemmaseger
+2006,Umeå IK,Jitex BK,6,3,Hemmaseger
+2006,Umeå IK,KIF Örebro,3,0,Hemmaseger
+2006,Umeå IK,Kopparbergs/Göteborg,1,1,Oavgjort
+2006,Umeå IK,Linköpings FC,2,1,Hemmaseger
+2006,Umeå IK,Mallbackens IF,1,0,Hemmaseger
+2006,Umeå IK,Malmö FF,2,0,Hemmaseger
+2006,Umeå IK,QBIK,6,0,Hemmaseger
+2006,Umeå IK,Sunnanå SK,5,0,Hemmaseger
+2007,AIK,Bälinge IF,1,0,Hemmaseger
+2007,AIK,Djurgårdens IF,0,3,Bortaseger
+2007,AIK,Falköpings KIK,2,0,Hemmaseger
+2007,AIK,Hammarby IF,3,2,Hemmaseger
+2007,AIK,KIF Örebro,0,0,Oavgjort
+2007,AIK,Kopparbergs/Göteborg,0,2,Bortaseger
+2007,AIK,LdB Malmö,0,0,Oavgjort
+2007,AIK,Linköpings FC,1,1,Oavgjort
+2007,AIK,QBIK,0,0,Oavgjort
+2007,AIK,Sunnanå SK,1,2,Bortaseger
+2007,AIK,Umeå IK,0,4,Bortaseger
+2007,Bälinge IF,AIK,2,0,Hemmaseger
+2007,Bälinge IF,Djurgårdens IF,1,1,Oavgjort
+2007,Bälinge IF,Falköpings KIK,2,2,Oavgjort
+2007,Bälinge IF,Hammarby IF,0,2,Bortaseger
+2007,Bälinge IF,KIF Örebro,4,1,Hemmaseger
+2007,Bälinge IF,Kopparbergs/Göteborg,2,7,Bortaseger
+2007,Bälinge IF,LdB Malmö,0,1,Bortaseger
+2007,Bälinge IF,Linköpings FC,1,2,Bortaseger
+2007,Bälinge IF,QBIK,0,0,Oavgjort
+2007,Bälinge IF,Sunnanå SK,2,2,Oavgjort
+2007,Bälinge IF,Umeå IK,1,2,Bortaseger
+2007,Djurgårdens IF,AIK,7,0,Hemmaseger
+2007,Djurgårdens IF,Bälinge IF,2,1,Hemmaseger
+2007,Djurgårdens IF,Falköpings KIK,4,0,Hemmaseger
+2007,Djurgårdens IF,Hammarby IF,1,0,Hemmaseger
+2007,Djurgårdens IF,KIF Örebro,1,0,Hemmaseger
+2007,Djurgårdens IF,Kopparbergs/Göteborg,1,0,Hemmaseger
+2007,Djurgårdens IF,LdB Malmö,2,0,Hemmaseger
+2007,Djurgårdens IF,Linköpings FC,2,1,Hemmaseger
+2007,Djurgårdens IF,QBIK,3,1,Hemmaseger
+2007,Djurgårdens IF,Sunnanå SK,1,1,Oavgjort
+2007,Djurgårdens IF,Umeå IK,3,5,Bortaseger
+2007,Falköpings KIK,AIK,3,0,Hemmaseger
+2007,Falköpings KIK,Bälinge IF,0,3,Bortaseger
+2007,Falköpings KIK,Djurgårdens IF,0,4,Bortaseger
+2007,Falköpings KIK,Hammarby IF,0,2,Bortaseger
+2007,Falköpings KIK,KIF Örebro,2,0,Hemmaseger
+2007,Falköpings KIK,Kopparbergs/Göteborg,0,3,Bortaseger
+2007,Falköpings KIK,LdB Malmö,0,4,Bortaseger
+2007,Falköpings KIK,Linköpings FC,2,1,Hemmaseger
+2007,Falköpings KIK,QBIK,2,2,Oavgjort
+2007,Falköpings KIK,Sunnanå SK,2,2,Oavgjort
+2007,Falköpings KIK,Umeå IK,0,5,Bortaseger
+2007,Hammarby IF,AIK,0,0,Oavgjort
+2007,Hammarby IF,Bälinge IF,1,2,Bortaseger
+2007,Hammarby IF,Djurgårdens IF,1,2,Bortaseger
+2007,Hammarby IF,Falköpings KIK,4,2,Hemmaseger
+2007,Hammarby IF,KIF Örebro,1,1,Oavgjort
+2007,Hammarby IF,Kopparbergs/Göteborg,2,3,Bortaseger
+2007,Hammarby IF,LdB Malmö,1,3,Bortaseger
+2007,Hammarby IF,Linköpings FC,0,2,Bortaseger
+2007,Hammarby IF,QBIK,2,1,Hemmaseger
+2007,Hammarby IF,Sunnanå SK,1,1,Oavgjort
+2007,Hammarby IF,Umeå IK,0,1,Bortaseger
+2007,KIF Örebro,AIK,0,0,Oavgjort
+2007,KIF Örebro,Bälinge IF,1,0,Hemmaseger
+2007,KIF Örebro,Djurgårdens IF,2,1,Hemmaseger
+2007,KIF Örebro,Falköpings KIK,3,0,Hemmaseger
+2007,KIF Örebro,Hammarby IF,3,2,Hemmaseger
+2007,KIF Örebro,Kopparbergs/Göteborg,3,0,Hemmaseger
+2007,KIF Örebro,LdB Malmö,1,3,Bortaseger
+2007,KIF Örebro,Linköpings FC,1,1,Oavgjort
+2007,KIF Örebro,QBIK,1,0,Hemmaseger
+2007,KIF Örebro,Sunnanå SK,0,2,Bortaseger
+2007,KIF Örebro,Umeå IK,1,2,Bortaseger
+2007,Kopparbergs/Göteborg,AIK,3,1,Hemmaseger
+2007,Kopparbergs/Göteborg,Bälinge IF,4,3,Hemmaseger
+2007,Kopparbergs/Göteborg,Djurgårdens IF,3,2,Hemmaseger
+2007,Kopparbergs/Göteborg,Falköpings KIK,5,1,Hemmaseger
+2007,Kopparbergs/Göteborg,Hammarby IF,6,0,Hemmaseger
+2007,Kopparbergs/Göteborg,KIF Örebro,3,3,Oavgjort
+2007,Kopparbergs/Göteborg,LdB Malmö,2,7,Bortaseger
+2007,Kopparbergs/Göteborg,Linköpings FC,0,4,Bortaseger
+2007,Kopparbergs/Göteborg,QBIK,4,1,Hemmaseger
+2007,Kopparbergs/Göteborg,Sunnanå SK,2,3,Bortaseger
+2007,Kopparbergs/Göteborg,Umeå IK,0,3,Bortaseger
+2007,LdB Malmö,AIK,3,0,Hemmaseger
+2007,LdB Malmö,Bälinge IF,2,0,Hemmaseger
+2007,LdB Malmö,Djurgårdens IF,0,2,Bortaseger
+2007,LdB Malmö,Falköpings KIK,3,0,Hemmaseger
+2007,LdB Malmö,Hammarby IF,4,0,Hemmaseger
+2007,LdB Malmö,KIF Örebro,5,0,Hemmaseger
+2007,LdB Malmö,Kopparbergs/Göteborg,4,1,Hemmaseger
+2007,LdB Malmö,Linköpings FC,4,1,Hemmaseger
+2007,LdB Malmö,QBIK,7,0,Hemmaseger
+2007,LdB Malmö,Sunnanå SK,1,0,Hemmaseger
+2007,LdB Malmö,Umeå IK,1,2,Bortaseger
+2007,Linköpings FC,AIK,2,0,Hemmaseger
+2007,Linköpings FC,Bälinge IF,3,2,Hemmaseger
+2007,Linköpings FC,Djurgårdens IF,2,3,Bortaseger
+2007,Linköpings FC,Falköpings KIK,3,0,Hemmaseger
+2007,Linköpings FC,Hammarby IF,6,1,Hemmaseger
+2007,Linköpings FC,KIF Örebro,1,1,Oavgjort
+2007,Linköpings FC,Kopparbergs/Göteborg,1,2,Bortaseger
+2007,Linköpings FC,LdB Malmö,1,0,Hemmaseger
+2007,Linköpings FC,QBIK,4,1,Hemmaseger
+2007,Linköpings FC,Sunnanå SK,2,2,Oavgjort
+2007,Linköpings FC,Umeå IK,0,2,Bortaseger
+2007,QBIK,AIK,2,1,Hemmaseger
+2007,QBIK,Bälinge IF,2,2,Oavgjort
+2007,QBIK,Djurgårdens IF,0,3,Bortaseger
+2007,QBIK,Falköpings KIK,1,2,Bortaseger
+2007,QBIK,Hammarby IF,0,1,Bortaseger
+2007,QBIK,KIF Örebro,1,2,Bortaseger
+2007,QBIK,Kopparbergs/Göteborg,1,1,Oavgjort
+2007,QBIK,LdB Malmö,2,2,Oavgjort
+2007,QBIK,Linköpings FC,0,1,Bortaseger
+2007,QBIK,Sunnanå SK,0,1,Bortaseger
+2007,QBIK,Umeå IK,0,4,Bortaseger
+2007,Sunnanå SK,AIK,1,0,Hemmaseger
+2007,Sunnanå SK,Bälinge IF,1,0,Hemmaseger
+2007,Sunnanå SK,Djurgårdens IF,1,1,Oavgjort
+2007,Sunnanå SK,Falköpings KIK,8,0,Hemmaseger
+2007,Sunnanå SK,Hammarby IF,0,2,Bortaseger
+2007,Sunnanå SK,KIF Örebro,1,3,Bortaseger
+2007,Sunnanå SK,Kopparbergs/Göteborg,0,1,Bortaseger
+2007,Sunnanå SK,LdB Malmö,0,0,Oavgjort
+2007,Sunnanå SK,Linköpings FC,1,1,Oavgjort
+2007,Sunnanå SK,QBIK,4,0,Hemmaseger
+2007,Sunnanå SK,Umeå IK,3,2,Hemmaseger
+2007,Umeå IK,AIK,8,0,Hemmaseger
+2007,Umeå IK,Bälinge IF,7,1,Hemmaseger
+2007,Umeå IK,Djurgårdens IF,1,2,Bortaseger
+2007,Umeå IK,Falköpings KIK,4,1,Hemmaseger
+2007,Umeå IK,Hammarby IF,5,2,Hemmaseger
+2007,Umeå IK,KIF Örebro,2,1,Hemmaseger
+2007,Umeå IK,Kopparbergs/Göteborg,5,2,Hemmaseger
+2007,Umeå IK,LdB Malmö,2,0,Hemmaseger
+2007,Umeå IK,Linköpings FC,4,0,Hemmaseger
+2007,Umeå IK,QBIK,8,1,Hemmaseger
+2007,Umeå IK,Sunnanå SK,3,0,Hemmaseger
+2008,AIK,Bälinge IF,4,0,Hemmaseger
+2008,AIK,Djurgårdens IF,2,0,Hemmaseger
+2008,AIK,Hammarby IF,1,1,Oavgjort
+2008,AIK,KIF Örebro,3,1,Hemmaseger
+2008,AIK,Kopparbergs/Göteborg,1,2,Bortaseger
+2008,AIK,Kristianstads DFF,4,0,Hemmaseger
+2008,AIK,LdB Malmö,2,1,Hemmaseger
+2008,AIK,Linköpings FC,3,2,Hemmaseger
+2008,AIK,Sunnanå SK,1,0,Hemmaseger
+2008,AIK,Umeå IK,0,1,Bortaseger
+2008,AIK,Umeå Södra,4,1,Hemmaseger
+2008,Bälinge IF,AIK,0,3,Bortaseger
+2008,Bälinge IF,Djurgårdens IF,1,1,Oavgjort
+2008,Bälinge IF,Hammarby IF,0,2,Bortaseger
+2008,Bälinge IF,KIF Örebro,0,0,Oavgjort
+2008,Bälinge IF,Kopparbergs/Göteborg,1,3,Bortaseger
+2008,Bälinge IF,Kristianstads DFF,0,0,Oavgjort
+2008,Bälinge IF,LdB Malmö,0,3,Bortaseger
+2008,Bälinge IF,Linköpings FC,0,4,Bortaseger
+2008,Bälinge IF,Sunnanå SK,1,3,Bortaseger
+2008,Bälinge IF,Umeå IK,2,5,Bortaseger
+2008,Bälinge IF,Umeå Södra,1,1,Oavgjort
+2008,Djurgårdens IF,AIK,1,1,Oavgjort
+2008,Djurgårdens IF,Bälinge IF,6,0,Hemmaseger
+2008,Djurgårdens IF,Hammarby IF,3,1,Hemmaseger
+2008,Djurgårdens IF,KIF Örebro,2,1,Hemmaseger
+2008,Djurgårdens IF,Kopparbergs/Göteborg,3,0,Hemmaseger
+2008,Djurgårdens IF,Kristianstads DFF,2,1,Hemmaseger
+2008,Djurgårdens IF,LdB Malmö,2,3,Bortaseger
+2008,Djurgårdens IF,Linköpings FC,0,0,Oavgjort
+2008,Djurgårdens IF,Sunnanå SK,1,0,Hemmaseger
+2008,Djurgårdens IF,Umeå IK,2,2,Oavgjort
+2008,Djurgårdens IF,Umeå Södra,2,0,Hemmaseger
+2008,Hammarby IF,AIK,0,3,Bortaseger
+2008,Hammarby IF,Bälinge IF,1,0,Hemmaseger
+2008,Hammarby IF,Djurgårdens IF,3,0,Hemmaseger
+2008,Hammarby IF,KIF Örebro,1,1,Oavgjort
+2008,Hammarby IF,Kopparbergs/Göteborg,3,1,Hemmaseger
+2008,Hammarby IF,Kristianstads DFF,0,1,Bortaseger
+2008,Hammarby IF,LdB Malmö,1,7,Bortaseger
+2008,Hammarby IF,Linköpings FC,0,3,Bortaseger
+2008,Hammarby IF,Sunnanå SK,2,1,Hemmaseger
+2008,Hammarby IF,Umeå IK,1,2,Bortaseger
+2008,Hammarby IF,Umeå Södra,2,0,Hemmaseger
+2008,KIF Örebro,AIK,0,4,Bortaseger
+2008,KIF Örebro,Bälinge IF,3,0,Hemmaseger
+2008,KIF Örebro,Djurgårdens IF,1,0,Hemmaseger
+2008,KIF Örebro,Hammarby IF,1,0,Hemmaseger
+2008,KIF Örebro,Kopparbergs/Göteborg,1,0,Hemmaseger
+2008,KIF Örebro,Kristianstads DFF,1,0,Hemmaseger
+2008,KIF Örebro,LdB Malmö,0,0,Oavgjort
+2008,KIF Örebro,Linköpings FC,1,2,Bortaseger
+2008,KIF Örebro,Sunnanå SK,2,1,Hemmaseger
+2008,KIF Örebro,Umeå IK,0,2,Bortaseger
+2008,KIF Örebro,Umeå Södra,3,1,Hemmaseger
+2008,Kopparbergs/Göteborg,AIK,0,5,Bortaseger
+2008,Kopparbergs/Göteborg,Bälinge IF,5,0,Hemmaseger
+2008,Kopparbergs/Göteborg,Djurgårdens IF,3,4,Bortaseger
+2008,Kopparbergs/Göteborg,Hammarby IF,3,0,Hemmaseger
+2008,Kopparbergs/Göteborg,KIF Örebro,3,0,Hemmaseger
+2008,Kopparbergs/Göteborg,Kristianstads DFF,4,1,Hemmaseger
+2008,Kopparbergs/Göteborg,LdB Malmö,1,4,Bortaseger
+2008,Kopparbergs/Göteborg,Linköpings FC,0,3,Bortaseger
+2008,Kopparbergs/Göteborg,Sunnanå SK,4,1,Hemmaseger
+2008,Kopparbergs/Göteborg,Umeå IK,0,2,Bortaseger
+2008,Kopparbergs/Göteborg,Umeå Södra,9,0,Hemmaseger
+2008,Kristianstads DFF,AIK,1,2,Bortaseger
+2008,Kristianstads DFF,Bälinge IF,4,1,Hemmaseger
+2008,Kristianstads DFF,Djurgårdens IF,2,1,Hemmaseger
+2008,Kristianstads DFF,Hammarby IF,1,3,Bortaseger
+2008,Kristianstads DFF,KIF Örebro,1,3,Bortaseger
+2008,Kristianstads DFF,Kopparbergs/Göteborg,3,2,Hemmaseger
+2008,Kristianstads DFF,LdB Malmö,0,1,Bortaseger
+2008,Kristianstads DFF,Linköpings FC,0,7,Bortaseger
+2008,Kristianstads DFF,Sunnanå SK,3,2,Hemmaseger
+2008,Kristianstads DFF,Umeå IK,0,2,Bortaseger
+2008,Kristianstads DFF,Umeå Södra,2,0,Hemmaseger
+2008,LdB Malmö,AIK,1,0,Hemmaseger
+2008,LdB Malmö,Bälinge IF,4,0,Hemmaseger
+2008,LdB Malmö,Djurgårdens IF,1,1,Oavgjort
+2008,LdB Malmö,Hammarby IF,4,0,Hemmaseger
+2008,LdB Malmö,KIF Örebro,4,0,Hemmaseger
+2008,LdB Malmö,Kopparbergs/Göteborg,3,2,Hemmaseger
+2008,LdB Malmö,Kristianstads DFF,4,0,Hemmaseger
+2008,LdB Malmö,Linköpings FC,1,3,Bortaseger
+2008,LdB Malmö,Sunnanå SK,5,2,Hemmaseger
+2008,LdB Malmö,Umeå IK,2,2,Oavgjort
+2008,LdB Malmö,Umeå Södra,3,1,Hemmaseger
+2008,Linköpings FC,AIK,1,0,Hemmaseger
+2008,Linköpings FC,Bälinge IF,2,0,Hemmaseger
+2008,Linköpings FC,Djurgårdens IF,2,1,Hemmaseger
+2008,Linköpings FC,Hammarby IF,2,1,Hemmaseger
+2008,Linköpings FC,KIF Örebro,1,0,Hemmaseger
+2008,Linköpings FC,Kopparbergs/Göteborg,2,0,Hemmaseger
+2008,Linköpings FC,Kristianstads DFF,2,0,Hemmaseger
+2008,Linköpings FC,LdB Malmö,2,3,Bortaseger
+2008,Linköpings FC,Sunnanå SK,3,1,Hemmaseger
+2008,Linköpings FC,Umeå IK,1,4,Bortaseger
+2008,Linköpings FC,Umeå Södra,4,0,Hemmaseger
+2008,Sunnanå SK,AIK,1,1,Oavgjort
+2008,Sunnanå SK,Bälinge IF,0,0,Oavgjort
+2008,Sunnanå SK,Djurgårdens IF,1,0,Hemmaseger
+2008,Sunnanå SK,Hammarby IF,0,0,Oavgjort
+2008,Sunnanå SK,KIF Örebro,2,0,Hemmaseger
+2008,Sunnanå SK,Kopparbergs/Göteborg,0,1,Bortaseger
+2008,Sunnanå SK,Kristianstads DFF,4,2,Hemmaseger
+2008,Sunnanå SK,LdB Malmö,0,1,Bortaseger
+2008,Sunnanå SK,Linköpings FC,2,2,Oavgjort
+2008,Sunnanå SK,Umeå IK,0,1,Bortaseger
+2008,Sunnanå SK,Umeå Södra,5,0,Hemmaseger
+2008,Umeå IK,AIK,3,0,Hemmaseger
+2008,Umeå IK,Bälinge IF,11,1,Hemmaseger
+2008,Umeå IK,Djurgårdens IF,3,3,Oavgjort
+2008,Umeå IK,Hammarby IF,6,0,Hemmaseger
+2008,Umeå IK,KIF Örebro,3,0,Hemmaseger
+2008,Umeå IK,Kopparbergs/Göteborg,1,0,Hemmaseger
+2008,Umeå IK,Kristianstads DFF,8,0,Hemmaseger
+2008,Umeå IK,LdB Malmö,3,2,Hemmaseger
+2008,Umeå IK,Linköpings FC,2,3,Bortaseger
+2008,Umeå IK,Sunnanå SK,5,0,Hemmaseger
+2008,Umeå IK,Umeå Södra,6,0,Hemmaseger
+2008,Umeå Södra,AIK,1,5,Bortaseger
+2008,Umeå Södra,Bälinge IF,2,1,Hemmaseger
+2008,Umeå Södra,Djurgårdens IF,1,3,Bortaseger
+2008,Umeå Södra,Hammarby IF,1,1,Oavgjort
+2008,Umeå Södra,KIF Örebro,1,4,Bortaseger
+2008,Umeå Södra,Kopparbergs/Göteborg,0,2,Bortaseger
+2008,Umeå Södra,Kristianstads DFF,1,1,Oavgjort
+2008,Umeå Södra,LdB Malmö,0,5,Bortaseger
+2008,Umeå Södra,Linköpings FC,0,3,Bortaseger
+2008,Umeå Södra,Sunnanå SK,2,1,Hemmaseger
+2008,Umeå Södra,Umeå IK,0,6,Bortaseger
+2009,AIK,Djurgårdens IF,2,4,Bortaseger
+2009,AIK,Hammarby IF,1,1,Oavgjort
+2009,AIK,KIF Örebro,0,2,Bortaseger
+2009,AIK,Kopparbergs/Göteborg,0,1,Bortaseger
+2009,AIK,Kristianstads DFF,2,1,Hemmaseger
+2009,AIK,LdB FC Malmö,1,2,Bortaseger
+2009,AIK,Linköpings FC,1,2,Bortaseger
+2009,AIK,Piteå IF,3,1,Hemmaseger
+2009,AIK,Stattena IF,1,1,Oavgjort
+2009,AIK,Sunnanå SK,1,2,Bortaseger
+2009,AIK,Umeå IK,0,2,Bortaseger
+2009,Djurgårdens IF,AIK,2,3,Bortaseger
+2009,Djurgårdens IF,Hammarby IF,5,2,Hemmaseger
+2009,Djurgårdens IF,KIF Örebro,2,0,Hemmaseger
+2009,Djurgårdens IF,Kopparbergs/Göteborg,1,0,Hemmaseger
+2009,Djurgårdens IF,Kristianstads DFF,4,0,Hemmaseger
+2009,Djurgårdens IF,LdB FC Malmö,0,3,Bortaseger
+2009,Djurgårdens IF,Linköpings FC,0,1,Bortaseger
+2009,Djurgårdens IF,Piteå IF,4,0,Hemmaseger
+2009,Djurgårdens IF,Stattena IF,6,0,Hemmaseger
+2009,Djurgårdens IF,Sunnanå SK,2,0,Hemmaseger
+2009,Djurgårdens IF,Umeå IK,2,5,Bortaseger
+2009,Hammarby IF,AIK,2,0,Hemmaseger
+2009,Hammarby IF,Djurgårdens IF,0,1,Bortaseger
+2009,Hammarby IF,KIF Örebro,0,2,Bortaseger
+2009,Hammarby IF,Kopparbergs/Göteborg,1,4,Bortaseger
+2009,Hammarby IF,Kristianstads DFF,3,1,Hemmaseger
+2009,Hammarby IF,LdB FC Malmö,0,1,Bortaseger
+2009,Hammarby IF,Linköpings FC,0,3,Bortaseger
+2009,Hammarby IF,Piteå IF,2,2,Oavgjort
+2009,Hammarby IF,Stattena IF,4,1,Hemmaseger
+2009,Hammarby IF,Sunnanå SK,0,1,Bortaseger
+2009,Hammarby IF,Umeå IK,4,1,Hemmaseger
+2009,KIF Örebro,AIK,1,0,Hemmaseger
+2009,KIF Örebro,Djurgårdens IF,2,2,Oavgjort
+2009,KIF Örebro,Hammarby IF,2,1,Hemmaseger
+2009,KIF Örebro,Kopparbergs/Göteborg,0,0,Oavgjort
+2009,KIF Örebro,Kristianstads DFF,3,1,Hemmaseger
+2009,KIF Örebro,LdB FC Malmö,2,1,Hemmaseger
+2009,KIF Örebro,Linköpings FC,2,0,Hemmaseger
+2009,KIF Örebro,Piteå IF,1,0,Hemmaseger
+2009,KIF Örebro,Stattena IF,7,1,Hemmaseger
+2009,KIF Örebro,Sunnanå SK,1,0,Hemmaseger
+2009,KIF Örebro,Umeå IK,0,1,Bortaseger
+2009,Kopparbergs/Göteborg,AIK,3,4,Bortaseger
+2009,Kopparbergs/Göteborg,Djurgårdens IF,3,1,Hemmaseger
+2009,Kopparbergs/Göteborg,Hammarby IF,1,1,Oavgjort
+2009,Kopparbergs/Göteborg,KIF Örebro,4,0,Hemmaseger
+2009,Kopparbergs/Göteborg,Kristianstads DFF,2,1,Hemmaseger
+2009,Kopparbergs/Göteborg,LdB FC Malmö,2,1,Hemmaseger
+2009,Kopparbergs/Göteborg,Linköpings FC,0,1,Bortaseger
+2009,Kopparbergs/Göteborg,Piteå IF,7,0,Hemmaseger
+2009,Kopparbergs/Göteborg,Stattena IF,2,0,Hemmaseger
+2009,Kopparbergs/Göteborg,Sunnanå SK,1,0,Hemmaseger
+2009,Kopparbergs/Göteborg,Umeå IK,1,0,Hemmaseger
+2009,Kristianstads DFF,AIK,3,2,Hemmaseger
+2009,Kristianstads DFF,Djurgårdens IF,2,3,Bortaseger
+2009,Kristianstads DFF,Hammarby IF,3,1,Hemmaseger
+2009,Kristianstads DFF,KIF Örebro,2,3,Bortaseger
+2009,Kristianstads DFF,Kopparbergs/Göteborg,0,3,Bortaseger
+2009,Kristianstads DFF,LdB FC Malmö,2,7,Bortaseger
+2009,Kristianstads DFF,Linköpings FC,1,2,Bortaseger
+2009,Kristianstads DFF,Piteå IF,2,0,Hemmaseger
+2009,Kristianstads DFF,Stattena IF,4,0,Hemmaseger
+2009,Kristianstads DFF,Sunnanå SK,3,2,Hemmaseger
+2009,Kristianstads DFF,Umeå IK,0,1,Bortaseger
+2009,LdB FC Malmö,AIK,2,0,Hemmaseger
+2009,LdB FC Malmö,Djurgårdens IF,4,0,Hemmaseger
+2009,LdB FC Malmö,Hammarby IF,2,1,Hemmaseger
+2009,LdB FC Malmö,KIF Örebro,1,1,Oavgjort
+2009,LdB FC Malmö,Kopparbergs/Göteborg,4,0,Hemmaseger
+2009,LdB FC Malmö,Kristianstads DFF,6,0,Hemmaseger
+2009,LdB FC Malmö,Linköpings FC,0,0,Oavgjort
+2009,LdB FC Malmö,Piteå IF,7,0,Hemmaseger
+2009,LdB FC Malmö,Stattena IF,8,0,Hemmaseger
+2009,LdB FC Malmö,Sunnanå SK,0,4,Bortaseger
+2009,LdB FC Malmö,Umeå IK,1,2,Bortaseger
+2009,Linköpings FC,AIK,5,0,Hemmaseger
+2009,Linköpings FC,Djurgårdens IF,2,0,Hemmaseger
+2009,Linköpings FC,Hammarby IF,1,0,Hemmaseger
+2009,Linköpings FC,KIF Örebro,4,0,Hemmaseger
+2009,Linköpings FC,Kopparbergs/Göteborg,0,1,Bortaseger
+2009,Linköpings FC,Kristianstads DFF,2,0,Hemmaseger
+2009,Linköpings FC,LdB FC Malmö,0,0,Oavgjort
+2009,Linköpings FC,Piteå IF,5,1,Hemmaseger
+2009,Linköpings FC,Stattena IF,2,2,Oavgjort
+2009,Linköpings FC,Sunnanå SK,0,0,Oavgjort
+2009,Linköpings FC,Umeå IK,4,0,Hemmaseger
+2009,Piteå IF,AIK,0,1,Bortaseger
+2009,Piteå IF,Djurgårdens IF,0,2,Bortaseger
+2009,Piteå IF,Hammarby IF,0,2,Bortaseger
+2009,Piteå IF,KIF Örebro,2,1,Hemmaseger
+2009,Piteå IF,Kopparbergs/Göteborg,1,2,Bortaseger
+2009,Piteå IF,Kristianstads DFF,3,0,Hemmaseger
+2009,Piteå IF,LdB FC Malmö,0,2,Bortaseger
+2009,Piteå IF,Linköpings FC,0,4,Bortaseger
+2009,Piteå IF,Stattena IF,1,2,Bortaseger
+2009,Piteå IF,Sunnanå SK,0,2,Bortaseger
+2009,Piteå IF,Umeå IK,1,1,Oavgjort
+2009,Stattena IF,AIK,0,4,Bortaseger
+2009,Stattena IF,Djurgårdens IF,0,7,Bortaseger
+2009,Stattena IF,Hammarby IF,1,2,Bortaseger
+2009,Stattena IF,KIF Örebro,0,2,Bortaseger
+2009,Stattena IF,Kopparbergs/Göteborg,0,8,Bortaseger
+2009,Stattena IF,Kristianstads DFF,2,5,Bortaseger
+2009,Stattena IF,LdB FC Malmö,0,7,Bortaseger
+2009,Stattena IF,Linköpings FC,1,3,Bortaseger
+2009,Stattena IF,Piteå IF,2,2,Oavgjort
+2009,Stattena IF,Sunnanå SK,0,5,Bortaseger
+2009,Stattena IF,Umeå IK,1,3,Bortaseger
+2009,Sunnanå SK,AIK,0,2,Bortaseger
+2009,Sunnanå SK,Djurgårdens IF,0,5,Bortaseger
+2009,Sunnanå SK,Hammarby IF,1,0,Hemmaseger
+2009,Sunnanå SK,KIF Örebro,1,2,Bortaseger
+2009,Sunnanå SK,Kopparbergs/Göteborg,0,0,Oavgjort
+2009,Sunnanå SK,Kristianstads DFF,2,1,Hemmaseger
+2009,Sunnanå SK,LdB FC Malmö,0,1,Bortaseger
+2009,Sunnanå SK,Linköpings FC,0,3,Bortaseger
+2009,Sunnanå SK,Piteå IF,2,1,Hemmaseger
+2009,Sunnanå SK,Stattena IF,4,0,Hemmaseger
+2009,Sunnanå SK,Umeå IK,0,3,Bortaseger
+2009,Umeå IK,AIK,1,1,Oavgjort
+2009,Umeå IK,Djurgårdens IF,0,0,Oavgjort
+2009,Umeå IK,Hammarby IF,4,2,Hemmaseger
+2009,Umeå IK,KIF Örebro,2,0,Hemmaseger
+2009,Umeå IK,Kopparbergs/Göteborg,5,1,Hemmaseger
+2009,Umeå IK,Kristianstads DFF,8,0,Hemmaseger
+2009,Umeå IK,LdB FC Malmö,1,0,Hemmaseger
+2009,Umeå IK,Linköpings FC,2,1,Hemmaseger
+2009,Umeå IK,Piteå IF,5,1,Hemmaseger
+2009,Umeå IK,Stattena IF,5,0,Hemmaseger
+2009,Umeå IK,Sunnanå SK,1,2,Bortaseger
+2010,AIK,Djurgårdens IF,0,0,Oavgjort
+2010,AIK,Hammarby IF,2,4,Bortaseger
+2010,AIK,Jitex BK,2,1,Hemmaseger
+2010,AIK,KIF Örebro,0,4,Bortaseger
+2010,AIK,Kopparbergs/Göteborg,0,4,Bortaseger
+2010,AIK,Kristianstads DFF,3,1,Hemmaseger
+2010,AIK,LdB FC Malmö,1,3,Bortaseger
+2010,AIK,Linköpings FC,0,2,Bortaseger
+2010,AIK,Sunnanå SK,1,1,Oavgjort
+2010,AIK,Tyresö FF,0,2,Bortaseger
+2010,AIK,Umeå IK,2,2,Oavgjort
+2010,Djurgårdens IF,AIK,2,0,Hemmaseger
+2010,Djurgårdens IF,Hammarby IF,2,1,Hemmaseger
+2010,Djurgårdens IF,Jitex BK,1,3,Bortaseger
+2010,Djurgårdens IF,KIF Örebro,4,2,Hemmaseger
+2010,Djurgårdens IF,Kopparbergs/Göteborg,0,1,Bortaseger
+2010,Djurgårdens IF,Kristianstads DFF,1,5,Bortaseger
+2010,Djurgårdens IF,LdB FC Malmö,0,1,Bortaseger
+2010,Djurgårdens IF,Linköpings FC,0,0,Oavgjort
+2010,Djurgårdens IF,Sunnanå SK,1,2,Bortaseger
+2010,Djurgårdens IF,Tyresö FF,0,2,Bortaseger
+2010,Djurgårdens IF,Umeå IK,2,0,Hemmaseger
+2010,Hammarby IF,AIK,0,0,Oavgjort
+2010,Hammarby IF,Djurgårdens IF,0,2,Bortaseger
+2010,Hammarby IF,Jitex BK,1,2,Bortaseger
+2010,Hammarby IF,KIF Örebro,0,1,Bortaseger
+2010,Hammarby IF,Kopparbergs/Göteborg,1,2,Bortaseger
+2010,Hammarby IF,Kristianstads DFF,2,0,Hemmaseger
+2010,Hammarby IF,LdB FC Malmö,0,1,Bortaseger
+2010,Hammarby IF,Linköpings FC,1,4,Bortaseger
+2010,Hammarby IF,Sunnanå SK,2,0,Hemmaseger
+2010,Hammarby IF,Tyresö FF,1,2,Bortaseger
+2010,Hammarby IF,Umeå IK,0,1,Bortaseger
+2010,Jitex BK,AIK,1,0,Hemmaseger
+2010,Jitex BK,Djurgårdens IF,1,0,Hemmaseger
+2010,Jitex BK,Hammarby IF,3,1,Hemmaseger
+2010,Jitex BK,KIF Örebro,0,1,Bortaseger
+2010,Jitex BK,Kopparbergs/Göteborg,0,4,Bortaseger
+2010,Jitex BK,Kristianstads DFF,2,2,Oavgjort
+2010,Jitex BK,LdB FC Malmö,1,2,Bortaseger
+2010,Jitex BK,Linköpings FC,1,1,Oavgjort
+2010,Jitex BK,Sunnanå SK,1,2,Bortaseger
+2010,Jitex BK,Tyresö FF,0,2,Bortaseger
+2010,Jitex BK,Umeå IK,1,0,Hemmaseger
+2010,KIF Örebro,AIK,4,1,Hemmaseger
+2010,KIF Örebro,Djurgårdens IF,3,1,Hemmaseger
+2010,KIF Örebro,Hammarby IF,2,1,Hemmaseger
+2010,KIF Örebro,Jitex BK,1,1,Oavgjort
+2010,KIF Örebro,Kopparbergs/Göteborg,2,2,Oavgjort
+2010,KIF Örebro,Kristianstads DFF,3,0,Hemmaseger
+2010,KIF Örebro,LdB FC Malmö,1,3,Bortaseger
+2010,KIF Örebro,Linköpings FC,0,0,Oavgjort
+2010,KIF Örebro,Sunnanå SK,0,0,Oavgjort
+2010,KIF Örebro,Tyresö FF,1,2,Bortaseger
+2010,KIF Örebro,Umeå IK,0,0,Oavgjort
+2010,Kopparbergs/Göteborg,AIK,5,0,Hemmaseger
+2010,Kopparbergs/Göteborg,Djurgårdens IF,0,0,Oavgjort
+2010,Kopparbergs/Göteborg,Hammarby IF,2,1,Hemmaseger
+2010,Kopparbergs/Göteborg,Jitex BK,6,0,Hemmaseger
+2010,Kopparbergs/Göteborg,KIF Örebro,1,1,Oavgjort
+2010,Kopparbergs/Göteborg,Kristianstads DFF,4,2,Hemmaseger
+2010,Kopparbergs/Göteborg,LdB FC Malmö,1,1,Oavgjort
+2010,Kopparbergs/Göteborg,Linköpings FC,1,1,Oavgjort
+2010,Kopparbergs/Göteborg,Sunnanå SK,5,0,Hemmaseger
+2010,Kopparbergs/Göteborg,Tyresö FF,2,1,Hemmaseger
+2010,Kopparbergs/Göteborg,Umeå IK,5,0,Hemmaseger
+2010,Kristianstads DFF,AIK,3,1,Hemmaseger
+2010,Kristianstads DFF,Djurgårdens IF,1,1,Oavgjort
+2010,Kristianstads DFF,Hammarby IF,0,1,Bortaseger
+2010,Kristianstads DFF,Jitex BK,3,4,Bortaseger
+2010,Kristianstads DFF,KIF Örebro,3,1,Hemmaseger
+2010,Kristianstads DFF,Kopparbergs/Göteborg,1,1,Oavgjort
+2010,Kristianstads DFF,LdB FC Malmö,0,2,Bortaseger
+2010,Kristianstads DFF,Linköpings FC,0,5,Bortaseger
+2010,Kristianstads DFF,Sunnanå SK,3,2,Hemmaseger
+2010,Kristianstads DFF,Tyresö FF,0,3,Bortaseger
+2010,Kristianstads DFF,Umeå IK,3,1,Hemmaseger
+2010,LdB FC Malmö,AIK,3,0,Hemmaseger
+2010,LdB FC Malmö,Djurgårdens IF,6,3,Hemmaseger
+2010,LdB FC Malmö,Hammarby IF,4,0,Hemmaseger
+2010,LdB FC Malmö,Jitex BK,6,1,Hemmaseger
+2010,LdB FC Malmö,KIF Örebro,4,0,Hemmaseger
+2010,LdB FC Malmö,Kopparbergs/Göteborg,5,3,Hemmaseger
+2010,LdB FC Malmö,Kristianstads DFF,5,3,Hemmaseger
+2010,LdB FC Malmö,Linköpings FC,0,0,Oavgjort
+2010,LdB FC Malmö,Sunnanå SK,3,0,Hemmaseger
+2010,LdB FC Malmö,Tyresö FF,4,1,Hemmaseger
+2010,LdB FC Malmö,Umeå IK,5,0,Hemmaseger
+2010,Linköpings FC,AIK,1,0,Hemmaseger
+2010,Linköpings FC,Djurgårdens IF,2,1,Hemmaseger
+2010,Linköpings FC,Hammarby IF,1,2,Bortaseger
+2010,Linköpings FC,Jitex BK,0,1,Bortaseger
+2010,Linköpings FC,KIF Örebro,3,2,Hemmaseger
+2010,Linköpings FC,Kopparbergs/Göteborg,1,0,Hemmaseger
+2010,Linköpings FC,Kristianstads DFF,3,0,Hemmaseger
+2010,Linköpings FC,LdB FC Malmö,1,2,Bortaseger
+2010,Linköpings FC,Sunnanå SK,3,0,Hemmaseger
+2010,Linköpings FC,Tyresö FF,0,2,Bortaseger
+2010,Linköpings FC,Umeå IK,5,0,Hemmaseger
+2010,Sunnanå SK,AIK,2,0,Hemmaseger
+2010,Sunnanå SK,Djurgårdens IF,2,1,Hemmaseger
+2010,Sunnanå SK,Hammarby IF,1,1,Oavgjort
+2010,Sunnanå SK,Jitex BK,0,4,Bortaseger
+2010,Sunnanå SK,KIF Örebro,0,1,Bortaseger
+2010,Sunnanå SK,Kopparbergs/Göteborg,0,4,Bortaseger
+2010,Sunnanå SK,Kristianstads DFF,1,1,Oavgjort
+2010,Sunnanå SK,LdB FC Malmö,1,2,Bortaseger
+2010,Sunnanå SK,Linköpings FC,0,4,Bortaseger
+2010,Sunnanå SK,Tyresö FF,1,1,Oavgjort
+2010,Sunnanå SK,Umeå IK,1,3,Bortaseger
+2010,Tyresö FF,AIK,5,2,Hemmaseger
+2010,Tyresö FF,Djurgårdens IF,1,2,Bortaseger
+2010,Tyresö FF,Hammarby IF,2,2,Oavgjort
+2010,Tyresö FF,Jitex BK,3,2,Hemmaseger
+2010,Tyresö FF,KIF Örebro,0,1,Bortaseger
+2010,Tyresö FF,Kopparbergs/Göteborg,0,4,Bortaseger
+2010,Tyresö FF,Kristianstads DFF,0,0,Oavgjort
+2010,Tyresö FF,LdB FC Malmö,1,0,Hemmaseger
+2010,Tyresö FF,Linköpings FC,1,1,Oavgjort
+2010,Tyresö FF,Sunnanå SK,6,1,Hemmaseger
+2010,Tyresö FF,Umeå IK,1,2,Bortaseger
+2010,Umeå IK,AIK,0,1,Bortaseger
+2010,Umeå IK,Djurgårdens IF,1,0,Hemmaseger
+2010,Umeå IK,Hammarby IF,3,0,Hemmaseger
+2010,Umeå IK,Jitex BK,1,2,Bortaseger
+2010,Umeå IK,KIF Örebro,1,0,Hemmaseger
+2010,Umeå IK,Kopparbergs/Göteborg,1,2,Bortaseger
+2010,Umeå IK,Kristianstads DFF,2,1,Hemmaseger
+2010,Umeå IK,LdB FC Malmö,0,4,Bortaseger
+2010,Umeå IK,Linköpings FC,1,1,Oavgjort
+2010,Umeå IK,Sunnanå SK,6,1,Hemmaseger
+2010,Umeå IK,Tyresö FF,0,3,Bortaseger
+2011,Dalsjöfors GoIF,Djurgårdens IF,0,0,Oavgjort
+2011,Dalsjöfors GoIF,Hammarby IF,0,0,Oavgjort
+2011,Dalsjöfors GoIF,Jitex BK,0,9,Bortaseger
+2011,Dalsjöfors GoIF,KIF Örebro,1,3,Bortaseger
+2011,Dalsjöfors GoIF,Kopparbergs/Göteborg,0,1,Bortaseger
+2011,Dalsjöfors GoIF,Kristianstads DFF,0,5,Bortaseger
+2011,Dalsjöfors GoIF,LdB FC Malmö,0,2,Bortaseger
+2011,Dalsjöfors GoIF,Linköpings FC,0,1,Bortaseger
+2011,Dalsjöfors GoIF,Piteå IF,2,1,Hemmaseger
+2011,Dalsjöfors GoIF,Tyresö FF,0,4,Bortaseger
+2011,Dalsjöfors GoIF,Umeå IK,1,2,Bortaseger
+2011,Djurgårdens IF,Dalsjöfors GoIF,4,1,Hemmaseger
+2011,Djurgårdens IF,Hammarby IF,1,0,Hemmaseger
+2011,Djurgårdens IF,Jitex BK,2,1,Hemmaseger
+2011,Djurgårdens IF,KIF Örebro,1,3,Bortaseger
+2011,Djurgårdens IF,Kopparbergs/Göteborg,1,0,Hemmaseger
+2011,Djurgårdens IF,Kristianstads DFF,2,0,Hemmaseger
+2011,Djurgårdens IF,LdB FC Malmö,1,2,Bortaseger
+2011,Djurgårdens IF,Linköpings FC,1,2,Bortaseger
+2011,Djurgårdens IF,Piteå IF,3,2,Hemmaseger
+2011,Djurgårdens IF,Tyresö FF,0,3,Bortaseger
+2011,Djurgårdens IF,Umeå IK,0,5,Bortaseger
+2011,Hammarby IF,Dalsjöfors GoIF,0,0,Oavgjort
+2011,Hammarby IF,Djurgårdens IF,1,2,Bortaseger
+2011,Hammarby IF,Jitex BK,1,3,Bortaseger
+2011,Hammarby IF,KIF Örebro,0,3,Bortaseger
+2011,Hammarby IF,Kopparbergs/Göteborg,0,5,Bortaseger
+2011,Hammarby IF,Kristianstads DFF,1,0,Hemmaseger
+2011,Hammarby IF,LdB FC Malmö,0,1,Bortaseger
+2011,Hammarby IF,Linköpings FC,0,0,Oavgjort
+2011,Hammarby IF,Piteå IF,0,2,Bortaseger
+2011,Hammarby IF,Tyresö FF,0,0,Oavgjort
+2011,Hammarby IF,Umeå IK,0,2,Bortaseger
+2011,Jitex BK,Dalsjöfors GoIF,3,2,Hemmaseger
+2011,Jitex BK,Djurgårdens IF,2,0,Hemmaseger
+2011,Jitex BK,Hammarby IF,0,0,Oavgjort
+2011,Jitex BK,KIF Örebro,0,4,Bortaseger
+2011,Jitex BK,Kopparbergs/Göteborg,0,1,Bortaseger
+2011,Jitex BK,Kristianstads DFF,1,2,Bortaseger
+2011,Jitex BK,LdB FC Malmö,1,3,Bortaseger
+2011,Jitex BK,Linköpings FC,1,2,Bortaseger
+2011,Jitex BK,Piteå IF,3,0,Hemmaseger
+2011,Jitex BK,Tyresö FF,1,2,Bortaseger
+2011,Jitex BK,Umeå IK,1,3,Bortaseger
+2011,KIF Örebro,Dalsjöfors GoIF,1,1,Oavgjort
+2011,KIF Örebro,Djurgårdens IF,4,0,Hemmaseger
+2011,KIF Örebro,Hammarby IF,2,1,Hemmaseger
+2011,KIF Örebro,Jitex BK,2,2,Oavgjort
+2011,KIF Örebro,Kopparbergs/Göteborg,3,1,Hemmaseger
+2011,KIF Örebro,Kristianstads DFF,1,1,Oavgjort
+2011,KIF Örebro,LdB FC Malmö,1,1,Oavgjort
+2011,KIF Örebro,Linköpings FC,2,1,Hemmaseger
+2011,KIF Örebro,Piteå IF,0,0,Oavgjort
+2011,KIF Örebro,Tyresö FF,1,0,Hemmaseger
+2011,KIF Örebro,Umeå IK,1,2,Bortaseger
+2011,Kopparbergs/Göteborg,Dalsjöfors GoIF,5,0,Hemmaseger
+2011,Kopparbergs/Göteborg,Djurgårdens IF,3,0,Hemmaseger
+2011,Kopparbergs/Göteborg,Hammarby IF,6,0,Hemmaseger
+2011,Kopparbergs/Göteborg,Jitex BK,3,1,Hemmaseger
+2011,Kopparbergs/Göteborg,KIF Örebro,3,1,Hemmaseger
+2011,Kopparbergs/Göteborg,Kristianstads DFF,3,2,Hemmaseger
+2011,Kopparbergs/Göteborg,LdB FC Malmö,1,0,Hemmaseger
+2011,Kopparbergs/Göteborg,Linköpings FC,2,0,Hemmaseger
+2011,Kopparbergs/Göteborg,Piteå IF,6,0,Hemmaseger
+2011,Kopparbergs/Göteborg,Tyresö FF,0,0,Oavgjort
+2011,Kopparbergs/Göteborg,Umeå IK,0,1,Bortaseger
+2011,Kristianstads DFF,Dalsjöfors GoIF,5,1,Hemmaseger
+2011,Kristianstads DFF,Djurgårdens IF,3,1,Hemmaseger
+2011,Kristianstads DFF,Hammarby IF,3,0,Hemmaseger
+2011,Kristianstads DFF,Jitex BK,1,1,Oavgjort
+2011,Kristianstads DFF,KIF Örebro,4,2,Hemmaseger
+2011,Kristianstads DFF,Kopparbergs/Göteborg,1,0,Hemmaseger
+2011,Kristianstads DFF,LdB FC Malmö,0,1,Bortaseger
+2011,Kristianstads DFF,Linköpings FC,0,0,Oavgjort
+2011,Kristianstads DFF,Piteå IF,0,2,Bortaseger
+2011,Kristianstads DFF,Tyresö FF,1,0,Hemmaseger
+2011,Kristianstads DFF,Umeå IK,2,1,Hemmaseger
+2011,LdB FC Malmö,Dalsjöfors GoIF,5,0,Hemmaseger
+2011,LdB FC Malmö,Djurgårdens IF,4,0,Hemmaseger
+2011,LdB FC Malmö,Hammarby IF,3,1,Hemmaseger
+2011,LdB FC Malmö,Jitex BK,5,0,Hemmaseger
+2011,LdB FC Malmö,KIF Örebro,6,0,Hemmaseger
+2011,LdB FC Malmö,Kopparbergs/Göteborg,1,1,Oavgjort
+2011,LdB FC Malmö,Kristianstads DFF,2,1,Hemmaseger
+2011,LdB FC Malmö,Linköpings FC,3,1,Hemmaseger
+2011,LdB FC Malmö,Piteå IF,2,0,Hemmaseger
+2011,LdB FC Malmö,Tyresö FF,3,5,Bortaseger
+2011,LdB FC Malmö,Umeå IK,1,1,Oavgjort
+2011,Linköpings FC,Dalsjöfors GoIF,0,0,Oavgjort
+2011,Linköpings FC,Djurgårdens IF,1,0,Hemmaseger
+2011,Linköpings FC,Hammarby IF,5,0,Hemmaseger
+2011,Linköpings FC,Jitex BK,3,1,Hemmaseger
+2011,Linköpings FC,KIF Örebro,0,2,Bortaseger
+2011,Linköpings FC,Kopparbergs/Göteborg,0,0,Oavgjort
+2011,Linköpings FC,Kristianstads DFF,3,1,Hemmaseger
+2011,Linköpings FC,LdB FC Malmö,2,0,Hemmaseger
+2011,Linköpings FC,Piteå IF,1,1,Oavgjort
+2011,Linköpings FC,Tyresö FF,1,4,Bortaseger
+2011,Linköpings FC,Umeå IK,2,2,Oavgjort
+2011,Piteå IF,Dalsjöfors GoIF,5,0,Hemmaseger
+2011,Piteå IF,Djurgårdens IF,0,2,Bortaseger
+2011,Piteå IF,Hammarby IF,2,1,Hemmaseger
+2011,Piteå IF,Jitex BK,1,1,Oavgjort
+2011,Piteå IF,KIF Örebro,1,1,Oavgjort
+2011,Piteå IF,Kopparbergs/Göteborg,0,3,Bortaseger
+2011,Piteå IF,Kristianstads DFF,1,3,Bortaseger
+2011,Piteå IF,LdB FC Malmö,1,4,Bortaseger
+2011,Piteå IF,Linköpings FC,0,3,Bortaseger
+2011,Piteå IF,Tyresö FF,0,2,Bortaseger
+2011,Piteå IF,Umeå IK,1,3,Bortaseger
+2011,Tyresö FF,Dalsjöfors GoIF,3,0,Hemmaseger
+2011,Tyresö FF,Djurgårdens IF,3,0,Hemmaseger
+2011,Tyresö FF,Hammarby IF,8,1,Hemmaseger
+2011,Tyresö FF,Jitex BK,4,0,Hemmaseger
+2011,Tyresö FF,KIF Örebro,2,1,Hemmaseger
+2011,Tyresö FF,Kopparbergs/Göteborg,1,4,Bortaseger
+2011,Tyresö FF,Kristianstads DFF,1,1,Oavgjort
+2011,Tyresö FF,LdB FC Malmö,1,2,Bortaseger
+2011,Tyresö FF,Linköpings FC,1,1,Oavgjort
+2011,Tyresö FF,Piteå IF,2,0,Hemmaseger
+2011,Tyresö FF,Umeå IK,1,3,Bortaseger
+2011,Umeå IK,Dalsjöfors GoIF,4,0,Hemmaseger
+2011,Umeå IK,Djurgårdens IF,2,1,Hemmaseger
+2011,Umeå IK,Hammarby IF,4,0,Hemmaseger
+2011,Umeå IK,Jitex BK,2,0,Hemmaseger
+2011,Umeå IK,KIF Örebro,0,1,Bortaseger
+2011,Umeå IK,Kopparbergs/Göteborg,1,2,Bortaseger
+2011,Umeå IK,Kristianstads DFF,3,1,Hemmaseger
+2011,Umeå IK,LdB FC Malmö,1,1,Oavgjort
+2011,Umeå IK,Linköpings FC,1,1,Oavgjort
+2011,Umeå IK,Piteå IF,2,2,Oavgjort
+2011,Umeå IK,Tyresö FF,0,2,Bortaseger
+2012,AIK,Djurgårdens IF,0,1,Bortaseger
+2012,AIK,Jitex BK,3,1,Hemmaseger
+2012,AIK,KIF Örebro,0,2,Bortaseger
+2012,AIK,Kopparbergs/Göteborg,1,0,Hemmaseger
+2012,AIK,Kristianstads DFF,2,3,Bortaseger
+2012,AIK,LdB FC Malmö,2,0,Hemmaseger
+2012,AIK,Linköpings FC,1,3,Bortaseger
+2012,AIK,Piteå IF,0,3,Bortaseger
+2012,AIK,Tyresö FF,0,4,Bortaseger
+2012,AIK,Umeå IK,2,2,Oavgjort
+2012,AIK,Vittsjö GIK,1,1,Oavgjort
+2012,Djurgårdens IF,AIK,2,1,Hemmaseger
+2012,Djurgårdens IF,Jitex BK,0,2,Bortaseger
+2012,Djurgårdens IF,KIF Örebro,3,1,Hemmaseger
+2012,Djurgårdens IF,Kopparbergs/Göteborg,0,2,Bortaseger
+2012,Djurgårdens IF,Kristianstads DFF,0,1,Bortaseger
+2012,Djurgårdens IF,LdB FC Malmö,1,2,Bortaseger
+2012,Djurgårdens IF,Linköpings FC,1,4,Bortaseger
+2012,Djurgårdens IF,Piteå IF,4,3,Hemmaseger
+2012,Djurgårdens IF,Tyresö FF,2,0,Hemmaseger
+2012,Djurgårdens IF,Umeå IK,1,0,Hemmaseger
+2012,Djurgårdens IF,Vittsjö GIK,1,1,Oavgjort
+2012,Jitex BK,AIK,2,0,Hemmaseger
+2012,Jitex BK,Djurgårdens IF,3,0,Hemmaseger
+2012,Jitex BK,KIF Örebro,0,1,Bortaseger
+2012,Jitex BK,Kopparbergs/Göteborg,1,3,Bortaseger
+2012,Jitex BK,Kristianstads DFF,3,1,Hemmaseger
+2012,Jitex BK,LdB FC Malmö,1,4,Bortaseger
+2012,Jitex BK,Linköpings FC,0,0,Oavgjort
+2012,Jitex BK,Piteå IF,2,2,Oavgjort
+2012,Jitex BK,Tyresö FF,1,3,Bortaseger
+2012,Jitex BK,Umeå IK,1,1,Oavgjort
+2012,Jitex BK,Vittsjö GIK,1,2,Bortaseger
+2012,KIF Örebro,AIK,3,0,Hemmaseger
+2012,KIF Örebro,Djurgårdens IF,3,0,Hemmaseger
+2012,KIF Örebro,Jitex BK,1,0,Hemmaseger
+2012,KIF Örebro,Kopparbergs/Göteborg,0,6,Bortaseger
+2012,KIF Örebro,Kristianstads DFF,1,4,Bortaseger
+2012,KIF Örebro,LdB FC Malmö,3,4,Bortaseger
+2012,KIF Örebro,Linköpings FC,2,3,Bortaseger
+2012,KIF Örebro,Piteå IF,1,2,Bortaseger
+2012,KIF Örebro,Tyresö FF,0,5,Bortaseger
+2012,KIF Örebro,Umeå IK,0,2,Bortaseger
+2012,KIF Örebro,Vittsjö GIK,3,4,Bortaseger
+2012,Kopparbergs/Göteborg,AIK,1,1,Oavgjort
+2012,Kopparbergs/Göteborg,Djurgårdens IF,2,0,Hemmaseger
+2012,Kopparbergs/Göteborg,Jitex BK,3,3,Oavgjort
+2012,Kopparbergs/Göteborg,KIF Örebro,2,1,Hemmaseger
+2012,Kopparbergs/Göteborg,Kristianstads DFF,3,0,Hemmaseger
+2012,Kopparbergs/Göteborg,LdB FC Malmö,0,1,Bortaseger
+2012,Kopparbergs/Göteborg,Linköpings FC,6,0,Hemmaseger
+2012,Kopparbergs/Göteborg,Piteå IF,2,1,Hemmaseger
+2012,Kopparbergs/Göteborg,Tyresö FF,0,1,Bortaseger
+2012,Kopparbergs/Göteborg,Umeå IK,5,0,Hemmaseger
+2012,Kopparbergs/Göteborg,Vittsjö GIK,1,2,Bortaseger
+2012,Kristianstads DFF,AIK,3,0,Hemmaseger
+2012,Kristianstads DFF,Djurgårdens IF,4,3,Hemmaseger
+2012,Kristianstads DFF,Jitex BK,1,3,Bortaseger
+2012,Kristianstads DFF,KIF Örebro,4,0,Hemmaseger
+2012,Kristianstads DFF,Kopparbergs/Göteborg,4,1,Hemmaseger
+2012,Kristianstads DFF,LdB FC Malmö,0,3,Bortaseger
+2012,Kristianstads DFF,Linköpings FC,1,1,Oavgjort
+2012,Kristianstads DFF,Piteå IF,3,2,Hemmaseger
+2012,Kristianstads DFF,Tyresö FF,0,2,Bortaseger
+2012,Kristianstads DFF,Umeå IK,0,1,Bortaseger
+2012,Kristianstads DFF,Vittsjö GIK,3,1,Hemmaseger
+2012,LdB FC Malmö,AIK,5,0,Hemmaseger
+2012,LdB FC Malmö,Djurgårdens IF,4,0,Hemmaseger
+2012,LdB FC Malmö,Jitex BK,2,0,Hemmaseger
+2012,LdB FC Malmö,KIF Örebro,2,1,Hemmaseger
+2012,LdB FC Malmö,Kopparbergs/Göteborg,2,1,Hemmaseger
+2012,LdB FC Malmö,Kristianstads DFF,5,2,Hemmaseger
+2012,LdB FC Malmö,Linköpings FC,2,1,Hemmaseger
+2012,LdB FC Malmö,Piteå IF,3,1,Hemmaseger
+2012,LdB FC Malmö,Tyresö FF,0,1,Bortaseger
+2012,LdB FC Malmö,Umeå IK,7,1,Hemmaseger
+2012,LdB FC Malmö,Vittsjö GIK,4,1,Hemmaseger
+2012,Linköpings FC,AIK,0,0,Oavgjort
+2012,Linköpings FC,Djurgårdens IF,11,0,Hemmaseger
+2012,Linköpings FC,Jitex BK,4,0,Hemmaseger
+2012,Linköpings FC,KIF Örebro,1,1,Oavgjort
+2012,Linköpings FC,Kopparbergs/Göteborg,3,2,Hemmaseger
+2012,Linköpings FC,Kristianstads DFF,1,1,Oavgjort
+2012,Linköpings FC,LdB FC Malmö,3,5,Bortaseger
+2012,Linköpings FC,Piteå IF,4,1,Hemmaseger
+2012,Linköpings FC,Tyresö FF,1,0,Hemmaseger
+2012,Linköpings FC,Umeå IK,4,1,Hemmaseger
+2012,Linköpings FC,Vittsjö GIK,4,3,Hemmaseger
+2012,Piteå IF,AIK,3,0,Hemmaseger
+2012,Piteå IF,Djurgårdens IF,3,1,Hemmaseger
+2012,Piteå IF,Jitex BK,0,1,Bortaseger
+2012,Piteå IF,KIF Örebro,3,0,Hemmaseger
+2012,Piteå IF,Kopparbergs/Göteborg,1,3,Bortaseger
+2012,Piteå IF,Kristianstads DFF,2,0,Hemmaseger
+2012,Piteå IF,LdB FC Malmö,0,2,Bortaseger
+2012,Piteå IF,Linköpings FC,0,1,Bortaseger
+2012,Piteå IF,Tyresö FF,1,5,Bortaseger
+2012,Piteå IF,Umeå IK,3,1,Hemmaseger
+2012,Piteå IF,Vittsjö GIK,2,0,Hemmaseger
+2012,Tyresö FF,AIK,1,0,Hemmaseger
+2012,Tyresö FF,Djurgårdens IF,2,0,Hemmaseger
+2012,Tyresö FF,Jitex BK,3,0,Hemmaseger
+2012,Tyresö FF,KIF Örebro,7,0,Hemmaseger
+2012,Tyresö FF,Kopparbergs/Göteborg,3,1,Hemmaseger
+2012,Tyresö FF,Kristianstads DFF,1,2,Bortaseger
+2012,Tyresö FF,LdB FC Malmö,2,0,Hemmaseger
+2012,Tyresö FF,Linköpings FC,3,0,Hemmaseger
+2012,Tyresö FF,Piteå IF,5,1,Hemmaseger
+2012,Tyresö FF,Umeå IK,6,0,Hemmaseger
+2012,Tyresö FF,Vittsjö GIK,5,1,Hemmaseger
+2012,Umeå IK,AIK,3,1,Hemmaseger
+2012,Umeå IK,Djurgårdens IF,2,0,Hemmaseger
+2012,Umeå IK,Jitex BK,1,1,Oavgjort
+2012,Umeå IK,KIF Örebro,0,1,Bortaseger
+2012,Umeå IK,Kopparbergs/Göteborg,0,3,Bortaseger
+2012,Umeå IK,Kristianstads DFF,0,2,Bortaseger
+2012,Umeå IK,LdB FC Malmö,1,1,Oavgjort
+2012,Umeå IK,Linköpings FC,1,1,Oavgjort
+2012,Umeå IK,Piteå IF,2,0,Hemmaseger
+2012,Umeå IK,Tyresö FF,1,5,Bortaseger
+2012,Umeå IK,Vittsjö GIK,4,1,Hemmaseger
+2012,Vittsjö GIK,AIK,3,1,Hemmaseger
+2012,Vittsjö GIK,Djurgårdens IF,4,1,Hemmaseger
+2012,Vittsjö GIK,Jitex BK,1,0,Hemmaseger
+2012,Vittsjö GIK,KIF Örebro,0,1,Bortaseger
+2012,Vittsjö GIK,Kopparbergs/Göteborg,0,1,Bortaseger
+2012,Vittsjö GIK,Kristianstads DFF,2,1,Hemmaseger
+2012,Vittsjö GIK,LdB FC Malmö,2,3,Bortaseger
+2012,Vittsjö GIK,Linköpings FC,3,0,Hemmaseger
+2012,Vittsjö GIK,Piteå IF,2,1,Hemmaseger
+2012,Vittsjö GIK,Tyresö FF,1,1,Oavgjort
+2012,Vittsjö GIK,Umeå IK,2,3,Bortaseger
+2013,Jitex BK,KIF Örebro,2,4,Bortaseger
+2013,Jitex BK,Kopparbergs/Göteborg,0,0,Oavgjort
+2013,Jitex BK,Kristianstads DFF,1,0,Hemmaseger
+2013,Jitex BK,LdB FC Malmö,0,2,Bortaseger
+2013,Jitex BK,Linköpings FC,1,1,Oavgjort
+2013,Jitex BK,Mallbackens IF,1,1,Oavgjort
+2013,Jitex BK,Piteå IF,1,1,Oavgjort
+2013,Jitex BK,Sunnanå SK,5,2,Hemmaseger
+2013,Jitex BK,Tyresö FF,0,7,Bortaseger
+2013,Jitex BK,Umeå IK,2,1,Hemmaseger
+2013,Jitex BK,Vittsjö GIK,0,0,Oavgjort
+2013,KIF Örebro,Jitex BK,0,1,Bortaseger
+2013,KIF Örebro,Kopparbergs/Göteborg,0,2,Bortaseger
+2013,KIF Örebro,Kristianstads DFF,3,1,Hemmaseger
+2013,KIF Örebro,LdB FC Malmö,0,0,Oavgjort
+2013,KIF Örebro,Linköpings FC,1,5,Bortaseger
+2013,KIF Örebro,Mallbackens IF,4,0,Hemmaseger
+2013,KIF Örebro,Piteå IF,1,1,Oavgjort
+2013,KIF Örebro,Sunnanå SK,6,1,Hemmaseger
+2013,KIF Örebro,Tyresö FF,1,1,Oavgjort
+2013,KIF Örebro,Umeå IK,4,0,Hemmaseger
+2013,KIF Örebro,Vittsjö GIK,3,1,Hemmaseger
+2013,Kopparbergs/Göteborg,Jitex BK,0,0,Oavgjort
+2013,Kopparbergs/Göteborg,KIF Örebro,4,1,Hemmaseger
+2013,Kopparbergs/Göteborg,Kristianstads DFF,4,3,Hemmaseger
+2013,Kopparbergs/Göteborg,LdB FC Malmö,0,5,Bortaseger
+2013,Kopparbergs/Göteborg,Linköpings FC,1,1,Oavgjort
+2013,Kopparbergs/Göteborg,Mallbackens IF,5,1,Hemmaseger
+2013,Kopparbergs/Göteborg,Piteå IF,1,0,Hemmaseger
+2013,Kopparbergs/Göteborg,Sunnanå SK,3,0,Hemmaseger
+2013,Kopparbergs/Göteborg,Tyresö FF,2,2,Oavgjort
+2013,Kopparbergs/Göteborg,Umeå IK,1,1,Oavgjort
+2013,Kopparbergs/Göteborg,Vittsjö GIK,0,1,Bortaseger
+2013,Kristianstads DFF,Jitex BK,1,0,Hemmaseger
+2013,Kristianstads DFF,KIF Örebro,2,2,Oavgjort
+2013,Kristianstads DFF,Kopparbergs/Göteborg,2,0,Hemmaseger
+2013,Kristianstads DFF,LdB FC Malmö,0,1,Bortaseger
+2013,Kristianstads DFF,Linköpings FC,1,2,Bortaseger
+2013,Kristianstads DFF,Mallbackens IF,3,0,Hemmaseger
+2013,Kristianstads DFF,Piteå IF,1,1,Oavgjort
+2013,Kristianstads DFF,Sunnanå SK,5,1,Hemmaseger
+2013,Kristianstads DFF,Tyresö FF,2,3,Bortaseger
+2013,Kristianstads DFF,Umeå IK,1,2,Bortaseger
+2013,Kristianstads DFF,Vittsjö GIK,1,1,Oavgjort
+2013,LdB FC Malmö,Jitex BK,1,0,Hemmaseger
+2013,LdB FC Malmö,KIF Örebro,4,2,Hemmaseger
+2013,LdB FC Malmö,Kopparbergs/Göteborg,3,1,Hemmaseger
+2013,LdB FC Malmö,Kristianstads DFF,5,0,Hemmaseger
+2013,LdB FC Malmö,Linköpings FC,4,0,Hemmaseger
+2013,LdB FC Malmö,Mallbackens IF,3,0,Hemmaseger
+2013,LdB FC Malmö,Piteå IF,1,0,Hemmaseger
+2013,LdB FC Malmö,Sunnanå SK,4,0,Hemmaseger
+2013,LdB FC Malmö,Tyresö FF,2,2,Oavgjort
+2013,LdB FC Malmö,Umeå IK,2,0,Hemmaseger
+2013,LdB FC Malmö,Vittsjö GIK,4,0,Hemmaseger
+2013,Linköpings FC,Jitex BK,4,0,Hemmaseger
+2013,Linköpings FC,KIF Örebro,2,2,Oavgjort
+2013,Linköpings FC,Kopparbergs/Göteborg,3,0,Hemmaseger
+2013,Linköpings FC,Kristianstads DFF,3,1,Hemmaseger
+2013,Linköpings FC,LdB FC Malmö,3,1,Hemmaseger
+2013,Linköpings FC,Mallbackens IF,1,0,Hemmaseger
+2013,Linköpings FC,Piteå IF,3,1,Hemmaseger
+2013,Linköpings FC,Sunnanå SK,1,1,Oavgjort
+2013,Linköpings FC,Tyresö FF,4,1,Hemmaseger
+2013,Linköpings FC,Umeå IK,1,0,Hemmaseger
+2013,Linköpings FC,Vittsjö GIK,3,0,Hemmaseger
+2013,Mallbackens IF,Jitex BK,1,0,Hemmaseger
+2013,Mallbackens IF,KIF Örebro,1,1,Oavgjort
+2013,Mallbackens IF,Kopparbergs/Göteborg,0,1,Bortaseger
+2013,Mallbackens IF,Kristianstads DFF,1,2,Bortaseger
+2013,Mallbackens IF,LdB FC Malmö,1,1,Oavgjort
+2013,Mallbackens IF,Linköpings FC,3,1,Hemmaseger
+2013,Mallbackens IF,Piteå IF,3,0,Hemmaseger
+2013,Mallbackens IF,Sunnanå SK,1,1,Oavgjort
+2013,Mallbackens IF,Tyresö FF,1,1,Oavgjort
+2013,Mallbackens IF,Umeå IK,0,2,Bortaseger
+2013,Mallbackens IF,Vittsjö GIK,1,3,Bortaseger
+2013,Piteå IF,Jitex BK,3,2,Hemmaseger
+2013,Piteå IF,KIF Örebro,0,1,Bortaseger
+2013,Piteå IF,Kopparbergs/Göteborg,0,2,Bortaseger
+2013,Piteå IF,Kristianstads DFF,3,2,Hemmaseger
+2013,Piteå IF,LdB FC Malmö,2,2,Oavgjort
+2013,Piteå IF,Linköpings FC,1,2,Bortaseger
+2013,Piteå IF,Mallbackens IF,1,0,Hemmaseger
+2013,Piteå IF,Sunnanå SK,2,0,Hemmaseger
+2013,Piteå IF,Tyresö FF,1,1,Oavgjort
+2013,Piteå IF,Umeå IK,2,3,Bortaseger
+2013,Piteå IF,Vittsjö GIK,3,0,Hemmaseger
+2013,Sunnanå SK,Jitex BK,0,0,Oavgjort
+2013,Sunnanå SK,KIF Örebro,0,0,Oavgjort
+2013,Sunnanå SK,Kopparbergs/Göteborg,1,5,Bortaseger
+2013,Sunnanå SK,Kristianstads DFF,1,4,Bortaseger
+2013,Sunnanå SK,LdB FC Malmö,0,3,Bortaseger
+2013,Sunnanå SK,Linköpings FC,1,4,Bortaseger
+2013,Sunnanå SK,Mallbackens IF,1,1,Oavgjort
+2013,Sunnanå SK,Piteå IF,2,5,Bortaseger
+2013,Sunnanå SK,Tyresö FF,0,8,Bortaseger
+2013,Sunnanå SK,Umeå IK,0,1,Bortaseger
+2013,Sunnanå SK,Vittsjö GIK,1,5,Bortaseger
+2013,Tyresö FF,Jitex BK,5,0,Hemmaseger
+2013,Tyresö FF,KIF Örebro,3,0,Hemmaseger
+2013,Tyresö FF,Kopparbergs/Göteborg,4,1,Hemmaseger
+2013,Tyresö FF,Kristianstads DFF,5,1,Hemmaseger
+2013,Tyresö FF,LdB FC Malmö,2,3,Bortaseger
+2013,Tyresö FF,Linköpings FC,2,0,Hemmaseger
+2013,Tyresö FF,Mallbackens IF,5,0,Hemmaseger
+2013,Tyresö FF,Piteå IF,2,1,Hemmaseger
+2013,Tyresö FF,Sunnanå SK,10,2,Hemmaseger
+2013,Tyresö FF,Umeå IK,1,0,Hemmaseger
+2013,Tyresö FF,Vittsjö GIK,2,1,Hemmaseger
+2013,Umeå IK,Jitex BK,1,3,Bortaseger
+2013,Umeå IK,KIF Örebro,1,1,Oavgjort
+2013,Umeå IK,Kopparbergs/Göteborg,3,0,Hemmaseger
+2013,Umeå IK,Kristianstads DFF,3,1,Hemmaseger
+2013,Umeå IK,LdB FC Malmö,1,2,Bortaseger
+2013,Umeå IK,Linköpings FC,2,0,Hemmaseger
+2013,Umeå IK,Mallbackens IF,2,0,Hemmaseger
+2013,Umeå IK,Piteå IF,0,1,Bortaseger
+2013,Umeå IK,Sunnanå SK,4,0,Hemmaseger
+2013,Umeå IK,Tyresö FF,2,2,Oavgjort
+2013,Umeå IK,Vittsjö GIK,2,2,Oavgjort
+2013,Vittsjö GIK,Jitex BK,2,1,Hemmaseger
+2013,Vittsjö GIK,KIF Örebro,3,0,Hemmaseger
+2013,Vittsjö GIK,Kopparbergs/Göteborg,0,0,Oavgjort
+2013,Vittsjö GIK,Kristianstads DFF,1,4,Bortaseger
+2013,Vittsjö GIK,LdB FC Malmö,0,2,Bortaseger
+2013,Vittsjö GIK,Linköpings FC,1,2,Bortaseger
+2013,Vittsjö GIK,Mallbackens IF,1,1,Oavgjort
+2013,Vittsjö GIK,Piteå IF,2,2,Oavgjort
+2013,Vittsjö GIK,Sunnanå SK,5,0,Hemmaseger
+2013,Vittsjö GIK,Tyresö FF,0,2,Bortaseger
+2013,Vittsjö GIK,Umeå IK,3,0,Hemmaseger
+2014,AIK,Eskilstuna United DFF,2,2,Oavgjort
+2014,AIK,FC Rosengård,0,4,Bortaseger
+2014,AIK,Jitex BK,1,0,Hemmaseger
+2014,AIK,KIF Örebro,0,3,Bortaseger
+2014,AIK,Kopparbergs/Göteborg,0,3,Bortaseger
+2014,AIK,Kristianstads DFF,0,2,Bortaseger
+2014,AIK,Linköpings FC,1,1,Oavgjort
+2014,AIK,Piteå IF,2,1,Hemmaseger
+2014,AIK,Umeå IK,0,2,Bortaseger
+2014,AIK,Vittsjö GIK,0,2,Bortaseger
+2014,Eskilstuna United DFF,AIK,3,0,Hemmaseger
+2014,Eskilstuna United DFF,FC Rosengård,0,4,Bortaseger
+2014,Eskilstuna United DFF,Jitex BK,2,0,Hemmaseger
+2014,Eskilstuna United DFF,KIF Örebro,2,0,Hemmaseger
+2014,Eskilstuna United DFF,Kopparbergs/Göteborg,1,1,Oavgjort
+2014,Eskilstuna United DFF,Kristianstads DFF,0,0,Oavgjort
+2014,Eskilstuna United DFF,Linköpings FC,1,1,Oavgjort
+2014,Eskilstuna United DFF,Piteå IF,3,2,Hemmaseger
+2014,Eskilstuna United DFF,Umeå IK,2,3,Bortaseger
+2014,Eskilstuna United DFF,Vittsjö GIK,1,0,Hemmaseger
+2014,FC Rosengård,AIK,4,0,Hemmaseger
+2014,FC Rosengård,Eskilstuna United DFF,3,0,Hemmaseger
+2014,FC Rosengård,Jitex BK,3,0,Hemmaseger
+2014,FC Rosengård,KIF Örebro,1,0,Hemmaseger
+2014,FC Rosengård,Kopparbergs/Göteborg,5,0,Hemmaseger
+2014,FC Rosengård,Kristianstads DFF,2,1,Hemmaseger
+2014,FC Rosengård,Linköpings FC,2,3,Bortaseger
+2014,FC Rosengård,Piteå IF,6,1,Hemmaseger
+2014,FC Rosengård,Umeå IK,4,2,Hemmaseger
+2014,FC Rosengård,Vittsjö GIK,7,1,Hemmaseger
+2014,Jitex BK,AIK,2,3,Bortaseger
+2014,Jitex BK,Eskilstuna United DFF,1,2,Bortaseger
+2014,Jitex BK,FC Rosengård,0,1,Bortaseger
+2014,Jitex BK,KIF Örebro,1,2,Bortaseger
+2014,Jitex BK,Kopparbergs/Göteborg,0,4,Bortaseger
+2014,Jitex BK,Kristianstads DFF,0,1,Bortaseger
+2014,Jitex BK,Linköpings FC,0,8,Bortaseger
+2014,Jitex BK,Piteå IF,0,1,Bortaseger
+2014,Jitex BK,Umeå IK,0,1,Bortaseger
+2014,Jitex BK,Vittsjö GIK,0,2,Bortaseger
+2014,KIF Örebro,AIK,1,0,Hemmaseger
+2014,KIF Örebro,Eskilstuna United DFF,2,0,Hemmaseger
+2014,KIF Örebro,FC Rosengård,0,1,Bortaseger
+2014,KIF Örebro,Jitex BK,2,0,Hemmaseger
+2014,KIF Örebro,Kopparbergs/Göteborg,0,1,Bortaseger
+2014,KIF Örebro,Kristianstads DFF,1,0,Hemmaseger
+2014,KIF Örebro,Linköpings FC,2,0,Hemmaseger
+2014,KIF Örebro,Piteå IF,3,2,Hemmaseger
+2014,KIF Örebro,Umeå IK,1,0,Hemmaseger
+2014,KIF Örebro,Vittsjö GIK,3,1,Hemmaseger
+2014,Kopparbergs/Göteborg,AIK,6,0,Hemmaseger
+2014,Kopparbergs/Göteborg,Eskilstuna United DFF,3,2,Hemmaseger
+2014,Kopparbergs/Göteborg,FC Rosengård,2,3,Bortaseger
+2014,Kopparbergs/Göteborg,Jitex BK,8,0,Hemmaseger
+2014,Kopparbergs/Göteborg,KIF Örebro,0,2,Bortaseger
+2014,Kopparbergs/Göteborg,Kristianstads DFF,3,1,Hemmaseger
+2014,Kopparbergs/Göteborg,Linköpings FC,1,1,Oavgjort
+2014,Kopparbergs/Göteborg,Piteå IF,1,0,Hemmaseger
+2014,Kopparbergs/Göteborg,Umeå IK,5,0,Hemmaseger
+2014,Kopparbergs/Göteborg,Vittsjö GIK,3,1,Hemmaseger
+2014,Kristianstads DFF,AIK,1,0,Hemmaseger
+2014,Kristianstads DFF,Eskilstuna United DFF,1,1,Oavgjort
+2014,Kristianstads DFF,FC Rosengård,1,2,Bortaseger
+2014,Kristianstads DFF,Jitex BK,3,0,Hemmaseger
+2014,Kristianstads DFF,KIF Örebro,0,2,Bortaseger
+2014,Kristianstads DFF,Kopparbergs/Göteborg,3,2,Hemmaseger
+2014,Kristianstads DFF,Linköpings FC,1,0,Hemmaseger
+2014,Kristianstads DFF,Piteå IF,0,1,Bortaseger
+2014,Kristianstads DFF,Umeå IK,1,0,Hemmaseger
+2014,Kristianstads DFF,Vittsjö GIK,0,0,Oavgjort
+2014,Linköpings FC,AIK,4,0,Hemmaseger
+2014,Linköpings FC,Eskilstuna United DFF,0,0,Oavgjort
+2014,Linköpings FC,FC Rosengård,2,0,Hemmaseger
+2014,Linköpings FC,Jitex BK,6,0,Hemmaseger
+2014,Linköpings FC,KIF Örebro,0,4,Bortaseger
+2014,Linköpings FC,Kopparbergs/Göteborg,2,1,Hemmaseger
+2014,Linköpings FC,Kristianstads DFF,1,1,Oavgjort
+2014,Linköpings FC,Piteå IF,3,1,Hemmaseger
+2014,Linköpings FC,Umeå IK,2,0,Hemmaseger
+2014,Linköpings FC,Vittsjö GIK,4,1,Hemmaseger
+2014,Piteå IF,AIK,1,2,Bortaseger
+2014,Piteå IF,Eskilstuna United DFF,1,1,Oavgjort
+2014,Piteå IF,FC Rosengård,2,4,Bortaseger
+2014,Piteå IF,Jitex BK,3,1,Hemmaseger
+2014,Piteå IF,KIF Örebro,1,0,Hemmaseger
+2014,Piteå IF,Kopparbergs/Göteborg,0,1,Bortaseger
+2014,Piteå IF,Kristianstads DFF,2,3,Bortaseger
+2014,Piteå IF,Linköpings FC,1,0,Hemmaseger
+2014,Piteå IF,Umeå IK,1,1,Oavgjort
+2014,Piteå IF,Vittsjö GIK,1,0,Hemmaseger
+2014,Umeå IK,AIK,3,2,Hemmaseger
+2014,Umeå IK,Eskilstuna United DFF,6,1,Hemmaseger
+2014,Umeå IK,FC Rosengård,1,2,Bortaseger
+2014,Umeå IK,Jitex BK,6,0,Hemmaseger
+2014,Umeå IK,KIF Örebro,2,3,Bortaseger
+2014,Umeå IK,Kopparbergs/Göteborg,0,0,Oavgjort
+2014,Umeå IK,Kristianstads DFF,1,0,Hemmaseger
+2014,Umeå IK,Linköpings FC,1,3,Bortaseger
+2014,Umeå IK,Piteå IF,0,0,Oavgjort
+2014,Umeå IK,Vittsjö GIK,6,1,Hemmaseger
+2014,Vittsjö GIK,AIK,3,0,Hemmaseger
+2014,Vittsjö GIK,Eskilstuna United DFF,1,1,Oavgjort
+2014,Vittsjö GIK,FC Rosengård,1,4,Bortaseger
+2014,Vittsjö GIK,Jitex BK,2,1,Hemmaseger
+2014,Vittsjö GIK,KIF Örebro,2,1,Hemmaseger
+2014,Vittsjö GIK,Kopparbergs/Göteborg,0,5,Bortaseger
+2014,Vittsjö GIK,Kristianstads DFF,0,1,Bortaseger
+2014,Vittsjö GIK,Linköpings FC,1,2,Bortaseger
+2014,Vittsjö GIK,Piteå IF,1,0,Hemmaseger
+2014,Vittsjö GIK,Umeå IK,1,0,Hemmaseger
+2015,AIK,Eskilstuna United,0,3,Bortaseger
+2015,AIK,FC Rosengård,0,5,Bortaseger
+2015,AIK,Hammarby IF,1,1,Oavgjort
+2015,AIK,KIF Örebro,1,2,Bortaseger
+2015,AIK,Kopparbergs/Göteborg,0,2,Bortaseger
+2015,AIK,Kristianstads DFF,0,5,Bortaseger
+2015,AIK,Linköpings FC,0,5,Bortaseger
+2015,AIK,Mallbackens IF,0,1,Bortaseger
+2015,AIK,Piteå IF,0,2,Bortaseger
+2015,AIK,Umeå IK,3,6,Bortaseger
+2015,AIK,Vittsjö GIK,0,4,Bortaseger
+2015,Eskilstuna United,AIK,5,1,Hemmaseger
+2015,Eskilstuna United,FC Rosengård,1,2,Bortaseger
+2015,Eskilstuna United,Hammarby IF,3,1,Hemmaseger
+2015,Eskilstuna United,KIF Örebro,3,1,Hemmaseger
+2015,Eskilstuna United,Kopparbergs/Göteborg,2,0,Hemmaseger
+2015,Eskilstuna United,Kristianstads DFF,2,0,Hemmaseger
+2015,Eskilstuna United,Linköpings FC,1,0,Hemmaseger
+2015,Eskilstuna United,Mallbackens IF,2,0,Hemmaseger
+2015,Eskilstuna United,Piteå IF,0,3,Bortaseger
+2015,Eskilstuna United,Umeå IK,2,0,Hemmaseger
+2015,Eskilstuna United,Vittsjö GIK,2,0,Hemmaseger
+2015,FC Rosengård,AIK,4,0,Hemmaseger
+2015,FC Rosengård,Eskilstuna United,2,1,Hemmaseger
+2015,FC Rosengård,Hammarby IF,5,0,Hemmaseger
+2015,FC Rosengård,KIF Örebro,2,1,Hemmaseger
+2015,FC Rosengård,Kopparbergs/Göteborg,2,2,Oavgjort
+2015,FC Rosengård,Kristianstads DFF,7,0,Hemmaseger
+2015,FC Rosengård,Linköpings FC,5,0,Hemmaseger
+2015,FC Rosengård,Mallbackens IF,2,1,Hemmaseger
+2015,FC Rosengård,Piteå IF,5,2,Hemmaseger
+2015,FC Rosengård,Umeå IK,2,0,Hemmaseger
+2015,FC Rosengård,Vittsjö GIK,2,2,Oavgjort
+2015,Hammarby IF,AIK,1,1,Oavgjort
+2015,Hammarby IF,Eskilstuna United,0,2,Bortaseger
+2015,Hammarby IF,FC Rosengård,0,1,Bortaseger
+2015,Hammarby IF,KIF Örebro,0,0,Oavgjort
+2015,Hammarby IF,Kopparbergs/Göteborg,3,2,Hemmaseger
+2015,Hammarby IF,Kristianstads DFF,2,2,Oavgjort
+2015,Hammarby IF,Linköpings FC,0,0,Oavgjort
+2015,Hammarby IF,Mallbackens IF,3,1,Hemmaseger
+2015,Hammarby IF,Piteå IF,0,0,Oavgjort
+2015,Hammarby IF,Umeå IK,1,1,Oavgjort
+2015,Hammarby IF,Vittsjö GIK,2,2,Oavgjort
+2015,KIF Örebro,AIK,1,0,Hemmaseger
+2015,KIF Örebro,Eskilstuna United,1,2,Bortaseger
+2015,KIF Örebro,FC Rosengård,1,4,Bortaseger
+2015,KIF Örebro,Hammarby IF,3,1,Hemmaseger
+2015,KIF Örebro,Kopparbergs/Göteborg,1,1,Oavgjort
+2015,KIF Örebro,Kristianstads DFF,4,2,Hemmaseger
+2015,KIF Örebro,Linköpings FC,2,1,Hemmaseger
+2015,KIF Örebro,Mallbackens IF,2,1,Hemmaseger
+2015,KIF Örebro,Piteå IF,2,3,Bortaseger
+2015,KIF Örebro,Umeå IK,2,0,Hemmaseger
+2015,KIF Örebro,Vittsjö GIK,4,0,Hemmaseger
+2015,Kopparbergs/Göteborg,AIK,5,1,Hemmaseger
+2015,Kopparbergs/Göteborg,Eskilstuna United,1,3,Bortaseger
+2015,Kopparbergs/Göteborg,FC Rosengård,0,0,Oavgjort
+2015,Kopparbergs/Göteborg,Hammarby IF,3,0,Hemmaseger
+2015,Kopparbergs/Göteborg,KIF Örebro,2,4,Bortaseger
+2015,Kopparbergs/Göteborg,Kristianstads DFF,3,0,Hemmaseger
+2015,Kopparbergs/Göteborg,Linköpings FC,1,0,Hemmaseger
+2015,Kopparbergs/Göteborg,Mallbackens IF,1,0,Hemmaseger
+2015,Kopparbergs/Göteborg,Piteå IF,0,0,Oavgjort
+2015,Kopparbergs/Göteborg,Umeå IK,1,3,Bortaseger
+2015,Kopparbergs/Göteborg,Vittsjö GIK,3,1,Hemmaseger
+2015,Kristianstads DFF,AIK,5,0,Hemmaseger
+2015,Kristianstads DFF,Eskilstuna United,0,2,Bortaseger
+2015,Kristianstads DFF,FC Rosengård,0,0,Oavgjort
+2015,Kristianstads DFF,Hammarby IF,1,0,Hemmaseger
+2015,Kristianstads DFF,KIF Örebro,3,1,Hemmaseger
+2015,Kristianstads DFF,Kopparbergs/Göteborg,3,1,Hemmaseger
+2015,Kristianstads DFF,Linköpings FC,0,3,Bortaseger
+2015,Kristianstads DFF,Mallbackens IF,2,1,Hemmaseger
+2015,Kristianstads DFF,Piteå IF,2,3,Bortaseger
+2015,Kristianstads DFF,Umeå IK,1,0,Hemmaseger
+2015,Kristianstads DFF,Vittsjö GIK,3,1,Hemmaseger
+2015,Linköpings FC,AIK,4,0,Hemmaseger
+2015,Linköpings FC,Eskilstuna United,0,0,Oavgjort
+2015,Linköpings FC,FC Rosengård,2,1,Hemmaseger
+2015,Linköpings FC,Hammarby IF,3,0,Hemmaseger
+2015,Linköpings FC,KIF Örebro,2,1,Hemmaseger
+2015,Linköpings FC,Kopparbergs/Göteborg,4,0,Hemmaseger
+2015,Linköpings FC,Kristianstads DFF,1,0,Hemmaseger
+2015,Linköpings FC,Mallbackens IF,5,1,Hemmaseger
+2015,Linköpings FC,Piteå IF,5,0,Hemmaseger
+2015,Linköpings FC,Umeå IK,0,2,Bortaseger
+2015,Linköpings FC,Vittsjö GIK,2,0,Hemmaseger
+2015,Mallbackens IF,AIK,1,0,Hemmaseger
+2015,Mallbackens IF,Eskilstuna United,0,2,Bortaseger
+2015,Mallbackens IF,FC Rosengård,1,1,Oavgjort
+2015,Mallbackens IF,Hammarby IF,2,3,Bortaseger
+2015,Mallbackens IF,KIF Örebro,1,0,Hemmaseger
+2015,Mallbackens IF,Kopparbergs/Göteborg,0,1,Bortaseger
+2015,Mallbackens IF,Kristianstads DFF,1,0,Hemmaseger
+2015,Mallbackens IF,Linköpings FC,0,1,Bortaseger
+2015,Mallbackens IF,Piteå IF,1,4,Bortaseger
+2015,Mallbackens IF,Umeå IK,0,0,Oavgjort
+2015,Mallbackens IF,Vittsjö GIK,2,1,Hemmaseger
+2015,Piteå IF,AIK,4,1,Hemmaseger
+2015,Piteå IF,Eskilstuna United,1,0,Hemmaseger
+2015,Piteå IF,FC Rosengård,2,2,Oavgjort
+2015,Piteå IF,Hammarby IF,2,1,Hemmaseger
+2015,Piteå IF,KIF Örebro,1,1,Oavgjort
+2015,Piteå IF,Kopparbergs/Göteborg,4,0,Hemmaseger
+2015,Piteå IF,Kristianstads DFF,4,0,Hemmaseger
+2015,Piteå IF,Linköpings FC,2,0,Hemmaseger
+2015,Piteå IF,Mallbackens IF,2,1,Hemmaseger
+2015,Piteå IF,Umeå IK,1,1,Oavgjort
+2015,Piteå IF,Vittsjö GIK,0,1,Bortaseger
+2015,Umeå IK,AIK,2,0,Hemmaseger
+2015,Umeå IK,Eskilstuna United,1,2,Bortaseger
+2015,Umeå IK,FC Rosengård,0,2,Bortaseger
+2015,Umeå IK,Hammarby IF,2,0,Hemmaseger
+2015,Umeå IK,KIF Örebro,0,2,Bortaseger
+2015,Umeå IK,Kopparbergs/Göteborg,1,1,Oavgjort
+2015,Umeå IK,Kristianstads DFF,4,3,Hemmaseger
+2015,Umeå IK,Linköpings FC,1,2,Bortaseger
+2015,Umeå IK,Mallbackens IF,2,2,Oavgjort
+2015,Umeå IK,Piteå IF,2,2,Oavgjort
+2015,Umeå IK,Vittsjö GIK,0,2,Bortaseger
+2015,Vittsjö GIK,AIK,3,2,Hemmaseger
+2015,Vittsjö GIK,Eskilstuna United,1,1,Oavgjort
+2015,Vittsjö GIK,FC Rosengård,0,4,Bortaseger
+2015,Vittsjö GIK,Hammarby IF,1,1,Oavgjort
+2015,Vittsjö GIK,KIF Örebro,0,0,Oavgjort
+2015,Vittsjö GIK,Kopparbergs/Göteborg,1,2,Bortaseger
+2015,Vittsjö GIK,Kristianstads DFF,1,1,Oavgjort
+2015,Vittsjö GIK,Linköpings FC,0,3,Bortaseger
+2015,Vittsjö GIK,Mallbackens IF,2,1,Hemmaseger
+2015,Vittsjö GIK,Piteå IF,0,3,Bortaseger
+2015,Vittsjö GIK,Umeå IK,3,0,Hemmaseger
+2016,Djurgårdens IF,Eskilstuna United,3,3,Oavgjort
+2016,Djurgårdens IF,FC Rosengård,0,3,Bortaseger
+2016,Djurgårdens IF,KIF Örebro,1,2,Bortaseger
+2016,Djurgårdens IF,Kopparbergs/Göteborg,2,1,Hemmaseger
+2016,Djurgårdens IF,Kristianstads DFF,2,0,Hemmaseger
+2016,Djurgårdens IF,Kvarnsvedens IK,2,2,Oavgjort
+2016,Djurgårdens IF,Linköpings FC,0,1,Bortaseger
+2016,Djurgårdens IF,Mallbackens IF,2,1,Hemmaseger
+2016,Djurgårdens IF,Piteå IF,1,1,Oavgjort
+2016,Djurgårdens IF,Umeå IK,1,3,Bortaseger
+2016,Djurgårdens IF,Vittsjö GIK,3,1,Hemmaseger
+2016,Eskilstuna United,Djurgårdens IF,2,1,Hemmaseger
+2016,Eskilstuna United,FC Rosengård,0,1,Bortaseger
+2016,Eskilstuna United,KIF Örebro,3,0,Hemmaseger
+2016,Eskilstuna United,Kopparbergs/Göteborg,0,0,Oavgjort
+2016,Eskilstuna United,Kristianstads DFF,1,0,Hemmaseger
+2016,Eskilstuna United,Kvarnsvedens IK,2,0,Hemmaseger
+2016,Eskilstuna United,Linköpings FC,1,3,Bortaseger
+2016,Eskilstuna United,Mallbackens IF,0,0,Oavgjort
+2016,Eskilstuna United,Piteå IF,2,2,Oavgjort
+2016,Eskilstuna United,Umeå IK,2,0,Hemmaseger
+2016,Eskilstuna United,Vittsjö GIK,2,1,Hemmaseger
+2016,FC Rosengård,Djurgårdens IF,2,2,Oavgjort
+2016,FC Rosengård,Eskilstuna United,1,2,Bortaseger
+2016,FC Rosengård,KIF Örebro,3,0,Hemmaseger
+2016,FC Rosengård,Kopparbergs/Göteborg,2,1,Hemmaseger
+2016,FC Rosengård,Kristianstads DFF,2,1,Hemmaseger
+2016,FC Rosengård,Kvarnsvedens IK,6,1,Hemmaseger
+2016,FC Rosengård,Linköpings FC,1,1,Oavgjort
+2016,FC Rosengård,Mallbackens IF,7,0,Hemmaseger
+2016,FC Rosengård,Piteå IF,4,0,Hemmaseger
+2016,FC Rosengård,Umeå IK,5,1,Hemmaseger
+2016,FC Rosengård,Vittsjö GIK,4,1,Hemmaseger
+2016,KIF Örebro,Djurgårdens IF,0,3,Bortaseger
+2016,KIF Örebro,Eskilstuna United,1,4,Bortaseger
+2016,KIF Örebro,FC Rosengård,0,2,Bortaseger
+2016,KIF Örebro,Kopparbergs/Göteborg,1,3,Bortaseger
+2016,KIF Örebro,Kristianstads DFF,3,1,Hemmaseger
+2016,KIF Örebro,Kvarnsvedens IK,1,2,Bortaseger
+2016,KIF Örebro,Linköpings FC,2,2,Oavgjort
+2016,KIF Örebro,Mallbackens IF,4,0,Hemmaseger
+2016,KIF Örebro,Piteå IF,0,0,Oavgjort
+2016,KIF Örebro,Umeå IK,1,1,Oavgjort
+2016,KIF Örebro,Vittsjö GIK,3,1,Hemmaseger
+2016,Kopparbergs/Göteborg,Djurgårdens IF,1,0,Hemmaseger
+2016,Kopparbergs/Göteborg,Eskilstuna United,1,3,Bortaseger
+2016,Kopparbergs/Göteborg,FC Rosengård,1,2,Bortaseger
+2016,Kopparbergs/Göteborg,KIF Örebro,0,0,Oavgjort
+2016,Kopparbergs/Göteborg,Kristianstads DFF,3,1,Hemmaseger
+2016,Kopparbergs/Göteborg,Kvarnsvedens IK,2,1,Hemmaseger
+2016,Kopparbergs/Göteborg,Linköpings FC,1,2,Bortaseger
+2016,Kopparbergs/Göteborg,Mallbackens IF,4,0,Hemmaseger
+2016,Kopparbergs/Göteborg,Piteå IF,3,1,Hemmaseger
+2016,Kopparbergs/Göteborg,Umeå IK,5,2,Hemmaseger
+2016,Kopparbergs/Göteborg,Vittsjö GIK,2,2,Oavgjort
+2016,Kristianstads DFF,Djurgårdens IF,0,2,Bortaseger
+2016,Kristianstads DFF,Eskilstuna United,0,1,Bortaseger
+2016,Kristianstads DFF,FC Rosengård,0,2,Bortaseger
+2016,Kristianstads DFF,KIF Örebro,2,2,Oavgjort
+2016,Kristianstads DFF,Kopparbergs/Göteborg,1,1,Oavgjort
+2016,Kristianstads DFF,Kvarnsvedens IK,2,0,Hemmaseger
+2016,Kristianstads DFF,Linköpings FC,1,4,Bortaseger
+2016,Kristianstads DFF,Mallbackens IF,1,0,Hemmaseger
+2016,Kristianstads DFF,Piteå IF,0,1,Bortaseger
+2016,Kristianstads DFF,Umeå IK,1,1,Oavgjort
+2016,Kristianstads DFF,Vittsjö GIK,1,1,Oavgjort
+2016,Kvarnsvedens IK,Djurgårdens IF,2,2,Oavgjort
+2016,Kvarnsvedens IK,Eskilstuna United,1,1,Oavgjort
+2016,Kvarnsvedens IK,FC Rosengård,0,4,Bortaseger
+2016,Kvarnsvedens IK,KIF Örebro,0,1,Bortaseger
+2016,Kvarnsvedens IK,Kopparbergs/Göteborg,0,2,Bortaseger
+2016,Kvarnsvedens IK,Kristianstads DFF,2,2,Oavgjort
+2016,Kvarnsvedens IK,Linköpings FC,1,2,Bortaseger
+2016,Kvarnsvedens IK,Mallbackens IF,3,1,Hemmaseger
+2016,Kvarnsvedens IK,Piteå IF,2,2,Oavgjort
+2016,Kvarnsvedens IK,Umeå IK,3,1,Hemmaseger
+2016,Kvarnsvedens IK,Vittsjö GIK,1,1,Oavgjort
+2016,Linköpings FC,Djurgårdens IF,3,1,Hemmaseger
+2016,Linköpings FC,Eskilstuna United,5,0,Hemmaseger
+2016,Linköpings FC,FC Rosengård,1,0,Hemmaseger
+2016,Linköpings FC,KIF Örebro,4,1,Hemmaseger
+2016,Linköpings FC,Kopparbergs/Göteborg,1,0,Hemmaseger
+2016,Linköpings FC,Kristianstads DFF,2,0,Hemmaseger
+2016,Linköpings FC,Kvarnsvedens IK,8,0,Hemmaseger
+2016,Linköpings FC,Mallbackens IF,4,2,Hemmaseger
+2016,Linköpings FC,Piteå IF,3,2,Hemmaseger
+2016,Linköpings FC,Umeå IK,3,0,Hemmaseger
+2016,Linköpings FC,Vittsjö GIK,8,0,Hemmaseger
+2016,Mallbackens IF,Djurgårdens IF,0,3,Bortaseger
+2016,Mallbackens IF,Eskilstuna United,2,1,Hemmaseger
+2016,Mallbackens IF,FC Rosengård,0,6,Bortaseger
+2016,Mallbackens IF,KIF Örebro,3,3,Oavgjort
+2016,Mallbackens IF,Kopparbergs/Göteborg,0,3,Bortaseger
+2016,Mallbackens IF,Kristianstads DFF,0,1,Bortaseger
+2016,Mallbackens IF,Kvarnsvedens IK,1,3,Bortaseger
+2016,Mallbackens IF,Linköpings FC,0,6,Bortaseger
+2016,Mallbackens IF,Piteå IF,4,0,Hemmaseger
+2016,Mallbackens IF,Umeå IK,1,0,Hemmaseger
+2016,Mallbackens IF,Vittsjö GIK,1,2,Bortaseger
+2016,Piteå IF,Djurgårdens IF,2,0,Hemmaseger
+2016,Piteå IF,Eskilstuna United,2,1,Hemmaseger
+2016,Piteå IF,FC Rosengård,1,1,Oavgjort
+2016,Piteå IF,KIF Örebro,2,1,Hemmaseger
+2016,Piteå IF,Kopparbergs/Göteborg,2,0,Hemmaseger
+2016,Piteå IF,Kristianstads DFF,2,1,Hemmaseger
+2016,Piteå IF,Kvarnsvedens IK,2,2,Oavgjort
+2016,Piteå IF,Linköpings FC,1,4,Bortaseger
+2016,Piteå IF,Mallbackens IF,2,1,Hemmaseger
+2016,Piteå IF,Umeå IK,1,0,Hemmaseger
+2016,Piteå IF,Vittsjö GIK,2,1,Hemmaseger
+2016,Umeå IK,Djurgårdens IF,0,0,Oavgjort
+2016,Umeå IK,Eskilstuna United,1,3,Bortaseger
+2016,Umeå IK,FC Rosengård,0,4,Bortaseger
+2016,Umeå IK,KIF Örebro,1,1,Oavgjort
+2016,Umeå IK,Kopparbergs/Göteborg,0,0,Oavgjort
+2016,Umeå IK,Kristianstads DFF,2,1,Hemmaseger
+2016,Umeå IK,Kvarnsvedens IK,1,2,Bortaseger
+2016,Umeå IK,Linköpings FC,0,4,Bortaseger
+2016,Umeå IK,Mallbackens IF,1,1,Oavgjort
+2016,Umeå IK,Piteå IF,1,1,Oavgjort
+2016,Umeå IK,Vittsjö GIK,0,2,Bortaseger
+2016,Vittsjö GIK,Djurgårdens IF,4,1,Hemmaseger
+2016,Vittsjö GIK,Eskilstuna United,1,0,Hemmaseger
+2016,Vittsjö GIK,FC Rosengård,0,0,Oavgjort
+2016,Vittsjö GIK,KIF Örebro,0,0,Oavgjort
+2016,Vittsjö GIK,Kopparbergs/Göteborg,2,2,Oavgjort
+2016,Vittsjö GIK,Kristianstads DFF,1,1,Oavgjort
+2016,Vittsjö GIK,Kvarnsvedens IK,2,2,Oavgjort
+2016,Vittsjö GIK,Linköpings FC,0,2,Bortaseger
+2016,Vittsjö GIK,Mallbackens IF,1,1,Oavgjort
+2016,Vittsjö GIK,Piteå IF,0,1,Bortaseger
+2016,Vittsjö GIK,Umeå IK,5,0,Hemmaseger
+2017,Djurgårdens IF,Eskilstuna United,1,0,Hemmaseger
+2017,Djurgårdens IF,FC Rosengård,1,3,Bortaseger
+2017,Djurgårdens IF,Hammarby IF,1,0,Hemmaseger
+2017,Djurgårdens IF,KIF Örebro,1,2,Bortaseger
+2017,Djurgårdens IF,Kopparbergs/Göteborg,2,0,Hemmaseger
+2017,Djurgårdens IF,Kristianstads DFF,2,1,Hemmaseger
+2017,Djurgårdens IF,Kvarnsvedens IK,1,2,Bortaseger
+2017,Djurgårdens IF,Limhamn Bunkeflo,2,1,Hemmaseger
+2017,Djurgårdens IF,Linköpings FC,1,2,Bortaseger
+2017,Djurgårdens IF,Piteå IF,1,5,Bortaseger
+2017,Djurgårdens IF,Vittsjö GIK,1,1,Oavgjort
+2017,Eskilstuna United,Djurgårdens IF,1,1,Oavgjort
+2017,Eskilstuna United,FC Rosengård,3,2,Hemmaseger
+2017,Eskilstuna United,Hammarby IF,1,0,Hemmaseger
+2017,Eskilstuna United,KIF Örebro,2,1,Hemmaseger
+2017,Eskilstuna United,Kopparbergs/Göteborg,1,5,Bortaseger
+2017,Eskilstuna United,Kristianstads DFF,2,1,Hemmaseger
+2017,Eskilstuna United,Kvarnsvedens IK,4,1,Hemmaseger
+2017,Eskilstuna United,Limhamn Bunkeflo,4,0,Hemmaseger
+2017,Eskilstuna United,Linköpings FC,0,2,Bortaseger
+2017,Eskilstuna United,Piteå IF,0,1,Bortaseger
+2017,Eskilstuna United,Vittsjö GIK,2,1,Hemmaseger
+2017,FC Rosengård,Djurgårdens IF,6,3,Hemmaseger
+2017,FC Rosengård,Eskilstuna United,1,0,Hemmaseger
+2017,FC Rosengård,Hammarby IF,0,1,Bortaseger
+2017,FC Rosengård,KIF Örebro,2,2,Oavgjort
+2017,FC Rosengård,Kopparbergs/Göteborg,5,0,Hemmaseger
+2017,FC Rosengård,Kristianstads DFF,1,0,Hemmaseger
+2017,FC Rosengård,Kvarnsvedens IK,7,2,Hemmaseger
+2017,FC Rosengård,Limhamn Bunkeflo,3,0,Hemmaseger
+2017,FC Rosengård,Linköpings FC,2,2,Oavgjort
+2017,FC Rosengård,Piteå IF,0,0,Oavgjort
+2017,FC Rosengård,Vittsjö GIK,2,2,Oavgjort
+2017,Hammarby IF,Djurgårdens IF,0,2,Bortaseger
+2017,Hammarby IF,Eskilstuna United,1,0,Hemmaseger
+2017,Hammarby IF,FC Rosengård,1,0,Hemmaseger
+2017,Hammarby IF,KIF Örebro,6,1,Hemmaseger
+2017,Hammarby IF,Kopparbergs/Göteborg,0,0,Oavgjort
+2017,Hammarby IF,Kristianstads DFF,1,1,Oavgjort
+2017,Hammarby IF,Kvarnsvedens IK,2,1,Hemmaseger
+2017,Hammarby IF,Limhamn Bunkeflo,1,2,Bortaseger
+2017,Hammarby IF,Linköpings FC,1,3,Bortaseger
+2017,Hammarby IF,Piteå IF,0,1,Bortaseger
+2017,Hammarby IF,Vittsjö GIK,2,0,Hemmaseger
+2017,KIF Örebro,Djurgårdens IF,0,3,Bortaseger
+2017,KIF Örebro,Eskilstuna United,0,1,Bortaseger
+2017,KIF Örebro,FC Rosengård,2,2,Oavgjort
+2017,KIF Örebro,Hammarby IF,2,2,Oavgjort
+2017,KIF Örebro,Kopparbergs/Göteborg,0,1,Bortaseger
+2017,KIF Örebro,Kristianstads DFF,1,0,Hemmaseger
+2017,KIF Örebro,Kvarnsvedens IK,3,3,Oavgjort
+2017,KIF Örebro,Limhamn Bunkeflo,1,2,Bortaseger
+2017,KIF Örebro,Linköpings FC,1,4,Bortaseger
+2017,KIF Örebro,Piteå IF,0,0,Oavgjort
+2017,KIF Örebro,Vittsjö GIK,0,0,Oavgjort
+2017,Kopparbergs/Göteborg,Djurgårdens IF,1,0,Hemmaseger
+2017,Kopparbergs/Göteborg,Eskilstuna United,0,1,Bortaseger
+2017,Kopparbergs/Göteborg,FC Rosengård,1,1,Oavgjort
+2017,Kopparbergs/Göteborg,Hammarby IF,3,3,Oavgjort
+2017,Kopparbergs/Göteborg,KIF Örebro,1,0,Hemmaseger
+2017,Kopparbergs/Göteborg,Kristianstads DFF,1,2,Bortaseger
+2017,Kopparbergs/Göteborg,Kvarnsvedens IK,2,2,Oavgjort
+2017,Kopparbergs/Göteborg,Limhamn Bunkeflo,2,5,Bortaseger
+2017,Kopparbergs/Göteborg,Linköpings FC,0,2,Bortaseger
+2017,Kopparbergs/Göteborg,Piteå IF,2,2,Oavgjort
+2017,Kopparbergs/Göteborg,Vittsjö GIK,2,0,Hemmaseger
+2017,Kristianstads DFF,Djurgårdens IF,1,2,Bortaseger
+2017,Kristianstads DFF,Eskilstuna United,1,1,Oavgjort
+2017,Kristianstads DFF,FC Rosengård,2,1,Hemmaseger
+2017,Kristianstads DFF,Hammarby IF,0,0,Oavgjort
+2017,Kristianstads DFF,KIF Örebro,3,2,Hemmaseger
+2017,Kristianstads DFF,Kopparbergs/Göteborg,5,2,Hemmaseger
+2017,Kristianstads DFF,Kvarnsvedens IK,5,2,Hemmaseger
+2017,Kristianstads DFF,Limhamn Bunkeflo,2,0,Hemmaseger
+2017,Kristianstads DFF,Linköpings FC,1,2,Bortaseger
+2017,Kristianstads DFF,Piteå IF,1,0,Hemmaseger
+2017,Kristianstads DFF,Vittsjö GIK,0,1,Bortaseger
+2017,Kvarnsvedens IK,Djurgårdens IF,2,2,Oavgjort
+2017,Kvarnsvedens IK,Eskilstuna United,2,2,Oavgjort
+2017,Kvarnsvedens IK,FC Rosengård,1,3,Bortaseger
+2017,Kvarnsvedens IK,Hammarby IF,3,3,Oavgjort
+2017,Kvarnsvedens IK,KIF Örebro,3,1,Hemmaseger
+2017,Kvarnsvedens IK,Kopparbergs/Göteborg,3,3,Oavgjort
+2017,Kvarnsvedens IK,Kristianstads DFF,1,2,Bortaseger
+2017,Kvarnsvedens IK,Limhamn Bunkeflo,5,0,Hemmaseger
+2017,Kvarnsvedens IK,Linköpings FC,0,0,Oavgjort
+2017,Kvarnsvedens IK,Piteå IF,3,1,Hemmaseger
+2017,Kvarnsvedens IK,Vittsjö GIK,2,3,Bortaseger
+2017,Limhamn Bunkeflo,Djurgårdens IF,2,1,Hemmaseger
+2017,Limhamn Bunkeflo,Eskilstuna United,0,3,Bortaseger
+2017,Limhamn Bunkeflo,FC Rosengård,0,1,Bortaseger
+2017,Limhamn Bunkeflo,Hammarby IF,1,1,Oavgjort
+2017,Limhamn Bunkeflo,KIF Örebro,2,0,Hemmaseger
+2017,Limhamn Bunkeflo,Kopparbergs/Göteborg,2,1,Hemmaseger
+2017,Limhamn Bunkeflo,Kristianstads DFF,0,3,Bortaseger
+2017,Limhamn Bunkeflo,Kvarnsvedens IK,1,0,Hemmaseger
+2017,Limhamn Bunkeflo,Linköpings FC,0,1,Bortaseger
+2017,Limhamn Bunkeflo,Piteå IF,1,1,Oavgjort
+2017,Limhamn Bunkeflo,Vittsjö GIK,0,2,Bortaseger
+2017,Linköpings FC,Djurgårdens IF,2,1,Hemmaseger
+2017,Linköpings FC,Eskilstuna United,0,6,Bortaseger
+2017,Linköpings FC,FC Rosengård,0,3,Bortaseger
+2017,Linköpings FC,Hammarby IF,2,2,Oavgjort
+2017,Linköpings FC,KIF Örebro,5,0,Hemmaseger
+2017,Linköpings FC,Kopparbergs/Göteborg,5,1,Hemmaseger
+2017,Linköpings FC,Kristianstads DFF,1,0,Hemmaseger
+2017,Linköpings FC,Kvarnsvedens IK,3,2,Hemmaseger
+2017,Linköpings FC,Limhamn Bunkeflo,3,0,Hemmaseger
+2017,Linköpings FC,Piteå IF,2,3,Bortaseger
+2017,Linköpings FC,Vittsjö GIK,1,0,Hemmaseger
+2017,Piteå IF,Djurgårdens IF,0,1,Bortaseger
+2017,Piteå IF,Eskilstuna United,2,2,Oavgjort
+2017,Piteå IF,FC Rosengård,0,2,Bortaseger
+2017,Piteå IF,Hammarby IF,2,0,Hemmaseger
+2017,Piteå IF,KIF Örebro,2,0,Hemmaseger
+2017,Piteå IF,Kopparbergs/Göteborg,0,1,Bortaseger
+2017,Piteå IF,Kristianstads DFF,2,1,Hemmaseger
+2017,Piteå IF,Kvarnsvedens IK,3,0,Hemmaseger
+2017,Piteå IF,Limhamn Bunkeflo,4,1,Hemmaseger
+2017,Piteå IF,Linköpings FC,0,1,Bortaseger
+2017,Piteå IF,Vittsjö GIK,2,1,Hemmaseger
+2017,Vittsjö GIK,Djurgårdens IF,4,1,Hemmaseger
+2017,Vittsjö GIK,Eskilstuna United,1,1,Oavgjort
+2017,Vittsjö GIK,FC Rosengård,0,3,Bortaseger
+2017,Vittsjö GIK,Hammarby IF,0,0,Oavgjort
+2017,Vittsjö GIK,KIF Örebro,2,2,Oavgjort
+2017,Vittsjö GIK,Kopparbergs/Göteborg,0,2,Bortaseger
+2017,Vittsjö GIK,Kristianstads DFF,1,1,Oavgjort
+2017,Vittsjö GIK,Kvarnsvedens IK,3,1,Hemmaseger
+2017,Vittsjö GIK,Limhamn Bunkeflo,2,3,Bortaseger
+2017,Vittsjö GIK,Linköpings FC,0,2,Bortaseger
+2017,Vittsjö GIK,Piteå IF,0,0,Oavgjort
+2018,Djurgårdens IF,Eskilstuna United,2,1,Hemmaseger
+2018,Djurgårdens IF,FC Rosengård,1,2,Bortaseger
+2018,Djurgårdens IF,Hammarby IF,2,1,Hemmaseger
+2018,Djurgårdens IF,IFK Kalmar,2,0,Hemmaseger
+2018,Djurgårdens IF,Kopparbergs/Göteborg,0,2,Bortaseger
+2018,Djurgårdens IF,Kristianstads DFF,1,1,Oavgjort
+2018,Djurgårdens IF,Limhamn Bunkeflo,1,1,Oavgjort
+2018,Djurgårdens IF,Linköpings FC,2,2,Oavgjort
+2018,Djurgårdens IF,Piteå IF,0,1,Bortaseger
+2018,Djurgårdens IF,Vittsjö GIK,2,0,Hemmaseger
+2018,Djurgårdens IF,Växjö DFF,2,0,Hemmaseger
+2018,Eskilstuna United,Djurgårdens IF,3,1,Hemmaseger
+2018,Eskilstuna United,FC Rosengård,1,1,Oavgjort
+2018,Eskilstuna United,Hammarby IF,1,0,Hemmaseger
+2018,Eskilstuna United,IFK Kalmar,4,1,Hemmaseger
+2018,Eskilstuna United,Kopparbergs/Göteborg,1,3,Bortaseger
+2018,Eskilstuna United,Kristianstads DFF,1,0,Hemmaseger
+2018,Eskilstuna United,Limhamn Bunkeflo,4,0,Hemmaseger
+2018,Eskilstuna United,Linköpings FC,3,3,Oavgjort
+2018,Eskilstuna United,Piteå IF,1,2,Bortaseger
+2018,Eskilstuna United,Vittsjö GIK,1,1,Oavgjort
+2018,Eskilstuna United,Växjö DFF,1,1,Oavgjort
+2018,FC Rosengård,Djurgårdens IF,2,0,Hemmaseger
+2018,FC Rosengård,Eskilstuna United,9,0,Hemmaseger
+2018,FC Rosengård,Hammarby IF,5,1,Hemmaseger
+2018,FC Rosengård,IFK Kalmar,10,0,Hemmaseger
+2018,FC Rosengård,Kopparbergs/Göteborg,1,1,Oavgjort
+2018,FC Rosengård,Kristianstads DFF,3,0,Hemmaseger
+2018,FC Rosengård,Limhamn Bunkeflo,3,0,Hemmaseger
+2018,FC Rosengård,Linköpings FC,1,2,Bortaseger
+2018,FC Rosengård,Piteå IF,1,0,Hemmaseger
+2018,FC Rosengård,Vittsjö GIK,2,0,Hemmaseger
+2018,FC Rosengård,Växjö DFF,1,1,Oavgjort
+2018,Hammarby IF,Djurgårdens IF,0,1,Bortaseger
+2018,Hammarby IF,Eskilstuna United,0,2,Bortaseger
+2018,Hammarby IF,FC Rosengård,2,1,Hemmaseger
+2018,Hammarby IF,IFK Kalmar,2,0,Hemmaseger
+2018,Hammarby IF,Kopparbergs/Göteborg,2,1,Hemmaseger
+2018,Hammarby IF,Kristianstads DFF,0,1,Bortaseger
+2018,Hammarby IF,Limhamn Bunkeflo,4,2,Hemmaseger
+2018,Hammarby IF,Linköpings FC,1,2,Bortaseger
+2018,Hammarby IF,Piteå IF,0,3,Bortaseger
+2018,Hammarby IF,Vittsjö GIK,0,3,Bortaseger
+2018,Hammarby IF,Växjö DFF,1,2,Bortaseger
+2018,IFK Kalmar,Djurgårdens IF,2,3,Bortaseger
+2018,IFK Kalmar,Eskilstuna United,0,3,Bortaseger
+2018,IFK Kalmar,FC Rosengård,0,4,Bortaseger
+2018,IFK Kalmar,Hammarby IF,0,4,Bortaseger
+2018,IFK Kalmar,Kopparbergs/Göteborg,2,3,Bortaseger
+2018,IFK Kalmar,Kristianstads DFF,1,2,Bortaseger
+2018,IFK Kalmar,Limhamn Bunkeflo,0,3,Bortaseger
+2018,IFK Kalmar,Linköpings FC,1,9,Bortaseger
+2018,IFK Kalmar,Piteå IF,1,2,Bortaseger
+2018,IFK Kalmar,Vittsjö GIK,0,3,Bortaseger
+2018,IFK Kalmar,Växjö DFF,2,3,Bortaseger
+2018,Kopparbergs/Göteborg,Djurgårdens IF,3,0,Hemmaseger
+2018,Kopparbergs/Göteborg,Eskilstuna United,3,1,Hemmaseger
+2018,Kopparbergs/Göteborg,FC Rosengård,4,2,Hemmaseger
+2018,Kopparbergs/Göteborg,Hammarby IF,1,3,Bortaseger
+2018,Kopparbergs/Göteborg,IFK Kalmar,5,1,Hemmaseger
+2018,Kopparbergs/Göteborg,Kristianstads DFF,1,0,Hemmaseger
+2018,Kopparbergs/Göteborg,Limhamn Bunkeflo,3,1,Hemmaseger
+2018,Kopparbergs/Göteborg,Linköpings FC,4,2,Hemmaseger
+2018,Kopparbergs/Göteborg,Piteå IF,0,1,Bortaseger
+2018,Kopparbergs/Göteborg,Vittsjö GIK,2,2,Oavgjort
+2018,Kopparbergs/Göteborg,Växjö DFF,3,2,Hemmaseger
+2018,Kristianstads DFF,Djurgårdens IF,2,2,Oavgjort
+2018,Kristianstads DFF,Eskilstuna United,1,0,Hemmaseger
+2018,Kristianstads DFF,FC Rosengård,2,0,Hemmaseger
+2018,Kristianstads DFF,Hammarby IF,1,0,Hemmaseger
+2018,Kristianstads DFF,IFK Kalmar,4,0,Hemmaseger
+2018,Kristianstads DFF,Kopparbergs/Göteborg,1,5,Bortaseger
+2018,Kristianstads DFF,Limhamn Bunkeflo,4,2,Hemmaseger
+2018,Kristianstads DFF,Linköpings FC,1,1,Oavgjort
+2018,Kristianstads DFF,Piteå IF,2,1,Hemmaseger
+2018,Kristianstads DFF,Vittsjö GIK,1,1,Oavgjort
+2018,Kristianstads DFF,Växjö DFF,1,0,Hemmaseger
+2018,Limhamn Bunkeflo,Djurgårdens IF,1,0,Hemmaseger
+2018,Limhamn Bunkeflo,Eskilstuna United,0,1,Bortaseger
+2018,Limhamn Bunkeflo,FC Rosengård,0,2,Bortaseger
+2018,Limhamn Bunkeflo,Hammarby IF,1,3,Bortaseger
+2018,Limhamn Bunkeflo,IFK Kalmar,2,0,Hemmaseger
+2018,Limhamn Bunkeflo,Kopparbergs/Göteborg,0,2,Bortaseger
+2018,Limhamn Bunkeflo,Kristianstads DFF,3,3,Oavgjort
+2018,Limhamn Bunkeflo,Linköpings FC,1,0,Hemmaseger
+2018,Limhamn Bunkeflo,Piteå IF,0,2,Bortaseger
+2018,Limhamn Bunkeflo,Vittsjö GIK,1,0,Hemmaseger
+2018,Limhamn Bunkeflo,Växjö DFF,2,1,Hemmaseger
+2018,Linköpings FC,Djurgårdens IF,1,1,Oavgjort
+2018,Linköpings FC,Eskilstuna United,0,1,Bortaseger
+2018,Linköpings FC,FC Rosengård,2,1,Hemmaseger
+2018,Linköpings FC,Hammarby IF,2,1,Hemmaseger
+2018,Linköpings FC,IFK Kalmar,8,0,Hemmaseger
+2018,Linköpings FC,Kopparbergs/Göteborg,1,0,Hemmaseger
+2018,Linköpings FC,Kristianstads DFF,0,0,Oavgjort
+2018,Linköpings FC,Limhamn Bunkeflo,5,2,Hemmaseger
+2018,Linköpings FC,Piteå IF,1,2,Bortaseger
+2018,Linköpings FC,Vittsjö GIK,1,1,Oavgjort
+2018,Linköpings FC,Växjö DFF,1,0,Hemmaseger
+2018,Piteå IF,Djurgårdens IF,2,0,Hemmaseger
+2018,Piteå IF,Eskilstuna United,2,0,Hemmaseger
+2018,Piteå IF,FC Rosengård,0,1,Bortaseger
+2018,Piteå IF,Hammarby IF,3,2,Hemmaseger
+2018,Piteå IF,IFK Kalmar,2,1,Hemmaseger
+2018,Piteå IF,Kopparbergs/Göteborg,4,3,Hemmaseger
+2018,Piteå IF,Kristianstads DFF,0,1,Bortaseger
+2018,Piteå IF,Limhamn Bunkeflo,2,1,Hemmaseger
+2018,Piteå IF,Linköpings FC,4,2,Hemmaseger
+2018,Piteå IF,Vittsjö GIK,1,4,Bortaseger
+2018,Piteå IF,Växjö DFF,6,1,Hemmaseger
+2018,Vittsjö GIK,Djurgårdens IF,2,2,Oavgjort
+2018,Vittsjö GIK,Eskilstuna United,4,0,Hemmaseger
+2018,Vittsjö GIK,FC Rosengård,1,2,Bortaseger
+2018,Vittsjö GIK,Hammarby IF,0,1,Bortaseger
+2018,Vittsjö GIK,IFK Kalmar,0,1,Bortaseger
+2018,Vittsjö GIK,Kopparbergs/Göteborg,0,1,Bortaseger
+2018,Vittsjö GIK,Kristianstads DFF,1,2,Bortaseger
+2018,Vittsjö GIK,Limhamn Bunkeflo,0,1,Bortaseger
+2018,Vittsjö GIK,Linköpings FC,3,2,Hemmaseger
+2018,Vittsjö GIK,Piteå IF,2,1,Hemmaseger
+2018,Vittsjö GIK,Växjö DFF,3,0,Hemmaseger
+2018,Växjö DFF,Djurgårdens IF,1,0,Hemmaseger
+2018,Växjö DFF,Eskilstuna United,2,0,Hemmaseger
+2018,Växjö DFF,FC Rosengård,0,1,Bortaseger
+2018,Växjö DFF,Hammarby IF,5,1,Hemmaseger
+2018,Växjö DFF,IFK Kalmar,4,1,Hemmaseger
+2018,Växjö DFF,Kopparbergs/Göteborg,0,4,Bortaseger
+2018,Växjö DFF,Kristianstads DFF,3,0,Hemmaseger
+2018,Växjö DFF,Limhamn Bunkeflo,0,1,Bortaseger
+2018,Växjö DFF,Linköpings FC,1,0,Hemmaseger
+2018,Växjö DFF,Piteå IF,0,1,Bortaseger
+2018,Växjö DFF,Vittsjö GIK,3,0,Hemmaseger
+2019,Djurgårdens IF,Eskilstuna United,0,3,Bortaseger
+2019,Djurgårdens IF,FC Rosengård,0,3,Bortaseger
+2019,Djurgårdens IF,KIF Örebro,1,4,Bortaseger
+2019,Djurgårdens IF,Kopparbergs/Göteborg,1,3,Bortaseger
+2019,Djurgårdens IF,Kristianstads DFF,0,2,Bortaseger
+2019,Djurgårdens IF,Kungsbacka DFF,3,0,Hemmaseger
+2019,Djurgårdens IF,Limhamn Bunkeflo,0,0,Oavgjort
+2019,Djurgårdens IF,Linköpings FC,2,3,Bortaseger
+2019,Djurgårdens IF,Piteå IF,3,3,Oavgjort
+2019,Djurgårdens IF,Vittsjö GIK,1,3,Bortaseger
+2019,Djurgårdens IF,Växjö DFF,3,0,Hemmaseger
+2019,Eskilstuna United,Djurgårdens IF,4,2,Hemmaseger
+2019,Eskilstuna United,FC Rosengård,0,1,Bortaseger
+2019,Eskilstuna United,KIF Örebro,0,0,Oavgjort
+2019,Eskilstuna United,Kopparbergs/Göteborg,2,1,Hemmaseger
+2019,Eskilstuna United,Kristianstads DFF,5,0,Hemmaseger
+2019,Eskilstuna United,Kungsbacka DFF,3,0,Hemmaseger
+2019,Eskilstuna United,Limhamn Bunkeflo,1,0,Hemmaseger
+2019,Eskilstuna United,Linköpings FC,2,0,Hemmaseger
+2019,Eskilstuna United,Piteå IF,1,1,Oavgjort
+2019,Eskilstuna United,Vittsjö GIK,1,0,Hemmaseger
+2019,Eskilstuna United,Växjö DFF,0,1,Bortaseger
+2019,FC Rosengård,Djurgårdens IF,3,1,Hemmaseger
+2019,FC Rosengård,Eskilstuna United,2,1,Hemmaseger
+2019,FC Rosengård,KIF Örebro,3,1,Hemmaseger
+2019,FC Rosengård,Kopparbergs/Göteborg,2,2,Oavgjort
+2019,FC Rosengård,Kristianstads DFF,5,1,Hemmaseger
+2019,FC Rosengård,Kungsbacka DFF,6,1,Hemmaseger
+2019,FC Rosengård,Limhamn Bunkeflo,3,0,Hemmaseger
+2019,FC Rosengård,Linköpings FC,3,3,Oavgjort
+2019,FC Rosengård,Piteå IF,2,0,Hemmaseger
+2019,FC Rosengård,Vittsjö GIK,1,1,Oavgjort
+2019,FC Rosengård,Växjö DFF,5,0,Hemmaseger
+2019,KIF Örebro,Djurgårdens IF,3,1,Hemmaseger
+2019,KIF Örebro,Eskilstuna United,2,2,Oavgjort
+2019,KIF Örebro,FC Rosengård,0,4,Bortaseger
+2019,KIF Örebro,Kopparbergs/Göteborg,0,3,Bortaseger
+2019,KIF Örebro,Kristianstads DFF,0,1,Bortaseger
+2019,KIF Örebro,Kungsbacka DFF,1,0,Hemmaseger
+2019,KIF Örebro,Limhamn Bunkeflo,0,1,Bortaseger
+2019,KIF Örebro,Linköpings FC,1,3,Bortaseger
+2019,KIF Örebro,Piteå IF,1,0,Hemmaseger
+2019,KIF Örebro,Vittsjö GIK,1,0,Hemmaseger
+2019,KIF Örebro,Växjö DFF,1,0,Hemmaseger
+2019,Kopparbergs/Göteborg,Djurgårdens IF,3,1,Hemmaseger
+2019,Kopparbergs/Göteborg,Eskilstuna United,1,1,Oavgjort
+2019,Kopparbergs/Göteborg,FC Rosengård,0,2,Bortaseger
+2019,Kopparbergs/Göteborg,KIF Örebro,0,0,Oavgjort
+2019,Kopparbergs/Göteborg,Kristianstads DFF,2,0,Hemmaseger
+2019,Kopparbergs/Göteborg,Kungsbacka DFF,6,0,Hemmaseger
+2019,Kopparbergs/Göteborg,Limhamn Bunkeflo,3,0,Hemmaseger
+2019,Kopparbergs/Göteborg,Linköpings FC,1,1,Oavgjort
+2019,Kopparbergs/Göteborg,Piteå IF,1,1,Oavgjort
+2019,Kopparbergs/Göteborg,Vittsjö GIK,2,1,Hemmaseger
+2019,Kopparbergs/Göteborg,Växjö DFF,2,1,Hemmaseger
+2019,Kristianstads DFF,Djurgårdens IF,2,0,Hemmaseger
+2019,Kristianstads DFF,Eskilstuna United,3,0,Hemmaseger
+2019,Kristianstads DFF,FC Rosengård,0,1,Bortaseger
+2019,Kristianstads DFF,KIF Örebro,2,0,Hemmaseger
+2019,Kristianstads DFF,Kopparbergs/Göteborg,2,2,Oavgjort
+2019,Kristianstads DFF,Kungsbacka DFF,5,0,Hemmaseger
+2019,Kristianstads DFF,Limhamn Bunkeflo,5,1,Hemmaseger
+2019,Kristianstads DFF,Linköpings FC,1,1,Oavgjort
+2019,Kristianstads DFF,Piteå IF,1,1,Oavgjort
+2019,Kristianstads DFF,Vittsjö GIK,0,3,Bortaseger
+2019,Kristianstads DFF,Växjö DFF,3,1,Hemmaseger
+2019,Kungsbacka DFF,Djurgårdens IF,1,2,Bortaseger
+2019,Kungsbacka DFF,Eskilstuna United,0,4,Bortaseger
+2019,Kungsbacka DFF,FC Rosengård,1,2,Bortaseger
+2019,Kungsbacka DFF,KIF Örebro,1,5,Bortaseger
+2019,Kungsbacka DFF,Kopparbergs/Göteborg,0,3,Bortaseger
+2019,Kungsbacka DFF,Kristianstads DFF,0,5,Bortaseger
+2019,Kungsbacka DFF,Limhamn Bunkeflo,2,2,Oavgjort
+2019,Kungsbacka DFF,Linköpings FC,2,1,Hemmaseger
+2019,Kungsbacka DFF,Piteå IF,1,5,Bortaseger
+2019,Kungsbacka DFF,Vittsjö GIK,0,1,Bortaseger
+2019,Kungsbacka DFF,Växjö DFF,0,3,Bortaseger
+2019,Limhamn Bunkeflo,Djurgårdens IF,0,1,Bortaseger
+2019,Limhamn Bunkeflo,Eskilstuna United,0,1,Bortaseger
+2019,Limhamn Bunkeflo,FC Rosengård,3,2,Hemmaseger
+2019,Limhamn Bunkeflo,KIF Örebro,1,3,Bortaseger
+2019,Limhamn Bunkeflo,Kopparbergs/Göteborg,0,2,Bortaseger
+2019,Limhamn Bunkeflo,Kristianstads DFF,2,2,Oavgjort
+2019,Limhamn Bunkeflo,Kungsbacka DFF,2,0,Hemmaseger
+2019,Limhamn Bunkeflo,Linköpings FC,0,4,Bortaseger
+2019,Limhamn Bunkeflo,Piteå IF,1,1,Oavgjort
+2019,Limhamn Bunkeflo,Vittsjö GIK,0,3,Bortaseger
+2019,Limhamn Bunkeflo,Växjö DFF,1,1,Oavgjort
+2019,Linköpings FC,Djurgårdens IF,4,1,Hemmaseger
+2019,Linköpings FC,Eskilstuna United,0,1,Bortaseger
+2019,Linköpings FC,FC Rosengård,0,0,Oavgjort
+2019,Linköpings FC,KIF Örebro,4,1,Hemmaseger
+2019,Linköpings FC,Kopparbergs/Göteborg,1,0,Hemmaseger
+2019,Linköpings FC,Kristianstads DFF,0,0,Oavgjort
+2019,Linköpings FC,Kungsbacka DFF,2,0,Hemmaseger
+2019,Linköpings FC,Limhamn Bunkeflo,3,0,Hemmaseger
+2019,Linköpings FC,Piteå IF,0,0,Oavgjort
+2019,Linköpings FC,Vittsjö GIK,2,1,Hemmaseger
+2019,Linköpings FC,Växjö DFF,5,0,Hemmaseger
+2019,Piteå IF,Djurgårdens IF,1,0,Hemmaseger
+2019,Piteå IF,Eskilstuna United,3,1,Hemmaseger
+2019,Piteå IF,FC Rosengård,1,1,Oavgjort
+2019,Piteå IF,KIF Örebro,0,3,Bortaseger
+2019,Piteå IF,Kopparbergs/Göteborg,1,2,Bortaseger
+2019,Piteå IF,Kristianstads DFF,2,1,Hemmaseger
+2019,Piteå IF,Kungsbacka DFF,3,0,Hemmaseger
+2019,Piteå IF,Limhamn Bunkeflo,2,1,Hemmaseger
+2019,Piteå IF,Linköpings FC,1,0,Hemmaseger
+2019,Piteå IF,Vittsjö GIK,0,0,Oavgjort
+2019,Piteå IF,Växjö DFF,4,1,Hemmaseger
+2019,Vittsjö GIK,Djurgårdens IF,2,0,Hemmaseger
+2019,Vittsjö GIK,Eskilstuna United,1,0,Hemmaseger
+2019,Vittsjö GIK,FC Rosengård,0,0,Oavgjort
+2019,Vittsjö GIK,KIF Örebro,1,0,Hemmaseger
+2019,Vittsjö GIK,Kopparbergs/Göteborg,2,4,Bortaseger
+2019,Vittsjö GIK,Kristianstads DFF,2,0,Hemmaseger
+2019,Vittsjö GIK,Kungsbacka DFF,3,0,Hemmaseger
+2019,Vittsjö GIK,Limhamn Bunkeflo,4,0,Hemmaseger
+2019,Vittsjö GIK,Linköpings FC,2,0,Hemmaseger
+2019,Vittsjö GIK,Piteå IF,0,0,Oavgjort
+2019,Vittsjö GIK,Växjö DFF,2,0,Hemmaseger
+2019,Växjö DFF,Djurgårdens IF,2,1,Hemmaseger
+2019,Växjö DFF,Eskilstuna United,1,1,Oavgjort
+2019,Växjö DFF,FC Rosengård,0,0,Oavgjort
+2019,Växjö DFF,KIF Örebro,2,1,Hemmaseger
+2019,Växjö DFF,Kopparbergs/Göteborg,0,2,Bortaseger
+2019,Växjö DFF,Kristianstads DFF,2,2,Oavgjort
+2019,Växjö DFF,Kungsbacka DFF,5,5,Oavgjort
+2019,Växjö DFF,Limhamn Bunkeflo,3,1,Hemmaseger
+2019,Växjö DFF,Linköpings FC,1,0,Hemmaseger
+2019,Växjö DFF,Piteå IF,0,0,Oavgjort
+2019,Växjö DFF,Vittsjö GIK,1,1,Oavgjort
+2020,Djurgårdens IF,Eskilstuna United,2,1,Hemmaseger
+2020,Djurgårdens IF,FC Rosengård,0,0,Oavgjort
+2020,Djurgårdens IF,IK Uppsala,2,0,Hemmaseger
+2020,Djurgårdens IF,KIF Örebro,0,1,Bortaseger
+2020,Djurgårdens IF,Kopparbergs/Göteborg,0,3,Bortaseger
+2020,Djurgårdens IF,Kristianstads DFF,3,3,Oavgjort
+2020,Djurgårdens IF,Linköpings FC,0,3,Bortaseger
+2020,Djurgårdens IF,Piteå IF,1,0,Hemmaseger
+2020,Djurgårdens IF,Umeå IK,1,1,Oavgjort
+2020,Djurgårdens IF,Vittsjö GIK,2,1,Hemmaseger
+2020,Djurgårdens IF,Växjö DFF,2,1,Hemmaseger
+2020,Eskilstuna United,Djurgårdens IF,3,2,Hemmaseger
+2020,Eskilstuna United,FC Rosengård,1,2,Bortaseger
+2020,Eskilstuna United,IK Uppsala,1,3,Bortaseger
+2020,Eskilstuna United,KIF Örebro,3,1,Hemmaseger
+2020,Eskilstuna United,Kopparbergs/Göteborg,1,1,Oavgjort
+2020,Eskilstuna United,Kristianstads DFF,2,3,Bortaseger
+2020,Eskilstuna United,Linköpings FC,0,1,Bortaseger
+2020,Eskilstuna United,Piteå IF,2,0,Hemmaseger
+2020,Eskilstuna United,Umeå IK,0,1,Bortaseger
+2020,Eskilstuna United,Vittsjö GIK,3,1,Hemmaseger
+2020,Eskilstuna United,Växjö DFF,3,0,Hemmaseger
+2020,FC Rosengård,Djurgårdens IF,0,0,Oavgjort
+2020,FC Rosengård,Eskilstuna United,1,2,Bortaseger
+2020,FC Rosengård,IK Uppsala,5,1,Hemmaseger
+2020,FC Rosengård,KIF Örebro,6,0,Hemmaseger
+2020,FC Rosengård,Kopparbergs/Göteborg,3,0,Hemmaseger
+2020,FC Rosengård,Kristianstads DFF,1,2,Bortaseger
+2020,FC Rosengård,Linköpings FC,7,1,Hemmaseger
+2020,FC Rosengård,Piteå IF,2,1,Hemmaseger
+2020,FC Rosengård,Umeå IK,0,0,Oavgjort
+2020,FC Rosengård,Vittsjö GIK,1,0,Hemmaseger
+2020,FC Rosengård,Växjö DFF,0,1,Bortaseger
+2020,IK Uppsala,Djurgårdens IF,3,2,Hemmaseger
+2020,IK Uppsala,Eskilstuna United,2,4,Bortaseger
+2020,IK Uppsala,FC Rosengård,1,9,Bortaseger
+2020,IK Uppsala,KIF Örebro,1,2,Bortaseger
+2020,IK Uppsala,Kopparbergs/Göteborg,0,2,Bortaseger
+2020,IK Uppsala,Kristianstads DFF,1,4,Bortaseger
+2020,IK Uppsala,Linköpings FC,0,1,Bortaseger
+2020,IK Uppsala,Piteå IF,0,1,Bortaseger
+2020,IK Uppsala,Umeå IK,3,0,Hemmaseger
+2020,IK Uppsala,Vittsjö GIK,0,1,Bortaseger
+2020,IK Uppsala,Växjö DFF,0,2,Bortaseger
+2020,KIF Örebro,Djurgårdens IF,2,0,Hemmaseger
+2020,KIF Örebro,Eskilstuna United,3,3,Oavgjort
+2020,KIF Örebro,FC Rosengård,0,3,Bortaseger
+2020,KIF Örebro,IK Uppsala,2,1,Hemmaseger
+2020,KIF Örebro,Kopparbergs/Göteborg,0,1,Bortaseger
+2020,KIF Örebro,Kristianstads DFF,1,2,Bortaseger
+2020,KIF Örebro,Linköpings FC,1,1,Oavgjort
+2020,KIF Örebro,Piteå IF,0,1,Bortaseger
+2020,KIF Örebro,Umeå IK,5,1,Hemmaseger
+2020,KIF Örebro,Vittsjö GIK,1,2,Bortaseger
+2020,KIF Örebro,Växjö DFF,1,0,Hemmaseger
+2020,Kopparbergs/Göteborg,Djurgårdens IF,2,0,Hemmaseger
+2020,Kopparbergs/Göteborg,Eskilstuna United,3,0,Hemmaseger
+2020,Kopparbergs/Göteborg,FC Rosengård,1,1,Oavgjort
+2020,Kopparbergs/Göteborg,IK Uppsala,3,0,Hemmaseger
+2020,Kopparbergs/Göteborg,KIF Örebro,1,1,Oavgjort
+2020,Kopparbergs/Göteborg,Kristianstads DFF,5,1,Hemmaseger
+2020,Kopparbergs/Göteborg,Linköpings FC,2,0,Hemmaseger
+2020,Kopparbergs/Göteborg,Piteå IF,3,0,Hemmaseger
+2020,Kopparbergs/Göteborg,Umeå IK,2,0,Hemmaseger
+2020,Kopparbergs/Göteborg,Vittsjö GIK,3,1,Hemmaseger
+2020,Kopparbergs/Göteborg,Växjö DFF,4,0,Hemmaseger
+2020,Kristianstads DFF,Djurgårdens IF,0,1,Bortaseger
+2020,Kristianstads DFF,Eskilstuna United,1,0,Hemmaseger
+2020,Kristianstads DFF,FC Rosengård,0,1,Bortaseger
+2020,Kristianstads DFF,IK Uppsala,2,1,Hemmaseger
+2020,Kristianstads DFF,KIF Örebro,4,2,Hemmaseger
+2020,Kristianstads DFF,Kopparbergs/Göteborg,1,0,Hemmaseger
+2020,Kristianstads DFF,Linköpings FC,1,2,Bortaseger
+2020,Kristianstads DFF,Piteå IF,3,1,Hemmaseger
+2020,Kristianstads DFF,Umeå IK,1,1,Oavgjort
+2020,Kristianstads DFF,Vittsjö GIK,4,0,Hemmaseger
+2020,Kristianstads DFF,Växjö DFF,2,0,Hemmaseger
+2020,Linköpings FC,Djurgårdens IF,1,0,Hemmaseger
+2020,Linköpings FC,Eskilstuna United,1,0,Hemmaseger
+2020,Linköpings FC,FC Rosengård,2,2,Oavgjort
+2020,Linköpings FC,IK Uppsala,3,1,Hemmaseger
+2020,Linköpings FC,KIF Örebro,1,0,Hemmaseger
+2020,Linköpings FC,Kopparbergs/Göteborg,0,7,Bortaseger
+2020,Linköpings FC,Kristianstads DFF,0,3,Bortaseger
+2020,Linköpings FC,Piteå IF,1,2,Bortaseger
+2020,Linköpings FC,Umeå IK,3,0,Hemmaseger
+2020,Linköpings FC,Vittsjö GIK,1,2,Bortaseger
+2020,Linköpings FC,Växjö DFF,3,0,Hemmaseger
+2020,Piteå IF,Djurgårdens IF,1,1,Oavgjort
+2020,Piteå IF,Eskilstuna United,1,0,Hemmaseger
+2020,Piteå IF,FC Rosengård,0,3,Bortaseger
+2020,Piteå IF,IK Uppsala,2,0,Hemmaseger
+2020,Piteå IF,KIF Örebro,1,1,Oavgjort
+2020,Piteå IF,Kopparbergs/Göteborg,1,5,Bortaseger
+2020,Piteå IF,Kristianstads DFF,2,3,Bortaseger
+2020,Piteå IF,Linköpings FC,2,2,Oavgjort
+2020,Piteå IF,Umeå IK,1,2,Bortaseger
+2020,Piteå IF,Vittsjö GIK,0,0,Oavgjort
+2020,Piteå IF,Växjö DFF,0,1,Bortaseger
+2020,Umeå IK,Djurgårdens IF,0,0,Oavgjort
+2020,Umeå IK,Eskilstuna United,1,0,Hemmaseger
+2020,Umeå IK,FC Rosengård,0,3,Bortaseger
+2020,Umeå IK,IK Uppsala,1,0,Hemmaseger
+2020,Umeå IK,KIF Örebro,0,2,Bortaseger
+2020,Umeå IK,Kopparbergs/Göteborg,0,2,Bortaseger
+2020,Umeå IK,Kristianstads DFF,0,4,Bortaseger
+2020,Umeå IK,Linköpings FC,3,2,Hemmaseger
+2020,Umeå IK,Piteå IF,2,3,Bortaseger
+2020,Umeå IK,Vittsjö GIK,3,0,Hemmaseger
+2020,Umeå IK,Växjö DFF,1,3,Bortaseger
+2020,Vittsjö GIK,Djurgårdens IF,1,1,Oavgjort
+2020,Vittsjö GIK,Eskilstuna United,3,2,Hemmaseger
+2020,Vittsjö GIK,FC Rosengård,1,1,Oavgjort
+2020,Vittsjö GIK,IK Uppsala,4,2,Hemmaseger
+2020,Vittsjö GIK,KIF Örebro,4,0,Hemmaseger
+2020,Vittsjö GIK,Kopparbergs/Göteborg,0,2,Bortaseger
+2020,Vittsjö GIK,Kristianstads DFF,3,3,Oavgjort
+2020,Vittsjö GIK,Linköpings FC,1,2,Bortaseger
+2020,Vittsjö GIK,Piteå IF,0,1,Bortaseger
+2020,Vittsjö GIK,Umeå IK,3,2,Hemmaseger
+2020,Vittsjö GIK,Växjö DFF,3,1,Hemmaseger
+2020,Växjö DFF,Djurgårdens IF,1,0,Hemmaseger
+2020,Växjö DFF,Eskilstuna United,2,0,Hemmaseger
+2020,Växjö DFF,FC Rosengård,0,3,Bortaseger
+2020,Växjö DFF,IK Uppsala,1,1,Oavgjort
+2020,Växjö DFF,KIF Örebro,0,0,Oavgjort
+2020,Växjö DFF,Kopparbergs/Göteborg,0,2,Bortaseger
+2020,Växjö DFF,Kristianstads DFF,2,1,Hemmaseger
+2020,Växjö DFF,Linköpings FC,0,1,Bortaseger
+2020,Växjö DFF,Piteå IF,1,0,Hemmaseger
+2020,Växjö DFF,Umeå IK,2,2,Oavgjort
+2020,Växjö DFF,Vittsjö GIK,0,2,Bortaseger

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Regression och korrelation | R-anvisningar till Grundläggande statistik</title>
+  <meta name="description" content="8 Regression och korrelation | R-anvisningar till Grundläggande statistik" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Regression och korrelation | R-anvisningar till Grundläggande statistik" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Regression och korrelation | R-anvisningar till Grundläggande statistik" />
+  
+  
+  
+
+
+
+<meta name="date" content="2023-07-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variansanalys.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R-anvisningar</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduktion</a></li>
+<li class="chapter" data-level="" data-path="installation-av-r-och-rstudio.html"><a href="installation-av-r-och-rstudio.html"><i class="fa fa-check"></i>Installation av R och RStudio</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="installation-av-r-och-rstudio.html"><a href="installation-av-r-och-rstudio.html#inledning"><i class="fa fa-check"></i><b>0.1</b> Inledning</a></li>
+<li class="chapter" data-level="0.2" data-path="installation-av-r-och-rstudio.html"><a href="installation-av-r-och-rstudio.html#installation-av-r"><i class="fa fa-check"></i><b>0.2</b> Installation av R</a></li>
+<li class="chapter" data-level="0.3" data-path="installation-av-r-och-rstudio.html"><a href="installation-av-r-och-rstudio.html#installation-av-rstudio"><i class="fa fa-check"></i><b>0.3</b> Installation av RStudio</a></li>
+<li class="chapter" data-level="0.4" data-path="installation-av-r-och-rstudio.html"><a href="installation-av-r-och-rstudio.html#gränssnittet-i-rstudio"><i class="fa fa-check"></i><b>0.4</b> Gränssnittet i RStudio</a></li>
+<li class="chapter" data-level="0.5" data-path="installation-av-r-och-rstudio.html"><a href="installation-av-r-och-rstudio.html#paket-i-r"><i class="fa fa-check"></i><b>0.5</b> Paket i R</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html"><i class="fa fa-check"></i><b>1</b> Datahantering och grafer</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#uppstart-och-orientering"><i class="fa fa-check"></i><b>1.1</b> Uppstart och orientering</a></li>
+<li class="chapter" data-level="1.2" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#packages-från-cran"><i class="fa fa-check"></i><b>1.2</b> <em>Packages</em> från CRAN</a></li>
+<li class="chapter" data-level="1.3" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#objekt-och-funktioner"><i class="fa fa-check"></i><b>1.3</b> Objekt och funktioner</a></li>
+<li class="chapter" data-level="1.4" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#sekvenser-av-funktioner"><i class="fa fa-check"></i><b>1.4</b> Sekvenser av funktioner</a></li>
+<li class="chapter" data-level="1.5" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#datainskrivning-och-dataimport-från-web"><i class="fa fa-check"></i><b>1.5</b> Datainskrivning och dataimport från web</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#inskrivning-av-data"><i class="fa fa-check"></i><b>1.5.1</b> Inskrivning av data</a></li>
+<li class="chapter" data-level="1.5.2" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#import-från-en-extern-fil"><i class="fa fa-check"></i><b>1.5.2</b> Import från en extern fil</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#urval-ur-en-tabell-med-select-och-filter"><i class="fa fa-check"></i><b>1.6</b> Urval ur en tabell med <code>select</code> och <code>filter</code></a></li>
+<li class="chapter" data-level="1.7" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#grafer-med-ggplot2"><i class="fa fa-check"></i><b>1.7</b> Grafer med <code>ggplot2</code></a></li>
+<li class="chapter" data-level="1.8" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#bonus.-interaktiva-grafer-med-plotly"><i class="fa fa-check"></i><b>1.8</b> Bonus. Interaktiva grafer med <code>plotly</code></a></li>
+<li class="chapter" data-level="1.9" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#bonus.-warming-stripes"><i class="fa fa-check"></i><b>1.9</b> Bonus. Warming stripes</a></li>
+<li class="chapter" data-level="1.10" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#valfria-hemuppgifter"><i class="fa fa-check"></i><b>1.10</b> Valfria hemuppgifter</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html"><i class="fa fa-check"></i><b>2</b> Beskrivande statistik</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#repetition-från-datorövning-1"><i class="fa fa-check"></i><b>2.1</b> Repetition från datorövning 1</a></li>
+<li class="chapter" data-level="2.2" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#import-av-data-från-en-excelfil"><i class="fa fa-check"></i><b>2.2</b> Import av data från en Excelfil</a></li>
+<li class="chapter" data-level="2.3" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#ändra-och-skapa-nya-kolumner-med-mutate"><i class="fa fa-check"></i><b>2.3</b> Ändra och skapa nya kolumner med <code>mutate</code></a></li>
+<li class="chapter" data-level="2.4" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#sammanfattande-lägesmått"><i class="fa fa-check"></i><b>2.4</b> Sammanfattande lägesmått</a></li>
+<li class="chapter" data-level="2.5" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#sammanfattande-spridningsmått"><i class="fa fa-check"></i><b>2.5</b> Sammanfattande spridningsmått</a></li>
+<li class="chapter" data-level="2.6" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#ordna-upp-beskrivande-statistik-och-exportera"><i class="fa fa-check"></i><b>2.6</b> Ordna upp beskrivande statistik och exportera</a></li>
+<li class="chapter" data-level="2.7" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#stegvis-beräkning-av-varians"><i class="fa fa-check"></i><b>2.7</b> Stegvis beräkning av varians</a></li>
+<li class="chapter" data-level="2.8" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#kumulativt-medelvärde"><i class="fa fa-check"></i><b>2.8</b> Kumulativt medelvärde</a></li>
+<li class="chapter" data-level="2.9" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#darwin-exempel"><i class="fa fa-check"></i><b>2.9</b> Darwin-exempel</a></li>
+<li class="chapter" data-level="2.10" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#bonus.-tredimensionella-grafer-med-plotly"><i class="fa fa-check"></i><b>2.10</b> Bonus. Tredimensionella grafer med <code>plotly</code></a></li>
+<li class="chapter" data-level="2.11" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html#valfria-hemuppgifter-1"><i class="fa fa-check"></i><b>2.11</b> Valfria hemuppgifter</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="slumpvariabler.html"><a href="slumpvariabler.html"><i class="fa fa-check"></i><b>3</b> Slumpvariabler</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="slumpvariabler.html"><a href="slumpvariabler.html#repetition-från-datorövning-2"><i class="fa fa-check"></i><b>3.1</b> Repetition från datorövning 2</a></li>
+<li class="chapter" data-level="3.2" data-path="slumpvariabler.html"><a href="slumpvariabler.html#diskreta-fördelningar-i-allmänhet"><i class="fa fa-check"></i><b>3.2</b> Diskreta fördelningar i allmänhet</a></li>
+<li class="chapter" data-level="3.3" data-path="slumpvariabler.html"><a href="slumpvariabler.html#särskilda-diskreta-fördelningar-binomialfördelning"><i class="fa fa-check"></i><b>3.3</b> Särskilda diskreta fördelningar: binomialfördelning</a></li>
+<li class="chapter" data-level="3.4" data-path="slumpvariabler.html"><a href="slumpvariabler.html#särskilda-diskreta-fördelningar-poissonfördelning"><i class="fa fa-check"></i><b>3.4</b> Särskilda diskreta fördelningar: poissonfördelning</a></li>
+<li class="chapter" data-level="3.5" data-path="slumpvariabler.html"><a href="slumpvariabler.html#kontinuerliga-fördelningar-i-allmänhet"><i class="fa fa-check"></i><b>3.5</b> Kontinuerliga fördelningar i allmänhet</a></li>
+<li class="chapter" data-level="3.6" data-path="slumpvariabler.html"><a href="slumpvariabler.html#särskilda-kontinuerliga-fördelningar-normalfördelningen"><i class="fa fa-check"></i><b>3.6</b> Särskilda kontinuerliga fördelningar: normalfördelningen</a></li>
+<li class="chapter" data-level="3.7" data-path="slumpvariabler.html"><a href="slumpvariabler.html#bonus.-summan-av-två-slumpvariabler-med-slumptal"><i class="fa fa-check"></i><b>3.7</b> Bonus. Summan av två slumpvariabler med slumptal</a></li>
+<li class="chapter" data-level="3.8" data-path="slumpvariabler.html"><a href="slumpvariabler.html#bonus.-cirkelns-area-från-slumptal"><i class="fa fa-check"></i><b>3.8</b> Bonus. Cirkelns area från slumptal</a></li>
+<li class="chapter" data-level="3.9" data-path="slumpvariabler.html"><a href="slumpvariabler.html#bonus.-slump-och-ordning---sierpinski-triangeln"><i class="fa fa-check"></i><b>3.9</b> Bonus. Slump och ordning - Sierpinski-triangeln</a></li>
+<li class="chapter" data-level="3.10" data-path="slumpvariabler.html"><a href="slumpvariabler.html#valfria-hemuppgifter-2"><i class="fa fa-check"></i><b>3.10</b> Valfria hemuppgifter</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html"><i class="fa fa-check"></i><b>4</b> Ett stickprov av normalfördelad data</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#repetition-av-datorövning-3"><i class="fa fa-check"></i><b>4.1</b> Repetition av datorövning 3</a></li>
+<li class="chapter" data-level="4.2" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#test-av-medelvärde-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.2</b> Test av medelvärde för normalfördelad data</a></li>
+<li class="chapter" data-level="4.3" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#konfidensintervall-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.3</b> Konfidensintervall för normalfördelad data</a></li>
+<li class="chapter" data-level="4.4" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#normalfördelad-data-och-centrala-gränsvärdesatsen"><i class="fa fa-check"></i><b>4.4</b> Normalfördelad data och centrala gränsvärdesatsen</a></li>
+<li class="chapter" data-level="4.5" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall"><i class="fa fa-check"></i><b>4.5</b> Bonus. Simuleringar för t-test och konfidensintervall</a></li>
+<li class="chapter" data-level="4.6" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#valfria-hemuppgifter-3"><i class="fa fa-check"></i><b>4.6</b> Valfria hemuppgifter</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html"><i class="fa fa-check"></i><b>5</b> Ett stickprov av icke-normalfördelad data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#repetition-av-datorövning-4"><i class="fa fa-check"></i><b>5.1</b> Repetition av datorövning 4</a></li>
+<li class="chapter" data-level="5.2" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#proportioner-från-binär-data"><i class="fa fa-check"></i><b>5.2</b> Proportioner från binär data</a></li>
+<li class="chapter" data-level="5.3" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#konfidensintervall-för-proportioner"><i class="fa fa-check"></i><b>5.3</b> Konfidensintervall för proportioner</a></li>
+<li class="chapter" data-level="5.4" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#chi-två-test-för-goodness-of-fit"><i class="fa fa-check"></i><b>5.4</b> Chi-två-test för goodness-of-fit</a></li>
+<li class="chapter" data-level="5.5" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#chi-två-test-när-någon-parameter-skattas-från-datan"><i class="fa fa-check"></i><b>5.5</b> Chi-två-test när någon parameter skattas från datan</a></li>
+<li class="chapter" data-level="5.6" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#bonus.-interaktiva-kartor-med-leaflet"><i class="fa fa-check"></i><b>5.6</b> Bonus. Interaktiva kartor med leaflet</a></li>
+<li class="chapter" data-level="5.7" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#valfria-hemuppgifter-4"><i class="fa fa-check"></i><b>5.7</b> Valfria hemuppgifter</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html"><i class="fa fa-check"></i><b>6</b> Test för två stickprov</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html#repetition-av-datorövning-5"><i class="fa fa-check"></i><b>6.1</b> Repetition av datorövning 5</a></li>
+<li class="chapter" data-level="6.2" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html#två-stickprov-och-normalfördelad-data"><i class="fa fa-check"></i><b>6.2</b> Två stickprov och normalfördelad data</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html#t-test-för-två-matchade-stickprov"><i class="fa fa-check"></i><b>6.2.1</b> t-test för två matchade stickprov</a></li>
+<li class="chapter" data-level="6.2.2" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html#t-test-för-två-oberoende-stickprov"><i class="fa fa-check"></i><b>6.2.2</b> t-test för två oberoende stickprov</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html#z-test-och-konfidensintervall-för-två-proportioner"><i class="fa fa-check"></i><b>6.3</b> z-test och konfidensintervall för två proportioner</a></li>
+<li class="chapter" data-level="6.4" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html#chi-två-test-för-korstabeller"><i class="fa fa-check"></i><b>6.4</b> Chi-två-test för korstabeller</a></li>
+<li class="chapter" data-level="6.5" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html#bonus.-bilder-i-r"><i class="fa fa-check"></i><b>6.5</b> Bonus. Bilder i R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="variansanalys.html"><a href="variansanalys.html"><i class="fa fa-check"></i><b>7</b> Variansanalys</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="variansanalys.html"><a href="variansanalys.html#repetition-av-datorövning-6"><i class="fa fa-check"></i><b>7.1</b> Repetition av datorövning 6</a></li>
+<li class="chapter" data-level="7.2" data-path="variansanalys.html"><a href="variansanalys.html#allmänt"><i class="fa fa-check"></i><b>7.2</b> Allmänt</a></li>
+<li class="chapter" data-level="7.3" data-path="variansanalys.html"><a href="variansanalys.html#variansanalys.-en-faktor"><i class="fa fa-check"></i><b>7.3</b> Variansanalys. En faktor</a></li>
+<li class="chapter" data-level="7.4" data-path="variansanalys.html"><a href="variansanalys.html#variansanalys.-en-faktor-med-block"><i class="fa fa-check"></i><b>7.4</b> Variansanalys. En faktor med block</a></li>
+<li class="chapter" data-level="7.5" data-path="variansanalys.html"><a href="variansanalys.html#variansanalys.-två-faktorer-med-block"><i class="fa fa-check"></i><b>7.5</b> Variansanalys. Två faktorer med block</a></li>
+<li class="chapter" data-level="7.6" data-path="variansanalys.html"><a href="variansanalys.html#modellantaganden-och-residualer"><i class="fa fa-check"></i><b>7.6</b> Modellantaganden och residualer</a></li>
+<li class="chapter" data-level="7.7" data-path="variansanalys.html"><a href="variansanalys.html#bonus.-statistik-för-ekologi"><i class="fa fa-check"></i><b>7.7</b> Bonus. Statistik för ekologi</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regression-och-korrelation.html"><a href="regression-och-korrelation.html"><i class="fa fa-check"></i><b>8</b> Regression och korrelation</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="regression-och-korrelation.html"><a href="regression-och-korrelation.html#repetition-av-datorövning-7"><i class="fa fa-check"></i><b>8.1</b> Repetition av datorövning 7</a></li>
+<li class="chapter" data-level="8.2" data-path="regression-och-korrelation.html"><a href="regression-och-korrelation.html#regression"><i class="fa fa-check"></i><b>8.2</b> Regression</a></li>
+<li class="chapter" data-level="8.3" data-path="regression-och-korrelation.html"><a href="regression-och-korrelation.html#korrelation"><i class="fa fa-check"></i><b>8.3</b> Korrelation</a></li>
+<li class="chapter" data-level="8.4" data-path="regression-och-korrelation.html"><a href="regression-och-korrelation.html#bonus.-skrapa-data-från-webbsidor"><i class="fa fa-check"></i><b>8.4</b> Bonus. Skrapa data från webbsidor</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R-anvisningar till <em>Grundläggande statistik</em></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="regression-och-korrelation" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Regression och korrelation<a href="regression-och-korrelation.html#regression-och-korrelation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Datorövning 8 handlar om regression och korrelation. Efter övningen ska vi kunna</p>
+<ul>
+<li><p>skatta en regressionsmodell i R,</p></li>
+<li><p>testa parametrar i modellen med F-test och t-test,</p></li>
+<li><p>göra lämpliga tester av modellantaganden,</p></li>
+<li><p>beräkna och tolka korrelationen mellan två variabler.</p></li>
+</ul>
+<div id="repetition-av-datorövning-7" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Repetition av datorövning 7<a href="regression-och-korrelation.html#repetition-av-datorövning-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>När man startar en ny R-session bör man ladda de paket man vet kommer behövas med <code>library()</code>. Om paket inte finns installerade måste man först köra <code>install.packages()</code>.</p>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="regression-och-korrelation.html#cb544-1" tabindex="-1"></a><span class="co"># install.packages(&quot;tidyverse&quot;)</span></span>
+<span id="cb544-2"><a href="regression-och-korrelation.html#cb544-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>I datorövning 7 tittade vi på variansanalys - en metod som gör det möjligt att utvidga t-testet för två grupper till ett godtyckligt antal grupper eller kombinationer av faktorer. I variansanalys skattar man en modell som förklarar ett datautfall. Utifrån modellen sätter man upp en anova-tabell som delar upp den totala variansen i en förklarad del och en kvarvarande residualdel. Anova-tabell ger också ett F-test som testar om det finns några skillnader mellan grupper. Från en skattad modell kan man sedan göra parvisa jämförelser mellan specifika grupper och testa modellantaganden (främst antagande om normalfördelning och lika varians inom grupper).</p>
+<p>Ta som exempel följande data på tandtillväxt (<code>len</code>) hos marsvin under C-vitaminbehandling i olika doser (<code>dose</code>) och två olika metoder (<code>supp</code>), tillgängligt i R som objektet <code>ToothGrowth</code>.</p>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="regression-och-korrelation.html#cb545-1" tabindex="-1"></a>ToothGrowth <span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">dose =</span> <span class="fu">as.character</span>(dose))</span>
+<span id="cb545-2"><a href="regression-och-korrelation.html#cb545-2" tabindex="-1"></a></span>
+<span id="cb545-3"><a href="regression-och-korrelation.html#cb545-3" tabindex="-1"></a><span class="fu">ggplot</span>(ToothGrowth, <span class="fu">aes</span>(len, supp, <span class="at">fill =</span> dose)) <span class="sc">+</span> </span>
+<span id="cb545-4"><a href="regression-och-korrelation.html#cb545-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-348-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Ett lådagram visar en klar skillnad mellan doser och en svagare skillnad mellan metoder. Det finns också tecken på att metoderna svarar olika på dos i att metoden <em>VC</em> ligger lägre än <em>OJ</em> vid de låga doserna men över (eller iallafall lika) vid den höga dosen.</p>
+<p>En envägsanova-modell (en modell med en faktor) kan skattas med <code>lm()</code> och en anovatabell kan tas fram med <code>Anova()</code> från paketet <code>car</code>.</p>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="regression-och-korrelation.html#cb546-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(len <span class="sc">~</span> dose, <span class="at">data =</span> ToothGrowth)</span>
+<span id="cb546-2"><a href="regression-och-korrelation.html#cb546-2" tabindex="-1"></a></span>
+<span id="cb546-3"><a href="regression-och-korrelation.html#cb546-3" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb546-4"><a href="regression-och-korrelation.html#cb546-4" tabindex="-1"></a><span class="fu">Anova</span>(mod)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: len
+##           Sum Sq Df F value    Pr(&gt;F)    
+## dose      2426.4  2  67.416 9.533e-16 ***
+## Residuals 1025.8 57                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>F-testets nollhypotes är att alla grupper (här alla doser) har samma populationsmedelvärde. Det låga p-värdet pekar på en klar skillnad mellan doser.</p>
+<p>En anovamodell bygger på antaganden om normalfördelning och lika varianser. Normalfördelningsantagandet kan undersökas med en QQ-graf över residualerna och variansantagandet kan undersökas med en spridningsgraf över skattade värden och residualer.</p>
+<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="regression-och-korrelation.html#cb548-1" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb548-2"><a href="regression-och-korrelation.html#cb548-2" tabindex="-1"></a>ToothGrowth <span class="ot">&lt;-</span> ToothGrowth <span class="sc">%&gt;%</span> </span>
+<span id="cb548-3"><a href="regression-och-korrelation.html#cb548-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Skattade =</span> <span class="fu">fitted</span>(mod),</span>
+<span id="cb548-4"><a href="regression-och-korrelation.html#cb548-4" tabindex="-1"></a>         <span class="at">Residualer =</span> <span class="fu">residuals</span>(mod))</span>
+<span id="cb548-5"><a href="regression-och-korrelation.html#cb548-5" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ToothGrowth, <span class="fu">aes</span>(<span class="at">sample =</span> Residualer)) <span class="sc">+</span> <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="fu">geom_qq_line</span>()</span>
+<span id="cb548-6"><a href="regression-och-korrelation.html#cb548-6" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(ToothGrowth, <span class="fu">aes</span>(Skattade, Residualer)) <span class="sc">+</span></span>
+<span id="cb548-7"><a href="regression-och-korrelation.html#cb548-7" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb548-8"><a href="regression-och-korrelation.html#cb548-8" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb548-9"><a href="regression-och-korrelation.html#cb548-9" tabindex="-1"></a>g1 <span class="sc">+</span> g2</span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-350-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Punkterna ligger ungefär på linjen i QQ-grafen och punkterna har ungefär samma spridning för alla nivåer av det skattade värdet.</p>
+<p>Anova-modeller kan lätt byggas ut genom att lägga till fler faktorer. Här är det till exempel naturligt att skatta en modell med både metod och dos, vilket kan göras genom att lägga till <code>supp</code> till formeln i <code>lm()</code>.</p>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="regression-och-korrelation.html#cb549-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(len <span class="sc">~</span> dose <span class="sc">*</span> supp, ToothGrowth)</span>
+<span id="cb549-2"><a href="regression-och-korrelation.html#cb549-2" tabindex="-1"></a><span class="fu">Anova</span>(mod)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: len
+##            Sum Sq Df F value    Pr(&gt;F)    
+## dose      2426.43  2  92.000 &lt; 2.2e-16 ***
+## supp       205.35  1  15.572 0.0002312 ***
+## dose:supp  108.32  2   4.107 0.0218603 *  
+## Residuals  712.11 54                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Resultaten är i linje med grafen - dos har en stor effekt medan metod och interaktionen mellan dos och metod är något svagare, om än signifikanta.</p>
+<p>En anovamodell kan användas för parvisa jämförelse, vilket ibland kallas post-hoc-test. Den vanligaste är Tukey-testet, men andra tester kan också förekomma. Testet kan utföras med <code>emmeans()</code> från paketet med samma namn. Följande ger en jämförelse mellan doser uppdelat efter metod.</p>
+<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="regression-och-korrelation.html#cb551-1" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb551-2"><a href="regression-och-korrelation.html#cb551-2" tabindex="-1"></a><span class="fu">emmeans</span>(mod, pairwise <span class="sc">~</span> dose <span class="sc">|</span> supp)</span></code></pre></div>
+<pre><code>## $emmeans
+## supp = OJ:
+##  dose emmean   SE df lower.CL upper.CL
+##  0.5   13.23 1.15 54    10.93     15.5
+##  1     22.70 1.15 54    20.40     25.0
+##  2     26.06 1.15 54    23.76     28.4
+## 
+## supp = VC:
+##  dose emmean   SE df lower.CL upper.CL
+##  0.5    7.98 1.15 54     5.68     10.3
+##  1     16.77 1.15 54    14.47     19.1
+##  2     26.14 1.15 54    23.84     28.4
+## 
+## Confidence level used: 0.95 
+## 
+## $contrasts
+## supp = OJ:
+##  contrast        estimate   SE df t.ratio p.value
+##  dose0.5 - dose1    -9.47 1.62 54  -5.831  &lt;.0001
+##  dose0.5 - dose2   -12.83 1.62 54  -7.900  &lt;.0001
+##  dose1 - dose2      -3.36 1.62 54  -2.069  0.1060
+## 
+## supp = VC:
+##  contrast        estimate   SE df t.ratio p.value
+##  dose0.5 - dose1    -8.79 1.62 54  -5.413  &lt;.0001
+##  dose0.5 - dose2   -18.16 1.62 54 -11.182  &lt;.0001
+##  dose1 - dose2      -9.37 1.62 54  -5.770  &lt;.0001
+## 
+## P value adjustment: tukey method for comparing a family of 3 estimates</code></pre>
+</div>
+<div id="regression" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Regression<a href="regression-och-korrelation.html#regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I en regression modelleras en numerisk variabel som en funktion av en annan numerisk variabel. Vid enkel linjär regression finns <em>en</em> sådan <em>förklarande variabel</em> och förhållandet mellan variablerna antas vara linjärt.</p>
+<p>Ta som exempel data på förväntad medellivslängd och bnp per capita. Datan hämtas från <code>gapminder</code>-paketet. Paketet <code>ggrepel</code> och funktionen <code>geom_text_repel()</code> kan användas för att sätta punktetiketter som inte överlappar. För enklare tolkning av modellen transformeras bnp per capita till att vara i tusen dollar, snarare än dollar.</p>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="regression-och-korrelation.html#cb553-1" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb553-2"><a href="regression-och-korrelation.html#cb553-2" tabindex="-1"></a>dat_eu07 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb553-3"><a href="regression-och-korrelation.html#cb553-3" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, continent <span class="sc">==</span> <span class="st">&quot;Europe&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb553-4"><a href="regression-och-korrelation.html#cb553-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdpPercap =</span> gdpPercap <span class="sc">/</span> <span class="dv">1000</span>)</span>
+<span id="cb553-5"><a href="regression-och-korrelation.html#cb553-5" tabindex="-1"></a></span>
+<span id="cb553-6"><a href="regression-och-korrelation.html#cb553-6" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb553-7"><a href="regression-och-korrelation.html#cb553-7" tabindex="-1"></a><span class="fu">ggplot</span>(dat_eu07, <span class="fu">aes</span>(gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb553-8"><a href="regression-och-korrelation.html#cb553-8" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb553-9"><a href="regression-och-korrelation.html#cb553-9" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> country), <span class="at">size =</span> <span class="dv">3</span>)</span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-353-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Datan visar ett positivt samband mellan variablerna - högre bnp per capita är kopplat till högre medellivslängd.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-201" class="exercise"><strong>Uppgift 8.1  (Data för 1957) </strong></span>Vad måste ändras i stycket nedan för att plocka ut data och göra en graf för Europa 1957?</p>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="regression-och-korrelation.html#cb554-1" tabindex="-1"></a>dat_eu57 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb554-2"><a href="regression-och-korrelation.html#cb554-2" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>, continent <span class="sc">==</span> <span class="st">&quot;Europe&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb554-3"><a href="regression-och-korrelation.html#cb554-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gdpPercap =</span> gdpPercap <span class="sc">/</span> <span class="dv">1000</span>)</span>
+<span id="cb554-4"><a href="regression-och-korrelation.html#cb554-4" tabindex="-1"></a></span>
+<span id="cb554-5"><a href="regression-och-korrelation.html#cb554-5" tabindex="-1"></a><span class="fu">ggplot</span>(dat_eu57, <span class="fu">aes</span>(gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb554-6"><a href="regression-och-korrelation.html#cb554-6" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb554-7"><a href="regression-och-korrelation.html#cb554-7" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> country), <span class="at">size =</span> <span class="dv">3</span>)</span></code></pre></div>
+</div>
+<p>En regressionmodell kan i R skattas med <code>lm</code>-funktionen. Syntaxen är väldigt lik den för anovamodellen, men istället för en faktor som förklarande variabel används nu en kontinuerlig variabel.</p>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="regression-och-korrelation.html#cb555-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> gdpPercap, <span class="at">data =</span> dat_eu07)</span>
+<span id="cb555-2"><a href="regression-och-korrelation.html#cb555-2" tabindex="-1"></a><span class="fu">summary</span>(mod)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = lifeExp ~ gdpPercap, data = dat_eu07)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.79839 -1.30472  0.00807  1.33443  2.87766 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 72.27106    0.69416 104.113  &lt; 2e-16 ***
+## gdpPercap    0.21463    0.02514   8.537  2.8e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.598 on 28 degrees of freedom
+## Multiple R-squared:  0.7225, Adjusted R-squared:  0.7125 
+## F-statistic: 72.88 on 1 and 28 DF,  p-value: 2.795e-09</code></pre>
+<p>Funktionen <code>summary</code> ger en sammanfattning av modellen. Skattningen av modellens konstanta parameter ges som raden <code>(Intercept)</code> och dess tolkning är som förväntat värde i medellivslängd om bnp per capita är noll. Det är ofta lutningsparametern som är mer intressant. Skattningen av lutningsparametern ges på den rad som har samma namn som den förklarande variabeln, här <code>gdpPercap</code>. Den skattade parametern är 0.2146. Lutningsparametern har den generella tolkning som ökningen i y-variabeln när x-variabeln ökar med 1. I det här fallet ger 0.2146 att ett lands medellivslängd ökar med ungefär 0.2146 år (eller 78 dagar) när bnp per capita ökar med 1000 dollar.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-202" class="exercise"><strong>Uppgift 8.2  (Modell för 1957) </strong></span>Skatta samma modell som ovan, denna gång med data från 1957. Tolka lutningsparametern i ord. Är effekten av ökad bnp större 2007 än den var 1957?</p>
+</div>
+<p>Man kan enkelt rita ut regressionlinjen i en graf med <code>geom_smooth()</code> och argumentet <code>method</code> satt till <code>lm</code>.</p>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="regression-och-korrelation.html#cb557-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_eu07, <span class="fu">aes</span>(gdpPercap, lifeExp)) <span class="sc">+</span></span>
+<span id="cb557-2"><a href="regression-och-korrelation.html#cb557-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb557-3"><a href="regression-och-korrelation.html#cb557-3" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> country), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb557-4"><a href="regression-och-korrelation.html#cb557-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-356-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Den blå linjen illustrerar regressionlinjen 72.27 + 0.2146x. Det grå bandet kring linjen är ett konfidensintervall för skattningen av y-variabeln.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-203" class="exercise"><strong>Uppgift 8.3  (Graf för 1957) </strong></span>Använd <code>geom_smooth(method = lm)</code> för att lägga till en regressionslinje för data för 1957. Hur mycket påverkar de två avvikande länderna?</p>
+</div>
+<p>Utskriften från <code>summary</code> ger också tester av parametrarna (den högra kolumnen <code>Pr(&gt;|t|)</code> ger p-värdet för ett test där nollhypotesen är att populationsparametern är noll). I det här fallet är både intercept och lutning skilda från noll. Motsvarande F-test för lutningen kan tas fram med en anova-tabell.</p>
+<div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="regression-och-korrelation.html#cb558-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb558-2"><a href="regression-och-korrelation.html#cb558-2" tabindex="-1"></a><span class="fu">Anova</span>(mod)</span></code></pre></div>
+<pre><code>## Anova Table (Type II tests)
+## 
+## Response: lifeExp
+##            Sum Sq Df F value    Pr(&gt;F)    
+## gdpPercap 186.031  1  72.883 2.795e-09 ***
+## Residuals  71.469 28                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Testerna av en regressionsmodell bygger på ett normalfördelningsantagande och ett antagande om <em>homoskedasticitet</em> (lika varians i y oavsett position på x-axeln). Antagandena kan undersökas genom att titta på skattningens <em>residualer</em> - skillnaden mellan det faktiska y-värdet och modellens värde. Residualerna kan undersökas med ett histogram eller en QQ-plot. En annan vanlig diagnosplot är ett spridningsdiagram med skattade värden på x-axeln och residualerna på y-axeln.</p>
+<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="regression-och-korrelation.html#cb560-1" tabindex="-1"></a>dat_eu07 <span class="ot">&lt;-</span> dat_eu07 <span class="sc">%&gt;%</span> </span>
+<span id="cb560-2"><a href="regression-och-korrelation.html#cb560-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Residualer =</span> <span class="fu">residuals</span>(mod),</span>
+<span id="cb560-3"><a href="regression-och-korrelation.html#cb560-3" tabindex="-1"></a>         <span class="at">Skattade =</span> <span class="fu">fitted</span>(mod))</span>
+<span id="cb560-4"><a href="regression-och-korrelation.html#cb560-4" tabindex="-1"></a></span>
+<span id="cb560-5"><a href="regression-och-korrelation.html#cb560-5" tabindex="-1"></a><span class="fu">ggplot</span>(dat_eu07, <span class="fu">aes</span>(<span class="at">sample =</span> Residualer)) <span class="sc">+</span> <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="fu">geom_qq_line</span>()</span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-358-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="regression-och-korrelation.html#cb561-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_eu07, <span class="fu">aes</span>(Skattade, Residualer)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-358-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Om data följer en normalfördelning bör histogrammet visa en ungefärlig normalkurva, QQ-plotten bör visa punkter på den diagonala linjen och spridningsdiagrammet bör visa en slumpmässig spridning av punkter. Graferna pekar i det här fallet inte på några tydliga avvikelser från normalfördelningsantagandet, möjligen pekar QQ-plotten på mindre spridning i svansarna än en teoretisk normalfördelning.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-204" class="exercise"><strong>Uppgift 8.4  (Diagnos för 1957) </strong></span>Gör lämpliga ändringar i data ovan för diagnosgrafer för data från 1957. Finns det några tydliga avvikande värden?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-205" class="exercise"><strong>Uppgift 8.5  (Icke-linjära samband) </strong></span>Låt oss titta på hela gapminder-datan för 2007.</p>
+<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="regression-och-korrelation.html#cb562-1" tabindex="-1"></a>dat_2007 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb562-2"><a href="regression-och-korrelation.html#cb562-2" tabindex="-1"></a><span class="fu">ggplot</span>(dat_2007, <span class="fu">aes</span>(gdpPercap, lifeExp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<p>Hur ser sambandet mellan bnp och medellivslängd ut? Vad skulle vara problematiskt med simpel linjär regression i det här fallet? När vi tittade på normalfördelningen sa vi att man ofta kan logaritmera en variabeln och få <em>bättre</em> egenskaper. Vad ska ändras i koden ovan för att använda logaritmerad <code>gdpPercap</code> istället för den ursprungliga variabeln? Är det sambandet mer linjärt?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-206" class="exercise"><strong>Uppgift 8.6  (Log-transformerad data) </strong></span>Vad ska ändras i koden nedan för att använda logaritmerad <code>gdpPercap</code> istället för den ursprungliga variabeln? Är det sambandet mer linjärt?</p>
+<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="regression-och-korrelation.html#cb563-1" tabindex="-1"></a>dat_2007 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb563-2"><a href="regression-och-korrelation.html#cb563-2" tabindex="-1"></a><span class="fu">ggplot</span>(dat_2007, <span class="fu">aes</span>(gdpPercap, lifeExp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-207" class="exercise"><strong>Uppgift 8.7  (Blodtrycksdata) </strong></span>Gör lämplig ändring i stycket nedan för att läsa in fliken <em>Blodtrycksdata</em> från filen <em>Uppgiftsdata.xlsx</em>.</p>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="regression-och-korrelation.html#cb564-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb564-2"><a href="regression-och-korrelation.html#cb564-2" tabindex="-1"></a>dat_blod <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;___&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Blodtryck&quot;</span>)</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-208" class="exercise"><strong>Uppgift 8.8  (Blodtrycksgraf) </strong></span>Gör ett spridningsdiagram med ålder på x-axeln och blodtryck på y-axeln. Lägg till en regressionslinje med <code>geom_smooth(method = lm)</code>.</p>
+<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="regression-och-korrelation.html#cb565-1" tabindex="-1"></a><span class="fu">ggplot</span>(___, <span class="fu">aes</span>(<span class="at">x =</span> ___, <span class="at">y =</span> ___)) <span class="sc">+</span></span>
+<span id="cb565-2"><a href="regression-och-korrelation.html#cb565-2" tabindex="-1"></a>  <span class="fu">___</span>() <span class="sc">+</span></span>
+<span id="cb565-3"><a href="regression-och-korrelation.html#cb565-3" tabindex="-1"></a>  <span class="fu">___</span>()</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-209" class="exercise"><strong>Uppgift 8.9  (Blodtrycksmodell) </strong></span>Skatta och tolka en regressionmodell med ålder som förklarande variabel och blodtryck som förklarad variabel.</p>
+<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="regression-och-korrelation.html#cb566-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(___ <span class="sc">~</span> ___, <span class="at">data =</span> dat_blod)</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-210" class="exercise"><strong>Uppgift 8.10  (Blodtryckstest) </strong></span>Använd <code>Anova()</code> för att testa om det finns ett signifikant samband mellan ålder och blodtryck. Vad är testets nollhypotes och alternativhypotes?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-211" class="exercise"><strong>Uppgift 8.11  (Blodtrycksdiagnos) </strong></span>Ta fram diagnosgrafer för blodtrycksmodell och avgör om det finns några tydliga avvikelser från normalfördelning eller några extrema värden.</p>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="regression-och-korrelation.html#cb567-1" tabindex="-1"></a>dat_blod <span class="ot">&lt;-</span> dat_blod <span class="sc">%&gt;%</span> </span>
+<span id="cb567-2"><a href="regression-och-korrelation.html#cb567-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Residualer =</span> <span class="fu">residuals</span>(mod),</span>
+<span id="cb567-3"><a href="regression-och-korrelation.html#cb567-3" tabindex="-1"></a>         <span class="at">Skattade =</span> <span class="fu">fitted</span>(mod))</span>
+<span id="cb567-4"><a href="regression-och-korrelation.html#cb567-4" tabindex="-1"></a></span>
+<span id="cb567-5"><a href="regression-och-korrelation.html#cb567-5" tabindex="-1"></a><span class="fu">ggplot</span>(___, <span class="fu">aes</span>(<span class="at">sample =</span> ___)) <span class="sc">+</span> <span class="fu">geom_qq</span>() <span class="sc">+</span> <span class="fu">geom_qq_line</span>()</span>
+<span id="cb567-6"><a href="regression-och-korrelation.html#cb567-6" tabindex="-1"></a><span class="fu">ggplot</span>(___, <span class="fu">aes</span>(Skattade, ___)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+</div>
+</div>
+<div id="korrelation" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Korrelation<a href="regression-och-korrelation.html#korrelation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Korrelation ger ett mått mellan <span class="math inline">\(-1\)</span> och <span class="math inline">\(1\)</span> på hur väl två variabler samvarierar. En korrelation över noll tyder på ett positivt samband mellan variablerna - en observation med ett högt värde i den ena variabeln har också ett högt värde på den andra - medan en korrelation under noll tyder på ett negativt samband. I R kan korrelation beräknas med <code>cor()</code> och två variabler som första och andra argument. Funktionen <code>cor.test()</code> ger ett test där nollhypotesen är att korrelationen är noll.</p>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="regression-och-korrelation.html#cb568-1" tabindex="-1"></a><span class="fu">cor</span>(dat_eu07<span class="sc">$</span>lifeExp, dat_eu07<span class="sc">$</span>gdpPercap)</span></code></pre></div>
+<pre><code>## [1] 0.8499711</code></pre>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="regression-och-korrelation.html#cb570-1" tabindex="-1"></a><span class="fu">cor.test</span>(dat_eu07<span class="sc">$</span>lifeExp, dat_eu07<span class="sc">$</span>gdpPercap)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  dat_eu07$lifeExp and dat_eu07$gdpPercap
+## t = 8.5372, df = 28, p-value = 2.795e-09
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.7058444 0.9265221
+## sample estimates:
+##       cor 
+## 0.8499711</code></pre>
+<p>Medellivslängd och bnp per capita har en stark positiv korrelation på 0.85 och den korrelation är signifikant skild från noll (p &lt; 0.001). Notera att p-värdet är detsamma som för lutningsparametern i regressionen.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-212" class="exercise"><strong>Uppgift 8.12  (Korrelationsmatris) </strong></span>Om man har fler än två variabler sammanfattas korrelationer ofta med en korrelationsmatris.</p>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="regression-och-korrelation.html#cb572-1" tabindex="-1"></a>dat_eu07[, <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span></code></pre></div>
+<pre><code>## # A tibble: 30 × 3
+##    lifeExp      pop gdpPercap
+##      &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+##  1    76.4  3600523      5.94
+##  2    79.8  8199783     36.1 
+##  3    79.4 10392226     33.7 
+##  4    74.9  4552198      7.45
+##  5    73.0  7322858     10.7 
+##  6    75.7  4493312     14.6 
+##  7    76.5 10228744     22.8 
+##  8    78.3  5468120     35.3 
+##  9    79.3  5238460     33.2 
+## 10    80.7 61083916     30.5 
+## # ℹ 20 more rows</code></pre>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="regression-och-korrelation.html#cb574-1" tabindex="-1"></a><span class="fu">cor</span>(dat_eu07[, <span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>])</span></code></pre></div>
+<pre><code>##              lifeExp        pop gdpPercap
+## lifeExp   1.00000000 0.06946716 0.8499711
+## pop       0.06946716 1.00000000 0.0137427
+## gdpPercap 0.84997107 0.01374270 1.0000000</code></pre>
+<p>Vad är korrelationen mellan befolkningsstorlek och bnp per capita?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-213" class="exercise"><strong>Uppgift 8.13  (Anscombes data) </strong></span>Den raka regressionslinjen eller det enkla korrelationsmåttet säger lite om hur data egentligen ser ut. En vanlig illustration av detta är <em>Anscombes kvartett</em>, fyra exempel konstruerade av den brittiske statistikern Francis Anscombe 1973. Datan finns tillgänglig i R som datasetet <code>anscombe</code>.</p>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="regression-och-korrelation.html#cb576-1" tabindex="-1"></a>anscombe</span></code></pre></div>
+<p>Plotta de fyra graferna (<code>x1</code> paras med <code>y1</code> och så vidare) i spridningsdiagram och beräkna korrelation för varje par. Ett exempel ges för den första mängden nedan. Kommentera utfallet.</p>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="regression-och-korrelation.html#cb577-1" tabindex="-1"></a><span class="fu">ggplot</span>(anscombe, <span class="fu">aes</span>(x1, y1)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb577-2"><a href="regression-och-korrelation.html#cb577-2" tabindex="-1"></a><span class="fu">cor</span>(anscombe<span class="sc">$</span>x1, anscombe<span class="sc">$</span>y1)</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-214" class="exercise"><strong>Uppgift 8.14  (Datasaurus Dozen. Beskrivande mått) </strong></span>Datasaurus-datan är en konstruerad datamängd som illustrerar hur skilda mönster i data kan ge samma punktskattningar (medelvärden, standardavvikelser och korrelationer). Datan finns tillgänglig som en del av TidyTuesday-projektet och kan hämtas med följande rad.</p>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="regression-och-korrelation.html#cb578-1" tabindex="-1"></a>dat_saurus <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-10-13/datasaurus.csv&#39;</span>)</span></code></pre></div>
+<p>Datan innehåller en gruppering (<code>dataset</code>) och x- och y-koordinater. Beräkna medelvärden, standardavvikelser och korrelation för varje grupp i <code>dataset</code> genom att fylla i stycket nedan.</p>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="regression-och-korrelation.html#cb579-1" tabindex="-1"></a>dat_saurus <span class="sc">%&gt;%</span> </span>
+<span id="cb579-2"><a href="regression-och-korrelation.html#cb579-2" tabindex="-1"></a>  <span class="fu">group_by</span>(___) <span class="sc">%&gt;%</span> </span>
+<span id="cb579-3"><a href="regression-och-korrelation.html#cb579-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(x), <span class="fu">mean</span>(y), <span class="fu">sd</span>(x), <span class="fu">sd</span>(y), <span class="fu">cor</span>(x, y))</span></code></pre></div>
+<p>Kommentera utfallet.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-215" class="exercise"><strong>Uppgift 8.15  (Datasaurus Dozen. Grafer) </strong></span>Illustrera datasaurus datan med spridningsdiagram. Använd <code>facet_wrap()</code> för småfönster per <code>dataset</code>.</p>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="regression-och-korrelation.html#cb580-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_saurus, <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb580-2"><a href="regression-och-korrelation.html#cb580-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb580-3"><a href="regression-och-korrelation.html#cb580-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> ___)</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-216" class="exercise"><strong>Uppgift 8.16  (Galtons längdstudier. Installation av paket) </strong></span>En modern förståelse av regression införs under slutet av 1800-talet av Francis Galton (1822 - 1911). I en studie från 1886 samlade Galton in data på längder hos föräldrar och barn. En av Galtons slutsatser från den datan var att barn till långa föräldrar ofta blev kortade än föräldrarna. Extremvärden hade en tendes att <em>återgå</em> mot mitten - härifrån kommer namnet <em>regression</em>.</p>
+<p>Galtons längddata finns tillgänglig i paketet <code>HistData</code> som <code>Galton</code>. Installera paketet, ladda paketet, och skriv ut datan.</p>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="regression-och-korrelation.html#cb581-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;___&quot;</span>)</span>
+<span id="cb581-2"><a href="regression-och-korrelation.html#cb581-2" tabindex="-1"></a><span class="fu">library</span>(___)</span>
+<span id="cb581-3"><a href="regression-och-korrelation.html#cb581-3" tabindex="-1"></a>Galton</span></code></pre></div>
+<p>Datan är i tum. Om man föredrar cm kan man multiplicera med 2.54.</p>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="regression-och-korrelation.html#cb582-1" tabindex="-1"></a>Galton <span class="ot">&lt;-</span> <span class="fl">2.54</span> <span class="sc">*</span> Galton</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-217" class="exercise"><strong>Uppgift 8.17  (Galtons längdstudier. Graf) </strong></span>Gör en graf med föräldrars medellängd (<code>parent</code>) och barnets längd (<code>child</code>). Eftersom det finns överlappande punkter kan man använda <code>geom_count()</code> eller <code>geom_jitter()</code> istället för <code>geom_point()</code>.</p>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="regression-och-korrelation.html#cb583-1" tabindex="-1"></a><span class="fu">ggplot</span>(Galton, <span class="fu">aes</span>(parent, child)) <span class="sc">+</span> <span class="fu">geom_count</span>()</span>
+<span id="cb583-2"><a href="regression-och-korrelation.html#cb583-2" tabindex="-1"></a><span class="fu">ggplot</span>(Galton, <span class="fu">aes</span>(parent, child)) <span class="sc">+</span> <span class="fu">geom_jitter</span>()</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-218" class="exercise"><strong>Uppgift 8.18  (Galtons längdstudier. Modell) </strong></span>Skatta en regressionmodell med barnets längd som förklarad variabel och förälderns längd som förklarande variabeln. Skriv ut resultaten och tolka lutningsparametern. Gör ett F-test med <code>Anova()</code>.</p>
+<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="regression-och-korrelation.html#cb584-1" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(___ <span class="sc">~</span> ___, Galton)</span>
+<span id="cb584-2"><a href="regression-och-korrelation.html#cb584-2" tabindex="-1"></a><span class="fu">summary</span>(___)</span>
+<span id="cb584-3"><a href="regression-och-korrelation.html#cb584-3" tabindex="-1"></a><span class="fu">Anova</span>(___)</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-219" class="exercise"><strong>Uppgift 8.19  (Galtons längdstudier. Konfidensintervall) </strong></span>Paketet <code>emmeans()</code>, som vi tidigare använt för att ta fram effekter i anovamodeller, har också en funktion för lutningsparametrar <code>emtrends()</code>. Vi kan använda den funktionen för att beräkna konfidensintervall för lutningen.</p>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="regression-och-korrelation.html#cb585-1" tabindex="-1"></a><span class="fu">library</span>(emmeans)</span>
+<span id="cb585-2"><a href="regression-och-korrelation.html#cb585-2" tabindex="-1"></a><span class="fu">emtrends</span>(mod, <span class="sc">~</span> <span class="dv">1</span>, <span class="at">var =</span> <span class="st">&quot;parent&quot;</span>)</span></code></pre></div>
+<p>Funktionen <code>emmeans()</code> kan också användas för ett konfidensintervall för barnets längd vid ett specifikt värde för föräldrarnas längd. Följande ger ett konfidensintervall för barnets längd om föräldrarnas medellängd är 170 cm.</p>
+<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="regression-och-korrelation.html#cb586-1" tabindex="-1"></a><span class="fu">emmeans</span>(mod, <span class="sc">~</span> parent, <span class="at">at =</span> <span class="fu">list</span>(<span class="at">parent =</span> <span class="dv">68</span>))</span></code></pre></div>
+<p>Vad ska ändras i stycket ovan för att beräkna ett konfidensintervall för barnets längd om föräldrarnas medellängd är 190 cm?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-220" class="exercise"><strong>Uppgift 8.20  (Galtons längdstudier. Diagnosgrafer) </strong></span>Galtondatan omfattar 928 mätningar. Ta ut residualerna med <code>residuals(mod)</code> och gör ett histogram med <code>hist()</code> eller <code>geom_histogram()</code>. Följer residualerna en ungefärlig normalfördelning?</p>
+</div>
+</div>
+<div id="bonus.-skrapa-data-från-webbsidor" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Bonus. Skrapa data från webbsidor<a href="regression-och-korrelation.html#bonus.-skrapa-data-från-webbsidor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Det är väldigt vanligt att hämta in data från externa källor för att bygga ut en statistisk analys, till exempel kan offentlig väderdata vara intressant för ett odlingsförsök. Den typen av data kan vara mer eller mindre lättillgänglig. Här tittar vi på några exempel på hur allmänt tillgänglig data kan hämtas och användas.</p>
+<p>Kommunikation mellan datorer sker genom ett API (<em>Application Programming Interface</em>). Många organisationer som sprider data har ett öppet tillgängligt API som användare kan koppla upp sig till. Ofta finns R-paket som gör det enkelt att ange vilket data man är ute efter. Några exempel är</p>
+<ul>
+<li><code>pxweb</code> - statistiska centralbyråns web-API, <a href="https://cran.r-project.org/web/packages/pxweb/vignettes/pxweb.html" class="uri">https://cran.r-project.org/web/packages/pxweb/vignettes/pxweb.html</a>,</li>
+<li><code>Eurostat</code> - europeiska statistikbyrån, <a href="https://ropengov.github.io/eurostat/articles/eurostat_tutorial.html" class="uri">https://ropengov.github.io/eurostat/articles/eurostat_tutorial.html</a>,</li>
+<li><code>Rspotify</code> - Spotifys API, <a href="https://github.com/tiagomendesdantas/Rspotify" class="uri">https://github.com/tiagomendesdantas/Rspotify</a>.</li>
+</ul>
+<p>I följande exempel används paketet <code>osmdata</code> för att hämta data från OpenStreetMap, <a href="https://www.openstreetmap.org/" class="uri">https://www.openstreetmap.org/</a>.</p>
+<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="regression-och-korrelation.html#cb587-1" tabindex="-1"></a><span class="co">#install.packages(&quot;osmdata&quot;)</span></span>
+<span id="cb587-2"><a href="regression-och-korrelation.html#cb587-2" tabindex="-1"></a><span class="fu">library</span>(osmdata)</span>
+<span id="cb587-3"><a href="regression-och-korrelation.html#cb587-3" tabindex="-1"></a>dat_osm <span class="ot">&lt;-</span> <span class="fu">opq</span>(<span class="at">bbox =</span> <span class="st">&#39;Malmö&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb587-4"><a href="regression-och-korrelation.html#cb587-4" tabindex="-1"></a>    <span class="fu">add_osm_feature</span>(<span class="at">key =</span> <span class="st">&#39;admin_level&#39;</span>, <span class="at">value =</span> <span class="st">&#39;10&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb587-5"><a href="regression-och-korrelation.html#cb587-5" tabindex="-1"></a>    <span class="fu">osmdata_sf</span>()</span>
+<span id="cb587-6"><a href="regression-och-korrelation.html#cb587-6" tabindex="-1"></a></span>
+<span id="cb587-7"><a href="regression-och-korrelation.html#cb587-7" tabindex="-1"></a>dat_osm_pol <span class="ot">&lt;-</span> dat_osm<span class="sc">$</span>osm_multipolygons</span>
+<span id="cb587-8"><a href="regression-och-korrelation.html#cb587-8" tabindex="-1"></a></span>
+<span id="cb587-9"><a href="regression-och-korrelation.html#cb587-9" tabindex="-1"></a><span class="fu">ggplot</span>(dat_osm_pol, <span class="fu">aes</span>()) <span class="sc">+</span> </span>
+<span id="cb587-10"><a href="regression-och-korrelation.html#cb587-10" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb587-11"><a href="regression-och-korrelation.html#cb587-11" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">size =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-221" class="exercise"><strong>Uppgift 8.21  (Malmös stadsdelar) </strong></span>Vad kan ändras i exemplet ovan för att ta ut Lunds stadsdelar i stället för Malmös?</p>
+</div>
+<p>Ännu ett exempel. Denna gång Malmös restauranger efter typ.</p>
+<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="regression-och-korrelation.html#cb588-1" tabindex="-1"></a>dat_osm <span class="ot">&lt;-</span> <span class="fu">opq</span>(<span class="at">bbox =</span> <span class="st">&#39;Malmö&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb588-2"><a href="regression-och-korrelation.html#cb588-2" tabindex="-1"></a>    <span class="fu">add_osm_feature</span>(<span class="at">key =</span> <span class="st">&#39;amenity&#39;</span>, <span class="at">value =</span> <span class="st">&#39;restaurant&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb588-3"><a href="regression-och-korrelation.html#cb588-3" tabindex="-1"></a>    <span class="fu">osmdata_sf</span>()</span>
+<span id="cb588-4"><a href="regression-och-korrelation.html#cb588-4" tabindex="-1"></a></span>
+<span id="cb588-5"><a href="regression-och-korrelation.html#cb588-5" tabindex="-1"></a>dat_osm_point <span class="ot">&lt;-</span> dat_osm<span class="sc">$</span>osm_points <span class="sc">%&gt;%</span> </span>
+<span id="cb588-6"><a href="regression-och-korrelation.html#cb588-6" tabindex="-1"></a>  <span class="fu">filter</span>(cuisine <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;pizza&quot;</span>, <span class="st">&quot;sushi&quot;</span>, <span class="st">&quot;burger&quot;</span>, <span class="st">&quot;chinese&quot;</span>, <span class="st">&quot;indian&quot;</span>, <span class="st">&quot;vietnamese&quot;</span>))</span>
+<span id="cb588-7"><a href="regression-och-korrelation.html#cb588-7" tabindex="-1"></a></span>
+<span id="cb588-8"><a href="regression-och-korrelation.html#cb588-8" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb588-9"><a href="regression-och-korrelation.html#cb588-9" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> dat_osm_pol) <span class="sc">+</span></span>
+<span id="cb588-10"><a href="regression-och-korrelation.html#cb588-10" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> dat_osm_point, <span class="fu">aes</span>(<span class="at">color =</span> cuisine), <span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-222" class="exercise"><strong>Uppgift 8.22  (Offentlig konst) </strong></span>Offentliga konstverk är ofta registrerade med <code>key = 'tourism'</code> och <code>value = 'artwork'</code>. Vad kan ändras i exemplet ovan för att ta ut offentliga konstverk i Malmö?</p>
+</div>
+<p>Det är inte alltid data finns tillgängligt genom en API. Mycket information finns publicerad som text eller tabeller på vanliga hemsidor. I såna fall kan man ofta ta hem data genom webbskrapning - att man med ett skript hämtar hem hemsidan, snarare än att själv läsa genom en webbläsare. I R kan det göras med paketet <code>rvest</code>. Ta som exempel den här tabellen över filmer i criterion-samlingen: <a href="https://www.criterion.com/shop/browse/list" class="uri">https://www.criterion.com/shop/browse/list</a>. För att läsa in den listan i R kan vi göra följande.</p>
+<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="regression-och-korrelation.html#cb589-1" tabindex="-1"></a><span class="co"># install.packages(&quot;rvest&quot;)</span></span>
+<span id="cb589-2"><a href="regression-och-korrelation.html#cb589-2" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb589-3"><a href="regression-och-korrelation.html#cb589-3" tabindex="-1"></a></span>
+<span id="cb589-4"><a href="regression-och-korrelation.html#cb589-4" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://www.criterion.com/shop/browse/list&quot;</span></span>
+<span id="cb589-5"><a href="regression-och-korrelation.html#cb589-5" tabindex="-1"></a>html <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb589-6"><a href="regression-och-korrelation.html#cb589-6" tabindex="-1"></a></span>
+<span id="cb589-7"><a href="regression-och-korrelation.html#cb589-7" tabindex="-1"></a>dat_crit <span class="ot">&lt;-</span> html <span class="sc">%&gt;%</span> </span>
+<span id="cb589-8"><a href="regression-och-korrelation.html#cb589-8" tabindex="-1"></a>  <span class="fu">html_table</span>()</span>
+<span id="cb589-9"><a href="regression-och-korrelation.html#cb589-9" tabindex="-1"></a></span>
+<span id="cb589-10"><a href="regression-och-korrelation.html#cb589-10" tabindex="-1"></a>dat_crit <span class="ot">&lt;-</span> dat_crit[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span> </span>
+<span id="cb589-11"><a href="regression-och-korrelation.html#cb589-11" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb589-12"><a href="regression-och-korrelation.html#cb589-12" tabindex="-1"></a>  <span class="fu">filter</span>(Director <span class="sc">!=</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb589-13"><a href="regression-och-korrelation.html#cb589-13" tabindex="-1"></a>dat_crit</span></code></pre></div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-223" class="exercise"><strong>Uppgift 8.23  (Regissör) </strong></span>Vilken regissör har flest filmer i criterion-samlingen? Använd datan från exemplet ovan och räkna antal filmer per regissör, t.ex. med <code>count()</code>.</p>
+</div>
+<p>Det finns flera paket som kan hämta data från Wikipedia, men det kan också göras med <code>rvest</code>. Här hämtas en tabell över mottagare av Nobelpriset i litteratur.</p>
+<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="regression-och-korrelation.html#cb590-1" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Literature&quot;</span></span>
+<span id="cb590-2"><a href="regression-och-korrelation.html#cb590-2" tabindex="-1"></a>dat_nob <span class="ot">&lt;-</span> url <span class="sc">%&gt;%</span> </span>
+<span id="cb590-3"><a href="regression-och-korrelation.html#cb590-3" tabindex="-1"></a>  <span class="fu">read_html</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb590-4"><a href="regression-och-korrelation.html#cb590-4" tabindex="-1"></a>  <span class="fu">html_table</span>()</span>
+<span id="cb590-5"><a href="regression-och-korrelation.html#cb590-5" tabindex="-1"></a>dat_nob <span class="ot">&lt;-</span> dat_nob[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-224" class="exercise"><strong>Uppgift 8.24  (Skrivspråk) </strong></span>Skapa ett stapeldiagram över antalet vinnare per språk (kolumnen <code>Language(s)</code>) genom att fylla i stycket nedan.</p>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="regression-och-korrelation.html#cb591-1" tabindex="-1"></a>dat_agg <span class="ot">&lt;-</span> dat_nob <span class="sc">%&gt;%</span> <span class="fu">count</span>(<span class="st">`</span><span class="at">Language(s)</span><span class="st">`</span>)</span>
+<span id="cb591-2"><a href="regression-och-korrelation.html#cb591-2" tabindex="-1"></a></span>
+<span id="cb591-3"><a href="regression-och-korrelation.html#cb591-3" tabindex="-1"></a><span class="fu">ggplot</span>(dat_agg, <span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> ___)) <span class="sc">+</span></span>
+<span id="cb591-4"><a href="regression-och-korrelation.html#cb591-4" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-225" class="exercise"><strong>Uppgift 8.25  (Valfri tabell) </strong></span>Hitta en wikipedia-artikel med en tabell och försök hämta ner den till R genom att göra lämplig ändring i exemplet ovan.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variansanalys.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "sepia",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["R-anvisningar.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

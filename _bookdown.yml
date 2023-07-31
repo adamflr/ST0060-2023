@@ -1,0 +1,26 @@
+book_filename: "R-anvisningar"
+delete_merged_file: true
+output_dir: "docs"
+rmd_files: ["index.Rmd", 
+"Rmd/Installation.Rmd",
+"Rmd/Datorövning-1.Rmd",
+"Rmd/Datorövning-2.Rmd",
+"Rmd/Datorövning-3.Rmd",
+"Rmd/Datorövning-4.Rmd",
+"Rmd/Datorövning-5.Rmd",
+"Rmd/Datorövning-6.Rmd",
+"Rmd/Datorövning-7.Rmd",
+"Rmd/Datorövning-8.Rmd"]
+language:
+  label:
+    fig: 'Figur '
+    tab: 'Tabell '
+    exm: 'Exempel '
+    prp: 'Problem '
+    prf: 'Bevis '
+    thm: 'Sats '
+    exr: 'Uppgift '
+    hyp: 'Lösningsförslag '
+  ui:
+    chapter_name: ""
+always_allow_html: true
