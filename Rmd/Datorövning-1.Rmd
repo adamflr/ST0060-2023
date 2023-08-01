@@ -51,7 +51,7 @@ i skriptet och tryck *Ctrl + Enter*. Titta i flikarna *Console* och *Environment
 
 ## *Packages* från CRAN
 
-En av de stora styrkorna med R är att språket kan byggas ut av dess användare. De här tilläggen kan sedan samlas i paket (*packages*) och delas med andra. Rs officiella bibliotek för paket kallas för *CRAN* (*Comprehensive R Archive Network*) och består av mer än 18 000 uppladdade paket som innehåller allt från fritt tillgänglig data till avancerade statistiska modeller. 
+En av de stora styrkorna med R är att språket kan byggas ut av dess användare. De här tilläggen kan sedan samlas i paket (*packages*) och delas med andra. Rs officiella bibliotek för paket kallas för *CRAN* (*Comprehensive R Archive Network*).
 
 För att använda ett specifikt paket måste det först installeras. Om man vet namnet på paketet man vill installera kan man köra 
 
@@ -68,7 +68,7 @@ Kör raden ovan för att installera `tidyverse`. Du kan antingen köra raden gen
 :::
 
 ::: {.exercise name="Installera gapminder-paketet"}
-Paketet `gapminder` innehåller lite intressant data vi kommer använda senare. Installera paketet `gapminder` genom att fylla i och köra raden nedan.
+Paketet `gapminder` innehåller lite intressant data vi kommer använda senare. Installera paketet `gapminder` genom att fylla i den saknade biten och köra raden nedan.
 
 ```{r, eval = F}
 install.packages("___")
@@ -127,7 +127,6 @@ Här skapas ett objekt `b` som innehåller en *serie* numeriska värden (en *vek
 b[3]               # Det tredje värdet i vektorn b
 b[c(3,5)]          # Det tredje och femte värdet i b
 ```
-
 
 ::: {.exercise name="Skapa en vektor"}
 Skapa ett objekt med namnet `new_vector` som innehåller värden 5, 7 och 10 genom att fylla i följande rad.
@@ -245,7 +244,7 @@ new_vector^2 %>%                       # Ta kvadraterna av new_vector, och sen
 
 Det första praktiska steget i en statistisk analys är att importera data. I R kan det göras genom att direkt skriva in sin data och spara som ett nytt objekt, men ett bättre och vanligare sätt är att importera sin data från en extern fil eller databas.
 
-I ett tidigare exempel användes funktionen `c` för att skapa en vektor av data. Ofta ordnas flera vektorer i en tabell där varje kolumn är en vektor och varje rad en observation av någon enhet. En datatabell (en `data.frame` i R) skapas genom funktionen `data.frame()` följt av namngivna vektorer. Exempeldata kan skrivas in genom föjande.
+I ett tidigare exempel användes funktionen `c()` för att skapa en vektor av data. Ofta ordnas flera vektorer i en tabell där varje kolumn är en vektor och varje rad en observation av någon enhet. En datatabell (en `data.frame` i R) skapas genom funktionen `data.frame()` följt av namngivna vektorer. Exempeldata kan skrivas in genom föjande.
 
 ```{r}
 dat <- data.frame(Vecka = c(7,7,7,7,7,7,11,11,11,11,11,11),
@@ -282,7 +281,7 @@ dat[ ,3]           # Alla värden i kolumn 3
 ```
 
 ::: {.exercise name="Plocka ut en specifik kolumn"}
-I den tidigare övningen skapade du ett objekt `dat_dice`. Använd dollartecken för att plocka ut kolumnen Utfall från det objektet.
+I den tidigare övningen skapade du ett objekt `dat_dice`. Använd dollartecken för att plocka ut kolumnen *Utfall* från det objektet.
 
 ```{r, eval = F}
 dat_dice$___
@@ -315,7 +314,7 @@ plot(dat_dice$___, dat_dice$___)
 Inskrivning av värden är ofta tidskrävande och kan lätt leda till misstag. Det är därför mycket vanligare att data läses in från en extern fil. Det finns en mängd funktioner för dataimport och det exakta valet av funktion beror på vilken typ av fil datan är sparad i. Ett vanligt filformat är .csv (*comma separated values*). Här importerar vi en fil med data från Spotify. Filen ligger på Github, en populär sida för lagring av filer och kod.
 
 ```{r}
-dat <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Spotify_data.csv") 
+dat <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2023/master/Data/Spotify_data.csv") 
                                        # Läs in en csv-fil från Github
 dat                                    # Skriv ut objektet dat
 ```
@@ -332,16 +331,16 @@ där `unique` är en funktion som tar bort alla dubletter och `dat$artist_name` 
 
 ## Urval ur en tabell med `select` och `filter`
 
-En vanlig operation på en tabell är att göra ett urval - antingen ett urval av rader (t.ex. en viss artist), vilket kallas *filtrering* eller ett urval av variabler (t.ex. artist och albumnamn), vilket kallas *selektion*. Det finns flera olika sätt att göra ett urval i R. Det traditionella sättet är att använda index inom hakparenteser (t.ex. `dat[4, 2]` för fjärde raden, andra kolumnen) eller dollartecken för specifika kolumner (t.ex. `dat$artist_name` för artistnamn). Här fokuseras dock på hur det kan göras med funktionerna `filter()` och `select()` från paketet `tidyverse`.
+En vanlig operation på en tabell är att göra ett urval - antingen ett urval av rader (t.ex. en viss artist), vilket kallas *filtrering* eller ett urval av variabler (t.ex. artist och albumnamn), vilket kallas *selektion*. Här tittar vi på hur det kan göras med funktionerna `filter()` och `select()` från paketet `tidyverse`.
 
-För att filtrera på ett givet land kan använda pipe-funktionen från datan till en filter-funktion, t.ex.
+För att filtrera på en given artist kan man använda pipe-funktionen från datan till en filter-funktion, t.ex.
 
 ```{r}
 dat %>%                                # Ta spotify-datan och sen
   filter(artist_name == "Robyn")       # filtrera för en specifik artist
 ```
 
-Inom filterfunktionen anges ett logisk villkor `country == "Sweden"` och utfallet är de rader där villkoret är sant. Notera de dubbla likhetstecknen - de måste användas för ett logisk villkor eftersom enkelt likhetstecken används för att skapa objekt och sätta funktionsargument. 
+Inom filterfunktionen anges ett logisk villkor `artist_name == "Robyn"` och utfallet är de rader där villkoret är sant. Notera de dubbla likhetstecknen - de måste användas för ett logisk villkor eftersom enkelt likhetstecken används för att skapa objekt och sätta funktionsargument. 
 
 ::: {.exercise name="Filtrera för artist"}
 Vad måste ändras i koden för att istället plocka ut rader där artisten är Esperanza Spalding? Hur många rader har det urvalet i datan?
@@ -359,20 +358,12 @@ dat %>%                                                              # Ta datan,
   filter(artist_name %in% c("Robyn", "Esperanza Spalding"))          # filtrera för specifika artister
 ```
 
-och om man vill ha mer än ett villkor kan man rada dem i filter-funktionen eller ha flera filter-steg:
+och om man vill ha mer än ett villkor kan man rada dem i filter-funktionen:
 
 ```{r, eval=F}
 dat %>%                                                              # Ta datan, och sen
   filter(artist_name %in% c("Robyn", "Esperanza Spalding"),          # filtrera för specifika artister
          key_name == "D#")                                           # och för tonart
-```
-
-alternativt
-
-```{r, eval=F}
-dat %>%                                                              # Ta datan, och sen
-  filter(artist_name %in% c("Robyn", "Esperanza Spalding")) %>%      # filtrera för artister, och sen
-  filter(key_name == "D#")                                           # filtrera för tonart
 ```
 
 För att se fler eller färre rader kan man använda en pipe `%>%` till funktionen `print()`. Följande skriver ut fem rader
@@ -401,7 +392,7 @@ dat %>%                                                    # Ta datan och sen
 ```
 
 ::: {.exercise name="Snabba spår"}
-Funktionen `arrange` sorterar data efter en angiven kolumn. Följande stycke ger oss Björks snabbaste spår. 
+Funktionen `arrange()` sorterar data efter en angiven kolumn. Följande stycke ger oss Björks snabbaste spår. 
 
 ```{r, eval = F}
 dat %>%                                                    # Ta datan, och sen
@@ -410,12 +401,12 @@ dat %>%                                                    # Ta datan, och sen
   arrange(-tempo)                                          # ordna efter tempo (minus för fallande ordning)
 ```
 
-Gör lämpliga ändringar för att hitta Kate Bushs snabbaste spår. Gör ytterligare ändringar för att hitta Daft Punks långsammaste spår.
+Gör lämpliga ändringar för att hitta Kate Bushs snabbaste spår.
 :::
 
 ## Grafer med `ggplot2`
 
-Vi kan nu börja titta på grafer. Eftersom datan är ganska stor och grafer lätt blir oöversiktliga, börjar vi med att skapa en lite mindre datamängd.
+Vi kan nu börja titta på grafer. Eftersom spotify-datan är ganska stor och grafer lätt blir oöversiktliga, börjar vi med att skapa en lite mindre datamängd.
 
 ```{r}
 dat_small <- dat %>%                                      # Ta data, och sen
@@ -423,7 +414,7 @@ dat_small <- dat %>%                                      # Ta data, och sen
 ```
 
 ::: {.exercise name="Valfritt artistbyte"}
-Om du vill titta data på något annan artist, gör lämplig ändring i stycket ovan. Kom ihåg att man skriva ut artister i datan med `unique(dat$artist_name)`.
+Om du vill titta på data för någon annan artist, gör lämplig ändring i stycket ovan. Kom ihåg att man kan skriva ut artister i datan med `unique(dat$artist_name)`.
 :::
 
 R har en mängd grundläggande funktioner för grafer. Vi såg tidigare ett exempel på funktionen `plot()`.
@@ -460,8 +451,8 @@ Vad ska ändras i stycket nedan för att skapa en graf med dur/moll (`mode_name`
 
 ```{r, eval = F}
 ggplot(dat_small, aes(x = ____, y = ____, color = album_name)) + # Ta datan och koppla variabler till egenskaper
-  geom_point() +                                                         # Illustrera med punkter
-  facet_wrap(~ album_release_year)                                       # Skapa småfönster efter år
+  geom_point() +                                                 # Illustrera med punkter
+  facet_wrap(~ album_release_year)                               # Skapa småfönster efter år
 ```
 
 Har spår i dur (*major*) högre valens?
