@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-09-04" />
+<meta name="date" content="2023-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -204,7 +204,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#chi-två-test-för-goodness-of-fit"><i class="fa fa-check"></i><b>5.4</b> Chi-två-test för goodness-of-fit</a></li>
 <li class="chapter" data-level="5.5" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#chi-två-test-när-någon-parameter-skattas-från-datan"><i class="fa fa-check"></i><b>5.5</b> Chi-två-test när någon parameter skattas från datan</a></li>
 <li class="chapter" data-level="5.6" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#bonus.-interaktiva-kartor-med-leaflet"><i class="fa fa-check"></i><b>5.6</b> Bonus. Interaktiva kartor med leaflet</a></li>
-<li class="chapter" data-level="5.7" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#valfria-hemuppgifter"><i class="fa fa-check"></i><b>5.7</b> Valfria hemuppgifter</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html"><i class="fa fa-check"></i><b>6</b> Test för två stickprov</a>
 <ul>
@@ -226,6 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="variansanalys.html"><a href="variansanalys.html#variansanalys.-en-faktor-med-block"><i class="fa fa-check"></i><b>7.4</b> Variansanalys. En faktor med block</a></li>
 <li class="chapter" data-level="7.5" data-path="variansanalys.html"><a href="variansanalys.html#variansanalys.-två-faktorer-med-block"><i class="fa fa-check"></i><b>7.5</b> Variansanalys. Två faktorer med block</a></li>
 <li class="chapter" data-level="7.6" data-path="variansanalys.html"><a href="variansanalys.html#modellantaganden-och-residualer"><i class="fa fa-check"></i><b>7.6</b> Modellantaganden och residualer</a></li>
+<li class="chapter" data-level="7.7" data-path="variansanalys.html"><a href="variansanalys.html#bonus.-statistik-för-ekologi"><i class="fa fa-check"></i><b>7.7</b> Bonus. Statistik för ekologi</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="regression-och-korrelation.html"><a href="regression-och-korrelation.html"><i class="fa fa-check"></i><b>8</b> Regression och korrelation</a>
 <ul>
@@ -370,9 +370,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="slumpvariabler.html#cb182-1" tabindex="-1"></a>slumputfall <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> dat_dice6<span class="sc">$</span>x, <span class="at">size =</span> <span class="dv">10000</span>, <span class="at">replace =</span> T)</span>
 <span id="cb182-2"><a href="slumpvariabler.html#cb182-2" tabindex="-1"></a></span>
 <span id="cb182-3"><a href="slumpvariabler.html#cb182-3" tabindex="-1"></a><span class="fu">mean</span>(slumputfall)</span></code></pre></div>
-<pre><code>## [1] 3.5026</code></pre>
+<pre><code>## [1] 3.4837</code></pre>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="slumpvariabler.html#cb184-1" tabindex="-1"></a><span class="fu">var</span>(slumputfall)</span></code></pre></div>
-<pre><code>## [1] 2.939087</code></pre>
+<pre><code>## [1] 2.907825</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-55" class="exercise"><strong>Uppgift 3.5  (Simulera tärningen) </strong></span>Använd <code>sample()</code> för att dra tiotusen observationer från din egen tärning. Beräkna medelvärde och varians från det stickprovet. Är utfallen nära de teoretiska beräkningarna av populationsmedelvärde och -varians?</p>
 </div>
@@ -656,12 +656,12 @@ Notera att denna fråga finns bland instuderingsuppgifterna.</p>
 <span id="cb222-3"><a href="slumpvariabler.html#cb222-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">inner =</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">1</span>)</span>
 <span id="cb222-4"><a href="slumpvariabler.html#cb222-4" tabindex="-1"></a></span>
 <span id="cb222-5"><a href="slumpvariabler.html#cb222-5" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="fu">mean</span>(dat_random<span class="sc">$</span>inner)</span></code></pre></div>
-<pre><code>## [1] 3.24</code></pre>
+<pre><code>## [1] 3.16</code></pre>
 <div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="slumpvariabler.html#cb224-1" tabindex="-1"></a>pi</span></code></pre></div>
 <pre><code>## [1] 3.141593</code></pre>
 <p>Den beräknade arean ligger inte så långt från konstanten pi.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-74" class="exercise"><strong>Uppgift 3.24  (Summan av tre tärningskast) </strong></span>Beräkningens precision ökar med antalet slumptal. Vad i kodstycket ovan ska ändras för att generera fler slumptal? Blir utfallet närmre det väntade värdet om antalet slumptal ökar?</p>
+<p><span id="exr:unlabeled-div-74" class="exercise"><strong>Uppgift 3.24  (Fler punkter ger bättre skattning) </strong></span>Beräkningens precision ökar med antalet slumptal. Vad i kodstycket ovan ska ändras för att generera fler slumptal? Blir utfallet närmre det väntade värdet om antalet slumptal ökar?</p>
 </div>
 </div>
 <div id="bonus.-slump-och-ordning---sierpinski-triangeln" class="section level2 hasAnchor" number="3.9">

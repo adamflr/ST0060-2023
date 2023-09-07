@@ -133,7 +133,7 @@
 
 \title{R-anvisningar till \emph{Grundläggande statistik}}
 \author{}
-\date{\vspace{-2.5em}2023-09-04}
+\date{\vspace{-2.5em}2023-09-07}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Sats}[chapter]
@@ -2518,7 +2518,7 @@ R kommer också med en rad funktioner för att simulera data. Funktionen \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.4949
+## [1] 3.4851
 \end{verbatim}
 
 \begin{Shaded}
@@ -2528,7 +2528,7 @@ R kommer också med en rad funktioner för att simulera data. Funktionen \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.916466
+## [1] 2.935272
 \end{verbatim}
 
 \begin{exercise}[Simulera tärningen]
@@ -3078,7 +3078,7 @@ Pytagoras sats kan användas för att beräkna avståndet mellan en slumpmässig
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.24
+## [1] 3.16
 \end{verbatim}
 
 \begin{Shaded}
@@ -3093,7 +3093,7 @@ Pytagoras sats kan användas för att beräkna avståndet mellan en slumpmässig
 
 Den beräknade arean ligger inte så långt från konstanten pi.
 
-\begin{exercise}[Summan av tre tärningskast]
+\begin{exercise}[Fler punkter ger bättre skattning]
 Beräkningens precision ökar med antalet slumptal. Vad i kodstycket ovan ska ändras för att generera fler slumptal? Blir utfallet närmre det väntade värdet om antalet slumptal ökar?
 \end{exercise}
 
@@ -3780,13 +3780,13 @@ Följande kod simulerar ett dataset om tio observationer från en normalfördeln
 ##  One Sample t-test
 ## 
 ## data:  dat_sim$x
-## t = -1.5419, df = 9, p-value = 0.1575
+## t = 0.5114, df = 9, p-value = 0.6214
 ## alternative hypothesis: true mean is not equal to 7
 ## 95 percent confidence interval:
-##  0.3527458 8.2585330
+##   4.587898 10.821245
 ## sample estimates:
 ## mean of x 
-##  4.305639
+##  7.704572
 \end{verbatim}
 
 \begin{exercise}[Upprepad simulering]
@@ -3831,7 +3831,7 @@ Vidare ska p-värdet vara under fem procent fem procent av gångerna.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.052
+## [1] 0.051
 \end{verbatim}
 
 Även det stämmer någorlunda väl. Det här innebär alltså att om man har en signifikansnivå på fem procent kommer man förkasta nollhypotesen fem procent av gångerna även om nollhypotesen stämmer. Det kallas ett \emph{falskt positivt} utfall.
@@ -4730,45 +4730,6 @@ Slutligen kan vi lägga till en etikett för år med argumentet \texttt{popup}. 
 Ändra i koden ovan för att ange artnamn som popup-text istället för rödlistestatus. Funktionen \texttt{paste()} kan också vara intressant för att ta med mer information i texten: \texttt{paste(dat\_leaf\$Rödlistade,\ dat\_leaf\$Antal)} skulle exempelvis ge både status och antal individer vid den specifika observationen.
 \end{exercise}
 
-\hypertarget{valfria-hemuppgifter}{%
-\section{Valfria hemuppgifter}\label{valfria-hemuppgifter}}
-
-\begin{exercise}[Herrallsvenskan]
-Följande importerar data för herrallsvenskan i fotboll.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/adamflr/ST0060{-}2022/main/Data/Allsvenskan\%2C\%20herrar\%2C\%201924{-}2020.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Importera datan och se hur många matcher som ingår.
-\end{exercise}
-
-\begin{exercise}[Antal hemmasegrar]
-Beräkna antalet hemmasegrar i herrallsvenskan genom att räkna antalet matcher där \texttt{Hemmamål} överstiger \texttt{Bortamål}.
-\end{exercise}
-
-\begin{exercise}[Test för antal hemmasegrar]
-Testa om andelen hemmasegrar skiljer sig från nollhypotesen på 47 procent.
-\end{exercise}
-
-\begin{exercise}[Konfidensintervall för antal hemmasegrar]
-Använd \texttt{binom.asymp()} från paketet \texttt{binom} för att beräkna ett konfidensintervall för andelen hemmasegrar. Jämför med en handräkning (hand och miniräknare).
-\end{exercise}
-
-\begin{exercise}[Hemmasegrar för Malmö FF]
-
-Följande beräknar antalet hemmasegrar för Malmö FF. Testa om Malmös andel hemmasegrar är större än 47 procent.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dat }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Hemmalag }\SpecialCharTok{==} \StringTok{"Malmö FF"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{count}\NormalTok{(Hemmamål }\SpecialCharTok{\textgreater{}}\NormalTok{ Bortamål)}
-\end{Highlighting}
-\end{Shaded}
-
-\end{exercise}
-
 \hypertarget{test-fuxf6r-tvuxe5-stickprov}{%
 \chapter{Test för två stickprov}\label{test-fuxf6r-tvuxe5-stickprov}}
 
@@ -5077,7 +5038,7 @@ Datan kan illustreras med ett enkelt punktdiagram.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-233-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-231-1} \end{center}
 
 Ett t-test för två oberoende stickprov har nollhypotesen att grupperna har samma populationsmedelvärde och alternativhypotesen att populationsmedelvärdena är skilda (för det tvåsidiga fallet):
 
@@ -5364,7 +5325,7 @@ Datan tyder på att överlevnad är beroende av klass. Datan kan illustreras med
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-247-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-245-1} \end{center}
 
 Argumentet \texttt{position} i \texttt{geom\_bar} används för att skapa proportionella staplar.
 
@@ -5796,7 +5757,7 @@ Vi vill här testa om det finns en skillnad mellan arter och om det finns skilln
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-274-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-272-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5806,7 +5767,7 @@ Vi vill här testa om det finns en skillnad mellan arter och om det finns skilln
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-275-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-273-1} \end{center}
 
 För arterna har vi matchad data - varje observation av den ena arten är kopplad till en observation från den andra arten eftersom den kommer från samma båt - och vi kan testa om medelfångsterna av de två arterna är lika med ett t-test. Hypoteserna ges av
 
@@ -5991,7 +5952,7 @@ Datan har 30 observationer av vikt \texttt{weight} och varje observation tillhö
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-281-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-279-1} \end{center}
 
 Behandling 1 verkar vara något lägre än kontrollen medan behandling 2 verkar vara något högre.
 
@@ -6171,27 +6132,27 @@ Anledning till att vi justerar p-värden är att man vid varje test har en sanno
 
 \begin{verbatim}
 ## $emmeans
-##  group  emmean    SE df lower.CL upper.CL
-##  a     -0.3576 0.331 45   -1.025    0.310
-##  b      0.0628 0.331 45   -0.605    0.730
-##  c      0.1539 0.331 45   -0.514    0.821
-##  d     -0.0534 0.331 45   -0.721    0.614
-##  e      0.1263 0.331 45   -0.541    0.794
+##  group emmean    SE df lower.CL upper.CL
+##  a      0.143 0.284 45   -0.429    0.716
+##  b     -0.293 0.284 45   -0.866    0.279
+##  c     -0.718 0.284 45   -1.290   -0.145
+##  d      0.266 0.284 45   -0.307    0.838
+##  e     -0.425 0.284 45   -0.998    0.147
 ## 
 ## Confidence level used: 0.95 
 ## 
 ## $contrasts
 ##  contrast estimate    SE df t.ratio p.value
-##  a - b     -0.4204 0.469 45  -0.897  0.3745
-##  a - c     -0.5115 0.469 45  -1.091  0.2810
-##  a - d     -0.3042 0.469 45  -0.649  0.5197
-##  a - e     -0.4839 0.469 45  -1.032  0.3074
-##  b - c     -0.0911 0.469 45  -0.194  0.8469
-##  b - d      0.1163 0.469 45   0.248  0.8052
-##  b - e     -0.0635 0.469 45  -0.135  0.8929
-##  c - d      0.2073 0.469 45   0.442  0.6604
-##  c - e      0.0276 0.469 45   0.059  0.9533
-##  d - e     -0.1797 0.469 45  -0.383  0.7032
+##  a - b       0.436 0.402 45   1.086  0.2833
+##  a - c       0.861 0.402 45   2.142  0.0377
+##  a - d      -0.122 0.402 45  -0.304  0.7625
+##  a - e       0.568 0.402 45   1.414  0.1642
+##  b - c       0.424 0.402 45   1.056  0.2967
+##  b - d      -0.559 0.402 45  -1.390  0.1714
+##  b - e       0.132 0.402 45   0.328  0.7442
+##  c - d      -0.983 0.402 45  -2.446  0.0184
+##  c - e      -0.292 0.402 45  -0.727  0.4707
+##  d - e       0.691 0.402 45   1.718  0.0926
 \end{verbatim}
 
 Kör koden tio gånger. Hur många gånger av de tio ger de parvisa jämförelserna \emph{någon} signifikant skillnad (det vill säga något p-värde under 0.05)?
@@ -6282,7 +6243,7 @@ En vanlig illustration av ett blockförsök är ett punktdiagram kombinerat med 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-295-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-293-1} \end{center}
 
 Färg och linje sammanbinder observationer från samma block. Det finns tecken på en blockeffekt: block I är nästan alltid högst och block V är nästan alltid lägst. Det finns också en tydlig behandlingseffekt i att högre kväve ger högre skörd.
 
@@ -6488,7 +6449,7 @@ Exempeldata på havre tar med två förklarande faktorer och ett block. Datan ka
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-306-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-304-1} \end{center}
 
 Grafen visar samma kvävesamband som tidigare. Det finns inga tydliga skillnader mellan sorter, möjligen har sorten Victory givit något lägre skörd än övriga. Det finns fortfarande en tydlig blockeffekt, till exempel har block I höga värden och block V låga värden.
 
@@ -6643,7 +6604,7 @@ Normalfördelning kan undersökas grafiskt med ett histogram eller en QQ-graf.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-313-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-311-1} \end{center}
 
 Punkterna avviker något från normalfördelningen i svansarna, men det är förstås alltid en bedömningsfråga.
 
@@ -6657,7 +6618,7 @@ Lika varians undersöks ofta med ett spridningsdiagram med de skattade värdena 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-314-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-312-1} \end{center}
 
 Om datan är i linje med antaganden ska diagrammet se ut som slumpmässigt placerade punkter med ungefär lika stor spridning kring noll-linjen för samtliga nivåer på x-axeln. För det här exemplet ser det okej ut.
 
@@ -6735,6 +6696,206 @@ Vi använder den skattade modellen för att ta fram skattade värden och residua
 Använd exemplet på residualtester ovan för att undersöka antagandet om normalfördelade residualer.
 \end{exercise}
 
+\hypertarget{bonus.-statistik-fuxf6r-ekologi}{%
+\section{Bonus. Statistik för ekologi}\label{bonus.-statistik-fuxf6r-ekologi}}
+
+Här tittar vi på några statistiska metoder som är vanliga inom ekologin, men går bortom materialet på en statistisk grundkurs. Vi börjar med datastruktur och visualisering för populationsdata, för att sedan titta på diversitetsmått, principalkomponentanalys (PCA) och hierarkisk klustering. Det vanligaste paketet för ekologi är \texttt{vegan}, så vi kan börja med att installera och ladda det. Vi kommer också använda \texttt{factoextra} för en graf.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# install.packages("vegan")}
+\FunctionTok{library}\NormalTok{(vegan)}
+
+\CommentTok{\# install.packages("factoextra")}
+\FunctionTok{library}\NormalTok{(factoextra)}
+\end{Highlighting}
+\end{Shaded}
+
+Data för ekologiska populationer för flera platser eller tillfällen ordnas oftast i en tabell med plats som rad och arter som kolumner. Värdena i tabellen anger antingen antalet observerade individer eller ett binärt utfall (1 för förekomst, 0 för ingen förekomst). Exempeldatan \texttt{dune}, som kan laddas med funktionen \texttt{data()}, ger ett exempel. För att illustrera en typisk jämförelsestudie skapar vi en kolumn för platstyp och lägger till ett plats-id.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(dune)}
+\NormalTok{dune }\OtherTok{\textless{}{-}}\NormalTok{ dune }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Site =} \DecValTok{1}\SpecialCharTok{:}\FunctionTok{n}\NormalTok{(), }
+         \AttributeTok{Type =} \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"A"}\NormalTok{, }\StringTok{"B"}\NormalTok{), }\AttributeTok{each =} \DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Vi kan illustrera data genom att pivotera till långt format och göra en graf med \texttt{ggplot()}. En heatmap eller ett spridningsdiagram med storlek för antal observationer kan vara lämpliga grafer. Tolkning kräver förstås kod artkännedom och beror på den vetenskapliga frågan.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dune\_long }\OtherTok{\textless{}{-}}\NormalTok{ dune }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pivot\_longer}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(Site, Type), }\AttributeTok{names\_to =} \StringTok{"Species"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"Abundance"}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(dune\_long, }\FunctionTok{aes}\NormalTok{(Site, Species, }\AttributeTok{fill =}\NormalTok{ Abundance)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_tile}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_gradient2}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-321-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dune\_long }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Abundance }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{), }\FunctionTok{aes}\NormalTok{(Site, Species, }\AttributeTok{size =}\NormalTok{ Abundance, }\AttributeTok{color =}\NormalTok{ Type)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-321-2} \end{center}
+
+Ytterligare alternativ kan vara upprepade lådagram eller staplar med småfönster per art.
+
+\begin{exercise}[Populationsgrafer]
+
+Vad måste läggas till i stycket nedan för göra ett lådagram (med art på y-axeln och abundans på x-axeln) och ett stapeldiagram (med platstyp på x-axeln och abundans på y-axeln)?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dune\_long}
+\FunctionTok{ggplot}\NormalTok{(dune\_long, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_, }\AttributeTok{y =}\NormalTok{ \_\_\_, }\AttributeTok{fill =}\NormalTok{ Type)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+
+\FunctionTok{ggplot}\NormalTok{(dune\_long, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ \_\_\_, }\AttributeTok{y =}\NormalTok{ \_\_\_, }\AttributeTok{fill =}\NormalTok{ Type)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{ \_\_\_, }\AttributeTok{nrow =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{exercise}
+
+Ekologiska populationer kan analyseras genom \emph{heirarkisk klustring} - metoder där platser (rader) eller arter (kolumner) sorteras efter hur lika de är. Först beräknas ett avstånd mellan samtliga enheter (platser eller arter) och därefter sker klustringen genom att slå ihop enheter som ligger \emph{nära} varandra. Resultatet illustreras med ett träddiagram.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dune\_data }\OtherTok{\textless{}{-}}\NormalTok{ dune }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Site, }\SpecialCharTok{{-}}\NormalTok{Type)}
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{dist}\NormalTok{(dune\_data, }\AttributeTok{method =} \StringTok{"euclidean"}\NormalTok{)}
+\NormalTok{hc }\OtherTok{\textless{}{-}} \FunctionTok{hclust}\NormalTok{(d)}
+\FunctionTok{plot}\NormalTok{(hc, }\AttributeTok{hang =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{labels =}\NormalTok{ dune}\SpecialCharTok{$}\NormalTok{Type, }
+     \AttributeTok{axes =}\NormalTok{ F, }\AttributeTok{xlab =} \StringTok{""}\NormalTok{, }\AttributeTok{ylab =} \StringTok{""}\NormalTok{, }\AttributeTok{ann =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-323-1} \end{center}
+
+\begin{exercise}[Avståndsmått]
+Ta upp hjälpsidan till distansfunktionen med \texttt{?dist}. Under \texttt{method} finns flera möjliga avståndsmått. Vad måste ändras i kodstycket ovan för att ange ett Manhattan-avstånd? Har avståndet någon betydande effekt på träddiagrammet?
+\end{exercise}
+
+För att göra en klustring av arter kan man \emph{transponera} data så att rader och kolumner byter plats med varandra. Här kommer artnamn automatisk med eftersom raderna i datan har namn. Det är inte alltid fallet, så det kan vara nödvändigt att sätta etiketter med argumentet \texttt{labels} i \texttt{plot()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dune\_data }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{(dune\_data)}
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{dist}\NormalTok{(dune\_data, }\AttributeTok{method =} \StringTok{"euclidean"}\NormalTok{)}
+\NormalTok{hc }\OtherTok{\textless{}{-}} \FunctionTok{hclust}\NormalTok{(d)}
+\FunctionTok{plot}\NormalTok{(hc, }\AttributeTok{hang =} \SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}
+     \AttributeTok{axes =}\NormalTok{ F, }\AttributeTok{xlab =} \StringTok{""}\NormalTok{, }\AttributeTok{ylab =} \StringTok{""}\NormalTok{, }\AttributeTok{ann =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-324-1} \end{center}
+
+Träddiagrammet tolkas så att enheter vars koppling ligger lågt är mer lika varandra - arterna förekommer ofta på samma plats.
+
+En annan vanlig metod för \emph{multivariat} data, vilket populationsdata är ett exempel på, är \emph{principalkomponentsanalys} (PCA, Principal Component Analysis). En PCA är ett försök att sammanfatta den ursprungliga datans 30 variabler (en per art) med ett mindre antal variabler. De nya variablerna - \emph{komponenterna} - skapas genom att väga och addera de ursprungliga variablerna på ett sätt som förklarar så mycket som möjligt av variationen med minsta möjliga antal variabler. Resultatet illustreras vanligen med en \emph{biplot} - ett spridningsdiagram som placerar ut både platser och arter.
+
+I R kan en PCA göras med \texttt{prcomp()} och en biplot kan göras med \texttt{fviz\_pca\_biplot()} från \texttt{factoextra}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dune\_data }\OtherTok{\textless{}{-}}\NormalTok{ dune }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Site, }\SpecialCharTok{{-}}\NormalTok{Type)}
+\NormalTok{pca }\OtherTok{\textless{}{-}} \FunctionTok{prcomp}\NormalTok{(dune\_data, }\AttributeTok{scale. =}\NormalTok{ F)}
+\FunctionTok{fviz\_pca\_biplot}\NormalTok{(pca, }\AttributeTok{geom.ind =} \StringTok{"point"}\NormalTok{, }\AttributeTok{habillage =}\NormalTok{ dune}\SpecialCharTok{$}\NormalTok{Type, }\AttributeTok{labelsize =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-325-1} \end{center}
+
+Platserna illustreras med punkter och arterna med pilar. Pilar i samma riktning motsvarar arter som är lika (de finns på samma platser), närliggande punkter motsvarar lika platser (de har samma arter), och punkter i samma riktning som en pil har höga värden för den arten.
+
+\begin{exercise}[Skalning i en PCA]
+En PCA kan göras med och utan att skala variablerna. Om variablerna skalas får en variabel som varierar mycket samma vikt som en variabel som varierar lite. Det kan vara bra om man har variabler som är mätta på olika sätt, till exempel om en variabel är i meter och en är i centimeter. Gör lämplig ändring i kodstycket ovan för att skala variablerna i \texttt{prcomp()}. Har det någon effekt på grafen?
+\end{exercise}
+
+Den sista ansatsen vi ska titta på är att sammanfatta en population i ett enskilt tal - ett diversitetsindex. Genom att beräkna ett index kan man reducera datan till en observation på plats. Man kan därifrån tillämpa de metoder vi sett i övriga delar av kursen (t-test och variansanalys). Det finns en stor mängd olika index. Det vanligaste än Shannon-Weaver indexet (eller entropi), vilket beräknas genom att ta andelen per art, multiplicera med logaritmen av andelen, summera över arter, och multiplicera med minus ett. Om man har tre arter med andelarna 0.3, 0.5 och 0.2 ges Shannon-Weaver alltså av
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\SpecialCharTok{{-}}\NormalTok{(}\FloatTok{0.3} \SpecialCharTok{*} \FunctionTok{log}\NormalTok{(}\FloatTok{0.3}\NormalTok{) }\SpecialCharTok{+} \FloatTok{0.5} \SpecialCharTok{*} \FunctionTok{log}\NormalTok{(}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} \FloatTok{0.2} \SpecialCharTok{*} \FunctionTok{log}\NormalTok{(}\FloatTok{0.2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.029653
+\end{verbatim}
+
+Indexet ökar om det finns många arter och om andelen per art är samma. En population med \emph{en} dominant art kommer alltså ha ett lågt index.
+
+För en tabell med data kan index beräknas med \texttt{diversity()}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diver }\OtherTok{\textless{}{-}} \FunctionTok{diversity}\NormalTok{(dune\_data, }\AttributeTok{index =} \StringTok{"shannon"}\NormalTok{)}
+\NormalTok{dune }\OtherTok{\textless{}{-}}\NormalTok{ dune }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Diversity =}\NormalTok{ diver)}
+\end{Highlighting}
+\end{Shaded}
+
+Diversitetsindexen kan sedan illustreras och analyseras som vilken numerisk variabel som helst.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dune, }\FunctionTok{aes}\NormalTok{(Diversity, Type)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-328-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mod }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Diversity }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Type, }\AttributeTok{data =}\NormalTok{ dune)}
+\FunctionTok{Anova}\NormalTok{(mod)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Anova Table (Type II tests)
+## 
+## Response: Diversity
+##            Sum Sq Df F value  Pr(>F)  
+## Type      0.37586  1  6.6647 0.01881 *
+## Residuals 1.01513 18                  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{emmeans}\NormalTok{(mod, }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Type)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  Type emmean     SE df lower.CL upper.CL
+##  A      2.30 0.0751 18     2.14     2.46
+##  B      2.03 0.0751 18     1.87     2.18
+## 
+## Confidence level used: 0.95
+\end{verbatim}
+
+Här finns en signifikant skillnad med platstyper.
+
+\begin{exercise}[Diversitetsindex]
+Ta upp hjälpsidan till funktionen \texttt{diversity()}. Hur anger man att funktionen ska ge Simpsons index?
+\end{exercise}
+
+\begin{exercise}[Test på nytt index]
+Gör om analysen på diversitet (anovamodellen och F-testet) med Simpsons index istället för Shannon-Weaver. Påverkar valet av diversitetsindex utfallet av testet?
+\end{exercise}
+
 \hypertarget{regression-och-korrelation}{%
 \chapter{Regression och korrelation}\label{regression-och-korrelation}}
 
@@ -6776,7 +6937,7 @@ Ta som exempel följande data på tandtillväxt (\texttt{len}) hos marsvin under
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-322-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-330-1} \end{center}
 
 Ett lådagram visar en klar skillnad mellan doser och en svagare skillnad mellan metoder. Det finns också tecken på att metoderna svarar olika på dos i att metoden \emph{VC} ligger lägre än \emph{OJ} vid de låga doserna men över (eller iallafall lika) vid den höga dosen.
 
@@ -6820,7 +6981,7 @@ En anovamodell bygger på antaganden om normalfördelning och lika varianser. No
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-324-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-332-1} \end{center}
 
 Punkterna ligger ungefär på linjen i QQ-grafen och punkterna har ungefär samma spridning för alla nivåer av det skattade värdet.
 
@@ -6910,7 +7071,7 @@ Ta som exempel data på förväntad medellivslängd och bnp per capita. Datan h�
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-327-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-335-1} \end{center}
 
 Datan visar ett positivt samband mellan variablerna - högre bnp per capita är kopplat till högre medellivslängd.
 
@@ -6979,7 +7140,7 @@ Man kan enkelt rita ut regressionlinjen i en graf med \texttt{geom\_smooth()} oc
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-330-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-338-1} \end{center}
 
 Den blå linjen illustrerar regressionlinjen 72.27 + 0.2146x. Det grå bandet kring linjen är ett konfidensintervall för skattningen av y-variabeln.
 
@@ -7019,7 +7180,7 @@ Testerna av en regressionsmodell bygger på ett normalfördelningsantagande och 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-332-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-340-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7027,7 +7188,7 @@ Testerna av en regressionsmodell bygger på ett normalfördelningsantagande och 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-332-2} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-340-2} \end{center}
 
 Om data följer en normalfördelning bör histogrammet visa en ungefärlig normalkurva, QQ-plotten bör visa punkter på den diagonala linjen och spridningsdiagrammet bör visa en slumpmässig spridning av punkter. Graferna pekar i det här fallet inte på några tydliga avvikelser från normalfördelningsantagandet, möjligen pekar QQ-plotten på mindre spridning i svansarna än en teoretisk normalfördelning.
 

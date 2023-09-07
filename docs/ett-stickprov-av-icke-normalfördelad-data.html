@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-09-04" />
+<meta name="date" content="2023-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -204,7 +204,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#chi-två-test-för-goodness-of-fit"><i class="fa fa-check"></i><b>5.4</b> Chi-två-test för goodness-of-fit</a></li>
 <li class="chapter" data-level="5.5" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#chi-två-test-när-någon-parameter-skattas-från-datan"><i class="fa fa-check"></i><b>5.5</b> Chi-två-test när någon parameter skattas från datan</a></li>
 <li class="chapter" data-level="5.6" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#bonus.-interaktiva-kartor-med-leaflet"><i class="fa fa-check"></i><b>5.6</b> Bonus. Interaktiva kartor med leaflet</a></li>
-<li class="chapter" data-level="5.7" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html#valfria-hemuppgifter"><i class="fa fa-check"></i><b>5.7</b> Valfria hemuppgifter</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="test-för-två-stickprov.html"><a href="test-för-två-stickprov.html"><i class="fa fa-check"></i><b>6</b> Test för två stickprov</a>
 <ul>
@@ -226,6 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="variansanalys.html"><a href="variansanalys.html#variansanalys.-en-faktor-med-block"><i class="fa fa-check"></i><b>7.4</b> Variansanalys. En faktor med block</a></li>
 <li class="chapter" data-level="7.5" data-path="variansanalys.html"><a href="variansanalys.html#variansanalys.-två-faktorer-med-block"><i class="fa fa-check"></i><b>7.5</b> Variansanalys. Två faktorer med block</a></li>
 <li class="chapter" data-level="7.6" data-path="variansanalys.html"><a href="variansanalys.html#modellantaganden-och-residualer"><i class="fa fa-check"></i><b>7.6</b> Modellantaganden och residualer</a></li>
+<li class="chapter" data-level="7.7" data-path="variansanalys.html"><a href="variansanalys.html#bonus.-statistik-för-ekologi"><i class="fa fa-check"></i><b>7.7</b> Bonus. Statistik för ekologi</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="regression-och-korrelation.html"><a href="regression-och-korrelation.html"><i class="fa fa-check"></i><b>8</b> Regression och korrelation</a>
 <ul>
@@ -649,27 +649,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb355-4"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb355-4" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">lng =</span> dat_leaf<span class="sc">$</span>lng, <span class="at">lat =</span> dat_leaf<span class="sc">$</span>lat, <span class="at">radius =</span> <span class="dv">10</span>, <span class="at">popup =</span> dat_leaf<span class="sc">$</span>Rödlistade)</span></code></pre></div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-125" class="exercise"><strong>Uppgift 5.25  (Artnamn) </strong></span>Ändra i koden ovan för att ange artnamn som popup-text istället för rödlistestatus. Funktionen <code>paste()</code> kan också vara intressant för att ta med mer information i texten: <code>paste(dat_leaf$Rödlistade, dat_leaf$Antal)</code> skulle exempelvis ge både status och antal individer vid den specifika observationen.</p>
-</div>
-</div>
-<div id="valfria-hemuppgifter" class="section level2 hasAnchor" number="5.7">
-<h2><span class="header-section-number">5.7</span> Valfria hemuppgifter<a href="ett-stickprov-av-icke-normalfördelad-data.html#valfria-hemuppgifter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-126" class="exercise"><strong>Uppgift 5.26  (Herrallsvenskan) </strong></span>Följande importerar data för herrallsvenskan i fotboll.</p>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb356-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Allsvenskan%2C%20herrar%2C%201924-2020.csv&quot;</span>)</span></code></pre></div>
-<p>Importera datan och se hur många matcher som ingår.</p>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-127" class="exercise"><strong>Uppgift 5.27  (Antal hemmasegrar) </strong></span>Beräkna antalet hemmasegrar i herrallsvenskan genom att räkna antalet matcher där <code>Hemmamål</code> överstiger <code>Bortamål</code>.</p>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-128" class="exercise"><strong>Uppgift 5.28  (Test för antal hemmasegrar) </strong></span>Testa om andelen hemmasegrar skiljer sig från nollhypotesen på 47 procent.</p>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-129" class="exercise"><strong>Uppgift 5.29  (Konfidensintervall för antal hemmasegrar) </strong></span>Använd <code>binom.asymp()</code> från paketet <code>binom</code> för att beräkna ett konfidensintervall för andelen hemmasegrar. Jämför med en handräkning (hand och miniräknare).</p>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-130" class="exercise"><strong>Uppgift 5.30  (Hemmasegrar för Malmö FF) </strong></span>Följande beräknar antalet hemmasegrar för Malmö FF. Testa om Malmös andel hemmasegrar är större än 47 procent.</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb357-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Hemmalag <span class="sc">==</span> <span class="st">&quot;Malmö FF&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">count</span>(Hemmamål <span class="sc">&gt;</span> Bortamål)</span></code></pre></div>
 </div>
 
 </div>

@@ -503,3 +503,132 @@ dat_bact <- dat_bact %>%
 
 Använd exemplet på residualtester ovan för att undersöka antagandet om normalfördelade residualer.
 :::
+
+## Bonus. Statistik för ekologi
+
+Här tittar vi på några statistiska metoder som är vanliga inom ekologin, men går bortom materialet på en statistisk grundkurs. Vi börjar med datastruktur och visualisering för populationsdata, för att sedan titta på diversitetsmått, principalkomponentanalys (PCA) och hierarkisk klustering. Det vanligaste paketet för ekologi är `vegan`, så vi kan börja med att installera och ladda det. Vi kommer också använda `factoextra` för en graf.
+
+```{r}
+# install.packages("vegan")
+library(vegan)
+
+# install.packages("factoextra")
+library(factoextra)
+```
+
+Data för ekologiska populationer för flera platser eller tillfällen ordnas oftast i en tabell med plats som rad och arter som kolumner. Värdena i tabellen anger antingen antalet observerade individer eller ett binärt utfall (1 för förekomst, 0 för ingen förekomst). Exempeldatan `dune`, som kan laddas med funktionen `data()`, ger ett exempel. För att illustrera en typisk jämförelsestudie skapar vi en kolumn för platstyp och lägger till ett plats-id.
+
+```{r}
+data(dune)
+dune <- dune %>% 
+  mutate(Site = 1:n(), 
+         Type = rep(c("A", "B"), each = 10))
+```
+
+Vi kan illustrera data genom att pivotera till långt format och göra en graf med `ggplot()`. En heatmap eller ett spridningsdiagram med storlek för antal observationer kan vara lämpliga grafer. Tolkning kräver förstås kod artkännedom och beror på den vetenskapliga frågan.
+
+```{r}
+dune_long <- dune %>%
+  pivot_longer(-c(Site, Type), names_to = "Species", values_to = "Abundance")
+
+ggplot(dune_long, aes(Site, Species, fill = Abundance)) +
+  geom_tile() +
+  scale_fill_gradient2() +
+  theme_minimal()
+
+ggplot(dune_long %>% filter(Abundance > 0), aes(Site, Species, size = Abundance, color = Type)) +
+  geom_point()
+```
+
+Ytterligare alternativ kan vara upprepade lådagram eller staplar med småfönster per art.
+
+::: {.exercise name="Populationsgrafer"}
+Vad måste läggas till i stycket nedan för göra ett lådagram (med art på y-axeln och abundans på x-axeln) och ett stapeldiagram (med platstyp på x-axeln och abundans på y-axeln)?
+
+```{r, eval=F}
+dune_long
+ggplot(dune_long, aes(x = ___, y = ___, fill = Type)) +
+  geom_boxplot()
+
+ggplot(dune_long, aes(x = ___, y = ___, fill = Type)) +
+  geom_col() +
+  facet_wrap(~ ___, nrow = 2)
+```
+:::
+
+Ekologiska populationer kan analyseras genom *heirarkisk klustring* - metoder där platser (rader) eller arter (kolumner) sorteras efter hur lika de är. Först beräknas ett avstånd mellan samtliga enheter (platser eller arter) och därefter sker klustringen genom att slå ihop enheter som ligger *nära* varandra. Resultatet  illustreras med ett träddiagram.
+
+```{r}
+dune_data <- dune %>% select(-Site, -Type)
+d <- dist(dune_data, method = "euclidean")
+hc <- hclust(d)
+plot(hc, hang = -1, labels = dune$Type, 
+     axes = F, xlab = "", ylab = "", ann = F)
+```
+
+::: {.exercise name="Avståndsmått"}
+Ta upp hjälpsidan till distansfunktionen med `?dist`. Under `method` finns flera möjliga avståndsmått. Vad måste ändras i kodstycket ovan för att ange ett Manhattan-avstånd? Har avståndet någon betydande effekt på träddiagrammet?
+:::
+
+För att göra en klustring av arter kan man *transponera* data så att rader och kolumner byter plats med varandra. Här kommer artnamn automatisk med eftersom raderna i datan har namn. Det är inte alltid fallet, så det kan vara nödvändigt att sätta etiketter med argumentet `labels` i `plot()`.
+
+```{r}
+dune_data <- t(dune_data)
+d <- dist(dune_data, method = "euclidean")
+hc <- hclust(d)
+plot(hc, hang = -1,
+     axes = F, xlab = "", ylab = "", ann = F)
+```
+
+Träddiagrammet tolkas så att enheter vars koppling ligger lågt är mer lika varandra - arterna förekommer ofta på samma plats.
+
+En annan vanlig metod för *multivariat* data, vilket populationsdata är ett exempel på, är *principalkomponentsanalys* (PCA, Principal Component Analysis). En PCA är ett försök att sammanfatta den ursprungliga datans 30 variabler (en per art) med ett mindre antal variabler. De nya variablerna - *komponenterna* - skapas genom att väga och addera de ursprungliga variablerna på ett sätt som förklarar så mycket som möjligt av variationen med minsta möjliga antal variabler. Resultatet illustreras vanligen med en *biplot* - ett spridningsdiagram som placerar ut både platser och arter.
+
+I R kan en PCA göras med `prcomp()` och en biplot kan göras med `fviz_pca_biplot()` från `factoextra`.
+
+```{r, fig.height=6}
+dune_data <- dune %>% select(-Site, -Type)
+pca <- prcomp(dune_data, scale. = F)
+fviz_pca_biplot(pca, geom.ind = "point", habillage = dune$Type, labelsize = 3)
+```
+
+Platserna illustreras med punkter och arterna med pilar. Pilar i samma riktning motsvarar arter som är lika (de finns på samma platser), närliggande punkter motsvarar lika platser (de har samma arter), och punkter i samma riktning som en pil har höga värden för den arten.
+
+::: {.exercise name="Skalning i en PCA"}
+En PCA kan göras med och utan att skala variablerna. Om variablerna skalas får en variabel som varierar mycket samma vikt som en variabel som varierar lite. Det kan vara bra om man har variabler som är mätta på olika sätt, till exempel om en variabel är i meter och en är i centimeter. Gör lämplig ändring i kodstycket ovan för att skala variablerna i `prcomp()`. Har det någon effekt på grafen?
+:::
+
+Den sista ansatsen vi ska titta på är att sammanfatta en population i ett enskilt tal - ett diversitetsindex. Genom att beräkna ett index kan man reducera datan till en observation på plats. Man kan därifrån tillämpa de metoder vi sett i övriga delar av kursen (t-test och variansanalys). Det finns en stor mängd olika index. Det vanligaste än Shannon-Weaver indexet (eller entropi), vilket beräknas genom att ta andelen per art, multiplicera med logaritmen av andelen, summera över arter, och multiplicera med minus ett. Om man har tre arter med andelarna 0.3, 0.5 och 0.2 ges Shannon-Weaver alltså av
+
+```{r}
+-(0.3 * log(0.3) + 0.5 * log(0.5) + 0.2 * log(0.2))
+```
+
+Indexet ökar om det finns många arter och om andelen per art är samma. En population med *en* dominant art kommer alltså ha ett lågt index.
+
+För en tabell med data kan index beräknas med `diversity()`.
+
+```{r}
+diver <- diversity(dune_data, index = "shannon")
+dune <- dune %>% mutate(Diversity = diver)
+```
+
+Diversitetsindexen kan sedan illustreras och analyseras som vilken numerisk variabel som helst.
+
+```{r, fig.height=2}
+ggplot(dune, aes(Diversity, Type)) + geom_point()
+
+mod <- lm(Diversity ~ Type, data = dune)
+Anova(mod)
+emmeans(mod, ~ Type)
+```
+
+Här finns en signifikant skillnad med platstyper.
+
+::: {.exercise name="Diversitetsindex"}
+Ta upp hjälpsidan till funktionen `diversity()`. Hur anger man att funktionen ska ge Simpsons index? 
+:::
+
+::: {.exercise name="Test på nytt index"}
+Gör om analysen på diversitet (anovamodellen och F-testet) med Simpsons index istället för Shannon-Weaver. Påverkar valet av diversitetsindex utfallet av testet?
+:::
