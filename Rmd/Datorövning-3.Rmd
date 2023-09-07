@@ -63,9 +63,9 @@ ggplot(dat_sum, aes(continent, Mean, fill = continent)) +
 
 ## Diskreta fördelningar i allmänhet
 
-En diskret slumpvariabel kan bara anta specifika värden på tallinjen. Det absolut vanligaste fallet är när utfallen är heltal. Tärningskastet med en sex-sidig tärning är ett exempel på en diskret variabel: utfallet är något av 1, 2, 3, 4, 5 och 6. Låt oss börja med att definera en diskret slumpvariabel med tärningskastet som exempel.
+En diskret slumpvariabel kan bara anta specifika värden på tallinjen. Det absolut vanligaste fallet är när utfallen är heltal. Varje utfall är kopplat till *en* sannolikhet och summan av sannolikheterna är ett.
 
-Ett kast med en 6-sidig tärning har sex möjliga utfall och (för en balanserad tärning) samma sannolikhet för varje utfall. Eftersom summan av sannolikheter ska bli ett måste sannolikheten för ett specifik utfall vara en sjättedel. Vi kan kodifiera slumpvariabeln i en tabell över utfall och sannolikhet.
+Ett kast med en 6-sidig tärning har sex möjliga utfall och samma sannolikhet för varje utfall. Eftersom summan av sannolikheter ska bli ett måste sannolikheten för ett specifik utfall vara en sjättedel. Vi kan kodifiera slumpvariabeln i en tabell över utfall och sannolikhet.
 
 ```{r}
 dat_dice6 <- data.frame(x = c(1,2,3,4,5,6),
@@ -80,12 +80,12 @@ ggplot(dat_dice6, aes(x, p)) + geom_col()
 ```
 
 ::: {.exercise name="En annan tärning"}
-Ta fram en tärning som *inte* har sex sidor. Om du saknar en sådan tärning, fråga lämplig person om du kan få en. Behåll tärningen, då den kan återkomma vid en senare datorövning. Följ exemplet ovan för att kodifiera din tärning som en slumpvariabel. Utfallen `x` är de möjliga resultaten av att kasta tärningen och sannolikheten `p` är sannolikheten för varje utfall. Antag att tärningen är balanserad och att alla utfall därför är lika troliga. Ett bra namn på det nya objektet kan vara `dat_diceN` där N anger antalet sidor på tärningen, t.ex. `dat_dice20` för en 20-sidig tärning.
+Ta fram en tärning som *inte* har sex sidor. Följ exemplet ovan för att kodifiera din tärning som en slumpvariabel. Ett bra namn på det nya objektet kan vara `dat_diceN` där N anger antalet sidor på tärningen, t.ex. `dat_dice20` för en 20-sidig tärning.
 :::
 
 Under tidigare datorövningar såg vi hur man kan beräkna medelvärde och varians från ett stickprov. De måtten kan också beräknas på en teoretisk slumpvariabel. Den här kopplingen mellan beräkningar på ett stickprov och teoretiska egenskaper hos en slumpvariabel är väldigt central inom statistiken, eftersom vårt mål är att koppla verklig data till teoretiska modeller.
 
-För en diskret slumpvariabel ges medelvärdet (som då också kallas *populationsmedelvärde*, eller vanligare *väntevärde*) av summan av utfallen gånger sannolikheterna. Vi säger att utfallen vägs med sannolikheterna. För vår tärning kan vi räkna ut det genom att multiplicera utfall och sannolikhet i ett `mutate()` steg och sedan summera.
+För en diskret slumpvariabel ges medelvärdet (som då också kallas *populationsmedelvärde*, eller vanligare *väntevärde*) av summan av utfallen gånger sannolikheterna. För vår tärning kan vi räkna ut det genom att multiplicera utfall och sannolikhet i ett `mutate()` steg och sedan summera.
 
 ```{r}
 dat_dice6 %>% 
@@ -99,23 +99,17 @@ Notera att medelvärdet inte behöver vara ett möjligt utfall.
 Upprepa beräkningen ovan, denna gång med den slumpvariabel du kodifierade i den tidigare uppgiften.
 :::
 
-Beräkningen av en teoretisk varians (som vi kan kalla *populationsvarians*) är lite komplicerad. Stegen ges av
+Beräkningen av en teoretisk varians (som vi kan kalla *populationsvarians*) är lite mer komplicerad och vi går inte in på några detaljer här. Koden nedan skapar en funktion som beräknar populationsvariansen. 
 
-1. dra ifrån medelvärdet från utfallen,
-2. kvadrera differenserna,
-3. multiplicera kvadraterna med sannolikheterna,
-4. summera produkterna.
+```{r}
+pop_var <- function(x, p) sum(p * (x - sum(x * p))^2)
+```
 
-För den 6-sidiga tärningen får vi beräkningen nedan. Precis som i fallet med faktiskt data ges standardavvikelsen av roten ur variansen.
+För en 6-sidig tärning kan vi beräkna variansen med följande.
 
 ```{r}
 dat_dice6 %>% 
-  mutate(mean = sum(x * p)) %>% 
-  mutate(differenser = x - mean,
-         kvadrater = differenser^2,
-         produkter = kvadrater * p) %>% 
-  summarise(varians = sum(produkter),
-            standardavvikelse = sqrt(varians))
+  summarise(varians = pop_var(x, p))
 ```
 
 ::: {.exercise name="Varians för din tärning"}
@@ -137,7 +131,7 @@ sd(utfall)
 Ligger medelvärde och varians från stickprovet nära de teoretiska beräkningarna?
 :::
 
-R kommer också med en rad funktioner för att simulera data. För kontinuerlig data kan man använda funktioner `sample()` som drar ett valfritt stort urval ur en serie möjlig utfall. Följande kod drar tiotusen slumputfall från en 6-sidig tärning, och beräknar medelvärde och varians.
+R kommer också med en rad funktioner för att simulera data. Funktionen `sample()` drar ett urval ur en serie möjliga utfall. Följande kod drar tiotusen slumputfall från en 6-sidig tärning, och beräknar medelvärde och varians.
 
 ```{r}
 slumputfall <- sample(x = dat_dice6$x, size = 10000, replace = T)
@@ -152,21 +146,25 @@ Använd `sample()` för att dra tiotusen observationer från din egen tärning. 
 
 ## Särskilda diskreta fördelningar: binomialfördelning
 
-Vi såg i tärningsexemplet hur en slumpvariabel kan beskrivas med dess sannolikhetsfördelning - variabeln förklaras helt av de möjliga utfallen och sannolikheten för varje utfall. Man kan dock ofta beskriva en slumpvariabel i mindre direkta termer. Ett tärningskast med en 6-sidig tärning kan beskrivas som *utfall från 1 till 6 med varje utfall lika sannolikt* och ett tärningskast med en 20-sidig tärning kan beskrivas som *utfall från 1 till 20 med varje utfall lika sannolikt*. Slumpvariablerna kan alltså beskrivas på ett tydligt sätt utifrån den bakomliggande processen. Den här typen av variabler är ofta *parametriserade* - det finns någon aspekt av processen som beskrivs med en bestämd siffra (6 respektive 20 för de bägge tärningskasten).
+Under föreläsningen såg vi tre familjer av fördelningar som uppstår i vissa specifika situationer:
 
-Ett vanligt exempel på en sådan *parametriserad* fördelning är en binomialfördelning. En binomialfördelning uppstår när man har upprepningar av en binär händelse (en händelse som antingen inträffar eller inte inträffar) och räknar antalet *positiva* utfall (positiva i klinisk mening som något utfall man är intresserad av). I en binomialfördelning ges antalet upprepningar av en parameter *n* och sannolikheten för ett positivt utfall i en händelse av en parameter *p*.
+- binomialfördelningen (för antalet positiva utfall vid ett antal försök),
+- poissonfördelningen (för antalet händelser vid en stor mängd försök), och
+- normalfördelningen (för kontinuerliga variabler).
 
-Som exempel kan vi ta ett myntkast. Om man singlar ett balanserat mynt tio gånger kommer antalet krona (vårt positiva utfall) följa en binomialfördelning där n ges av 10 och p av 0.5. I R kan sannolikheter från en binomialfördelning tas fram med `dbinom()`. Sannolikheten för tre krona ges till exempel av 
+Binomialfördelningen ger sannolikheter för antalet positiva utfall vid ett visst antal försök. Varje försök har ett av två utfall (positivt och negativt) och försöken är oberoende av varandra. I en binomialfördelning ges antalet försök av en parameter *n* och sannolikheten för ett positivt utfall i ett försök av en parameter *p*.
+
+Som exempel kan vi ta ett tärningskast. Om man kastar en 6-sidig tärning tio gånger kommer antalet ettor (vårt positiva utfall) följa en binomialfördelning där n ges av tio och p av en sjättedel. I R kan sannolikheter från en binomialfördelning tas fram med `dbinom()`. Sannolikheten för tre ettor ges till exempel av 
 
 ```{r}
-dbinom(3, size = 10, prob = 0.5)
+dbinom(3, size = 10, prob = 1/6)
 ```
 
 Om vi vill illustrera en binomalfördelning kan vi ta fram sannolikheterna för varje utfall och göra ett stapeldiagram.
 
 ```{r}
 dat_bin <- data.frame(x = 0:10) %>% 
-  mutate(p = dbinom(x, size = 10, prob = 0.5))
+  mutate(p = dbinom(x, size = 10, prob = 1/6))
 
 ggplot(dat_bin, aes(x, p)) + geom_col()
 ```
@@ -188,12 +186,12 @@ I den fördelning du beräknade i uppgiften ovan. Vad är sannolikheten att få 
 
 Utöver sannolikhetsfunktionen (som ger sannolikheten för varje utfall) används ofta också fördelningsfunktionen (som för varje utfall ger sannolikheten att ligga exakt på eller under ett specifikt värde). Fördelningsfunktionen används vid sannolikhetsberäkningar, t.ex. är de tabeller för fördelningar man ofta ser i slutet av statistikböcker på fördelningsformen.
 
-I R beräknas fördelningsfunktionen med `pbinom()`. För fallet med tio slantsinglingar kan man ta
+I R beräknas fördelningsfunktionen med `pbinom()`. För fallet med tio tärningskast kan man ta
 
 ```{r}
 dat_bin <- data.frame(x = 0:10) %>% 
-  mutate(p = dbinom(x, size = 10, prob = 0.5),
-         P = pbinom(x, size = 10, prob = 0.5))
+  mutate(p = dbinom(x, size = 10, prob = 1/6),
+         P = pbinom(x, size = 10, prob = 1/6))
 dat_bin
 ```
 
@@ -203,129 +201,51 @@ Fördelningsfunktionen ges av att summera sannolikhetsfunktionen uppifrån.
 Använd binomialfördelningen från den tidigare uppgiften till att beräkna sannolikheten att få *tre eller färre* positiva utfall.
 :::
 
-Vi kan använda ett logiskt uttryck för att illustrera sannolikheter i stapeldiagrammet. Om vi vill beräkna och illustrera sannolikheten för sju eller färre positiva utfall i exemplet med mynten kan vi använda följande.
+Vi kan använda ett logiskt uttryck för att illustrera sannolikheter i stapeldiagrammet. Om vi vill beräkna och illustrera sannolikheten för fyra eller färre positiva utfall i exemplet med en tärning kan vi använda följande.
 
 ```{r}
-pbinom(7, size = 10, prob = 0.5)
+pbinom(4, size = 10, prob = 1/6)
 
 dat_bin <- data.frame(x = 0:10) %>% 
-  mutate(p = dbinom(x, size = 10, prob = 0.5),
-         P = pbinom(x, size = 10, prob = 0.5))
+  mutate(p = dbinom(x, size = 10, prob = 1/6),
+         P = pbinom(x, size = 10, prob = 1/6))
 
-ggplot(dat_bin, aes(x, p, fill = x <= 7)) +
+ggplot(dat_bin, aes(x, p, fill = x <= 4)) +
   geom_col()
 ```
 
-Den blå ytan motsvarar sannolikheten att få sju eller färre krona. Den sannolikheten kan beräknas till 0.945.
+Den blå ytan motsvarar sannolikheten att få fyra eller färre ettor. Den sannolikheten kan beräknas till 0.985.
 
 ::: {.exercise name="Illustration av sannolikheten"}
-För en sexsidig tärning illustrerar följande sannolikheten att få tre eller färre sexor vid tjugo kast.
-
-```{r}
-pbinom(3, size = 20, prob = 1/6)
-dat_bin <- data.frame(x = 0:20) %>% 
-  mutate(p = dbinom(x, size = 20, prob = 1 / 6))
-
-ggplot(dat_bin, aes(x, p, fill = x <= 3)) +
-  geom_col()
-```
-
-Gör lämpliga ändringar i kodstycket ovan för att illustrera sannolikheten att få exakt tre positiva utfall i exemplet med tärningskastet. 
+Gör lämpliga ändringar i exemplet ovan för att illustrera sannolikheten att få exakt tre positiva utfall i exemplet med tärningskastet. 
 :::
 
 ::: {.exercise name="Teori och verklighet"}
-I en tidigare uppgift kastade du tärningen tjugo gånger. Hur många gånger fick du det lägsta möjliga utfallet på tärningen (t.ex. en etta på en vanlig sex-sidig tärning).
+I en tidigare uppgift kastade du tärningen tjugo gånger. Hur många gånger fick du det lägsta möjliga utfallet på tärningen (t.ex. en etta på en vanlig sex-sidig tärning)?
 :::
 
-I det första exemplet med tärningen kunde vi beräkna väntevärde och varians med de allmäna formlerna. För parametriserade fördelningar som binomialfördelningen finns ofta enklare formler som helt beror på parametrarna. I en binomial ges populationsmedelvärdet av antalet upprepningar gånger sannolikheten (n gånger p) och variansen av antalet upprepningar gånger sannolikheten gånger ett-minus-sannolikheten (n gånger p gånger (1 - p)). För myntkastet (n = 10 och p = 0.5) ges medelvärdet av 5 och variansen av 2.5.
+I det första exemplet med tärningen kunde vi beräkna väntevärde och varians med de allmänna formlerna. För parametriserade fördelningar som binomialfördelningen finns ofta enklare formler som helt beror på parametrarna. I en binomial ges populationsmedelvärdet av antalet upprepningar gånger sannolikheten (n gånger p) och variansen av antalet upprepningar gånger sannolikheten gånger ett-minus-sannolikheten (n gånger p gånger (1 - p)). För en sexsidig tärning (n = 10 och p = 1/6) ges medelvärdet av 1.667 och variansen av 1.389.
 
 ::: {.exercise name="Medelvärde och varians i binomialen"}
-Beräkna medelvärde och varians för antalet ettor om man kastar en sex-sidig tärning tjugo gånger.
+Beräkna medelvärde och varians för antalet ettor om man kastar en 16-sidig tärning tjugo gånger.
+:::
+
+::: {.exercise name="Frösort"}
+För en viss frösort är sannolikheten att gro 60%. Om man sår 10 slumpmässigt valda frön, hur stor är då chansen att
+
+a. högst 6 frön gror?
+b. minst 6 frön gror?
+c. Beräkna populationsmedelvärde och populationsvrians för antalet frön som gror.
+
+(Denna uppgift finns också i uppgiftsdokumentet och kan lösas för hand.)
+
 :::
 
 ## Särskilda diskreta fördelningar: poissonfördelning
 
-En poissonfördelning är en vanlig sannolikhetsfördelning för antalsdata (alltså data som antar positiva heltal som 0, 1, 2, 3 och så vidare). Poissonfördelningen har en nära koppling till binomialfördelningen.
-Om man tittar på binomialfördelningar med stort antal upprepningar och en låg sannolikhet för ett positivt utfall kan man observera att intressant fenomen: binomialfördelningar med samma medelvärde är *väldigt* lika. Ta som exempel en binomial med n = 5000 och p = 0.0006 och en annan binomialfördelning med n = 400 och p = 0.0075. Bägge fördelningarna har medelvärde 3 (ta n gånger p för att bekräfta det). Vi kan beräkna sannolikhetsfördelningen med `dbinom()`.
+En poissonfördelning är en vanlig sannolikhetsfördelning för antalsdata (alltså data som antar positiva heltal som 0, 1, 2, 3 och så vidare). Poissonfördelningen har en nära koppling till binomialfördelningen: om antalet försök n är stort och sannolikheten p liten liknar en binomial fördelning en poissonfördelning. Det innebär att en poissonfördelning är en lämplig fördelning för händelser som har många upprepningar men låg sannolikhet att inträffa i det enskilda försöket. Typexempel är olika typer av olyckor eller observationsantal för sällsynta växter och djur.
 
-```{r}
-dat_two_bin <- data.frame(x = 0:30) %>% 
-  mutate(binom1 = dbinom(x, size = 5000, p = 0.0006),
-         binom2 = dbinom(x, size = 400, p = 0.0075),
-         Differens = binom1 - binom2)
-dat_two_bin
-```
-
-Vi kan illustrera de två fördelningarna i en graf. Den ena fördelningen illustreras med en linje och den andra som punkter, för att kunna se bägge fördelningarna i en bild.
-
-```{r}
-ggplot(dat_two_bin) +
-  geom_line(aes(x, binom1), color = "red") +
-  geom_point(aes(x, binom2), color = "blue")
-```
-
-Punkterna ligger nästan perfekt på linjen. De två binomialfördelningarna har alltså nästan samma sannolikheter, trots att de har helt olika värden för n och p.
-
-::: {.exercise name="Skilda sannolikheter"}
-Följande kod gör samma sak som exemplet ovan, men nu med n1 och n2 som egna objekt.
-
-```{r, eval = F}
-n1 <- 5000
-n2 <- 400
-
-dat_two_bin <- data.frame(x = 0:30) %>% 
-  mutate(binom1 = dbinom(x, size = n1, p = 3 / n1),
-         binom2 = dbinom(x, size = n2, p = 3 / n2),
-         Differens = binom1 - binom2)
-dat_two_bin
-
-ggplot(dat_two_bin) +
-  geom_line(aes(x, binom1), color = "red") +
-  geom_point(aes(x, binom2), color = "blue")
-```
-
-Ändra värdena för `n1` och `n2` och gör om grafen. Vad händer när antalet upprepningar blir lägre, t.ex 50 och 20 - ligger punkterna fortfarande över linjen?
-:::
-
-Det här fenomenet - att binomialfördelningar med samma medelvärde, högt n och lågt p ger liknande sannolikheter - är ett uttryck för ett teoretiskt resultat som säger att en binomalfördelning går mot en *poissonfördelning* när n ökar och p minskar. Det innebär att en poissonfördelning är en lämplig fördelning för händelser som har många upprepningar men låg sannolikhet att inträffa i det enskilda försöket. Typexempel är olika typer av olyckor. Ett av de första historiska exemplet på beräkningar med en poissonfördelning kommer från Preussen under 1800-talet och handlar om soldater som dött i höstoyckor. Där är antalet försök stort (soldater var ofta nära hästar) men sannolikheten låg i varje enskild interaktion.
-
-Poissonfördelningen styrs av en enda parameter, lambda. Parametern lambda är lika med fördelningens medelvärde och varians. Till skillnad från en binomialfördelning, där det högsta möjliga utfall ges av n, har en poissonfördelning inget maxvärde. Man kan i teorin få vilket positivt heltalsutfall som helst.
-
-Vi gör om jämförelse mellan två fördelning, men nu jämför vi med en poissonfördelning med lambda lika med 3.
-
-```{r}
-dat_two_dist <- data.frame(x = 0:30) %>% 
-  mutate(pois = dpois(x, lambda = 3),
-         binom = dbinom(x, size = 400, p = 0.0075),
-         Differens = binom - pois)
-dat_two_dist
-
-ggplot(dat_two_dist) +
-  geom_line(aes(x, pois), color = "red") +
-  geom_point(aes(x, binom), color = "blue")
-```
-
-Den röda linjen är poissonfördelningen och de blå punkterna är en binomialfördelning med n = 400 och p = 0.0075. Fördelningarna är nästan identiska. Notera att fördelningarna har samma medelvärde (då 400 gånger 0.0075 ger 3).
-
-::: {.exercise name="Skilda sannolikheter"}
-Följande kod gör samma sak som exemplet ovan, men nu med n i binomial som eget objekt.
-
-```{r, eval = F}
-n <- 400
-
-dat_two_dist <- data.frame(x = 0:30) %>% 
-  mutate(pois = dpois(x, lambda = 3),
-         binom = dbinom(x, size = n, p = 3 / n),
-         Differens = binom - pois)
-dat_two_dist
-
-ggplot(dat_two_dist) +
-  geom_line(aes(x, pois), color = "red") +
-  geom_point(aes(x, binom), color = "blue")
-```
-
-Från statistisk teori tror vi att skillnaden mellan poissonfördelninen och binomialen växer när antalet upprepningar är litet. Vad händer när antalet upprepningar blir lägre, t.ex 50 eller 20 - ligger punkterna fortfarande över linjen? Vad händer om man ändrar medelvärdet (vilket här är tre). Notera att man då måste ändra i poissonfördelning och binomialfördelning eftersom vi vill jämföra fördelningar med samma medelvärde.
-:::
+Poissonfördelningen styrs av en enda parameter, lambda. Till skillnad från en binomialfördelning, där det högsta möjliga utfall ges av n, har en poissonfördelning inget maxvärde. Man kan i teorin få vilket positivt heltalsutfall som helst. För en poissonfördelning är populationsmedelvärdet och populationsvariansen lika med lambda.
 
 I R kan man beräkna sannolikheter för en poissonfördelning med `dpois()` och `ppois()`. 
 
@@ -350,6 +270,17 @@ Gör lämpliga ändringar för att beräkna sannolikheten för *mindre än eller
 Hur kan man beräkna sannolikheten att få mer än 5 i en fördelning med lambda satt till 3? 
 :::
 
+::: {.exercise name="Albinofödsel"}
+Sannolikheten att en viss individ i en viss population skall vara albino är 1/20 000. Hur stor är sannolikheten att på 40 000 födslar
+
+a. ingen albino föds,
+b. minst en albino föds.
+c. Vilka antaganden skall vara uppfyllda för att sannolikheterna i a och b ska gälla?
+
+(Denna uppgift finns också i uppgiftsdokumentet och kan lösas för hand.)
+
+:::
+
 ## Kontinuerliga fördelningar i allmänhet
 
 En kontinuerlig fördelning kan anta vilka värden som helst på hela tallinjen eller i något intervall på tallinjen. Ett enkelt exempel på en kontinuerlig slumpvariabel kan vara att stoppa ett stoppur slumpmässigt och titta på decimaldelen. Det kommer ge något värde mellan 0 och 1. (Stoppuret kommer naturligtvis avrunda värdet, så man får tänka sig ett magiskt stoppur med oändligt antal decimaler.) Till skillnad från en diskret slumpvariabel, som kan beskrivas med utfallen och dess sannolikheter, måste en kontinuerlig variabel förklaras med en matematisk funktion, en så kallad *täthetsfunktion*. Detta beror på att enskilda utfall alltid har sannolikhet noll för en kontinuerlig fördelning: om man har oändligt antal decimaler är det som exempel sannolikhet noll att få exakt 0.345000... som decimaler på ett stoppur.
@@ -359,7 +290,7 @@ Den absolut vanligaste kontinuerliga fördelningen är en *normalfördelning*.
 ## Särskilda kontinuerliga fördelningar: normalfördelningen
 
 En normalfördelning är en kontinuerlig fördelning some kan anta värden över hela tallinjen och beror på två parametrar: mu som styr var fördelningens är centrerad, och sigma som styr hur utspridd fördelningen är.
-En normalfördelning har en karaktäristisk *klockform*. Vi illustreras två normalfördelningar med hjälp av geomet `geom_function()` i en ggplot.
+En normalfördelning har en karaktäristisk *klockform*. Vi illustrerar två normalfördelningar med hjälp av geomet `geom_function()` i en ggplot.
 
 ```{r}
 ggplot() +
@@ -375,7 +306,7 @@ Den gröna och röda kurvan har samma medelvärde mu men skilda standardavvikels
 Gör lämpliga ändringar i stycken ovan för att illustrera två normalfördelningar: en med medelvärde 0 och standardavvikelse 1 och en med medelvärde 1 och standardavvikelse 2. Kan du utifrån kurvorna säga vilken av de två fördelningarna som ger störst sannolikhet att få ett utfall under minus två?
 :::
 
-Kurvorna illustrerar täthetsfunktionen. I en kontinuerlig fördelning har täthetsfunktionen ingen tolkning i termer av sannolikheter. För att kunna förstå i normalfördelning behöver vi titta på fördelningsfunktionen. Kom ihåg från det diskreta fallet att fördelningsfunktionen anger sannolikheten för exakt lika eller under ett givet värde. Samma sak gäller för en kontinuerlig variabel. Fördelningsfunktionen värde ges av `pnorm()`. Om vi vill beräkna sannolikheten att ligga under 1 i en normalfördelning med medelvärde 2 och standardavvikelse 3 tar vi
+Kurvorna illustrerar *täthetsfunktionen*. I en kontinuerlig fördelning har täthetsfunktionen ingen tolkning i termer av sannolikheter. För att kunna få fram sannolikheter från en normalfördelning behöver vi istället titta på *fördelningsfunktionen*. Kom ihåg från det diskreta fallet att fördelningsfunktionen anger sannolikheten för exakt lika eller under ett givet värde. Samma sak gäller för en kontinuerlig variabel. Fördelningsfunktionen värde ges av `pnorm()`. Om vi vill beräkna sannolikheten att ligga under 1 i en normalfördelning med medelvärde 2 och standardavvikelse 3 tar vi
 
 ```{r}
 pnorm(1, mean = 2, sd = 3)
@@ -590,7 +521,7 @@ pi
 
 Den beräknade arean ligger inte så långt från konstanten pi.
 
-::: {.exercise name="Summan av tre tärningskast"}
+::: {.exercise name="Fler punkter ger bättre skattning"}
 Beräkningens precision ökar med antalet slumptal. Vad i kodstycket ovan ska ändras för att generera fler slumptal? Blir utfallet närmre det väntade värdet om antalet slumptal ökar?
 :::
 
@@ -634,64 +565,3 @@ ggplot(dat_tri, aes(x, y)) +
 Vad måste ändras i stycket ovan för att generera fler punkter? Tiotusen kan vara ett lämpligt antal för en tydligare illustration. Vad händer om man ändrar värdena i `x_original` och `y_original`?
 :::
 
-## Valfria hemuppgifter
-
-::: {.exercise name="Sierpinski-pyramiden"}
-Stycket nedan skapar en tredimensionell variant av Sierpinski-triangeln.
-
-```{r, eval = F}
-x_original <- c(0,1,1,2)
-y_original <- c(0,2,1,0)
-z_original <- c(0,0,2,0)
-
-x_new <- 0.4
-y_new <- 0.2
-z_new <- 0.5
-dat_tri <- data.frame(x = x_new, y = y_new, z = z_new)
-
-n <- 100 # Antal skapade punkter
-
-for(i in 1:n){
-  new_point <- sample(c(1,2,3,4), 1)
-  x_new <- (x_new + x_original[new_point]) / 2
-  y_new <- (y_new + y_original[new_point]) / 2
-  z_new <- (z_new + z_original[new_point]) / 2
-  
-  dat_tri <- bind_rows(dat_tri, data.frame(x = x_new, y = y_new, z = z_new))
-}
-
-ggplot(dat_tri, aes(x, y)) +
-  geom_point()
-
-library(plotly)
-plot_ly(dat_tri, x = ~x, y = ~y, z = ~z) %>% 
-  add_markers(size = 0.1)
-```
-
-Vad måste ändras för att få fler punkter (`n`)?
-
-(Om grafen inte laddas i *Viewer* utan ger felet *WebGL is not supported*, testa att öppna den i en webläsare genom att trycka på kanppen som ser ut som ett fönster med en pil i viewer-fönstret.)
-:::
-
-::: {.exercise name="Pyramidens bas"}
-Vad händer om man ändrar värdena i `x_original`?
-:::
-
-::: {.exercise name="Mandelbrot"}
-Sierpinski-triangeln är ett exempel på en fraktal - en mängd som ser likadan ut oavsett inzoomning. Det mest kända exemplet på en fraktal är Mandelbrot-mängden. R-paketet *mandelbrot* kan producera och visualisera.
-
-```{r, eval=F}
-install.packages("mandelbrot")
-library(mandelbrot)
-mb <- mandelbrot()
-plot(mb)
-```
-:::
-
-::: {.exercise name="Ändrade färger"}
-Titta på hjälpsidan till `mandelbrot_palette` genom att köra `?mandelbrot_palette`. Använd exemplet längst ned för att skapa en färglagd graf.
-:::
-
-::: {.exercise name="Barnsley Fern"}
-Barnsleys ormbunke är ett exempel på en fraktal som efterliknar en naturlig växt. Se wikipediasidan https://en.wikipedia.org/wiki/Barnsley_fern för en beskrivning. Kör R-koden från wikipediasidan för ett exempel i R. Vad måste ändras för att få fler punkter i grafen?
-:::

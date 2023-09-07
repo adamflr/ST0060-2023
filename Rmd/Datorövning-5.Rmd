@@ -64,7 +64,7 @@ ggplot(dat_pH, aes(sample = pH)) +
 
 ## Proportioner från binär data
 
-Binär data är data där en observation har ett av två utfall, vilka kan kodas som noll och ett. Man talar ibland om utfallet ett som ett *positivt* utfall. Binär data kan sammanfattas med en proportion - antalet positiva utfall delat på det totala antalet upprepningar. En proportion kan testas med ett z-test för proportioner (eller *relativ frekvens*). Testet följer stegen för hypotestest (Hypoteser - Testvärde - Testfördelning - P-värde (eller jämförelse med kritiskt värde) - Slutsats). Testvärdet beräknas som differensen mellan den skattade proportionen minus nollhypotesen värde delat på medelfelet, där medelfelet ges av roten ur nollhypotesens värde gånger 1 minus nollhypotesens värde delat på antalet observationer. Testfördelningen är en standardiserad normalfördelning.
+Binär data är data där en observation har ett av två utfall, vilka kan kodas som noll och ett. Man talar ibland om utfallet ett som ett *positivt* utfall. Binär data kan sammanfattas med en proportion - antalet positiva utfall delat på det totala antalet upprepningar. En proportion kan testas med ett z-test för proportioner (eller *relativ frekvens*). Testet följer stegen för hypotestest (Hypoteser - Testvärde - Testfördelning - P-värde (eller jämförelse med kritiskt värde) - Slutsats). 
 
 Låt oss importera lite exempeldata och beräkna ett exempel. Följande rad importerar matchresultat i fotbollsallsvenskan för damer 2000-2020.
 
@@ -77,7 +77,7 @@ ggplot(dat_alls, aes(hemmamal, bortamal)) +
 ```
 
 ::: {.exercise name="En interaktiv målgraf"}
-Kör stycket nedan för en interaktiv målgraf. Vilken match gav det högsta antalet insläppta mål på hemmaplan?
+Kör stycket nedan för en interaktiv målgraf. Vilken match gav det högsta antalet gjorda bortamål?
 ```{r, eval = F}
 # install.packages(plotly)
 library(plotly)
@@ -107,11 +107,18 @@ n
 
 För att genomföra ett z-test sätter vi upp hypoteser om proportionen bortasegrar.
 
-Nollhypotes H0: p lika med 0.33
+- Nollhypotes H0: p lika med 0.33
+- Alternativhypotes H1: p ej lika med 0.33
 
-Alternativhypotes H1: p ej lika med 0.33
+Ett test kan köras i R med `prop.test()`.
 
-Testvärdet i ett z-test kan beräknas med testfunktionen.
+```{r}
+prop.test(x = 947, n = 2750, p = 0.33, correct = F)
+```
+
+P-värdet ställs mot en förbestämd signifikansnivå (vanligen 5 procent). I det här fallet leder det höga p-värdet till att nollhypotesen accepteras.
+
+Om vi tar en närmre titt på testets steg brörjar vi med att beräkna ett testvärde.
 
 ```{r}
 p0 <- 0.33
@@ -137,11 +144,11 @@ Areans yta kan tas fram med normalfördelningens fördelningsfunktion `pnorm()`.
 2 * pnorm(-z_value)
 ```
 
-Testets p-värde är alltså ungefär 11 procent. Om vi upprepar försöket (vilket i det här fallet skulle innebära att spela om 21 säsonger av allsvenskan) skulle vi i 11 procent av upprepningarna få en lika stor eller större avvikelse från 0.33. Vår observation är alltså inte ett orimligt utfall om den faktiska sannolikheten för bortaseger är 0.33 och vi kan inte förkasta nollhypotesen på femprocentsnivån.
+Testets p-värde är ungefär 11 procent. Vår observation är alltså inte ett orimligt utfall om den faktiska sannolikheten för bortaseger är 0.33 och vi kan inte förkasta nollhypotesen på femprocentsnivån.
 
 Om man löste uppgiften för hand skulle man istället för att beräkna p-värdet jämföra z-värdet med ett kritisk värde ur en tabell. Det kritiska värdet för fem-procentig signifikans är 1.96. Vi kan också ta fram det genom `qnorm(0.975)`.
 
-I R finns en funktion för test av proportioner `prop.test()`. Funktionens argument ges av *antalet* positiva utfall och det totala antalet observationer. Nollhypotesens värde anges med ett argument `p`. Det finns också en möjlighet att förbättra testet med en så kallad kontinuitetskorrektion. Då det inte ingår i kursen måste vi sätta `correct = F` för att få samma utfall som handräkningen. Vi kan genomföra testet med
+Vi kan jämföra den beräkning med den direkta R-funktionen.
 
 ```{r}
 prop.test(x = 947, n = 2750, p = 0.33, correct = F)
@@ -166,7 +173,7 @@ prop.test(x = ___, n = ___, p = ___, correct = F)
 :::
 
 ::: {.exercise name="Test för proportionen hemmasegrar"}
-Slutligen är då resten av matcherna, 1285 av 2750, hemmasegrar. Bollkunskap säger: *47 procent av alla matcher är hemmasegrar*. Genomför ett z-test för att testa det påstående.
+Slutligen är då resten av matcherna, 1285 av 2750, hemmasegrar. Gammal bollkunskap säger: *47 procent av alla matcher är hemmasegrar*. Genomför ett z-test för att testa det påstående.
 
 ```{r, eval = F}
 prop.test(x = ___, n = ___, p = ___, correct = F)
@@ -174,9 +181,7 @@ prop.test(x = ___, n = ___, p = ___, correct = F)
 :::
 
 ::: {.exercise name="Population och stickprov"}
-Ett hypotestest bygger på en underliggande tanke med en population (med någon för oss okänd proportion positiva utfall) och ett stickprov (i vilket vi kan observera andelen positiva utfall). Testet säger oss om någon hypotes om populationens proportion är rimlig i ljus av den proportion vi observerar. P-värdet ger oss sannolikheten för utfallet under antagandet att hypotesen stämmer. Ett lågt p-värde (en låg sannolikhet för datautfallet givet nollhypotesen) tyder på att nollhypotesen inte är rimlig.
-
-Det är inte alltid uppenbart vad som egentligen är populationen. I fallet med fotbollsdatan, vad kan ses som populationen? Hur långt skulle man kunna generalisera de slutsatser man kan dra från datan?
+Ett hypotestest bygger på en underliggande tanke med en population (med någon för oss okänd proportion positiva utfall) och ett stickprov (i vilket vi kan observera andelen positiva utfall). Det är inte alltid uppenbart vad som egentligen är populationen. I fallet med fotbollsdatan, vad kan ses som populationen? Hur långt skulle man kunna generalisera de slutsatser man kan dra från datan?
 :::
 
 ::: {.exercise name="Guldfiskgenetik"}
@@ -487,36 +492,4 @@ dat_leaf %>%
 
 ::: {.exercise name="Artnamn"}
 Ändra i koden ovan för att ange artnamn som popup-text istället för rödlistestatus. Funktionen `paste()` kan också vara intressant för att ta med mer information i texten: `paste(dat_leaf$Rödlistade, dat_leaf$Antal)` skulle exempelvis ge både status och antal individer vid den specifika observationen.
-:::
-
-## Valfria hemuppgifter
-
-::: {.exercise name="Herrallsvenskan"}
-Följande importerar data för herrallsvenskan i fotboll.
-
-```{r, eval=F}
-dat <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Allsvenskan%2C%20herrar%2C%201924-2020.csv")
-```
-
-Importera datan och se hur många matcher som ingår.
-:::
-
-::: {.exercise name="Antal hemmasegrar"}
-Beräkna antalet hemmasegrar i herrallsvenskan genom att räkna antalet matcher där `Hemmamål` överstiger `Bortamål`.
-:::
-
-::: {.exercise name="Test för antal hemmasegrar"}
-Testa om andelen hemmasegrar skiljer sig från nollhypotesen på 47 procent.
-:::
-
-::: {.exercise name="Konfidensintervall för antal hemmasegrar"}
-Använd `binom.asymp()` från paketet `binom` för att beräkna ett konfidensintervall för andelen hemmasegrar. Jämför med en handräkning (hand och miniräknare).
-:::
-
-::: {.exercise name="Hemmasegrar för Malmö FF"}
-Följande beräknar antalet hemmasegrar för Malmö FF. Testa om Malmös andel hemmasegrar är större än 47 procent.
-
-```{r, eval=F}
-dat %>% filter(Hemmalag == "Malmö FF") %>% count(Hemmamål > Bortamål)
-```
 :::

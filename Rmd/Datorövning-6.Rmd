@@ -110,7 +110,7 @@ eller som ett t-test för två stickprov där man särskilt anger att datan är 
 t.test(dat_apple$Before, dat_apple$After, paired = T)
 ```
 
-För bägge alternativen måste datan vara ordnad så att de två vektorerna matchar varandra parvis. Notera att ordningen på vektorerna påverkar konfidensintervall men inte p-värdet (i fallet med en tvåsidig mothypotes). Här är det naturligt att ta den andra mätningen först eftersom konfidensintervallet då blir ett intervall för medelvärdesökningen efter behandling. Ett p-värde på $0.0987$ ger att man inte förkastar vid en signifikansnivå på fem procent. Vi drar därmed slutsatsen att det inte finns någon signifikant skillnad före och efter behandling.
+För bägge alternativen måste datan vara ordnad så att de två vektorerna matchar varandra parvis. Ett p-värde på $0.0987$ ger att man inte förkastar vid en signifikansnivå på fem procent. Vi drar därmed slutsatsen att det inte finns någon signifikant skillnad före och efter behandling.
 
 ::: {.exercise name="Ensidigt test"}
 Gör ett tillägg till ett av kodstyckena med `t.test()` för att beräkna ett ensidigt test med mothypotesen att träden ökar i höjd efter behandling. Hjälpsidan för `t.test()` kan tas fram genom att köra `?t.test()`.
@@ -124,7 +124,7 @@ Konfidensintervallet beräknas från differenserna på samma sätt som vid ett s
 ```{r, eval = F}
 library(readxl)
 dat_onion <- read_excel("____", sheet = "Lökfärg")
-# dat_onion <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Uppgiftsdata/Uppgift_L%C3%B6kf%C3%A4rg.csv") # Alternativ lösning
+# dat_onion <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2023/main/Data/Uppgiftsdata/Uppgift_L%C3%B6kf%C3%A4rg.csv") # Alternativ lösning
 ```
 :::
 
@@ -224,7 +224,7 @@ I en undersökning av hur den europeiska ekorren (Sciurus vulgaris) förändras 
 dat_sq <- read_excel("___", sheet = "Ekorrar")
 dat_sq
 
-# dat_sq <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Uppgiftsdata/Uppgift_Ekorrar.csv") # Alternativ lösning
+# dat_sq <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2023/main/Data/Uppgiftsdata/Uppgift_Ekorrar.csv") # Alternativ lösning
 ```
 :::
 
@@ -378,7 +378,7 @@ I en undersökning på potatis används fyra behandlingar (a1b1, a1b2, a2b1 och 
 dat_pot <- read_excel("___", sheet = "Po-ta-toes")
 dat_pot
 
-# dat_pot <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Uppgiftsdata/Uppgift_Po-ta-toes.csv")
+# dat_pot <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2023/main/Data/Uppgiftsdata/Uppgift_Po-ta-toes.csv")
 ```
 :::
 
@@ -414,7 +414,7 @@ chisq.test(___)
 Vi vill undersöka om andelen hemmasegrar i herrallsvenskan förändrats över tid. Vi importerar data över matchresultat sedan 1920-talet.
 
 ```{r}
-dat_alls <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Allsvenskan%2C%20herrar%2C%201924-2020.csv")
+dat_alls <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2023/main/Data/Allsvenskan%2C%20herrar%2C%201924-2020.csv")
 dat_alls
 ```
 

@@ -8,36 +8,58 @@ for(i in 1:8){
   # Fix exercise lines
   ex_lines <- which(grepl("::: {.exercise", text, fixed = T))
   point_lines <- which(grepl(":::", text, fixed = T))
+  end_lines <- point_lines[!(point_lines %in% ex_lines)]
   
-  dat_temp <- tibble(ex_lines) %>% 
+  text[ex_lines] <- paste0("##### Övningsuppgift ", i, ".", 1:length(ex_lines), " #####")
+  text[end_lines] <- "##########"
+  
+  dat_temp_ex <- tibble(ex_lines) %>% 
     mutate(end_section = map_dbl(ex_lines, ~ min(point_lines[point_lines > .x]))) %>% 
     mutate(lines = map2(ex_lines, end_section, ~ .x:.y)) %>% 
     unnest(lines)
   
-  text <- text[-dat_temp$lines]
+  # text <- text[-dat_temp$lines]
   
   # Fix chunk lines
   ex_lines <- which(grepl("```{r", text, fixed = T))
   point_lines <- which(grepl("```", text, fixed = T))
   
-  dat_temp <- tibble(ex_lines) %>% 
+  dat_temp_chunks <- tibble(ex_lines) %>% 
     mutate(end_section = map_dbl(ex_lines, ~ min(point_lines[point_lines > .x]))) %>% 
     mutate(lines = map2(ex_lines, end_section, ~ (.x):(.y))) %>% 
     unnest(lines)
   
-  text <- text[dat_temp$lines]
+  # text <- text[dat_temp$lines]
   
   # Add empty lines at chunk end and start
-  text <- text[!grepl("```{r", text, fixed = T)]
-  
-  point_lines <- which(grepl("```", text, fixed = T))
-  text[point_lines] <- ""
+  # text <- text[!grepl("```{r", text, fixed = T)]
+  # 
+  # point_lines <- which(grepl("```", text, fixed = T))
+  # text[point_lines] <- ""
   
   # Clear comments
-  text <- map_chr(text, \(x) {
-    l <- length(strsplit(x, "#")[[1]])
-    ifelse(x == "", "", paste0(strsplit(x, "#")[[1]][1:(l - 1)], collapse = "#") %>% trimws("right"))
-    })
+  # text <- map_chr(text, \(x) {
+  #   l <- length(strsplit(x, "#")[[1]])
+  #   ifelse(x == "", "", paste0(strsplit(x, "#")[[1]][1:(l - 1)], collapse = "#") %>% trimws("right"))
+  #   })
+  
+  # Identify headers
+  dat_temp_head <- which(substring(text, 1, 1) == "#")
+  
+  # Add # to everything not a chunk or a header
+  selection <- unique(sort(c(dat_temp_chunks$lines, dat_temp_head)))
+  text[-selection] <- paste("#", text[-selection])
+  
+  # Remove everything outside of exercises, chunks, and headers
+  new_text <- text[unique(sort(c(dat_temp_head, dat_temp_ex$lines, dat_temp_ex$lines - 1, dat_temp_ex$lines + 1, dat_temp_chunks$lines)))]
+  
+  ex_lines <- which(grepl("```{r", new_text, fixed = T))
+  point_lines <- which(grepl("```", new_text, fixed = T))
+  
+  new_text[c(ex_lines, point_lines)] <- ""
+  new_text[new_text == "# "] <- ""
+  
+  cat(paste(new_text, collapse = "\n"))
   
   # Write files
   write_lines(text, paste0("Skriptversioner/Datorövning-", id_no, "-enbart-kod.R"))

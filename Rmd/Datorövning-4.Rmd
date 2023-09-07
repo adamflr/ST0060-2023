@@ -50,7 +50,7 @@ Slumputfall kan beräknas med funktionen `sample()`, till exempel `sample(1:6, 1
 
 ## Test av medelvärde för normalfördelad data
 
-Om man har en normalfördelad variabel och vill testa om populationens medelvärde är skilt från något hypotetiskt värde $\mu_0$ kan man använda ett t-test för ett stickprov. Ta som exempel följande data på 8 observationer av havreskörd. Av någon historisk anledning vill man testa om populationsmedelvärdet är skilt från 50.
+Om man har en normalfördelad variabel och vill testa om populationens medelvärde är skilt från något hypotetiskt värde $\mu_0$ kan man använda ett *t-test för ett stickprov*. Ta som exempel följande data på 8 observationer av havreskörd. Av någon historisk anledning vill man testa om populationsmedelvärdet är skilt från 50.
 
 ```{r, fig.height=2}
 library(tidyverse)
@@ -86,13 +86,13 @@ Vi vill testa om medelskörden är skild från 50, så hypoteser ges av
 - H0: mu lika med 50
 - H1: mu ej lika med 50
 
-Alternativhypotesen är tvåsidig - vi tittar både på möjligheten att populationsmedelvärdet är större och 50 på möjligheten att det är mindre.
+Alternativhypotesen är tvåsidig - vi tittar både på möjligheten att populationsmedelvärdet är större och på möjligheten att det är mindre.
 
 ::: {.exercise name="Ensidig mothypotes"}
-Hur hade hypoteserna sett ut om vi ville testa om medelvärdet är större än 50?
+Hur hade hypoteserna sett ut om vi ville testa om medelvärdet är *större* än 50?
 :::
 
-Vårt mål är att testa ett medelvärde och det är rimligt att anta normalfördelning för den undersökta variabeln. Det lämpliga testet är då ett t-test för ett stickprov och testvärdet kan beräknas av en testfunktion som ges av det observerade stickprovet minus nollhypotesens värde, delat på standardavvikelsen delat på roten ur antalet observationer. Låt oss beräkna detta i flera steg först, innan vi tittar på R-funktioner som beräknar t-testet i ett steg.
+Vårt mål är att testa ett medelvärde och det är rimligt att anta normalfördelning för den undersökta variabeln. Det lämpliga testet är då ett t-test för ett stickprov och testvärdet kan beräknas av en testfunktion som ges av det observerade stickprovet minus nollhypotesens värde, delat på standardavvikelsen delat på roten ur antalet observationer. Låt oss beräkna detta i flera steg och jämföra med utskriften från `t.test()`.
 
 ```{r}
 mean(dat$x)
@@ -140,7 +140,7 @@ De röda ytorna i *svansarna* motsvarar p-värdet. De anger sannolikheten att f�
 2 * pt(-abs(t_value), 7) # Tvåsidigt p-värde
 ```
 
-P-värdet ges av 0.266. En tolkning av det är om försöket upprepas ett stort antal gånger och nollhypotesen är sann, kommer vi 26.6 procent av gångerna få ett större testvärde än 1.2086. Det vi observerar är sannolikt under nollhypotesen, vilket tyder på att nollhypotesen är rimligt.
+P-värdet ges av 0.266. En tolkning av det är om försöket upprepas ett stort antal gånger och nollhypotesen är sann, kommer vi 26.6 procent av gångerna få ett större testvärde än 1.2086. Det vi observerar är ganska sannolikt under nollhypotesen, vilket tyder på att nollhypotesen är rimligt.
 
 Det avslutande steget är att dra en formell slutsats och ge ett tydligt svar. Det klassiska sättet är att jämföra p-värdet med en förbestämd signifikansnivå, oftast fem procent. Här är p-värdet över den nivån, så vi kan inte förkasta nollhyptesen. Slutsatsen är att det *inte* finns någon signifikant skillnad från 50 i havreskörd.
 
@@ -163,7 +163,7 @@ t.test(dat$x, mu = 50) # Tvåsidigt test
 Funktionen skriver ut det beräkna t-värdet, antal frihetsgrader och p-värdet.
 
 ::: {.exercise name="Ensigt test"}
-Använd `?t.test` för att ta fram funktionens hjälpsida. Försök att utifrån hjälpsidan beräkna ett ensidigt test för att se om medelskörden är *större* än 50.
+Använd `?t.test` för att ta fram funktionens hjälpsida. Försök att utifrån hjälpsidan beräkna ett *ensidigt* test för att se om medelskörden är *större* än 50.
 :::
 
 ::: {.exercise name="Ny nollhypotes"}
@@ -304,7 +304,7 @@ ggplot(dat, aes(sample = x)) + geom_qq() + geom_qq_line()
 Punkterna ligger nära linjen. Vi kan återigen demonstrera med lite genererad data.
 
 ```{r}
-n <- 100
+n <- 10
 dat_norm <- data.frame(x = rnorm(n))
 ggplot(dat_norm, aes(sample = x)) + geom_qq() + geom_qq_line()
 ```
@@ -316,7 +316,7 @@ Funktionen `runif()` ger slumpmässiga värden mellan 0 och 1. Testa att ändra 
 Även om data inte är normalfördelad kan t-testet vara ett lämpligt val av test. Detta beror på *centrala gränsvärdesatsen*, som säger att summor (och därmed även medelvärden) av lika slumpvariabler går mot en normalfördelning där antalet observationer ökar. Den tidigare uppgiften gav att `runif()` inte ger normalfördelad data. Vad händer om vi tar medelvärdet av flera observationer från `runif()`? Följande kod beräknar tiotusen medelvärden av två observationer.
 
 ```{r}
-n <- 2
+n <- 20
 
 dat_sim_unif <- expand_grid(Observation = 1:n, Upprepning = 1:10000) %>% 
   mutate(x = runif(n())) %>% 
@@ -481,32 +481,4 @@ mean(dat_sim$ci_upper - dat_sim$ci_lower)
 ```
 
 Ungefär hur många observationer behövs för att konfidensintervallets bredd ska bli under 1, under 0.9, under 0.8, och så vidare ned till 0.1?
-:::
-
-## Valfria hemuppgifter
-
-::: {.exercise name="Provstavar"}
-Mätningar av halten av något ämne i provstavar gav följande serie resultat.
-
-```{r, eval=F}
-x <- c(16, 10, 23, 30, 28, 37)
-```
-
-Beräkna konfidensintervallet för populationsmedelvärdet.
-:::
-
-::: {.exercise name="Provstavar, forts."}
-Kan man ur konfidensintervallet i föregående uppgift se om 28 är ett *rimligt* värde på medelvärdet?
-:::
-
-::: {.exercise name="Konfidensintervall och populationen"}
-En viktig poäng med konfidensintervallet är att det är ett intervall för populationsmedelvärdet - inte för populationen i sig. Det är alltså en feltolkning att säga att 95 procent av populationen ligger i intervallet. Man konstruera stickprov där inga observationer ligger i ett beräknat konfidensintervall. Konstruera en sådan datamängd.
-:::
-
-::: {.exercise name="Konstant stickprov"}
-Om det inte finns någon spridning i ett stickprov är medelfelet noll och konfidensintervallet blir en enskild punkt (det skattade medelvärdet). Hur reagerar funktionen `t.test()` om man anger ett stickprov utan någon spridning - det vill säga där alla värden är samma värde?
-:::
-
-::: {.exercise name="Känd standardavvikelse"}
-Det test som genomförs med `t.test()` är testet när standardavvikelsen skattas med `s` (fallet med okänd populationsstandardavvikelse). I fallet med känd populationsstandardavvikelse kan man istället göra ett z-test. Sök på internet efter ett R-paket som kan genomföra ett sådant z-test.
 :::

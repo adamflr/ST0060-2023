@@ -635,26 +635,3 @@ ggplot(dat_temp, aes(x = Year, y = Value)) +
 
 Använd temat från exemplet för att skapa en enklare version av grafen från föregående uppgift. Ett liknande resultat kan fås med temat `theme_void()`.
 :::
-
-## Valfria hemuppgifter
-
-::: {.exercise name="Installera R"}
-Gå till https://www.r-project.org/ och installera R på ditt hemma-system. Instruktioner finns i R-anvisningarnas kapitel *Installation*.
-:::
-
-::: {.exercise name="Installera RStudio"}
-Gå till https://www.rstudio.com/ och installera RStudio på ditt hemma-system. Instruktioner finns i R-anvisningarnas kapitel *Installation*.
-:::
-
-::: {.exercise name="Öppna RStudio"}
-Öppna skriptet till datorövning 1 i RStudio. Notera om något ser annorlunda ut mot hur det såg ut i datorsal.
-:::
-
-::: {.exercise name="Cheat sheets"}
-I början av datorövning 1 plockade vi upp en hemsida med *cheat sheets* - korta instruktioner och guider till specifika R-paket. Vi kan hitta några av dem på https://www.rstudio.com/resources/cheatsheets/.
-Ladda ner guiden till `ggplot2`. Hur många olika `theme_()`-funktioner (som t.ex. `theme_bw()`) beskrivs i guiden? Vad gör en `theme_`-funktion?
-:::
-
-::: {.exercise name="Timothée Chalamet"}
-Hitta klippet där skådespelaren Timothée Chalamet sjunger en sång om statistik. Uppskatta spårets dansbarhet och valens på en skala från noll till ett. Fundera på om det är rimligt att sätta en siffra på dansbarhet och valens.
-:::

@@ -58,7 +58,7 @@ ggplot(dat_small, aes(tempo, danceability, size = valence, color = mode_name)) +
 
 ## Import av data från en Excelfil
 
-Inom vetenskapen är Excel, på gott och ont, det vanligaste filformatet för mindre datamängder. Till den här delen ska vi arbeta med data från *Gapminder*, en stiftelse som sprider information om socio-ekonomisk utveckling och global hälsa.
+Inom vetenskapen är Excel det vanligaste filformatet för mindre datamängder. Till den här delen ska vi arbeta med data från *Gapminder*, en stiftelse som sprider information om socio-ekonomisk utveckling och global hälsa.
 
 ::: {.exercise name="Excelfil från Canvas"}
 Hitta excelfilen *Gapminder.xlsx* på Canvas och ladda ner den. Hitta mappen som filen laddats ned till.
@@ -123,7 +123,7 @@ Vi kan skriva ut objektet och se resultatet av beräkningen:
 gapminder %>% select(gdpPercap, pop, gdp)        # Ta datan och sen välj tre kolumner
 ```
 
-Om man vill skapa en kolumn med mellanrum i namnet måste man skriva namnet inom *backticks* `\`` för att ange att namnet ska tolkas som en enhet.
+Om man vill skapa en kolumn med mellanrum i namnet måste man skriva namnet inom *backticks* `\`` för att ange att namnet ska tolkas som en enhet. Jag rekommenderar att undvika mellanrum i kolumnnamn och istället använda stora bokstäver eller understreck för ett nytt ord (`NationalGDP` eller `National_GDP`).
 
 ```{r}
 gapminder %>% 
@@ -209,13 +209,7 @@ ggplot(dat_gdp_2007, aes(continent, Mean)) +
   geom_point(aes(continent, gdpPercap), data = gapminder %>% filter(year == 2007))
 ```
 
-Eftersom `geom_point()` här bygger på annan data än kolumnerna från `geom_col()` anger vi en ny `aes()`-funktionen och sätter argumentet `data`. Det kan också vara informativt att använda `geom_text()` för länderna. Etiketterna sätts med argumentet `label` i `aes()`. (Om man oroar sig för överlappande etiketter och letar efter lite överkurs kan man titta på paketet `ggrepel`.)
-
-```{r, eval = F}
-ggplot(dat_gdp_2007, aes(continent, Mean)) +
-  geom_col() +
-  geom_text(aes(continent, gdpPercap, label = country), data = gapminder %>% filter(year == 2007), size = 2)
-```
+Eftersom `geom_point()` här bygger på annan data än kolumnerna från `geom_col()` anger vi en ny `aes()`-funktionen och sätter argumentet `data`.
 
 ::: {.exercise name="Graf för livslängd"}
 Gör om stapeldiagrammet. Denna gång med livslängd (`lifeExp`) istället för bnp per capita (`gdpPercap`).
@@ -330,7 +324,7 @@ ggplot() +
   geom_point(aes(lifeExp, continent), data = gapminder_agg, color = "red", shape = "X", size = 6)
 ```
 
-Här byggs boxarna med datan gapminder och punkterna med den aggregerade datan. Beräkningen av medelvärde och median ger att en datamängd ofta har en längre svans åt det håll som medelvärdet ligger relativt medianen - ett medelvärde under medianen skulle tyda på att det finns några särskilt låga observationer. Kan den effekten ses i grafen?
+Här byggs boxarna med datan gapminder och punkterna med den aggregerade datan.
 
 Möjligheten att sätta data inom en `geom_()`-funktion kan blandas med `filter()` för att visa olika data i olika geom. Här ges ett spridningsdiagram över bnp och medellivslängd per land, och linjeserier (`geom_path()`) över tid för två specifika länder. Geom `geom_point()` är alltså på flera länder vid en tid, medan `geom_path()` är över tid för ett land.
 
@@ -368,6 +362,7 @@ Vi måste avrunda medelvärdet och standardavvikelsen först. Det kan man göra 
 ```{r}
 dat_sum <- dat_sum %>% 
   mutate(mean_plus_minus_sd = paste(round(Mean, 1), "±", round(SD, 1)))        # Skapa en ny kolumn med avrundade värden
+dat_sum
 ```
 
 ::: {.exercise name="Tappade nollor"}
@@ -388,67 +383,6 @@ write_csv(dat_sum, "Exporterad data från R.csv")           # Skriv datan till e
 ```
 
 Därifrån skulle man kunna öppna filen i något kalkylprogram, snygga till layouten, och sedan klippa in i ett textdokument.
-
-## Stegvis beräkning av varians
-
-Det vara nyttigt att göra en stegvis beräkning av varians (och standardavvikelse) för att få en lite bättre förståelse av vad det faktiskt beskriver. Nedan ges en slumpmässig exempeldata med fem observationer. Om du har en tärning från datorövning 1 kan du med fördel kasta den nu, och ersätta värdena med dina egna utfall
-
-```{r}
-dat <- data.frame(Rad = c(1,2,3,4,5), x = c(6,3,2,3,5))    # Skapa en datamängd med kolumner Rad och x
-dat
-```
-
-En variansberäkning har följande steg,
-
-1. beräkna medelvärdet,
-2. beräkna utfallet minus medelvärdet för varje observation,
-3. ta differenserna i kvadrat,
-4. summera kvadraterna,
-5. dela summan med antalet observationer minus ett.
-
-Vi har tidigare sett beräkningen av medelvärden med `mean()`. En skillnad mot tidigare är att vi gör det i ett `mutate()` steg istället för `summarise()`, eftersom vi vill ha kvar den tidigare strukturen med flera rader.
-
-```{r}
-dat <- dat %>% 
-  mutate(Medelvärde = mean(x))                   # Beräkna medelvärdet av x i en ny kolumn
-dat
-```
-
-Därefter tar vi differensen mellan observationernas värden och medelvärdet.
-
-```{r}
-dat <- dat %>% 
-  mutate(Differenser = x - Medelvärde)           # Beräkna differenser till medelvärdet
-dat
-```
-
-Därefter tar vi kvadrater av differenserna. För att ange en kvadrat används symbolen `^2`, t.ex. `3^2` för tre i kvadrat.
-
-```{r}
-dat <- dat %>% 
-  mutate(Kvadrater = Differenser^2)              # Beräkna kvadrerade differenser
-dat
-```
-
-Först i nästa steg summerar vi kvadraterna.
-
-```{r}
-dat_sum <- dat %>% 
-  summarise(Kvadratsumma = sum(Kvadrater))       # Summera kvadraterna
-dat_sum
-```
-
-Som avslutande steg delar vi kvadratsumman med antalet observationer minus ett. För fem observationer delar vi alltså med fyra.
-
-```{r}
-dat_sum %>% mutate(Varians = Kvadratsumma / 4)   # Dela summan med fyra (antalet observationer minus 1)
-```
-
-Vi kan se om vi fått rätt genom att beräkna variansen med funktionen `var()`.
-
-```{r}
-var(dat$x)                                       # Dollartecken för att ta ut kolumnen x i objektet dat
-```
 
 ## Kumulativt medelvärde
 
@@ -651,28 +585,4 @@ dat_small <- dat_spot %>% filter(artist_name == "Weyes Blood")
 plot_ly(dat_small, x = ~___, y = ~___, z = ~___, size = ~___, text = ~___) %>% 
   add_markers()
 ```
-:::
-
-## Valfria hemuppgifter
-
-::: {.exercise name="TidyTuesday"}
-*TidyTuesday* är ett R-kopplat pedagogiskt projekt som varje vecka publicerar ett nytt dataset och utmanar allmänheten att skapa bästa möjliga visualisering av data. Resultaten publiceras vanligen på Twitter med *#TidyTuesday*. På sidan
-https://github.com/rfordatascience/tidytuesday/tree/master/data/2022
-finns en tabell med dataset publicerade under 2022. Gå igenom listan, hitta ett intressant fall och läs informationen om det (genom att klicka på länken). Är det möjligt att förstå beskrivningen av datan?
-:::
-
-::: {.exercise name="r/dataisbeautiful"}
-Gå till reddit-sidan *dataisbeautiful*. Välj en graf som verkar tydlig eller vacker eller intressant. Försök förstå den i termer av data (vilken information ligger bakom grafen), geometrier (vilka geometriska former är synliga i grafen, punkter, linjer, staplar), och estetik (vilka datavariabler styr hur geometrin ser ut och var den är placerad).
-:::
-
-::: {.exercise name="More or Less: Behind the Stats"}
-BBC Radio har ett program om statistik, se https://www.bbc.co.uk/programmes/p02nrss1. Lyssna på ett avsnitt. Sammanfatta det i tre meningar.
-:::
-
-::: {.exercise name="gganimate"}
-Med paketet `gganimate` (https://gganimate.com/) kan man göra animationer av ggplot-grafer. Installera paketet med `install.packages("gganimate")` och försök köra de exempel som ges på hemsidan.
-:::
-
-::: {.exercise name="Skumma ett paper"}
-Hitta en *vetenskaplig* artikel i valfri tidskrift. Vilka läges- och spridningsmått kan du hitta? Vilka grafer? Finns det några grafer med den karaktäristiska grå bakgrunden som är basutseendet i en ggplot?
 :::

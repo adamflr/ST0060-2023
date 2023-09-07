@@ -9,6 +9,16 @@ bookdown::gitbook:
     fontsettings:
       theme: sepia
       family: serif
+    sharing:
+      facebook: false
+      github: false
+      twitter: false
+      linkedin: false
+      weibo: false
+      instapaper: false
+      vk: false
+      whatsapp: false
+      all: false
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
