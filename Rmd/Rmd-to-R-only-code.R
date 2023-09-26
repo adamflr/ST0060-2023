@@ -10,26 +10,25 @@ for(i in 1:8){
   point_lines <- which(grepl(":::", text, fixed = T))
   end_lines <- point_lines[!(point_lines %in% ex_lines)]
   
+  # Set headers for exercises
   text[ex_lines] <- paste0("##### Övningsuppgift ", i, ".", 1:length(ex_lines), " #####")
   text[end_lines] <- "##########"
   
+  # Identify which rows are exercises
   dat_temp_ex <- tibble(ex_lines) %>% 
     mutate(end_section = map_dbl(ex_lines, ~ min(point_lines[point_lines > .x]))) %>% 
     mutate(lines = map2(ex_lines, end_section, ~ .x:.y)) %>% 
     unnest(lines)
   
-  # text <- text[-dat_temp$lines]
-  
   # Fix chunk lines
   ex_lines <- which(grepl("```{r", text, fixed = T))
   point_lines <- which(grepl("```", text, fixed = T))
   
+  # Identify which rows are in chunks
   dat_temp_chunks <- tibble(ex_lines) %>% 
     mutate(end_section = map_dbl(ex_lines, ~ min(point_lines[point_lines > .x]))) %>% 
     mutate(lines = map2(ex_lines, end_section, ~ (.x):(.y))) %>% 
     unnest(lines)
-  
-  # text <- text[dat_temp$lines]
   
   # Add empty lines at chunk end and start
   # text <- text[!grepl("```{r", text, fixed = T)]
@@ -59,8 +58,11 @@ for(i in 1:8){
   new_text[c(ex_lines, point_lines)] <- ""
   new_text[new_text == "# "] <- ""
   
-  cat(paste(new_text, collapse = "\n"))
+  # Remove double empty lines
+  new_text <- new_text[-which(new_text == "")[diff(which(new_text == "")) == 1]]
+  
+  # cat(paste(new_text, collapse = "\n"))
   
   # Write files
-  write_lines(text, paste0("Skriptversioner/Datorövning-", id_no, "-enbart-kod.R"))
+  write_lines(new_text, paste0("Skriptversioner/Datorövning-", id_no, ".R"))
 }

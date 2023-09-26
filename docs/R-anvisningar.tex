@@ -133,7 +133,7 @@
 
 \title{R-anvisningar till \emph{Grundläggande statistik}}
 \author{}
-\date{\vspace{-2.5em}2023-09-20}
+\date{\vspace{-2.5em}2023-09-26}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Sats}[chapter]
@@ -163,7 +163,7 @@
 \chapter*{Introduktion}\label{introduktion}}
 \addcontentsline{toc}{chapter}{Introduktion}
 
-Detta dokument är en kort introduktion till R för en kurs i grundläggande statistik.
+Detta dokument ger en introduktion till R för en kurs i grundläggande statistik.
 
 \hypertarget{installation-av-r-och-rstudio}{%
 \chapter*{Installation av R och RStudio}\label{installation-av-r-och-rstudio}}
@@ -310,7 +310,7 @@ Gränssnittet i RStudio är uppdelat i fyra delar och varje del består av en el
 Hitta fliken \emph{Help}, klicka på husikonen under fliken. Finns det en länk med \emph{RStudio Cheat Sheets}? Följ den länken för att hitta guider till R som kan bli nyttiga längre fram. För nu, gå tillbaka till RStudio.
 \end{exercise}
 
-Ofta skriver man inte sin kod direkt i konsollen, utan i ett separat \emph{skript} - en vanlig textfil som innehåller den kod man vill köra. Genom att organisera sin kod i ett skript kan man lätt strukturera och dokumentera sitt arbete. I RStudio kan man öppna ett nytt skript genom att gå till \emph{File \textgreater{} New File \textgreater{} R Script} eller genom att klicka \emph{Ctrl + Shift + N}. Ett tomt skript öppnar sig då i det övre vänstra delfönstret. Om du läser det här i RStudio, genom att ha laddat ner .R-filen, läser du just nu ett skript.
+Ofta skriver man inte sin kod direkt i konsollen, utan i ett separat \emph{skript} - en vanlig textfil som innehåller den kod man vill köra. I RStudio kan man öppna ett nytt skript genom att gå till \emph{File \textgreater{} New File \textgreater{} R Script} eller genom att klicka \emph{Ctrl + Shift + N}. Ett tomt skript öppnar sig då i det övre vänstra delfönstret.
 
 \begin{exercise}[Ett första skript]
 Öppna ett nytt skript genom File-menyn eller genom \emph{Ctrl + Shift + N}.
@@ -695,7 +695,7 @@ Man kan också plocka ut rader och kolumner med hakparenteser och ordningstal.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat[}\DecValTok{2}\NormalTok{, ]           }\CommentTok{\# Tomt värde ger alla värden. Här alla värden i rad 2}
+\NormalTok{dat[}\DecValTok{2}\NormalTok{, ]          }\CommentTok{\# Tomt värde ger alla värden. Här alla värden i rad 2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -706,7 +706,7 @@ Man kan också plocka ut rader och kolumner med hakparenteser och ordningstal.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat[ ,}\DecValTok{3}\NormalTok{]           }\CommentTok{\# Alla värden i kolumn 3}
+\NormalTok{dat[ ,}\DecValTok{3}\NormalTok{]          }\CommentTok{\# Alla värden i kolumn 3}
 \end{Highlighting}
 \end{Shaded}
 
@@ -805,8 +805,6 @@ Inskrivning av värden är ofta tidskrävande och kan lätt leda till misstag. D
 ## #   key_name <chr>, mode_name <chr>, key_mode <chr>
 \end{verbatim}
 
-Om importen fungerat kan man skriva ut tabellens översta rader genom att köra objektets namn.
-
 För att snabbt se vilka artister datan täcker kan man köra
 
 \begin{Shaded}
@@ -857,7 +855,7 @@ Inom filterfunktionen anges ett logisk villkor \texttt{artist\_name\ ==\ "Robyn"
 
 \begin{exercise}[Filtrera för artist]
 
-Vad måste ändras i koden för att istället plocka ut rader där artisten är Esperanza Spalding? Hur många rader har det urvalet i datan?
+Vad måste ändras i koden för att istället plocka ut rader där artisten är Kate Bush? Hur många rader har det urvalet i datan?
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -872,8 +870,8 @@ Om man vill välja flera artister kan man använda funktionen \texttt{\%in\%} p�
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat }\SpecialCharTok{\%\textgreater{}\%}                                                              \CommentTok{\# Ta datan, och sen}
-  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Robyn"}\NormalTok{, }\StringTok{"Esperanza Spalding"}\NormalTok{))          }\CommentTok{\# filtrera för specifika artister}
+\NormalTok{dat }\SpecialCharTok{\%\textgreater{}\%}                                               \CommentTok{\# Ta datan, och sen}
+  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Robyn"}\NormalTok{, }\StringTok{"Kate Bush"}\NormalTok{))    }\CommentTok{\# filtrera för specifika artister}
 \end{Highlighting}
 \end{Shaded}
 
@@ -881,9 +879,9 @@ och om man vill ha mer än ett villkor kan man rada dem i filter-funktionen:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat }\SpecialCharTok{\%\textgreater{}\%}                                                              \CommentTok{\# Ta datan, och sen}
-  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Robyn"}\NormalTok{, }\StringTok{"Esperanza Spalding"}\NormalTok{),          }\CommentTok{\# filtrera för specifika artister}
-\NormalTok{         key\_name }\SpecialCharTok{==} \StringTok{"D\#"}\NormalTok{)                                           }\CommentTok{\# och för tonart}
+\NormalTok{dat }\SpecialCharTok{\%\textgreater{}\%}                                             \CommentTok{\# Ta datan, och sen}
+  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Robyn"}\NormalTok{, }\StringTok{"Kate Bush"}\NormalTok{),  }\CommentTok{\# filtrera för specifika artister}
+\NormalTok{         key\_name }\SpecialCharTok{==} \StringTok{"D\#"}\NormalTok{)                          }\CommentTok{\# och för tonart}
 \end{Highlighting}
 \end{Shaded}
 
@@ -891,23 +889,23 @@ För att se fler eller färre rader kan man använda en pipe \texttt{\%\textgrea
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat }\SpecialCharTok{\%\textgreater{}\%}                                                              \CommentTok{\# Ta datan, och sen}
-  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Robyn"}\NormalTok{, }\StringTok{"Esperanza Spalding"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}      \CommentTok{\# filtrera för artister, och sen}
-  \FunctionTok{filter}\NormalTok{(key\_name }\SpecialCharTok{==} \StringTok{"D\#"}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%}                                      \CommentTok{\# filtrera för tonart, och sen}
-  \FunctionTok{print}\NormalTok{(}\AttributeTok{n =} \DecValTok{5}\NormalTok{)                                                       }\CommentTok{\# skriv ut de fem första raderna}
+\NormalTok{dat }\SpecialCharTok{\%\textgreater{}\%}                                                     \CommentTok{\# Ta datan, och sen}
+  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Robyn"}\NormalTok{, }\StringTok{"Kate Bush"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}      \CommentTok{\# filtrera för artister, och sen}
+  \FunctionTok{filter}\NormalTok{(key\_name }\SpecialCharTok{==} \StringTok{"D\#"}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%}                             \CommentTok{\# filtrera för tonart, och sen}
+  \FunctionTok{print}\NormalTok{(}\AttributeTok{n =} \DecValTok{5}\NormalTok{)                                              }\CommentTok{\# skriv ut de fem första raderna}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## # A tibble: 21 x 24
-##   artist_name   album_name track_number track_name album_type album_release_date
-##   <chr>         <chr>             <dbl> <chr>      <chr>      <chr>             
-## 1 Esperanza Sp~ SONGWRIGH~            7 Formwela 7 album      2021-09-24        
-## 2 Esperanza Sp~ 12 Little~            2 To Tide U~ album      2019-05-10        
-## 3 Esperanza Sp~ 12 Little~            3 'Til the ~ album      2019-05-10        
-## 4 Esperanza Sp~ Emily’s D~            7 Ebony And~ album      2016-01-01        
-## 5 Esperanza Sp~ Emily’s D~            7 Ebony And~ album      2016-01-01        
-## # i 16 more rows
+## # A tibble: 22 x 24
+##   artist_name album_name   track_number track_name album_type album_release_date
+##   <chr>       <chr>               <dbl> <chr>      <chr>      <chr>             
+## 1 Kate Bush   Selection f~            5 Experimen~ album      2018-11-30        
+## 2 Kate Bush   Before The ~            2 Act Two -~ album      2016-12-02        
+## 3 Kate Bush   50 Words Fo~            3 Misty      album      2011-11-22        
+## 4 Kate Bush   50 Words fo~            3 Misty - 2~ album      2011-11-21        
+## 5 Kate Bush   50 Words fo~            3 Misty      album      2011-11-21        
+## # i 17 more rows
 ## # i 18 more variables: album_release_year <dbl>, danceability <dbl>,
 ## #   energy <dbl>, key <dbl>, loudness <dbl>, mode <dbl>, speechiness <dbl>,
 ## #   acousticness <dbl>, instrumentalness <dbl>, liveness <dbl>, valence <dbl>,
@@ -981,7 +979,7 @@ Funktionen \texttt{arrange()} sorterar data efter en angiven kolumn. Följande s
 \end{Highlighting}
 \end{Shaded}
 
-Gör lämpliga ändringar för att hitta Kate Bushs snabbaste spår.
+Gör lämpliga ändringar för att hitta Carly Rae Jepsens snabbaste spår.
 \end{exercise}
 
 \hypertarget{grafer-med-ggplot2}{%
@@ -1067,7 +1065,7 @@ Följande väljer ut en artist och plottar spårens dansbarhet i ett (liggande) 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{dat\_small }\OtherTok{\textless{}{-}}\NormalTok{ dat }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{==} \StringTok{"HAIM"}\NormalTok{, album\_type }\SpecialCharTok{==} \StringTok{"album"}\NormalTok{)}
+  \FunctionTok{filter}\NormalTok{(artist\_name }\SpecialCharTok{==} \StringTok{"Phoebe Bridgers"}\NormalTok{, album\_type }\SpecialCharTok{==} \StringTok{"album"}\NormalTok{)}
 
 \FunctionTok{ggplot}\NormalTok{(dat\_small, }\FunctionTok{aes}\NormalTok{(danceability, track\_name, }\AttributeTok{fill =}\NormalTok{ album\_name)) }\SpecialCharTok{+}
   \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{)}
@@ -1114,6 +1112,77 @@ Vi kan ändra utseendet på grafen genom argument inom geometrier och med funkti
 
 \begin{exercise}[Temaval 2]
 Ändra färgvalen i grafen ovan för att skapa fulast möjliga graf. Visa de två graferna för någon annan och se om de kan säga vilken som är vilken.
+\end{exercise}
+
+\hypertarget{bonus.-warming-stripes}{%
+\section{Bonus. Warming stripes}\label{bonus.-warming-stripes}}
+
+\emph{Warming stripes} har sedan de först introducerades av Ed Hawking 2018 blivit en vanlig illustration av temperaturökning. I en warming stripe-graf anges varje år av en stapel och stapels färg ges av ett temperaturmått, vanligen årets medeltemperatur. I ggplot-terminologi har vi geometrier (staplar eller kolumner) med en x-position som ges av år och en ifylld färg som ges av temperatur.
+
+För att göra en graf behöver vi data över temperaturer. Följande rad hämtar temperaturdata från Stockholm. Källa: \url{https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Läs in data från fil}
+\NormalTok{dat\_temp }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/adamflr/ST0060{-}2022/main/Data/Temperatur\%2C\%20Stockholm.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Vi skapar nu en graf, som alltså ska ha en x-axeln given av år (\texttt{Year}) och ifylld färg som ges av temperatur (\texttt{Value}). Höjden ska vara densamma för alla staplar, men det spelar ingen roll vad den är (så länge den inte är noll).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =} \DecValTok{1}\NormalTok{, }\AttributeTok{fill =}\NormalTok{ Value)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{() }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-57-1} \end{center}
+
+\begin{exercise}[Staplar utan mellanrum]
+Ett första problem är att staplarna inte fyller ytan. Man kan styra staplars bredd med argumentet \texttt{width}, t.ex.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =} \DecValTok{1}\NormalTok{, }\AttributeTok{fill =}\NormalTok{ Value)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Hitta ett värde för \texttt{width} som ger staplar utan mellanrum.
+\end{exercise}
+
+\begin{exercise}[Färgval]
+Ett andra problem är att ggplots grundval för färger är från svart till blått. För klassiska warming stripes vill vi ha en skala från blått till rött. Färgerna i en skala ändras med särskilda \texttt{scale\_()}-funktioner. En färgskala för ifylld färg kan sättas med \texttt{scale\_fill\_gradientn()}, till exempel
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =} \DecValTok{1}\NormalTok{, }\AttributeTok{fill =}\NormalTok{ Value)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_gradientn}\NormalTok{(}\AttributeTok{colours =} \FunctionTok{c}\NormalTok{(}\StringTok{"darkgreen"}\NormalTok{, }\StringTok{"blue"}\NormalTok{, }\StringTok{"white"}\NormalTok{, }\StringTok{"yellow"}\NormalTok{, }\StringTok{"purple"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Välj färger som ger en naturlig skala från blått till rött. Funktionen \texttt{colors()} ger valbara färger i R. Några möjliga val kan vara \texttt{darkblue}, \texttt{blue}, \texttt{white}, \texttt{red}, \texttt{salmon}, \texttt{darkred}, \texttt{steelblue} och \texttt{skyblue}.
+\end{exercise}
+
+\begin{exercise}[Enkel graf]
+Slutligen brukar warming stripes presenteras med så lite kringinformation som möjligt. I ggplot kan grafelement tas bort med \texttt{theme()}. Här är som exempel en graf utan y-axel, tickmärken och legend.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Value)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.title =} \FunctionTok{element\_blank}\NormalTok{(),            }\CommentTok{\# Sätt titel till blank}
+        \AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{,                }\CommentTok{\# Ta bort legenden}
+        \AttributeTok{plot.background =} \FunctionTok{element\_blank}\NormalTok{(),       }\CommentTok{\# Sätt bakgrunden till blank}
+        \AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(),      }\CommentTok{\# Sätt graffältets bakgrund till blank}
+        \AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(),           }\CommentTok{\# Sätt axeltext till blank}
+        \AttributeTok{axis.ticks =} \FunctionTok{element\_blank}\NormalTok{())            }\CommentTok{\# Sätt axelticks till blank}
+\end{Highlighting}
+\end{Shaded}
+
+Använd temat från exemplet för att skapa en enklare version av grafen från föregående uppgift. Ett liknande resultat kan fås med temat \texttt{theme\_void()}.
 \end{exercise}
 
 \hypertarget{bonus.-interaktiva-grafer-med-plotly}{%
@@ -1201,84 +1270,13 @@ Vi fortsätter med ett nytt exempel, nu med ett spridningsdiagram med album på 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-59-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-64-1} \end{center}
 
 Ändra gärna artist på lämpligt ställe.
 Vad måste läggas till för en interaktiv version av samma graf?
 \end{exercise}
 
 Hemsidan \url{https://plotly.com/r/} innehåller fler exempel för den som är intresserad.
-
-\hypertarget{bonus.-warming-stripes}{%
-\section{Bonus. Warming stripes}\label{bonus.-warming-stripes}}
-
-\emph{Warming stripes} har sedan de först introducerades av Ed Hawking 2018 blivit en vanlig illustration av temperaturökning. I en warming stripe-graf anges varje år av en stapel och stapels färg ges av ett temperaturmått, vanligen årets medeltemperatur. I ggplot-terminologi har vi geometrier (staplar eller kolumner) med en x-position som ges av år och en ifylld färg som ges av temperatur.
-
-För att göra en graf behöver vi data över temperaturer. Följande rad hämtar temperaturdata från Stockholm. Källa: \url{https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Läs in data från fil}
-\NormalTok{dat\_temp }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"https://raw.githubusercontent.com/adamflr/ST0060{-}2022/main/Data/Temperatur\%2C\%20Stockholm.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Vi skapar nu en graf, som alltså ska ha en x-axeln given av år (\texttt{Year}) och ifylld färg som ges av temperatur (\texttt{Value}). Höjden ska vara densamma för alla staplar, men det spelar ingen roll vad den är (så länge den inte är noll).
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =} \DecValTok{1}\NormalTok{, }\AttributeTok{fill =}\NormalTok{ Value)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_col}\NormalTok{() }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-61-1} \end{center}
-
-\begin{exercise}[Staplar utan mellanrum]
-Ett första problem är att staplarna inte fyller ytan. Man kan styra staplars bredd med argumentet \texttt{width}, t.ex.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =} \DecValTok{1}\NormalTok{, }\AttributeTok{fill =}\NormalTok{ Value)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Hitta ett värde för \texttt{width} som ger staplar utan mellanrum.
-\end{exercise}
-
-\begin{exercise}[Färgval]
-Ett andra problem är att ggplots grundval för färger är från svart till blått. För klassiska warming stripes vill vi ha en skala från blått till rött. Färgerna i en skala ändras med särskilda \texttt{scale\_()}-funktioner. En färgskala för ifylld färg kan sättas med \texttt{scale\_fill\_gradientn()}, till exempel
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =} \DecValTok{1}\NormalTok{, }\AttributeTok{fill =}\NormalTok{ Value)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{scale\_fill\_gradientn}\NormalTok{(}\AttributeTok{colours =} \FunctionTok{c}\NormalTok{(}\StringTok{"darkgreen"}\NormalTok{, }\StringTok{"blue"}\NormalTok{, }\StringTok{"white"}\NormalTok{, }\StringTok{"yellow"}\NormalTok{, }\StringTok{"purple"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-Välj färger som ger en naturlig skala från blått till rött. Funktionen \texttt{colors()} ger valbara färger i R. Några möjliga val kan vara \texttt{darkblue}, \texttt{blue}, \texttt{white}, \texttt{red}, \texttt{salmon}, \texttt{darkred}, \texttt{steelblue} och \texttt{skyblue}.
-\end{exercise}
-
-\begin{exercise}[Enkel graf]
-Slutligen brukar warming stripes presenteras med så lite kringinformation som möjligt. I ggplot kan grafelement tas bort med \texttt{theme()}. Här är som exempel en graf utan y-axel, tickmärken och legend.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(dat\_temp, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Value)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.title =} \FunctionTok{element\_blank}\NormalTok{(),            }\CommentTok{\# Sätt titel till blank}
-        \AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{,                }\CommentTok{\# Ta bort legenden}
-        \AttributeTok{plot.background =} \FunctionTok{element\_blank}\NormalTok{(),       }\CommentTok{\# Sätt bakgrunden till blank}
-        \AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(),      }\CommentTok{\# Sätt graffältets bakgrund till blank}
-        \AttributeTok{axis.text.y =} \FunctionTok{element\_blank}\NormalTok{(),           }\CommentTok{\# Sätt axeltext till blank}
-        \AttributeTok{axis.ticks =} \FunctionTok{element\_blank}\NormalTok{())            }\CommentTok{\# Sätt axelticks till blank}
-\end{Highlighting}
-\end{Shaded}
-
-Använd temat från exemplet för att skapa en enklare version av grafen från föregående uppgift. Ett liknande resultat kan fås med temat \texttt{theme\_void()}.
-\end{exercise}
 
 \hypertarget{beskrivande-statistik}{%
 \chapter{Beskrivande statistik}\label{beskrivande-statistik}}
@@ -2518,7 +2516,7 @@ R kommer också med en rad funktioner för att simulera data. Funktionen \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.5059
+## [1] 3.5038
 \end{verbatim}
 
 \begin{Shaded}
@@ -2528,7 +2526,7 @@ R kommer också med en rad funktioner för att simulera data. Funktionen \texttt
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.867652
+## [1] 2.909677
 \end{verbatim}
 
 \begin{exercise}[Simulera tärningen]
@@ -3078,7 +3076,7 @@ Pytagoras sats kan användas för att beräkna avståndet mellan en slumpmässig
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.32
+## [1] 3.08
 \end{verbatim}
 
 \begin{Shaded}
@@ -3780,13 +3778,13 @@ Följande kod simulerar ett dataset om tio observationer från en normalfördeln
 ##  One Sample t-test
 ## 
 ## data:  dat_sim$x
-## t = 0.027533, df = 9, p-value = 0.9786
+## t = 1.0148, df = 9, p-value = 0.3367
 ## alternative hypothesis: true mean is not equal to 7
 ## 95 percent confidence interval:
-##   3.211149 10.882216
+##   5.36446 11.29659
 ## sample estimates:
 ## mean of x 
-##  7.046682
+##  8.330525
 \end{verbatim}
 
 \begin{exercise}[Upprepad simulering]
@@ -3831,7 +3829,7 @@ Vidare ska p-värdet vara under fem procent fem procent av gångerna.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.056
+## [1] 0.053
 \end{verbatim}
 
 Även det stämmer någorlunda väl. Det här innebär alltså att om man har en signifikansnivå på fem procent kommer man förkasta nollhypotesen fem procent av gångerna även om nollhypotesen stämmer. Det kallas ett \emph{falskt positivt} utfall.
@@ -6133,26 +6131,26 @@ Anledning till att vi justerar p-värden är att man vid varje test har en sanno
 \begin{verbatim}
 ## $emmeans
 ##  group  emmean    SE df lower.CL upper.CL
-##  a     -0.1030 0.322 45   -0.752   0.5461
-##  b     -0.0894 0.322 45   -0.738   0.5597
-##  c     -0.0891 0.322 45   -0.738   0.5599
-##  d     -0.6432 0.322 45   -1.292   0.0058
-##  e     -0.0878 0.322 45   -0.737   0.5613
+##  a     0.00822 0.311 45   -0.618    0.634
+##  b     0.27217 0.311 45   -0.354    0.898
+##  c     0.06938 0.311 45   -0.557    0.695
+##  d     0.44878 0.311 45   -0.177    1.075
+##  e     0.73555 0.311 45    0.110    1.362
 ## 
 ## Confidence level used: 0.95 
 ## 
 ## $contrasts
-##  contrast  estimate    SE df t.ratio p.value
-##  a - b    -0.013606 0.456 45  -0.030  0.9763
-##  a - c    -0.013869 0.456 45  -0.030  0.9759
-##  a - d     0.540269 0.456 45   1.186  0.2420
-##  a - e    -0.015211 0.456 45  -0.033  0.9735
-##  b - c    -0.000263 0.456 45  -0.001  0.9995
-##  b - d     0.553875 0.456 45   1.215  0.2306
-##  b - e    -0.001606 0.456 45  -0.004  0.9972
-##  c - d     0.554137 0.456 45   1.216  0.2303
-##  c - e    -0.001343 0.456 45  -0.003  0.9977
-##  d - e    -0.555480 0.456 45  -1.219  0.2292
+##  contrast estimate   SE df t.ratio p.value
+##  a - b     -0.2640 0.44 45  -0.601  0.5512
+##  a - c     -0.0612 0.44 45  -0.139  0.8900
+##  a - d     -0.4406 0.44 45  -1.002  0.3215
+##  a - e     -0.7273 0.44 45  -1.655  0.1049
+##  b - c      0.2028 0.44 45   0.461  0.6467
+##  b - d     -0.1766 0.44 45  -0.402  0.6897
+##  b - e     -0.4634 0.44 45  -1.054  0.2974
+##  c - d     -0.3794 0.44 45  -0.863  0.3926
+##  c - e     -0.6662 0.44 45  -1.516  0.1366
+##  d - e     -0.2868 0.44 45  -0.652  0.5174
 \end{verbatim}
 
 Kör koden tio gånger. Hur många gånger av de tio ger de parvisa jämförelserna \emph{någon} signifikant skillnad (det vill säga något p-värde under 0.05)?

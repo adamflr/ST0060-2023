@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,8 +161,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#urval-ur-en-tabell-med-select-och-filter"><i class="fa fa-check"></i><b>1.6</b> Urval ur en tabell med <code>select</code> och <code>filter</code></a></li>
 <li class="chapter" data-level="1.7" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#grafer-med-ggplot2"><i class="fa fa-check"></i><b>1.7</b> Grafer med <code>ggplot2</code></a></li>
-<li class="chapter" data-level="1.8" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#bonus.-interaktiva-grafer-med-plotly"><i class="fa fa-check"></i><b>1.8</b> Bonus. Interaktiva grafer med <code>plotly</code></a></li>
-<li class="chapter" data-level="1.9" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#bonus.-warming-stripes"><i class="fa fa-check"></i><b>1.9</b> Bonus. Warming stripes</a></li>
+<li class="chapter" data-level="1.8" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#bonus.-warming-stripes"><i class="fa fa-check"></i><b>1.8</b> Bonus. Warming stripes</a></li>
+<li class="chapter" data-level="1.9" data-path="datahantering-och-grafer.html"><a href="datahantering-och-grafer.html#bonus.-interaktiva-grafer-med-plotly"><i class="fa fa-check"></i><b>1.9</b> Bonus. Interaktiva grafer med <code>plotly</code></a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="beskrivande-statistik.html"><a href="beskrivande-statistik.html"><i class="fa fa-check"></i><b>2</b> Beskrivande statistik</a>
 <ul>
@@ -277,7 +277,7 @@ Gränssnittet i RStudio är uppdelat i fyra delar och varje del består av en el
 <div class="exercise">
 <p><span id="exr:unlabeled-div-1" class="exercise"><strong>Uppgift 1.1  (Help-fliken) </strong></span>Hitta fliken <em>Help</em>, klicka på husikonen under fliken. Finns det en länk med <em>RStudio Cheat Sheets</em>? Följ den länken för att hitta guider till R som kan bli nyttiga längre fram. För nu, gå tillbaka till RStudio.</p>
 </div>
-<p>Ofta skriver man inte sin kod direkt i konsollen, utan i ett separat <em>skript</em> - en vanlig textfil som innehåller den kod man vill köra. Genom att organisera sin kod i ett skript kan man lätt strukturera och dokumentera sitt arbete. I RStudio kan man öppna ett nytt skript genom att gå till <em>File &gt; New File &gt; R Script</em> eller genom att klicka <em>Ctrl + Shift + N</em>. Ett tomt skript öppnar sig då i det övre vänstra delfönstret. Om du läser det här i RStudio, genom att ha laddat ner .R-filen, läser du just nu ett skript.</p>
+<p>Ofta skriver man inte sin kod direkt i konsollen, utan i ett separat <em>skript</em> - en vanlig textfil som innehåller den kod man vill köra. I RStudio kan man öppna ett nytt skript genom att gå till <em>File &gt; New File &gt; R Script</em> eller genom att klicka <em>Ctrl + Shift + N</em>. Ett tomt skript öppnar sig då i det övre vänstra delfönstret.</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-2" class="exercise"><strong>Uppgift 1.2  (Ett första skript) </strong></span>Öppna ett nytt skript genom File-menyn eller genom <em>Ctrl + Shift + N</em>.
 Skriv</p>
@@ -427,10 +427,10 @@ Notera att det är möjligt att skapa ett objekt med namnet <code>c</code> trots
 <p>Man kan också plocka ut rader och kolumner med hakparenteser och ordningstal.</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="datahantering-och-grafer.html#cb41-1" tabindex="-1"></a>dat[<span class="dv">2</span>,<span class="dv">3</span>]          <span class="co"># Andra raden och tredje kolumnen</span></span></code></pre></div>
 <pre><code>## [1] 161</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="datahantering-och-grafer.html#cb43-1" tabindex="-1"></a>dat[<span class="dv">2</span>, ]           <span class="co"># Tomt värde ger alla värden. Här alla värden i rad 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="datahantering-och-grafer.html#cb43-1" tabindex="-1"></a>dat[<span class="dv">2</span>, ]          <span class="co"># Tomt värde ger alla värden. Här alla värden i rad 2</span></span></code></pre></div>
 <pre><code>##   Vecka Behandling Vikt   N
 ## 2     7          A  161 2.9</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="datahantering-och-grafer.html#cb45-1" tabindex="-1"></a>dat[ ,<span class="dv">3</span>]           <span class="co"># Alla värden i kolumn 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="datahantering-och-grafer.html#cb45-1" tabindex="-1"></a>dat[ ,<span class="dv">3</span>]          <span class="co"># Alla värden i kolumn 3</span></span></code></pre></div>
 <pre><code>##  [1]  232  161  148  368  218  257 1633 2213  972 2560 2430  855</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-13" class="exercise"><strong>Uppgift 1.13  (Plocka ut en specifik kolumn) </strong></span>I den tidigare övningen skapade du ett objekt <code>dat_dice</code>. Använd dollartecken för att plocka ut kolumnen <em>Utfall</em> från det objektet.</p>
@@ -474,7 +474,6 @@ Notera att det är möjligt att skapa ett objekt med namnet <code>c</code> trots
 ## #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,
 ## #   tempo &lt;dbl&gt;, time_signature &lt;dbl&gt;, explicit &lt;lgl&gt;, type &lt;chr&gt;,
 ## #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;</code></pre>
-<p>Om importen fungerat kan man skriva ut tabellens översta rader genom att köra objektets namn.</p>
 <p>För att snabbt se vilka artister datan täcker kan man köra</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="datahantering-och-grafer.html#cb56-1" tabindex="-1"></a><span class="fu">unique</span>(dat<span class="sc">$</span>artist_name)                <span class="co"># Skriv ut unika värden i kolumnen artist_name i dat</span></span></code></pre></div>
 <p>där <code>unique</code> är en funktion som tar bort alla dubletter och <code>dat$artist_name</code> används för att plocka ut kolumnen <code>artist_name</code> ur tabellen <code>dat</code>.</p>
@@ -507,31 +506,31 @@ Notera att det är möjligt att skapa ett objekt med namnet <code>c</code> trots
 ## #   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;</code></pre>
 <p>Inom filterfunktionen anges ett logisk villkor <code>artist_name == "Robyn"</code> och utfallet är de rader där villkoret är sant. Notera de dubbla likhetstecknen - de måste användas för ett logisk villkor eftersom enkelt likhetstecken används för att skapa objekt och sätta funktionsargument.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Uppgift 1.15  (Filtrera för artist) </strong></span>Vad måste ändras i koden för att istället plocka ut rader där artisten är Esperanza Spalding? Hur många rader har det urvalet i datan?</p>
+<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Uppgift 1.15  (Filtrera för artist) </strong></span>Vad måste ändras i koden för att istället plocka ut rader där artisten är Kate Bush? Hur många rader har det urvalet i datan?</p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="datahantering-och-grafer.html#cb59-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span>                                <span class="co"># Ta spotify-datan och sen</span></span>
 <span id="cb59-2"><a href="datahantering-och-grafer.html#cb59-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;Robyn&quot;</span>)       <span class="co"># filtrera för en specifik artist</span></span></code></pre></div>
 </div>
 <p>Om man vill välja flera artister kan man använda funktionen <code>%in%</code> på ett liknande sätt.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="datahantering-och-grafer.html#cb60-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span>                                                              <span class="co"># Ta datan, och sen</span></span>
-<span id="cb60-2"><a href="datahantering-och-grafer.html#cb60-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Robyn&quot;</span>, <span class="st">&quot;Esperanza Spalding&quot;</span>))          <span class="co"># filtrera för specifika artister</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="datahantering-och-grafer.html#cb60-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span>                                               <span class="co"># Ta datan, och sen</span></span>
+<span id="cb60-2"><a href="datahantering-och-grafer.html#cb60-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Robyn&quot;</span>, <span class="st">&quot;Kate Bush&quot;</span>))    <span class="co"># filtrera för specifika artister</span></span></code></pre></div>
 <p>och om man vill ha mer än ett villkor kan man rada dem i filter-funktionen:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="datahantering-och-grafer.html#cb61-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span>                                                              <span class="co"># Ta datan, och sen</span></span>
-<span id="cb61-2"><a href="datahantering-och-grafer.html#cb61-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Robyn&quot;</span>, <span class="st">&quot;Esperanza Spalding&quot;</span>),          <span class="co"># filtrera för specifika artister</span></span>
-<span id="cb61-3"><a href="datahantering-och-grafer.html#cb61-3" tabindex="-1"></a>         key_name <span class="sc">==</span> <span class="st">&quot;D#&quot;</span>)                                           <span class="co"># och för tonart</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="datahantering-och-grafer.html#cb61-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span>                                             <span class="co"># Ta datan, och sen</span></span>
+<span id="cb61-2"><a href="datahantering-och-grafer.html#cb61-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Robyn&quot;</span>, <span class="st">&quot;Kate Bush&quot;</span>),  <span class="co"># filtrera för specifika artister</span></span>
+<span id="cb61-3"><a href="datahantering-och-grafer.html#cb61-3" tabindex="-1"></a>         key_name <span class="sc">==</span> <span class="st">&quot;D#&quot;</span>)                          <span class="co"># och för tonart</span></span></code></pre></div>
 <p>För att se fler eller färre rader kan man använda en pipe <code>%&gt;%</code> till funktionen <code>print()</code>. Följande skriver ut fem rader</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="datahantering-och-grafer.html#cb62-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span>                                                              <span class="co"># Ta datan, och sen</span></span>
-<span id="cb62-2"><a href="datahantering-och-grafer.html#cb62-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Robyn&quot;</span>, <span class="st">&quot;Esperanza Spalding&quot;</span>)) <span class="sc">%&gt;%</span>      <span class="co"># filtrera för artister, och sen</span></span>
-<span id="cb62-3"><a href="datahantering-och-grafer.html#cb62-3" tabindex="-1"></a>  <span class="fu">filter</span>(key_name <span class="sc">==</span> <span class="st">&quot;D#&quot;</span>)  <span class="sc">%&gt;%</span>                                      <span class="co"># filtrera för tonart, och sen</span></span>
-<span id="cb62-4"><a href="datahantering-och-grafer.html#cb62-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">5</span>)                                                       <span class="co"># skriv ut de fem första raderna</span></span></code></pre></div>
-<pre><code>## # A tibble: 21 × 24
-##   artist_name   album_name track_number track_name album_type album_release_date
-##   &lt;chr&gt;         &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;             
-## 1 Esperanza Sp… SONGWRIGH…            7 Formwela 7 album      2021-09-24        
-## 2 Esperanza Sp… 12 Little…            2 To Tide U… album      2019-05-10        
-## 3 Esperanza Sp… 12 Little…            3 &#39;Til the … album      2019-05-10        
-## 4 Esperanza Sp… Emily’s D…            7 Ebony And… album      2016-01-01        
-## 5 Esperanza Sp… Emily’s D…            7 Ebony And… album      2016-01-01        
-## # ℹ 16 more rows
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="datahantering-och-grafer.html#cb62-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span>                                                     <span class="co"># Ta datan, och sen</span></span>
+<span id="cb62-2"><a href="datahantering-och-grafer.html#cb62-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Robyn&quot;</span>, <span class="st">&quot;Kate Bush&quot;</span>)) <span class="sc">%&gt;%</span>      <span class="co"># filtrera för artister, och sen</span></span>
+<span id="cb62-3"><a href="datahantering-och-grafer.html#cb62-3" tabindex="-1"></a>  <span class="fu">filter</span>(key_name <span class="sc">==</span> <span class="st">&quot;D#&quot;</span>)  <span class="sc">%&gt;%</span>                             <span class="co"># filtrera för tonart, och sen</span></span>
+<span id="cb62-4"><a href="datahantering-och-grafer.html#cb62-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">5</span>)                                              <span class="co"># skriv ut de fem första raderna</span></span></code></pre></div>
+<pre><code>## # A tibble: 22 × 24
+##   artist_name album_name   track_number track_name album_type album_release_date
+##   &lt;chr&gt;       &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;             
+## 1 Kate Bush   Selection f…            5 Experimen… album      2018-11-30        
+## 2 Kate Bush   Before The …            2 Act Two -… album      2016-12-02        
+## 3 Kate Bush   50 Words Fo…            3 Misty      album      2011-11-22        
+## 4 Kate Bush   50 Words fo…            3 Misty - 2… album      2011-11-21        
+## 5 Kate Bush   50 Words fo…            3 Misty      album      2011-11-21        
+## # ℹ 17 more rows
 ## # ℹ 18 more variables: album_release_year &lt;dbl&gt;, danceability &lt;dbl&gt;,
 ## #   energy &lt;dbl&gt;, key &lt;dbl&gt;, loudness &lt;dbl&gt;, mode &lt;dbl&gt;, speechiness &lt;dbl&gt;,
 ## #   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,
@@ -579,7 +578,7 @@ Notera att det är möjligt att skapa ett objekt med namnet <code>c</code> trots
 <span id="cb68-2"><a href="datahantering-och-grafer.html#cb68-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;Björk&quot;</span>) <span class="sc">%&gt;%</span>                       <span class="co"># filtrera för rader där artist är Björk, och sen</span></span>
 <span id="cb68-3"><a href="datahantering-och-grafer.html#cb68-3" tabindex="-1"></a>  <span class="fu">select</span>(artist_name, album_name, track_name, tempo) <span class="sc">%&gt;%</span>   <span class="co"># välj kolumner med artist, album, spår och tempo, och sen</span></span>
 <span id="cb68-4"><a href="datahantering-och-grafer.html#cb68-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="sc">-</span>tempo)                                          <span class="co"># ordna efter tempo (minus för fallande ordning)</span></span></code></pre></div>
-<p>Gör lämpliga ändringar för att hitta Kate Bushs snabbaste spår.</p>
+<p>Gör lämpliga ändringar för att hitta Carly Rae Jepsens snabbaste spår.</p>
 </div>
 </div>
 <div id="grafer-med-ggplot2" class="section level2 hasAnchor" number="1.7">
@@ -619,7 +618,7 @@ Notera att det är möjligt att skapa ett objekt med namnet <code>c</code> trots
 <p>Andra graftyper kan skapas med andra <code>geom_</code>-funktioner. Stapeldiagram ges av <code>geom_col</code> (<code>col</code> för <em>column</em>). Man kan också använda <code>geom_bar</code> om man bara vill räkna antal rader per någon kategori.
 Följande väljer ut en artist och plottar spårens dansbarhet i ett (liggande) stapeldiagram.</p>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="datahantering-och-grafer.html#cb74-1" tabindex="-1"></a>dat_small <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb74-2"><a href="datahantering-och-grafer.html#cb74-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;HAIM&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>)</span>
+<span id="cb74-2"><a href="datahantering-och-grafer.html#cb74-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;Phoebe Bridgers&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>)</span>
 <span id="cb74-3"><a href="datahantering-och-grafer.html#cb74-3" tabindex="-1"></a></span>
 <span id="cb74-4"><a href="datahantering-och-grafer.html#cb74-4" tabindex="-1"></a><span class="fu">ggplot</span>(dat_small, <span class="fu">aes</span>(danceability, track_name, <span class="at">fill =</span> album_name)) <span class="sc">+</span></span>
 <span id="cb74-5"><a href="datahantering-och-grafer.html#cb74-5" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
@@ -648,91 +647,91 @@ Följande väljer ut en artist och plottar spårens dansbarhet i ett (liggande) 
 <p><span id="exr:unlabeled-div-20" class="exercise"><strong>Uppgift 1.20  (Temaval 2) </strong></span>Ändra färgvalen i grafen ovan för att skapa fulast möjliga graf. Visa de två graferna för någon annan och se om de kan säga vilken som är vilken.</p>
 </div>
 </div>
-<div id="bonus.-interaktiva-grafer-med-plotly" class="section level2 hasAnchor" number="1.8">
-<h2><span class="header-section-number">1.8</span> Bonus. Interaktiva grafer med <code>plotly</code><a href="datahantering-och-grafer.html#bonus.-interaktiva-grafer-med-plotly" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bonus.-warming-stripes" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Bonus. Warming stripes<a href="datahantering-och-grafer.html#bonus.-warming-stripes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>Warming stripes</em> har sedan de först introducerades av Ed Hawking 2018 blivit en vanlig illustration av temperaturökning. I en warming stripe-graf anges varje år av en stapel och stapels färg ges av ett temperaturmått, vanligen årets medeltemperatur. I ggplot-terminologi har vi geometrier (staplar eller kolumner) med en x-position som ges av år och en ifylld färg som ges av temperatur.</p>
+<p>För att göra en graf behöver vi data över temperaturer. Följande rad hämtar temperaturdata från Stockholm. Källa: <a href="https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/" class="uri">https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/</a></p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="datahantering-och-grafer.html#cb77-1" tabindex="-1"></a><span class="co"># Läs in data från fil</span></span>
+<span id="cb77-2"><a href="datahantering-och-grafer.html#cb77-2" tabindex="-1"></a>dat_temp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Temperatur%2C%20Stockholm.csv&quot;</span>)</span></code></pre></div>
+<p>Vi skapar nu en graf, som alltså ska ha en x-axeln given av år (<code>Year</code>) och ifylld färg som ges av temperatur (<code>Value</code>). Höjden ska vara densamma för alla staplar, men det spelar ingen roll vad den är (så länge den inte är noll).</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="datahantering-och-grafer.html#cb78-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">fill =</span> Value)) <span class="sc">+</span></span>
+<span id="cb78-2"><a href="datahantering-och-grafer.html#cb78-2" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-57-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Uppgift 1.21  (Staplar utan mellanrum) </strong></span>Ett första problem är att staplarna inte fyller ytan. Man kan styra staplars bredd med argumentet <code>width</code>, t.ex.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="datahantering-och-grafer.html#cb79-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">fill =</span> Value)) <span class="sc">+</span></span>
+<span id="cb79-2"><a href="datahantering-och-grafer.html#cb79-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<p>Hitta ett värde för <code>width</code> som ger staplar utan mellanrum.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Uppgift 1.22  (Färgval) </strong></span>Ett andra problem är att ggplots grundval för färger är från svart till blått. För klassiska warming stripes vill vi ha en skala från blått till rött. Färgerna i en skala ändras med särskilda <code>scale_()</code>-funktioner. En färgskala för ifylld färg kan sättas med <code>scale_fill_gradientn()</code>, till exempel</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="datahantering-och-grafer.html#cb80-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">fill =</span> Value)) <span class="sc">+</span></span>
+<span id="cb80-2"><a href="datahantering-och-grafer.html#cb80-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb80-3"><a href="datahantering-och-grafer.html#cb80-3" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">c</span>(<span class="st">&quot;darkgreen&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
+<p>Välj färger som ger en naturlig skala från blått till rött. Funktionen <code>colors()</code> ger valbara färger i R. Några möjliga val kan vara <code>darkblue</code>, <code>blue</code>, <code>white</code>, <code>red</code>, <code>salmon</code>, <code>darkred</code>, <code>steelblue</code> och <code>skyblue</code>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Uppgift 1.23  (Enkel graf) </strong></span>Slutligen brukar warming stripes presenteras med så lite kringinformation som möjligt. I ggplot kan grafelement tas bort med <code>theme()</code>. Här är som exempel en graf utan y-axel, tickmärken och legend.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="datahantering-och-grafer.html#cb81-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Value)) <span class="sc">+</span></span>
+<span id="cb81-2"><a href="datahantering-och-grafer.html#cb81-2" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb81-3"><a href="datahantering-och-grafer.html#cb81-3" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_blank</span>(),            <span class="co"># Sätt titel till blank</span></span>
+<span id="cb81-4"><a href="datahantering-och-grafer.html#cb81-4" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,                <span class="co"># Ta bort legenden</span></span>
+<span id="cb81-5"><a href="datahantering-och-grafer.html#cb81-5" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),       <span class="co"># Sätt bakgrunden till blank</span></span>
+<span id="cb81-6"><a href="datahantering-och-grafer.html#cb81-6" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),      <span class="co"># Sätt graffältets bakgrund till blank</span></span>
+<span id="cb81-7"><a href="datahantering-och-grafer.html#cb81-7" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),           <span class="co"># Sätt axeltext till blank</span></span>
+<span id="cb81-8"><a href="datahantering-och-grafer.html#cb81-8" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>())            <span class="co"># Sätt axelticks till blank</span></span></code></pre></div>
+<p>Använd temat från exemplet för att skapa en enklare version av grafen från föregående uppgift. Ett liknande resultat kan fås med temat <code>theme_void()</code>.</p>
+</div>
+</div>
+<div id="bonus.-interaktiva-grafer-med-plotly" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Bonus. Interaktiva grafer med <code>plotly</code><a href="datahantering-och-grafer.html#bonus.-interaktiva-grafer-med-plotly" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Låt oss ta en titt på <code>plotly</code>, ett av flera R-paket som gör det möjligt att skapa interaktiva grafer. Vi börjar med att installera och ladda paketet.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="datahantering-och-grafer.html#cb77-1" tabindex="-1"></a><span class="co"># install.packages(&quot;plotly&quot;)                     # Installera plotly (ej nödvändigt om redan installerat)</span></span>
-<span id="cb77-2"><a href="datahantering-och-grafer.html#cb77-2" tabindex="-1"></a><span class="fu">library</span>(plotly)                                  <span class="co"># Ladda plotly</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="datahantering-och-grafer.html#cb82-1" tabindex="-1"></a><span class="co"># install.packages(&quot;plotly&quot;)                     # Installera plotly (ej nödvändigt om redan installerat)</span></span>
+<span id="cb82-2"><a href="datahantering-och-grafer.html#cb82-2" tabindex="-1"></a><span class="fu">library</span>(plotly)                                  <span class="co"># Ladda plotly</span></span></code></pre></div>
 <p>Paketet innehåller en smidig funktion <code>ggplotly()</code> för att göra en interaktiv graf från en <code>ggplot</code>. Vi börjar med att filtrera datan för en specifik artist och albumtyp. I samma pipe skapar vi en ny kolumn decade, som beräknar årtiondet utifrån året. Den exakta beräkning är inte så viktig, men ta gärna en titt och se om du förstår vad som delarna gör.</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="datahantering-och-grafer.html#cb78-1" tabindex="-1"></a>dat_small <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span>                                                 <span class="co"># Ta datan, och sen</span></span>
-<span id="cb78-2"><a href="datahantering-och-grafer.html#cb78-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;David Bowie&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>) <span class="sc">%&gt;%</span>    <span class="co"># filtrera på artist och albumtyp, och sen</span></span>
-<span id="cb78-3"><a href="datahantering-och-grafer.html#cb78-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Decade =</span> <span class="fu">floor</span>(album_release_year <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="dv">10</span>)               <span class="co"># skapa en variable för årtionde.</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="datahantering-och-grafer.html#cb83-1" tabindex="-1"></a>dat_small <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span>                                                 <span class="co"># Ta datan, och sen</span></span>
+<span id="cb83-2"><a href="datahantering-och-grafer.html#cb83-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;David Bowie&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>) <span class="sc">%&gt;%</span>    <span class="co"># filtrera på artist och albumtyp, och sen</span></span>
+<span id="cb83-3"><a href="datahantering-och-grafer.html#cb83-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Decade =</span> <span class="fu">floor</span>(album_release_year <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="dv">10</span>)               <span class="co"># skapa en variable för årtionde.</span></span></code></pre></div>
 <p>(Säg t.ex. att vi har året 1979. Att dela med 10 ger 197.9. Funktionen <code>floor</code> avrundar nedåt till 197. Multiplikationen med 10 ger 1970.)</p>
 <p>Vi kan nu konstruera en graf med <code>ggplot()</code>. Låt oss ha dansbarhet på x-axeln och valens på y-axeln. Geomet <code>geom_point()</code> ger ett spridningdiagram och <code>facet_wrap(~ Decade)</code> delar i småfönster efter årtionde. Slutligen tar <code>theme(legend.position = "none")</code> bort <em>legenden</em> - guiden som anger vilken färg som är vilket album.</p>
 <p>Notera att vi sparar grafen som ett objekt <code>g</code>. För att se grafen kör vi objektnamnet.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="datahantering-och-grafer.html#cb79-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat_small, <span class="fu">aes</span>(danceability, valence, <span class="at">color =</span> album_name, <span class="at">text =</span> track_name)) <span class="sc">+</span></span>
-<span id="cb79-2"><a href="datahantering-och-grafer.html#cb79-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb79-3"><a href="datahantering-och-grafer.html#cb79-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Decade) <span class="sc">+</span>            <span class="co"># Skapa småfönster per årtionde</span></span>
-<span id="cb79-4"><a href="datahantering-och-grafer.html#cb79-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)   <span class="co"># Ta bort legenden (kopplingen mellan färg och album)</span></span>
-<span id="cb79-5"><a href="datahantering-och-grafer.html#cb79-5" tabindex="-1"></a>g</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="datahantering-och-grafer.html#cb84-1" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat_small, <span class="fu">aes</span>(danceability, valence, <span class="at">color =</span> album_name, <span class="at">text =</span> track_name)) <span class="sc">+</span></span>
+<span id="cb84-2"><a href="datahantering-och-grafer.html#cb84-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb84-3"><a href="datahantering-och-grafer.html#cb84-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Decade) <span class="sc">+</span>            <span class="co"># Skapa småfönster per årtionde</span></span>
+<span id="cb84-4"><a href="datahantering-och-grafer.html#cb84-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)   <span class="co"># Ta bort legenden (kopplingen mellan färg och album)</span></span>
+<span id="cb84-5"><a href="datahantering-och-grafer.html#cb84-5" tabindex="-1"></a>g</span></code></pre></div>
 <p>När vi har en färdig ggplot kan <code>ggplotly()</code> ge en interaktiv version av samma graf.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="datahantering-och-grafer.html#cb80-1" tabindex="-1"></a><span class="fu">ggplotly</span>(g)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="datahantering-och-grafer.html#cb85-1" tabindex="-1"></a><span class="fu">ggplotly</span>(g)</span></code></pre></div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Uppgift 1.21  (Interaktiv graf med annan artist) </strong></span>Gör lämpliga ändringar i stycket nedan för att skapa en interaktiv graf med en annan artist och med tempo på x-axeln och dansbarhet på y-axeln. Kom ihåg att du kan se tillgängliga artister med raden <code>unique(dat$artist_name)</code>.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="datahantering-och-grafer.html#cb81-1" tabindex="-1"></a>dat_small <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb81-2"><a href="datahantering-och-grafer.html#cb81-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;David Bowie&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-3"><a href="datahantering-och-grafer.html#cb81-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Decade =</span> <span class="fu">floor</span>(album_release_year <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="dv">10</span>)</span>
-<span id="cb81-4"><a href="datahantering-och-grafer.html#cb81-4" tabindex="-1"></a></span>
-<span id="cb81-5"><a href="datahantering-och-grafer.html#cb81-5" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat_small, <span class="fu">aes</span>(danceability, valence, <span class="at">color =</span> album_name, <span class="at">text =</span> track_name)) <span class="sc">+</span></span>
-<span id="cb81-6"><a href="datahantering-och-grafer.html#cb81-6" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>                                 <span class="co"># Skapa punkter</span></span>
-<span id="cb81-7"><a href="datahantering-och-grafer.html#cb81-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Decade) <span class="sc">+</span>                         <span class="co"># Skapa småfönster per årtionde</span></span>
-<span id="cb81-8"><a href="datahantering-och-grafer.html#cb81-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)                <span class="co"># Ta bort legenden (kopplingen mellan färg och album)</span></span>
-<span id="cb81-9"><a href="datahantering-och-grafer.html#cb81-9" tabindex="-1"></a>g</span>
-<span id="cb81-10"><a href="datahantering-och-grafer.html#cb81-10" tabindex="-1"></a></span>
-<span id="cb81-11"><a href="datahantering-och-grafer.html#cb81-11" tabindex="-1"></a><span class="fu">ggplotly</span>(g)</span></code></pre></div>
+<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Uppgift 1.24  (Interaktiv graf med annan artist) </strong></span>Gör lämpliga ändringar i stycket nedan för att skapa en interaktiv graf med en annan artist och med tempo på x-axeln och dansbarhet på y-axeln. Kom ihåg att du kan se tillgängliga artister med raden <code>unique(dat$artist_name)</code>.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="datahantering-och-grafer.html#cb86-1" tabindex="-1"></a>dat_small <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb86-2"><a href="datahantering-och-grafer.html#cb86-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;David Bowie&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb86-3"><a href="datahantering-och-grafer.html#cb86-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Decade =</span> <span class="fu">floor</span>(album_release_year <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="dv">10</span>)</span>
+<span id="cb86-4"><a href="datahantering-och-grafer.html#cb86-4" tabindex="-1"></a></span>
+<span id="cb86-5"><a href="datahantering-och-grafer.html#cb86-5" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat_small, <span class="fu">aes</span>(danceability, valence, <span class="at">color =</span> album_name, <span class="at">text =</span> track_name)) <span class="sc">+</span></span>
+<span id="cb86-6"><a href="datahantering-och-grafer.html#cb86-6" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>                                 <span class="co"># Skapa punkter</span></span>
+<span id="cb86-7"><a href="datahantering-och-grafer.html#cb86-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Decade) <span class="sc">+</span>                         <span class="co"># Skapa småfönster per årtionde</span></span>
+<span id="cb86-8"><a href="datahantering-och-grafer.html#cb86-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)                <span class="co"># Ta bort legenden (kopplingen mellan färg och album)</span></span>
+<span id="cb86-9"><a href="datahantering-och-grafer.html#cb86-9" tabindex="-1"></a>g</span>
+<span id="cb86-10"><a href="datahantering-och-grafer.html#cb86-10" tabindex="-1"></a></span>
+<span id="cb86-11"><a href="datahantering-och-grafer.html#cb86-11" tabindex="-1"></a><span class="fu">ggplotly</span>(g)</span></code></pre></div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Uppgift 1.22  (Interaktiv graf med andra axlar) </strong></span>Vi fortsätter med ett nytt exempel, nu med ett spridningsdiagram med album på y-axeln och valens på x-axeln. Funktionen <code>reorder()</code> ordnar en kolumn efter en annan. Här ordnas album efter release-år.</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="datahantering-och-grafer.html#cb82-1" tabindex="-1"></a>dat_small <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb82-2"><a href="datahantering-och-grafer.html#cb82-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;Rihanna&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb82-3"><a href="datahantering-och-grafer.html#cb82-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Decade =</span> <span class="fu">floor</span>(album_release_year <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="dv">10</span>,</span>
-<span id="cb82-4"><a href="datahantering-och-grafer.html#cb82-4" tabindex="-1"></a>         <span class="at">Decade =</span> <span class="fu">as.character</span>(Decade),</span>
-<span id="cb82-5"><a href="datahantering-och-grafer.html#cb82-5" tabindex="-1"></a>         <span class="at">album_name =</span> <span class="fu">reorder</span>(album_name, album_release_year))</span>
-<span id="cb82-6"><a href="datahantering-och-grafer.html#cb82-6" tabindex="-1"></a></span>
-<span id="cb82-7"><a href="datahantering-och-grafer.html#cb82-7" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat_small, <span class="fu">aes</span>(valence, album_name, <span class="at">color =</span> Decade, <span class="at">text =</span> track_name)) <span class="sc">+</span></span>
-<span id="cb82-8"><a href="datahantering-och-grafer.html#cb82-8" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb82-9"><a href="datahantering-och-grafer.html#cb82-9" tabindex="-1"></a>g</span></code></pre></div>
-<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-59-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Uppgift 1.25  (Interaktiv graf med andra axlar) </strong></span>Vi fortsätter med ett nytt exempel, nu med ett spridningsdiagram med album på y-axeln och valens på x-axeln. Funktionen <code>reorder()</code> ordnar en kolumn efter en annan. Här ordnas album efter release-år.</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="datahantering-och-grafer.html#cb87-1" tabindex="-1"></a>dat_small <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb87-2"><a href="datahantering-och-grafer.html#cb87-2" tabindex="-1"></a>  <span class="fu">filter</span>(artist_name <span class="sc">==</span> <span class="st">&quot;Rihanna&quot;</span>, album_type <span class="sc">==</span> <span class="st">&quot;album&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb87-3"><a href="datahantering-och-grafer.html#cb87-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Decade =</span> <span class="fu">floor</span>(album_release_year <span class="sc">/</span> <span class="dv">10</span>) <span class="sc">*</span> <span class="dv">10</span>,</span>
+<span id="cb87-4"><a href="datahantering-och-grafer.html#cb87-4" tabindex="-1"></a>         <span class="at">Decade =</span> <span class="fu">as.character</span>(Decade),</span>
+<span id="cb87-5"><a href="datahantering-och-grafer.html#cb87-5" tabindex="-1"></a>         <span class="at">album_name =</span> <span class="fu">reorder</span>(album_name, album_release_year))</span>
+<span id="cb87-6"><a href="datahantering-och-grafer.html#cb87-6" tabindex="-1"></a></span>
+<span id="cb87-7"><a href="datahantering-och-grafer.html#cb87-7" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dat_small, <span class="fu">aes</span>(valence, album_name, <span class="at">color =</span> Decade, <span class="at">text =</span> track_name)) <span class="sc">+</span></span>
+<span id="cb87-8"><a href="datahantering-och-grafer.html#cb87-8" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb87-9"><a href="datahantering-och-grafer.html#cb87-9" tabindex="-1"></a>g</span></code></pre></div>
+<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-64-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Ändra gärna artist på lämpligt ställe.
 Vad måste läggas till för en interaktiv version av samma graf?</p>
 </div>
 <p>Hemsidan <a href="https://plotly.com/r/" class="uri">https://plotly.com/r/</a> innehåller fler exempel för den som är intresserad.</p>
-</div>
-<div id="bonus.-warming-stripes" class="section level2 hasAnchor" number="1.9">
-<h2><span class="header-section-number">1.9</span> Bonus. Warming stripes<a href="datahantering-och-grafer.html#bonus.-warming-stripes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>Warming stripes</em> har sedan de först introducerades av Ed Hawking 2018 blivit en vanlig illustration av temperaturökning. I en warming stripe-graf anges varje år av en stapel och stapels färg ges av ett temperaturmått, vanligen årets medeltemperatur. I ggplot-terminologi har vi geometrier (staplar eller kolumner) med en x-position som ges av år och en ifylld färg som ges av temperatur.</p>
-<p>För att göra en graf behöver vi data över temperaturer. Följande rad hämtar temperaturdata från Stockholm. Källa: <a href="https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/" class="uri">https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/</a></p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="datahantering-och-grafer.html#cb83-1" tabindex="-1"></a><span class="co"># Läs in data från fil</span></span>
-<span id="cb83-2"><a href="datahantering-och-grafer.html#cb83-2" tabindex="-1"></a>dat_temp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Temperatur%2C%20Stockholm.csv&quot;</span>)</span></code></pre></div>
-<p>Vi skapar nu en graf, som alltså ska ha en x-axeln given av år (<code>Year</code>) och ifylld färg som ges av temperatur (<code>Value</code>). Höjden ska vara densamma för alla staplar, men det spelar ingen roll vad den är (så länge den inte är noll).</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="datahantering-och-grafer.html#cb84-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">fill =</span> Value)) <span class="sc">+</span></span>
-<span id="cb84-2"><a href="datahantering-och-grafer.html#cb84-2" tabindex="-1"></a>  <span class="fu">geom_col</span>() </span></code></pre></div>
-<p><img src="R-anvisningar_files/figure-html/unnamed-chunk-61-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Uppgift 1.23  (Staplar utan mellanrum) </strong></span>Ett första problem är att staplarna inte fyller ytan. Man kan styra staplars bredd med argumentet <code>width</code>, t.ex.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="datahantering-och-grafer.html#cb85-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">fill =</span> Value)) <span class="sc">+</span></span>
-<span id="cb85-2"><a href="datahantering-och-grafer.html#cb85-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.1</span>)</span></code></pre></div>
-<p>Hitta ett värde för <code>width</code> som ger staplar utan mellanrum.</p>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Uppgift 1.24  (Färgval) </strong></span>Ett andra problem är att ggplots grundval för färger är från svart till blått. För klassiska warming stripes vill vi ha en skala från blått till rött. Färgerna i en skala ändras med särskilda <code>scale_()</code>-funktioner. En färgskala för ifylld färg kan sättas med <code>scale_fill_gradientn()</code>, till exempel</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="datahantering-och-grafer.html#cb86-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">fill =</span> Value)) <span class="sc">+</span></span>
-<span id="cb86-2"><a href="datahantering-och-grafer.html#cb86-2" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb86-3"><a href="datahantering-och-grafer.html#cb86-3" tabindex="-1"></a>  <span class="fu">scale_fill_gradientn</span>(<span class="at">colours =</span> <span class="fu">c</span>(<span class="st">&quot;darkgreen&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;white&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
-<p>Välj färger som ger en naturlig skala från blått till rött. Funktionen <code>colors()</code> ger valbara färger i R. Några möjliga val kan vara <code>darkblue</code>, <code>blue</code>, <code>white</code>, <code>red</code>, <code>salmon</code>, <code>darkred</code>, <code>steelblue</code> och <code>skyblue</code>.</p>
-</div>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Uppgift 1.25  (Enkel graf) </strong></span>Slutligen brukar warming stripes presenteras med så lite kringinformation som möjligt. I ggplot kan grafelement tas bort med <code>theme()</code>. Här är som exempel en graf utan y-axel, tickmärken och legend.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="datahantering-och-grafer.html#cb87-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat_temp, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Value)) <span class="sc">+</span></span>
-<span id="cb87-2"><a href="datahantering-och-grafer.html#cb87-2" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb87-3"><a href="datahantering-och-grafer.html#cb87-3" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_blank</span>(),            <span class="co"># Sätt titel till blank</span></span>
-<span id="cb87-4"><a href="datahantering-och-grafer.html#cb87-4" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,                <span class="co"># Ta bort legenden</span></span>
-<span id="cb87-5"><a href="datahantering-och-grafer.html#cb87-5" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_blank</span>(),       <span class="co"># Sätt bakgrunden till blank</span></span>
-<span id="cb87-6"><a href="datahantering-och-grafer.html#cb87-6" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),      <span class="co"># Sätt graffältets bakgrund till blank</span></span>
-<span id="cb87-7"><a href="datahantering-och-grafer.html#cb87-7" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),           <span class="co"># Sätt axeltext till blank</span></span>
-<span id="cb87-8"><a href="datahantering-och-grafer.html#cb87-8" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>())            <span class="co"># Sätt axelticks till blank</span></span></code></pre></div>
-<p>Använd temat från exemplet för att skapa en enklare version av grafen från föregående uppgift. Ett liknande resultat kan fås med temat <code>theme_void()</code>.</p>
-</div>
 
 </div>
 </div>

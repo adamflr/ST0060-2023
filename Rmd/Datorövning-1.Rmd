@@ -36,7 +36,7 @@ Gränssnittet i RStudio är uppdelat i fyra delar och varje del består av en el
 Hitta fliken *Help*, klicka på husikonen under fliken. Finns det en länk med *RStudio Cheat Sheets*? Följ den länken för att hitta guider till R som kan bli nyttiga längre fram. För nu, gå tillbaka till RStudio.
 :::
 
-Ofta skriver man inte sin kod direkt i konsollen, utan i ett separat *skript* - en vanlig textfil som innehåller den kod man vill köra. Genom att organisera sin kod i ett skript kan man lätt strukturera och dokumentera sitt arbete. I RStudio kan man öppna ett nytt skript genom att gå till *File > New File > R Script* eller genom att klicka *Ctrl + Shift + N*. Ett tomt skript öppnar sig då i det övre vänstra delfönstret. Om du läser det här i RStudio, genom att ha laddat ner .R-filen, läser du just nu ett skript.
+Ofta skriver man inte sin kod direkt i konsollen, utan i ett separat *skript* - en vanlig textfil som innehåller den kod man vill köra. I RStudio kan man öppna ett nytt skript genom att gå till *File > New File > R Script* eller genom att klicka *Ctrl + Shift + N*. Ett tomt skript öppnar sig då i det övre vänstra delfönstret.
 
 ::: {.exercise name="Ett första skript"}
 Öppna ett nytt skript genom File-menyn eller genom *Ctrl + Shift + N*.
@@ -276,8 +276,8 @@ Man kan också plocka ut rader och kolumner med hakparenteser och ordningstal.
 
 ```{r}
 dat[2,3]          # Andra raden och tredje kolumnen
-dat[2, ]           # Tomt värde ger alla värden. Här alla värden i rad 2
-dat[ ,3]           # Alla värden i kolumn 3
+dat[2, ]          # Tomt värde ger alla värden. Här alla värden i rad 2
+dat[ ,3]          # Alla värden i kolumn 3
 ```
 
 ::: {.exercise name="Plocka ut en specifik kolumn"}
@@ -319,8 +319,6 @@ dat <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2023/master/Da
 dat                                    # Skriv ut objektet dat
 ```
 
-Om importen fungerat kan man skriva ut tabellens översta rader genom att köra objektets namn.
-
 För att snabbt se vilka artister datan täcker kan man köra
 
 ```{r, eval=F}
@@ -343,7 +341,7 @@ dat %>%                                # Ta spotify-datan och sen
 Inom filterfunktionen anges ett logisk villkor `artist_name == "Robyn"` och utfallet är de rader där villkoret är sant. Notera de dubbla likhetstecknen - de måste användas för ett logisk villkor eftersom enkelt likhetstecken används för att skapa objekt och sätta funktionsargument. 
 
 ::: {.exercise name="Filtrera för artist"}
-Vad måste ändras i koden för att istället plocka ut rader där artisten är Esperanza Spalding? Hur många rader har det urvalet i datan?
+Vad måste ändras i koden för att istället plocka ut rader där artisten är Kate Bush? Hur många rader har det urvalet i datan?
 
 ```{r, eval = F}
 dat %>%                                # Ta spotify-datan och sen
@@ -354,25 +352,25 @@ dat %>%                                # Ta spotify-datan och sen
 Om man vill välja flera artister kan man använda funktionen `%in%` på ett liknande sätt.
 
 ```{r, eval=F}
-dat %>%                                                              # Ta datan, och sen
-  filter(artist_name %in% c("Robyn", "Esperanza Spalding"))          # filtrera för specifika artister
+dat %>%                                               # Ta datan, och sen
+  filter(artist_name %in% c("Robyn", "Kate Bush"))    # filtrera för specifika artister
 ```
 
 och om man vill ha mer än ett villkor kan man rada dem i filter-funktionen:
 
 ```{r, eval=F}
-dat %>%                                                              # Ta datan, och sen
-  filter(artist_name %in% c("Robyn", "Esperanza Spalding"),          # filtrera för specifika artister
-         key_name == "D#")                                           # och för tonart
+dat %>%                                             # Ta datan, och sen
+  filter(artist_name %in% c("Robyn", "Kate Bush"),  # filtrera för specifika artister
+         key_name == "D#")                          # och för tonart
 ```
 
 För att se fler eller färre rader kan man använda en pipe `%>%` till funktionen `print()`. Följande skriver ut fem rader
 
 ```{r}
-dat %>%                                                              # Ta datan, och sen
-  filter(artist_name %in% c("Robyn", "Esperanza Spalding")) %>%      # filtrera för artister, och sen
-  filter(key_name == "D#")  %>%                                      # filtrera för tonart, och sen
-  print(n = 5)                                                       # skriv ut de fem första raderna
+dat %>%                                                     # Ta datan, och sen
+  filter(artist_name %in% c("Robyn", "Kate Bush")) %>%      # filtrera för artister, och sen
+  filter(key_name == "D#")  %>%                             # filtrera för tonart, och sen
+  print(n = 5)                                              # skriv ut de fem första raderna
 ```
 
 Om man istället vill göra ett urval av kolumner kan man använda `select()`. Som argument anges de kolumner man vill välja, t.ex.
@@ -401,7 +399,7 @@ dat %>%                                                    # Ta datan, och sen
   arrange(-tempo)                                          # ordna efter tempo (minus för fallande ordning)
 ```
 
-Gör lämpliga ändringar för att hitta Kate Bushs snabbaste spår.
+Gör lämpliga ändringar för att hitta Carly Rae Jepsens snabbaste spår.
 :::
 
 ## Grafer med `ggplot2`
@@ -463,7 +461,7 @@ Följande väljer ut en artist och plottar spårens dansbarhet i ett (liggande) 
 
 ```{r}
 dat_small <- dat %>% 
-  filter(artist_name == "HAIM", album_type == "album")
+  filter(artist_name == "Phoebe Bridgers", album_type == "album")
 
 ggplot(dat_small, aes(danceability, track_name, fill = album_name)) +
   geom_col(color = "black")
@@ -500,6 +498,64 @@ ggplot(dat_small, aes(danceability, album_name)) +
 
 ::: {.exercise name="Temaval 2"}
 Ändra färgvalen i grafen ovan för att skapa fulast möjliga graf. Visa de två graferna för någon annan och se om de kan säga vilken som är vilken.
+:::
+
+## Bonus. Warming stripes
+
+*Warming stripes* har sedan de först introducerades av Ed Hawking 2018 blivit en vanlig illustration av temperaturökning. I en warming stripe-graf anges varje år av en stapel och stapels färg ges av ett temperaturmått, vanligen årets medeltemperatur. I ggplot-terminologi har vi geometrier (staplar eller kolumner) med en x-position som ges av år och en ifylld färg som ges av temperatur.
+
+För att göra en graf behöver vi data över temperaturer. Följande rad hämtar temperaturdata från Stockholm. Källa: https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/
+
+```{r}
+# Läs in data från fil
+dat_temp <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Temperatur%2C%20Stockholm.csv")
+```
+
+Vi skapar nu en graf, som alltså ska ha en x-axeln given av år  (`Year`) och ifylld färg som ges av temperatur (`Value`). Höjden ska vara densamma för alla staplar, men det spelar ingen roll vad den är (så länge den inte är noll).
+
+```{r}
+ggplot(dat_temp, aes(x = Year, y = 1, fill = Value)) +
+  geom_col() 
+```
+
+::: {.exercise name="Staplar utan mellanrum"}
+Ett första problem är att staplarna inte fyller ytan. Man kan styra staplars bredd med argumentet `width`, t.ex.
+
+```{r, eval = F}
+ggplot(dat_temp, aes(x = Year, y = 1, fill = Value)) +
+  geom_col(width = 0.1)
+```
+
+Hitta ett värde för `width` som ger staplar utan mellanrum.
+:::
+
+::: {.exercise name="Färgval"}
+Ett andra problem är att ggplots grundval för färger är från svart till blått. För klassiska warming stripes vill vi ha en skala från blått till rött. Färgerna i en skala ändras med särskilda `scale_()`-funktioner. En färgskala för ifylld färg kan sättas med `scale_fill_gradientn()`, till exempel
+
+```{r, eval = F}
+ggplot(dat_temp, aes(x = Year, y = 1, fill = Value)) +
+  geom_col(width = 0.1) +
+  scale_fill_gradientn(colours = c("darkgreen", "blue", "white", "yellow", "purple"))
+```
+
+Välj färger som ger en naturlig skala från blått till rött. Funktionen `colors()` ger valbara färger i R. Några möjliga val kan vara `darkblue`, `blue`, `white`, `red`, `salmon`, `darkred`, `steelblue` och `skyblue`.
+:::
+
+::: {.exercise name="Enkel graf"}
+Slutligen brukar warming stripes presenteras med så lite kringinformation som möjligt. I ggplot kan grafelement tas bort med `theme()`. Här är som exempel en graf utan y-axel, tickmärken och legend.
+
+```{r, eval = F}
+ggplot(dat_temp, aes(x = Year, y = Value)) +
+  geom_line() +
+  theme(axis.title = element_blank(),            # Sätt titel till blank
+        legend.position = "none",                # Ta bort legenden
+        plot.background = element_blank(),       # Sätt bakgrunden till blank
+        panel.background = element_blank(),      # Sätt graffältets bakgrund till blank
+        axis.text.y = element_blank(),           # Sätt axeltext till blank
+        axis.ticks = element_blank())            # Sätt axelticks till blank
+```
+
+Använd temat från exemplet för att skapa en enklare version av grafen från föregående uppgift. Ett liknande resultat kan fås med temat `theme_void()`.
 :::
 
 ## Bonus. Interaktiva grafer med `plotly`
@@ -577,61 +633,3 @@ Vad måste läggas till för en interaktiv version av samma graf?
 :::
 
 Hemsidan https://plotly.com/r/ innehåller fler exempel för den som är intresserad.
-
-## Bonus. Warming stripes
-
-*Warming stripes* har sedan de först introducerades av Ed Hawking 2018 blivit en vanlig illustration av temperaturökning. I en warming stripe-graf anges varje år av en stapel och stapels färg ges av ett temperaturmått, vanligen årets medeltemperatur. I ggplot-terminologi har vi geometrier (staplar eller kolumner) med en x-position som ges av år och en ifylld färg som ges av temperatur.
-
-För att göra en graf behöver vi data över temperaturer. Följande rad hämtar temperaturdata från Stockholm. Källa: https://miljobarometern.stockholm.se/klimat/klimat-och-vaderstatistik/medeltemperatur/
-
-```{r}
-# Läs in data från fil
-dat_temp <- read_csv("https://raw.githubusercontent.com/adamflr/ST0060-2022/main/Data/Temperatur%2C%20Stockholm.csv")
-```
-
-Vi skapar nu en graf, som alltså ska ha en x-axeln given av år  (`Year`) och ifylld färg som ges av temperatur (`Value`). Höjden ska vara densamma för alla staplar, men det spelar ingen roll vad den är (så länge den inte är noll).
-
-```{r}
-ggplot(dat_temp, aes(x = Year, y = 1, fill = Value)) +
-  geom_col() 
-```
-
-::: {.exercise name="Staplar utan mellanrum"}
-Ett första problem är att staplarna inte fyller ytan. Man kan styra staplars bredd med argumentet `width`, t.ex.
-
-```{r, eval = F}
-ggplot(dat_temp, aes(x = Year, y = 1, fill = Value)) +
-  geom_col(width = 0.1)
-```
-
-Hitta ett värde för `width` som ger staplar utan mellanrum.
-:::
-
-::: {.exercise name="Färgval"}
-Ett andra problem är att ggplots grundval för färger är från svart till blått. För klassiska warming stripes vill vi ha en skala från blått till rött. Färgerna i en skala ändras med särskilda `scale_()`-funktioner. En färgskala för ifylld färg kan sättas med `scale_fill_gradientn()`, till exempel
-
-```{r, eval = F}
-ggplot(dat_temp, aes(x = Year, y = 1, fill = Value)) +
-  geom_col(width = 0.1) +
-  scale_fill_gradientn(colours = c("darkgreen", "blue", "white", "yellow", "purple"))
-```
-
-Välj färger som ger en naturlig skala från blått till rött. Funktionen `colors()` ger valbara färger i R. Några möjliga val kan vara `darkblue`, `blue`, `white`, `red`, `salmon`, `darkred`, `steelblue` och `skyblue`.
-:::
-
-::: {.exercise name="Enkel graf"}
-Slutligen brukar warming stripes presenteras med så lite kringinformation som möjligt. I ggplot kan grafelement tas bort med `theme()`. Här är som exempel en graf utan y-axel, tickmärken och legend.
-
-```{r, eval = F}
-ggplot(dat_temp, aes(x = Year, y = Value)) +
-  geom_line() +
-  theme(axis.title = element_blank(),            # Sätt titel till blank
-        legend.position = "none",                # Ta bort legenden
-        plot.background = element_blank(),       # Sätt bakgrunden till blank
-        panel.background = element_blank(),      # Sätt graffältets bakgrund till blank
-        axis.text.y = element_blank(),           # Sätt axeltext till blank
-        axis.ticks = element_blank())            # Sätt axelticks till blank
-```
-
-Använd temat från exemplet för att skapa en enklare version av grafen från föregående uppgift. Ett liknande resultat kan fås med temat `theme_void()`.
-:::

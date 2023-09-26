@@ -49,5 +49,5 @@ for(i in 1:8){
   text <- tab_text$New
   
   # Write files
-  write_lines(text, paste0("Skriptversioner/Datorövning-", id_no, ".R"))
+  write_lines(text, paste0("Skriptversioner/Datorövning-", id_no, "-fulltext.R"))
 }
