@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-09-26" />
+<meta name="date" content="2023-10-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -552,13 +552,13 @@ Ett t-test bygger, som alla hypotestest, på en serie steg:</p>
 ##  One Sample t-test
 ## 
 ## data:  dat_sim$x
-## t = 0.1017, df = 9, p-value = 0.9212
+## t = -0.39563, df = 9, p-value = 0.7016
 ## alternative hypothesis: true mean is not equal to 7
 ## 95 percent confidence interval:
-##   4.176895 10.088891
+##   2.686395 10.029392
 ## sample estimates:
 ## mean of x 
-##  7.132893</code></pre>
+##  6.357894</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-96" class="exercise"><strong>Uppgift 4.21  (Upprepad simulering) </strong></span>Kör de två raderna i stycket ovan ett tiotal gånger. Du bör se att man ibland förkastar nollhypotesen trots att den ska stämma. Kan du få en känsla för hur stor andel av gångerna man felaktigt förkastar?</p>
 </div>
@@ -579,7 +579,7 @@ Ett t-test bygger, som alla hypotestest, på en serie steg:</p>
 <p>Den teoretiska t-fördelning passar histogrammet nästan perfekt.</p>
 <p>Vidare ska p-värdet vara under fem procent fem procent av gångerna.</p>
 <div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="ett-stickprov-av-normalfördelad-data.html#cb280-1" tabindex="-1"></a><span class="fu">mean</span>(dat_sim<span class="sc">$</span>p_value <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span></code></pre></div>
-<pre><code>## [1] 0.062</code></pre>
+<pre><code>## [1] 0.056</code></pre>
 <p>Även det stämmer någorlunda väl. Det här innebär alltså att om man har en signifikansnivå på fem procent kommer man förkasta nollhypotesen fem procent av gångerna även om nollhypotesen stämmer. Det kallas ett <em>falskt positivt</em> utfall.</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-97" class="exercise"><strong>Uppgift 4.22  (Simulerade konfidensintervall) </strong></span>Hur många av de simulerade konfidensintervallen täcker värdet 7?</p>

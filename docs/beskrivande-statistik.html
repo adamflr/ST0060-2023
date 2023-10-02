@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-09-26" />
+<meta name="date" content="2023-10-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -378,7 +378,7 @@ Vi kan skriva ut objektet och se resultatet av beräkningen:</p>
 ##  9      649. 16317921 10595901589.
 ## 10      635. 22227415 14121995875.
 ## # ℹ 1,694 more rows</code></pre>
-<p>Om man vill skapa en kolumn med mellanrum i namnet måste man skriva namnet inom <em>backticks</em> <code>\`` för att ange att namnet ska tolkas som en enhet. Jag rekommenderar att undvika mellanrum i kolumnnamn och istället använda stora bokstäver eller understreck för ett nytt ord (</code>NationalGDP<code>eller</code>National_GDP`).</p>
+<p>Om man vill skapa en kolumn med mellanrum i namnet måste man skriva namnet inom <em>backticks</em> ` för att ange att namnet ska tolkas som en enhet. Jag rekommenderar att undvika mellanrum i kolumnnamn och istället använda stora bokstäver eller understreck för ett nytt ord (<code>NationalGDP</code> eller <code>National_GDP</code>).</p>
 <div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="beskrivande-statistik.html#cb105-1" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
 <span id="cb105-2"><a href="beskrivande-statistik.html#cb105-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">National GDP</span><span class="st">`</span> <span class="ot">=</span> gdpPercap <span class="sc">*</span> pop)</span></code></pre></div>
 <pre><code>## # A tibble: 1,704 × 8
@@ -653,7 +653,7 @@ Vi kan skriva ut objektet och se resultatet av beräkningen:</p>
 <p><a href="https://stackoverflow.com/questions/42105336/how-to-round-a-number-and-make-it-show-zeros" class="uri">https://stackoverflow.com/questions/42105336/how-to-round-a-number-and-make-it-show-zeros</a></p>
 <p>Försök använda kod därifrån för att lägga till en avslutande nolla.</p>
 </div>
-<p>Objekt kan exporteras från R på liknande som det importeras - med särskilda exportfunktioner (<em>write</em>-funktioner) beroende på filtyp. För att exportera till en csv-fil man man anvnäda <code>write_csv()</code>. Ingående argument är det objekt man vill exportera och den fil man vill exportera till. R ger ingen varning om man skriver över en existerande fil, så var lite försiktiga här.</p>
+<p>Objekt kan exporteras från R på liknande som det importeras - med särskilda exportfunktioner (<em>write</em>-funktioner) beroende på filtyp. För att exportera till en csv-fil man man använda <code>write_csv()</code>. Ingående argument är det objekt man vill exportera och den fil man vill exportera till. R ger ingen varning om man skriver över en existerande fil, så var lite försiktiga här.</p>
 <p>Precis som vid import använda R <em>working directory</em> om inget annat anges. Följande exporterar objektet <code>dat_sum</code> till en csv-fil <em>Exporterad data från R.csv</em> i <em>working directory</em>.</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="beskrivande-statistik.html#cb146-1" tabindex="-1"></a><span class="fu">getwd</span>()                                                    <span class="co"># Se nuvarande working directory</span></span>
 <span id="cb146-2"><a href="beskrivande-statistik.html#cb146-2" tabindex="-1"></a><span class="fu">write_csv</span>(dat_sum, <span class="st">&quot;Exporterad data från R.csv&quot;</span>)           <span class="co"># Skriv datan till en csv-fil.</span></span></code></pre></div>

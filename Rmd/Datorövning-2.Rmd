@@ -123,7 +123,7 @@ Vi kan skriva ut objektet och se resultatet av beräkningen:
 gapminder %>% select(gdpPercap, pop, gdp)        # Ta datan och sen välj tre kolumner
 ```
 
-Om man vill skapa en kolumn med mellanrum i namnet måste man skriva namnet inom *backticks* `\`` för att ange att namnet ska tolkas som en enhet. Jag rekommenderar att undvika mellanrum i kolumnnamn och istället använda stora bokstäver eller understreck för ett nytt ord (`NationalGDP` eller `National_GDP`).
+Om man vill skapa en kolumn med mellanrum i namnet måste man skriva namnet inom *backticks* \` för att ange att namnet ska tolkas som en enhet. Jag rekommenderar att undvika mellanrum i kolumnnamn och istället använda stora bokstäver eller understreck för ett nytt ord (`NationalGDP` eller `National_GDP`).
 
 ```{r}
 gapminder %>% 
@@ -373,7 +373,7 @@ https://stackoverflow.com/questions/42105336/how-to-round-a-number-and-make-it-s
 Försök använda kod därifrån för att lägga till en avslutande nolla.
 :::
 
-Objekt kan exporteras från R på liknande som det importeras - med särskilda exportfunktioner (*write*-funktioner) beroende på filtyp. För att exportera till en csv-fil man man anvnäda `write_csv()`. Ingående argument är det objekt man vill exportera och den fil man vill exportera till. R ger ingen varning om man skriver över en existerande fil, så var lite försiktiga här.
+Objekt kan exporteras från R på liknande som det importeras - med särskilda exportfunktioner (*write*-funktioner) beroende på filtyp. För att exportera till en csv-fil man man använda `write_csv()`. Ingående argument är det objekt man vill exportera och den fil man vill exportera till. R ger ingen varning om man skriver över en existerande fil, så var lite försiktiga här.
 
 Precis som vid import använda R *working directory* om inget annat anges. Följande exporterar objektet `dat_sum` till en csv-fil *Exporterad data från R.csv* i *working directory*.
 
