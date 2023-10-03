@@ -133,7 +133,7 @@
 
 \title{R-anvisningar till \emph{Grundläggande statistik}}
 \author{}
-\date{\vspace{-2.5em}2023-10-02}
+\date{\vspace{-2.5em}2023-10-03}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Sats}[chapter]
@@ -2400,139 +2400,6 @@ Därefter ett exempel på ett stapeldiagram med felstaplar för samma data. Fels
 
 \begin{center}\includegraphics{R-anvisningar_files/figure-latex/fig3_gm_bar-1} \end{center}
 
-\hypertarget{diskreta-fuxf6rdelningar-i-allmuxe4nhet}{%
-\section{Diskreta fördelningar i allmänhet}\label{diskreta-fuxf6rdelningar-i-allmuxe4nhet}}
-
-En diskret slumpvariabel kan bara anta specifika värden på tallinjen. Det absolut vanligaste fallet är när utfallen är heltal. Varje utfall är kopplat till \emph{en} sannolikhet och summan av sannolikheterna är ett.
-
-Ett kast med en 6-sidig tärning har sex möjliga utfall och samma sannolikhet för varje utfall. Eftersom summan av sannolikheter ska bli ett måste sannolikheten för ett specifik utfall vara en sjättedel. Vi kan kodifiera slumpvariabeln i en tabell över utfall och sannolikhet.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dat\_dice6 }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{),}
-                        \AttributeTok{p =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
-\NormalTok{dat\_dice6}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##   x         p
-## 1 1 0.1666667
-## 2 2 0.1666667
-## 3 3 0.1666667
-## 4 4 0.1666667
-## 5 5 0.1666667
-## 6 6 0.1666667
-\end{verbatim}
-
-En diskret slumpvariabel illustreras ofta med ett stapeldiagram.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{ggplot}\NormalTok{(dat\_dice6, }\FunctionTok{aes}\NormalTok{(x, p)) }\SpecialCharTok{+} \FunctionTok{geom\_col}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-116-1} \end{center}
-
-\begin{exercise}[En annan tärning]
-Ta fram en tärning som \emph{inte} har sex sidor. Följ exemplet ovan för att kodifiera din tärning som en slumpvariabel. Ett bra namn på det nya objektet kan vara \texttt{dat\_diceN} där N anger antalet sidor på tärningen, t.ex. \texttt{dat\_dice20} för en 20-sidig tärning.
-\end{exercise}
-
-Under tidigare datorövningar såg vi hur man kan beräkna medelvärde och varians från ett stickprov. De måtten kan också beräknas på en teoretisk slumpvariabel. Den här kopplingen mellan beräkningar på ett stickprov och teoretiska egenskaper hos en slumpvariabel är väldigt central inom statistiken, eftersom vårt mål är att koppla verklig data till teoretiska modeller.
-
-För en diskret slumpvariabel ges medelvärdet (som då också kallas \emph{populationsmedelvärde}, eller vanligare \emph{väntevärde}) av summan av utfallen gånger sannolikheterna. För vår tärning kan vi räkna ut det genom att multiplicera utfall och sannolikhet i ett \texttt{mutate()} steg och sedan summera.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dat\_dice6 }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{x\_times\_p =}\NormalTok{ x }\SpecialCharTok{*}\NormalTok{ p) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Expected\_value =} \FunctionTok{sum}\NormalTok{(x\_times\_p))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##   Expected_value
-## 1            3.5
-\end{verbatim}
-
-Notera att medelvärdet inte behöver vara ett möjligt utfall.
-
-\begin{exercise}[Medelvärde för din tärning]
-Upprepa beräkningen ovan, denna gång med den slumpvariabel du kodifierade i den tidigare uppgiften.
-\end{exercise}
-
-Beräkningen av en teoretisk varians (som vi kan kalla \emph{populationsvarians}) är lite mer komplicerad och vi går inte in på några detaljer här. Koden nedan skapar en funktion som beräknar populationsvariansen.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{pop\_var }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x, p) }\FunctionTok{sum}\NormalTok{(p }\SpecialCharTok{*}\NormalTok{ (x }\SpecialCharTok{{-}} \FunctionTok{sum}\NormalTok{(x }\SpecialCharTok{*}\NormalTok{ p))}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-För en 6-sidig tärning kan vi beräkna variansen med följande.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dat\_dice6 }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{varians =} \FunctionTok{pop\_var}\NormalTok{(x, p))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##    varians
-## 1 2.916667
-\end{verbatim}
-
-\begin{exercise}[Varians för din tärning]
-Upprepa beräkningen ovan, denna gång med den slumpvariabel du kodifierade i den tidigare uppgiften.
-\end{exercise}
-
-Vår modell för tärningskastet säger att en serie tärningskast ska ha ett visst medelvärde och varians. Låt oss nu testa det genom att kasta tärning.
-
-\begin{exercise}[Kasta tärningen]
-Kasta din tärning 20 gånger. Gärna på en mjuk yta. Skriv in utfallen i koden nedan och beräkna medelvärde och varians.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{utfall }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_,\_)}
-\FunctionTok{mean}\NormalTok{(utfall)}
-\FunctionTok{var}\NormalTok{(utfall)}
-\FunctionTok{sd}\NormalTok{(utfall)}
-\end{Highlighting}
-\end{Shaded}
-
-Ligger medelvärde och varians från stickprovet nära de teoretiska beräkningarna?
-\end{exercise}
-
-R kommer också med en rad funktioner för att simulera data. Funktionen \texttt{sample()} drar ett urval ur en serie möjliga utfall. Följande kod drar tiotusen slumputfall från en 6-sidig tärning, och beräknar medelvärde och varians.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{slumputfall }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ dat\_dice6}\SpecialCharTok{$}\NormalTok{x, }\AttributeTok{size =} \DecValTok{10000}\NormalTok{, }\AttributeTok{replace =}\NormalTok{ T)}
-
-\FunctionTok{mean}\NormalTok{(slumputfall)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 3.4816
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{var}\NormalTok{(slumputfall)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2.909752
-\end{verbatim}
-
-\begin{exercise}[Simulera tärningen]
-Använd \texttt{sample()} för att dra tiotusen observationer från din egen tärning. Beräkna medelvärde och varians från det stickprovet. Är utfallen nära de teoretiska beräkningarna av populationsmedelvärde och -varians?
-\end{exercise}
-
 \hypertarget{suxe4rskilda-diskreta-fuxf6rdelningar-binomialfuxf6rdelning}{%
 \section{Särskilda diskreta fördelningar: binomialfördelning}\label{suxe4rskilda-diskreta-fuxf6rdelningar-binomialfuxf6rdelning}}
 
@@ -2550,16 +2417,28 @@ Under föreläsningen såg vi tre familjer av fördelningar som uppstår i vissa
 
 Binomialfördelningen ger sannolikheter för antalet positiva utfall vid ett visst antal försök. Varje försök har ett av två utfall (positivt och negativt) och försöken är oberoende av varandra. I en binomialfördelning ges antalet försök av en parameter \emph{n} och sannolikheten för ett positivt utfall i ett försök av en parameter \emph{p}.
 
-Som exempel kan vi ta ett tärningskast. Om man kastar en 6-sidig tärning tio gånger kommer antalet ettor (vårt positiva utfall) följa en binomialfördelning där n ges av tio och p av en sjättedel. I R kan sannolikheter från en binomialfördelning tas fram med \texttt{dbinom()}. Sannolikheten för tre ettor ges till exempel av
+Som exempel kan vi ta ett myntkast. Om man kastar ett mynt tio gånger kommer antalet krona (vårt positiva utfall) följa en binomialfördelning där n ges av tio och p av en halv. I R kan sannolikheter från en binomialfördelning tas fram med \texttt{dbinom()}. Sannolikheten för tre krona ges till exempel av
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{dbinom}\NormalTok{(}\DecValTok{3}\NormalTok{, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
+\FunctionTok{dbinom}\NormalTok{(}\DecValTok{3}\NormalTok{, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.1550454
+## [1] 0.1171875
+\end{verbatim}
+
+Fördelningsfunktionen (sannolikheten att vara under eller lika med ett visst utfall) ges av \texttt{pbinom()}. Sannolikheten för tre eller färre krona ges av
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pbinom}\NormalTok{(}\DecValTok{3}\NormalTok{, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.171875
 \end{verbatim}
 
 Om vi vill illustrera en binomalfördelning kan vi ta fram sannolikheterna för varje utfall och göra ett stapeldiagram.
@@ -2567,123 +2446,78 @@ Om vi vill illustrera en binomalfördelning kan vi ta fram sannolikheterna för 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{dat\_bin }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{))}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{),}
+         \AttributeTok{P =} \FunctionTok{pbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{))}
 
-\FunctionTok{ggplot}\NormalTok{(dat\_bin, }\FunctionTok{aes}\NormalTok{(x, p)) }\SpecialCharTok{+} \FunctionTok{geom\_col}\NormalTok{()}
+\NormalTok{g1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dat\_bin, }\FunctionTok{aes}\NormalTok{(x, p, }\AttributeTok{label =} \FunctionTok{round}\NormalTok{(p, }\DecValTok{3}\NormalTok{))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{nudge\_y =} \FloatTok{0.01}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Sannolikhetsfunktion, P(X = x)"}\NormalTok{)}
+\NormalTok{g2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dat\_bin, }\FunctionTok{aes}\NormalTok{(x, P, }\AttributeTok{label =} \FunctionTok{round}\NormalTok{(P, }\DecValTok{3}\NormalTok{))) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{nudge\_y =} \FloatTok{0.01}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Fördelningsfunktion, P(X ≤ x)"}\NormalTok{)}
+
+\CommentTok{\# install.packages("patchwork")}
+\FunctionTok{library}\NormalTok{(patchwork)}
+\NormalTok{g1 }\SpecialCharTok{/}\NormalTok{ g2}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-123-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-117-1} \end{center}
 
-\begin{exercise}[Binomialfördelning för tärningen]
+\begin{exercise}[Grobarhet för hand (övningsuppgift 17)]
+Följande uppgift kan lösas på \emph{klassiskt vis} genom att slå upp sannolikheter i en tabell. För en viss frösort är sannolikheten att gro 60 \%. Om man sår 10 slumpmässigt valda frön, hur stor är då chansen att högst 6 frön gror? Att minst 8 frön gror?
+\end{exercise}
 
-Ta tärningen från tidigare uppgift. Om man kastar tärningen tjugo gånger, vad är fördelningen för antalet gånger man får tärningens lägsta utfall? (Till exempel, vad är fördelningen för antalet ettor vid tjugo kast med en sexsidig tärning?) Fyll i stycket nedan för att beräkna sannolikheterna i den fördelningen och illustrera med ett stapeldiagram.
+\begin{exercise}[Grobarhet, sannolikheter från R (övningsuppgift 17)]
+
+Vad måste läggas till i stycket nedan för att besvara frågan om grobarhet?
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat\_bin }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{20}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{20}\NormalTok{, }\AttributeTok{prob =}\NormalTok{ \_\_\_))}
-
-\FunctionTok{ggplot}\NormalTok{(dat\_bin, }\FunctionTok{aes}\NormalTok{(x, p)) }\SpecialCharTok{+} \FunctionTok{geom\_col}\NormalTok{()}
+\FunctionTok{pbinom}\NormalTok{(\_\_\_, }\DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \FloatTok{0.6}\NormalTok{)}
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pbinom}\NormalTok{(}\DecValTok{7}\NormalTok{, }\AttributeTok{size =}\NormalTok{ \_\_\_, }\AttributeTok{prob =}\NormalTok{ \_\_\_)}
 \end{Highlighting}
 \end{Shaded}
 
 \end{exercise}
 
-\begin{exercise}[Sannolikheter i binomialen]
-I den fördelning du beräknade i uppgiften ovan. Vad är sannolikheten att få exakt tre positiva utfall? (Ledning: för en sexsidig tärning skulle det ges av \texttt{dbinom(3,\ size\ =\ 20,\ prob\ =\ 1/6))}.)
-\end{exercise}
-
-Utöver sannolikhetsfunktionen (som ger sannolikheten för varje utfall) används ofta också fördelningsfunktionen (som för varje utfall ger sannolikheten att ligga exakt på eller under ett specifikt värde). Fördelningsfunktionen används vid sannolikhetsberäkningar, t.ex. är de tabeller för fördelningar man ofta ser i slutet av statistikböcker på fördelningsformen.
-
-I R beräknas fördelningsfunktionen med \texttt{pbinom()}. För fallet med tio tärningskast kan man ta
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{dat\_bin }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{),}
-         \AttributeTok{P =} \FunctionTok{pbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{))}
-\NormalTok{dat\_bin}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##     x            p         P
-## 1   0 1.615056e-01 0.1615056
-## 2   1 3.230112e-01 0.4845167
-## 3   2 2.907100e-01 0.7752268
-## 4   3 1.550454e-01 0.9302722
-## 5   4 5.426588e-02 0.9845380
-## 6   5 1.302381e-02 0.9975618
-## 7   6 2.170635e-03 0.9997325
-## 8   7 2.480726e-04 0.9999806
-## 9   8 1.860544e-05 0.9999992
-## 10  9 8.269086e-07 1.0000000
-## 11 10 1.653817e-08 1.0000000
-\end{verbatim}
-
-Fördelningsfunktionen ges av att summera sannolikhetsfunktionen uppifrån.
-
-\begin{exercise}[Fördelningsfunktion i binomialen]
-Använd binomialfördelningen från den tidigare uppgiften till att beräkna sannolikheten att få \emph{tre eller färre} positiva utfall.
-\end{exercise}
-
-Vi kan använda ett logiskt uttryck för att illustrera sannolikheter i stapeldiagrammet. Om vi vill beräkna och illustrera sannolikheten för fyra eller färre positiva utfall i exemplet med en tärning kan vi använda följande.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pbinom}\NormalTok{(}\DecValTok{4}\NormalTok{, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 0.984538
-\end{verbatim}
+Vi kan illustrera sannolikheter som i myntexemplet ovan. Ett logiskt villkor kan illustrera de relevanta staplarna.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{dat\_bin }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{10}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{),}
-         \AttributeTok{P =} \FunctionTok{pbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{6}\NormalTok{))}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \FloatTok{0.6}\NormalTok{),}
+         \AttributeTok{P =} \FunctionTok{pbinom}\NormalTok{(x, }\AttributeTok{size =} \DecValTok{10}\NormalTok{, }\AttributeTok{prob =} \FloatTok{0.6}\NormalTok{))}
 
-\FunctionTok{ggplot}\NormalTok{(dat\_bin, }\FunctionTok{aes}\NormalTok{(x, p, }\AttributeTok{fill =}\NormalTok{ x }\SpecialCharTok{\textless{}=} \DecValTok{4}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_col}\NormalTok{()}
+\NormalTok{g1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dat\_bin, }\FunctionTok{aes}\NormalTok{(x, p, }\AttributeTok{label =} \FunctionTok{round}\NormalTok{(p, }\DecValTok{3}\NormalTok{), }\AttributeTok{fill =}\NormalTok{ x }\SpecialCharTok{\textless{}=} \DecValTok{6}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{nudge\_y =} \FloatTok{0.01}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Sannolikhetsfunktion, P(X = x)"}\NormalTok{)}
+\NormalTok{g2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dat\_bin, }\FunctionTok{aes}\NormalTok{(x, P, }\AttributeTok{label =} \FunctionTok{round}\NormalTok{(P, }\DecValTok{3}\NormalTok{), }\AttributeTok{fill =}\NormalTok{ x }\SpecialCharTok{==} \DecValTok{6}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{nudge\_y =} \FloatTok{0.01}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Fördelningsfunktion, P(X ≤ x)"}\NormalTok{)}
+
+\CommentTok{\# install.packages("patchwork")}
+\FunctionTok{library}\NormalTok{(patchwork)}
+\NormalTok{g1 }\SpecialCharTok{/}\NormalTok{ g2 }\SpecialCharTok{\&} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-126-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-119-1} \end{center}
 
-Den blå ytan motsvarar sannolikheten att få fyra eller färre ettor. Den sannolikheten kan beräknas till 0.985.
+Sannolikheten kan antingen ses som en summa av individuella utfall eller som \emph{ett} värde från fördelningsfunktionen.
 
-\begin{exercise}[Illustration av sannolikheten]
-Gör lämpliga ändringar i exemplet ovan för att illustrera sannolikheten att få exakt tre positiva utfall i exemplet med tärningskastet.
+\begin{exercise}[Grobarhet, figur från R (övningsuppgift 17)]
+Gör lämpliga ändringar i kodstycket ovan för att illustrera sannolikheten att minst 8 frön gror.
 \end{exercise}
 
-\begin{exercise}[Teori och verklighet]
-I en tidigare uppgift kastade du tärningen tjugo gånger. Hur många gånger fick du det lägsta möjliga utfallet på tärningen (t.ex. en etta på en vanlig sex-sidig tärning)?
-\end{exercise}
+För parametriserade fördelningar som binomialfördelningen finns ofta enkla formler som helt beror på parametrarna. I en binomial ges populationsmedelvärdet av antalet upprepningar gånger sannolikheten (n gånger p) och variansen av antalet upprepningar gånger sannolikheten gånger ett-minus-sannolikheten (n gånger p gånger (1 - p)).
 
-I det första exemplet med tärningen kunde vi beräkna väntevärde och varians med de allmänna formlerna. För parametriserade fördelningar som binomialfördelningen finns ofta enklare formler som helt beror på parametrarna. I en binomial ges populationsmedelvärdet av antalet upprepningar gånger sannolikheten (n gånger p) och variansen av antalet upprepningar gånger sannolikheten gånger ett-minus-sannolikheten (n gånger p gånger (1 - p)). För en sexsidig tärning (n = 10 och p = 1/6) ges medelvärdet av 1.667 och variansen av 1.389.
-
-\begin{exercise}[Medelvärde och varians i binomialen]
-Beräkna medelvärde och varians för antalet ettor om man kastar en 16-sidig tärning tjugo gånger.
-\end{exercise}
-
-\begin{exercise}[Frösort]
-För en viss frösort är sannolikheten att gro 60\%. Om man sår 10 slumpmässigt valda frön, hur stor är då chansen att
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  högst 6 frön gror?
-\item
-  minst 6 frön gror?
-\item
-  Beräkna populationsmedelvärde och populationsvrians för antalet frön som gror.
-\end{enumerate}
-
-(Denna uppgift finns också i uppgiftsdokumentet och kan lösas för hand.)
+\begin{exercise}[Grobarhet, populationsmedelvärde och -varians (övningsuppgift 17)]
+Beräkna populationsmedelvärde och populationsvarians för antalet frön som gror.
 \end{exercise}
 
 \hypertarget{suxe4rskilda-diskreta-fuxf6rdelningar-poissonfuxf6rdelning}{%
@@ -2695,54 +2529,93 @@ Poissonfördelningen styrs av en enda parameter, lambda. Till skillnad från en 
 
 I R kan man beräkna sannolikheter för en poissonfördelning med \texttt{dpois()} och \texttt{ppois()}.
 
-\begin{exercise}[Sannolikhetsfunktionen för en poisson]
-Följande ger sannolikheten att få utfall 2 i en poissonfördelning med lambda satt till 4.
+\begin{exercise}[Albinofödsel, för hand (övningsuppgift 18)]
+Följande uppgift kan lösas på \emph{klassiskt vis} genom att slå upp sannolikheter i en tabell.
+Sannolikheten att en individ i en viss population skall vara albino är 1/20000.
+Hur stor är sannolikheten att på 40 000 födslar ingen albino föds? Minst en albino föds?
+\end{exercise}
+
+Vi kan identifiera detta som en poisson-fördelning utifrån att det är en sällsynt händelse i en stor population (många försök, låg sannolikhet).
+Parametern lambda ges av det förväntade utfall: antal försök gånger sannolikheten. Här är lambda därmed 2. Sannolikheten att få exakt två ges till exempel av
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{dpois}\NormalTok{(}\DecValTok{2}\NormalTok{, }\AttributeTok{lambda =} \DecValTok{4}\NormalTok{)}
+\FunctionTok{dpois}\NormalTok{(}\DecValTok{2}\NormalTok{, }\AttributeTok{lambda =} \DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.1465251
+## [1] 0.2706706
 \end{verbatim}
 
-Gör lämpliga ändringar för att beräkna sannolikheten för exakt 5 i en fördelning med lambda satt till 3.
+\begin{exercise}[Albinofödsel, sannolikheter från R (övningsuppgift 18)]
+Använd \texttt{dpois()} och \texttt{ppois()} för att beräkna sannolikhterna för ingen albino och minst en albino.
 \end{exercise}
 
-\begin{exercise}[Fördelningsfunktionen för en poisson]
-Följande ger sannolikheten att få mindre än eller lika med 2 i en poissonfördelning med lambda satt till 4.
+Vi kan illustrera sannolikheterna med en graf. Stycket nedan visar en poissonfördelning med lambda = 4 och med staplar färglagda för att visa sannolikheten att få mindre än eller lika med 3.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{ppois}\NormalTok{(}\DecValTok{2}\NormalTok{, }\AttributeTok{lambda =} \DecValTok{4}\NormalTok{)}
+\NormalTok{dat\_pois }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{15}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dpois}\NormalTok{(x, }\AttributeTok{lambda =} \DecValTok{4}\NormalTok{),}
+         \AttributeTok{P =} \FunctionTok{ppois}\NormalTok{(x, }\AttributeTok{lambda =} \DecValTok{4}\NormalTok{))}
+
+\NormalTok{g1 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dat\_pois, }\FunctionTok{aes}\NormalTok{(x, p, }\AttributeTok{label =} \FunctionTok{round}\NormalTok{(p, }\DecValTok{3}\NormalTok{), }\AttributeTok{fill =}\NormalTok{ x }\SpecialCharTok{\textless{}=} \DecValTok{3}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{nudge\_y =} \FloatTok{0.01}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Sannolikhetsfunktion, P(X = x)"}\NormalTok{)}
+\NormalTok{g2 }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dat\_pois, }\FunctionTok{aes}\NormalTok{(x, P, }\AttributeTok{label =} \FunctionTok{round}\NormalTok{(P, }\DecValTok{3}\NormalTok{), }\AttributeTok{fill =}\NormalTok{ x }\SpecialCharTok{==} \DecValTok{3}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\AttributeTok{nudge\_y =} \FloatTok{0.01}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Fördelningsfunktion, P(X ≤ x)"}\NormalTok{)}
+
+\NormalTok{g1 }\SpecialCharTok{/}\NormalTok{ g2 }\SpecialCharTok{\&} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [1] 0.2381033
-\end{verbatim}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-121-1} \end{center}
 
-Gör lämpliga ändringar för att beräkna sannolikheten för \emph{mindre än eller lika med 5} i en fördelning med lambda satt till 3.
-Hur kan man beräkna sannolikheten att få mer än 5 i en fördelning med lambda satt till 3?
+\begin{exercise}[Albinofödsel, figur med R (övningsuppgift 18)]
+Gör ändringar i kodstycket ovan för att visa sannolikheterna från albinofrågan.
 \end{exercise}
 
-\begin{exercise}[Albinofödsel]
-Sannolikheten att en viss individ i en viss population skall vara albino är 1/20 000. Hur stor är sannolikheten att på 40 000 födslar
+En historiskt viktigt poissonexempel är antalet dödsfall i preussiska kavalleriet under en tjugoårsperiod. Datan finns bland övningarna och skrivs in nedan.
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  ingen albino föds,
-\item
-  minst en albino föds.
-\item
-  Vilka antaganden skall vara uppfyllda för att sannolikheterna i a och b ska gälla?
-\end{enumerate}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat\_preus }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Deaths =} \DecValTok{0}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}
+                        \AttributeTok{Frequency =} \FunctionTok{c}\NormalTok{(}\DecValTok{109}\NormalTok{, }\DecValTok{65}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
-(Denna uppgift finns också i uppgiftsdokumentet och kan lösas för hand.)
+Totalt sker 122 dödsfall bland 200 observationer, så medelvärdet är 0.61. Vi kan jämföra de faktiska utfallen med sannolikheter från en poissonfördelning.
+
+\begin{exercise}[Kavalleri, förväntade antal (övningsuppgift 19)]
+
+Fyll i det saknade lambda-värdet i stycket nedan. Ligger de förväntade värdena nära de faktiska?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat\_preus }\OtherTok{\textless{}{-}}\NormalTok{ dat\_preus }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Expected =} \DecValTok{200} \SpecialCharTok{*} \FunctionTok{dpois}\NormalTok{(Deaths, }\AttributeTok{lambda =}\NormalTok{ \_\_\_))}
+\NormalTok{dat\_preus}
+\end{Highlighting}
+\end{Shaded}
+
+\end{exercise}
+
+\begin{exercise}[Kavalleri, figur (övningsuppgift 19)]
+Utfallet kan illustreras med en graf med de faktiska värdena som staplar och de förväntade antalen som punkter.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dat\_preus, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Deaths)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Frequency)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Expected))}
+\end{Highlighting}
+\end{Shaded}
+
+Är poissonfördelningen en passande fördelning för datan?
 \end{exercise}
 
 \hypertarget{kontinuerliga-fuxf6rdelningar-i-allmuxe4nhet}{%
@@ -2761,14 +2634,14 @@ En normalfördelning har en karaktäristisk \emph{klockform}. Vi illustrerar tv�
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dnorm, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{mean =} \DecValTok{5}\NormalTok{, }\AttributeTok{sd =} \DecValTok{2}\NormalTok{), }\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dnorm, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{mean =} \DecValTok{3}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{), }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dnorm, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{mean =} \DecValTok{5}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{), }\AttributeTok{color =} \StringTok{"green3"}\NormalTok{, }\AttributeTok{size =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dnorm, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{mean =} \DecValTok{5}\NormalTok{, }\AttributeTok{sd =} \DecValTok{2}\NormalTok{), }\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{linewidth =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dnorm, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{mean =} \DecValTok{3}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{), }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{linewidth =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dnorm, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{mean =} \DecValTok{5}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{), }\AttributeTok{color =} \StringTok{"green3"}\NormalTok{, }\AttributeTok{linewidth =} \DecValTok{2}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{xlim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-129-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-125-1} \end{center}
 
 Den gröna och röda kurvan har samma medelvärde mu men skilda standardavvikelser sigma. Den blå och gröna kurvan har skilda medelvärden mu men samma standardavvikelse sigma.
 
@@ -2822,136 +2695,159 @@ Vi kan ta fram en illustration med följande kod. Detaljer spelar mindre roll h�
   \FunctionTok{annotate}\NormalTok{(}\StringTok{"segment"}\NormalTok{, }\AttributeTok{x =}\NormalTok{ x\_value, }\AttributeTok{y =}\NormalTok{ P\_value, }\AttributeTok{xend =} \SpecialCharTok{{-}}\ConstantTok{Inf}\NormalTok{, }\AttributeTok{yend =}\NormalTok{ P\_value) }\SpecialCharTok{+}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Fördelningsfunktion"}\NormalTok{)}
 
-\CommentTok{\# install.packages("patchwork")}
-\FunctionTok{library}\NormalTok{(patchwork)}
 \NormalTok{g1 }\SpecialCharTok{/}\NormalTok{ g2}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-131-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-127-1} \end{center}
 
 Sannolikheten att ligga under ett värde på x ges av kurvan för fördelningsfunktionen vid det x-värdet. Det motsvarar den fyllda ytan under täthetsfunktionen till vänster om x-värdet.
 
-\begin{exercise}[Sannolikhet från normalfördelningen]
+\begin{exercise}[Vikter för hand (övningsuppgift 20)]
+Följande uppgift kan lösas på \emph{klassiskt vis} genom att slå upp sannolikheter i en tabell.
+Använd standardisering för att avgöra om det är rimligt att få en individ med vikten 150 kg om man slumpmässigt drar ur en population som är normalfördelad med populationsmedelvärdet 100 kg och populationsstandardavvikelsen 30 kg?
+\end{exercise}
 
-Fyll i kodstycket nedan för att beräkna sannolikheten att få ett värde under minus två i en normalfördelning med medelvärde 0 och standardavvikelse 1, och i en normalfördelning med medelvärde 1 och standardavvikelse 2.
+För att ta fram en sannolikhet från en normalfördelning med tabell standardiserar genom att dra ifrån populationsmedelvärdet och dela med populationsstandardavvikelsen.
+I uppgiften ovan tar man 150, drar ifrån 100, och delar med 30, vilket ger 1.67.
+Om man slår på 1.67 i en normalfördelningstabell får man sannolikheten att ligga under 1.67.
+
+\begin{exercise}[Vikter i R (övningsuppgift 20)]
+
+Sannolikheten från viktfrågan kan antingen tas fram efter standardisering eller genom att ange populationsmedelvärde och -standardavvikelse i \texttt{pnorm()}. Fyll i de saknade delarna nedan för att få samma sannolikhet som i lösningen för hand.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{mean =}\NormalTok{ \_\_\_, }\AttributeTok{sd =}\NormalTok{ \_\_\_)}
-\FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{mean =}\NormalTok{ \_\_\_, }\AttributeTok{sd =}\NormalTok{ \_\_\_)}
+\FunctionTok{pnorm}\NormalTok{(\_\_\_)}
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{150}\NormalTok{, }\AttributeTok{mean =}\NormalTok{ \_\_\_, }\AttributeTok{sd =}\NormalTok{ \_\_\_)}
 \end{Highlighting}
 \end{Shaded}
 
 \end{exercise}
 
-Om man vill ta fram en sannolikhet att ligga i ett visst intervall kan man ta skillnaden mellan två värden från fördelningsfunktionen. Sannolikheten att ligga mellan 1 och minus 1 i en normalfördelning med medelvärde 0 och standardavvikelse 1 ges till exempel av
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 0.6826895
-\end{verbatim}
-
-Den normalfördelningen (medelvärde 0 och standardavvikelse 1) kallas den \emph{standardiserade} normalfördelning. Vi kan illustrerade med följande.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x\_values }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{)}
-\NormalTok{mu }\OtherTok{\textless{}{-}} \DecValTok{0}
-\NormalTok{sigma }\OtherTok{\textless{}{-}} \DecValTok{1}
-
-\NormalTok{dat\_norm }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =}\NormalTok{ mu }\SpecialCharTok{{-}} \DecValTok{4} \SpecialCharTok{*}\NormalTok{ sigma, }\AttributeTok{to =}\NormalTok{ mu }\SpecialCharTok{+} \DecValTok{4} \SpecialCharTok{*}\NormalTok{ sigma, }\FloatTok{0.1}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{p =} \FunctionTok{dnorm}\NormalTok{(x, }\AttributeTok{mean =}\NormalTok{ mu, }\AttributeTok{sd =}\NormalTok{ sigma))}
-
-\FunctionTok{ggplot}\NormalTok{(dat\_norm, }\FunctionTok{aes}\NormalTok{(x, p)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_ribbon}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin =} \DecValTok{0}\NormalTok{, }\AttributeTok{ymax =}\NormalTok{ p), }\AttributeTok{data =}\NormalTok{ dat\_norm }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(x }\SpecialCharTok{\textless{}} \FunctionTok{max}\NormalTok{(x\_values) }\SpecialCharTok{\&}\NormalTok{ x }\SpecialCharTok{\textgreater{}} \FunctionTok{min}\NormalTok{(x\_values)), }\AttributeTok{fill =} \StringTok{"salmon"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Täthetsfunktion"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-134-1} \end{center}
-
-\begin{exercise}[Sannolikhet mellan två värden]
-
-Fyll i kodstycket nedan för att beräkna sannolikheten att få ett värde mellan \emph{minus två} och tre i en normalfördelning med medelvärde 1 och standardavvikelse 2.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pnorm}\NormalTok{(\_\_\_, }\AttributeTok{mean =}\NormalTok{ \_\_\_, }\AttributeTok{sd =}\NormalTok{ \_\_\_) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(\_\_\_, }\AttributeTok{mean =}\NormalTok{ \_\_\_, }\AttributeTok{sd =}\NormalTok{ \_\_\_)}
-\end{Highlighting}
-\end{Shaded}
-
+\begin{exercise}[Vikter, figur i R (övningsuppgift 20)]
+I kodstycket ovan gavs en figur av normalfördelningen. Sätt värdena för \texttt{x\_value}, \texttt{mu} och \texttt{sigma} så att grafen illustrerar övningen med vikter.
 \end{exercise}
 
-Fördelningsfunktionen ger sannolikheten att ligga under ett visst x-värde. Man kan enkelt beräkna sannolikheten att ligga över värdet genom att ta ett minus fördelningsfunktionen. Sannolikheten att ligga över 1.96 i en standardiserad normalfördelning ges till exempel av ungeför 2.5 procent.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.96}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 0.0249979
-\end{verbatim}
-
-\begin{exercise}[Sannolikhet över x]
-
-Fyll i kodstycket nedan för att beräkna sannolikheten att få ett värde över sju i en normalfördelning med medelvärde 3 och standardavvikelse 5.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(\_\_\_, }\AttributeTok{mean =}\NormalTok{ \_\_\_, }\AttributeTok{sd =}\NormalTok{ \_\_\_)}
-\end{Highlighting}
-\end{Shaded}
-
-\end{exercise}
-
-En normalfördelning kan transformeras till en annan normal genom att addera och multiplicera med någon konstant. Mer specifik kan vilken normalfördelning som helst återföras till en standardiserad normalfördelning genom att dra ifrån medelvärdet och dela med standardavvikelsen. Det här utnyttjas när man beräknar sannolikheter för hand. Säg till exempel att vi har en normalfördelning med medelvärde 8 och standardavvikelse 4, och vi vill ta fram sannolikheten att ligga under 7. Det kan beräknas med
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pnorm}\NormalTok{(}\DecValTok{7}\NormalTok{, }\AttributeTok{mean =} \DecValTok{8}\NormalTok{, }\AttributeTok{sd =} \DecValTok{4}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 0.4012937
-\end{verbatim}
-
-Alternativt kan man standardiserade genom att att ta 7 minus 8, delat på 4, vilket ger (7 - 8) / 4 = -0.25, och sedan göra sannolikhetsberäkningen i den standardiserade normalen.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{pnorm}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{0.25}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \DecValTok{1}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 0.4012937
-\end{verbatim}
-
-\begin{exercise}[Standardisering]
-En slumpvariabel Y följer en normalfördelning med medelvärde 2 och varians 9. Vad är sannolikheten att få
+\begin{exercise}[Normalsannolikheter för hand (övningsuppgift 21)]
+Använd en normalfördelningstabell för att ta fram följande sannolikheter.
+Z är en standardiserad normalfördelning (medelvärde 0 och standardavvikelse 1). Beräkna
 
 \begin{itemize}
 \tightlist
 \item
-  P(Y \textgreater{} 2.75),
+  P(Z ≤ 0.75),
 \item
-  P(Y \textless{} 2.75),
+  P(Z \textless{} 0.75),
 \item
-  P(2.30 \textless{} Y \textless{} 2.45)?
+  P(Z \textgreater{} 0.75),
+\item
+  P(Z \textgreater{} 0),
+\item
+  P(0.30 \textless{} Z \textless{} 2.45).
 \end{itemize}
 
-Beräkna först sannolikheten för hand och sedan med \texttt{pnorm()}.
-Notera att denna fråga finns bland instuderingsuppgifterna.
+Gör alltid en skiss av fördelningen och den sökta arean.
+\end{exercise}
+
+\begin{exercise}[Normalsannolikheter i R]
+Beräkna sannolikheterna i uppgiften ovan med hjälp av \texttt{pnorm()} i R.
+\end{exercise}
+
+När vi slår upp en sannolikhet i en tabell eller med \texttt{pnorm()} går vi från ett z-värde på x-axeln till en sannolikhet.
+Det kan också vara intressant att göra tvärtom, gå från en sannolikhet i en svans till motsvarande värde på x-axeln.
+Värdet på x-axeln kallas för en kvantil och kan tas fram med tabell eller med \texttt{qnorm()}.
+
+Säg till exempel att vi är ute efter värde sådant att sannolikheten att ligga under det värdet (i standardiserad normal) är en procent.
+Vi kan skriva
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.01}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -2.326348
+\end{verbatim}
+
+Sannolikheten att ligga under -2.326 är alltså 1 procent.
+
+\begin{exercise}[Kvantiler för hand (övningsuppgift 21)]
+Använd en normalfördelningstabell för att ta fram följande värden.
+Z är en standardiserad normalfördelning (medelvärde 0 och standardavvikelse 1).
+Bestäm värdet på w så att P(-w \textless{} Z \textless{} w) = 0.99.
+\end{exercise}
+
+\begin{exercise}[Kvantiler i R (övningsuppgift 21)]
+
+Fyll i stycket nedan för att hitta w.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(\_\_\_)}
+\end{Highlighting}
+\end{Shaded}
+
+\end{exercise}
+
+Vi handberäkning av en normalsannolikhet standardiserar man sitt värde och slår i en normalfördelningstabell.
+Standardisering sker genom att dra ifrån medelvärde och dela med standardavvikelsen.
+Om man beräknar en kvartil vänder man på beräkningen: man multiplicerar med standardavvikelse och adderar medelvärdet.
+
+\begin{exercise}[Standardisering för hand (övningsuppgift 22)]
+
+Slumpvariabeln Y är normalfördelad med medelvärde 2 och varians 9. Beräkna följande för hand.
+
+\begin{itemize}
+\tightlist
+\item
+  P(Y ≤ 2.75),
+\item
+  P(Y \textgreater{} 2.75),
+\item
+  P(2.30 \textless{} Y \textless{} 2.45),
+\item
+  P(Y \textgreater{} -0.02).
+\end{itemize}
+
+\end{exercise}
+
+I R behöver man inte standardisera utan kan sätta \texttt{mean} och \texttt{sd} i \texttt{pnorm()}. Följande ger t.ex. sannolikheten att ligga under 1 i en normal med medelvärde 2 och standardavvikelse 3.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{mean =} \DecValTok{2}\NormalTok{, }\AttributeTok{sd =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3694413
+\end{verbatim}
+
+\begin{exercise}[Normalsannolikheter i R (övningsuppgift 22)]
+Beräkna sannolikheterna från uppgiften ovan med \texttt{pnorm()}.
+\end{exercise}
+
+Man kan också beräkna kvantiler för en normalfördelning genom omvänd standardisering eller med \texttt{qnorm()}.
+Säg till exempel att man har en normal med medelvärde 5 och standardavvikelse 4. Man vill ha ett värde sådant att 90 procent är mindre än det värdet.
+I en standardiserad normal ges det värdet av 1.282. Vi kan återföra det till det till vår normalfördelning genom att multiplicera med 4 och lägga till 5.
+Det ger 10.13. I R kan det beräknas med
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.9}\NormalTok{, }\AttributeTok{mean =} \DecValTok{5}\NormalTok{, }\AttributeTok{sd =} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10.12621
+\end{verbatim}
+
+\begin{exercise}[Normalkvantiler i R (övningsuppgift 22)]
+Y är normalfördelad med medelvärde 2 och varians 9. Bestäm värdet på a som uppfyller F(a) = 0.95. F(a) är kortform för P(Y \textless{} a).
+
+Gör först beräkningen för hand och sedan med \texttt{qnorm()}.
 \end{exercise}
 
 \hypertarget{bonus.-summan-av-tvuxe5-slumpvariabler-med-slumptal}{%
@@ -2976,7 +2872,7 @@ Vi börjar med att dra slumptal för en poissonfördelning med lambda lika med 3
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-140-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-133-1} \end{center}
 
 Linjen ger den teoretiska poissonfördelningen och punkterna ger fördelningen för slumptalen. Punkterna ligger nära linjen, vilket är helt efter förväntan. Notera dock att det kommer finnas vissa naturliga avvikelser när man arbetar med slumptal.
 
@@ -3001,7 +2897,7 @@ Vi kan nu ta från två serier av slumptal, beräkna dess summa och jämföra me
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-141-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-134-1} \end{center}
 
 Summans värden ligger när den teoretiska fördelningen. Det stödjer tanken att summan av två poissonfördelningar är poissonfördelad.
 
@@ -3020,7 +2916,7 @@ Vi såg tidigare hur utfallet av en tärning kan ses som en slumpvariabel (n sty
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-142-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-135-1} \end{center}
 
 Summan av två tärningskast har en triangelformad fördelning där 7 är det vanligaste utfallet och 2 och 12 är de ovanligaste.
 
@@ -3076,7 +2972,7 @@ Pytagoras sats kan användas för att beräkna avståndet mellan en slumpmässig
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.08
+## [1] 3.28
 \end{verbatim}
 
 \begin{Shaded}
@@ -3251,7 +3147,7 @@ Om man har en normalfördelad variabel och vill testa om populationens medelvär
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-149-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-142-1} \end{center}
 
 I grafen ser vi att värdena ligger jämt spridda kring 50, så 50 är nog ganska rimligt som medelvärde, men låt oss göra ett formellt test.
 I R kan ett t-test genomföras med \texttt{t.test()}.
@@ -3363,7 +3259,7 @@ Nästa steg är att identifiera testfördelning, det vill säga den slumpfördel
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-152-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-145-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3372,7 +3268,7 @@ Nästa steg är att identifiera testfördelning, det vill säga den slumpfördel
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-152-2} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-145-2} \end{center}
 
 Nästa steg i ett hypotestest är att ta fram ett p-värdet. P-värdet kan illustreras som ytan under t-fördelning \emph{bortom} test-värdet. I ett tvåsidigt test tar vi med bägge svansarna.
 
@@ -3385,7 +3281,7 @@ Nästa steg i ett hypotestest är att ta fram ett p-värdet. P-värdet kan illus
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-153-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-146-1} \end{center}
 
 De röda ytorna i \emph{svansarna} motsvarar p-värdet. De anger sannolikheten att få ett större t-värde än det vi fått, under antagandet att nollhypotesen stämmer. Vi kan beräkna p-värdet med \texttt{pt()}. För ett tvåsidigt test multipliceras värdet med 2.
 
@@ -3612,7 +3508,7 @@ Ett konfidensintervall illustreras ofta med en felstapel. Vi kan lägga till en 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-164-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-157-1} \end{center}
 
 \begin{exercise}[Illustration av smältdata]
 Använd exempelillustrationen för havredata till en liknande illustration av smältpunktsdatan.
@@ -3629,7 +3525,7 @@ Eftersom t-testet bygger på att data är normalfördelad är det förstås bra 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-165-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-158-1} \end{center}
 
 Uppenbarligen helt meningslöst. Låt oss titta på histogram över genererad normalfördelad data.
 
@@ -3640,7 +3536,7 @@ Uppenbarligen helt meningslöst. Låt oss titta på histogram över genererad no
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-166-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-159-1} \end{center}
 
 \begin{exercise}[Histogram för normalfördelning]
 Testa koden ovan för lite olika värden på \texttt{n}. Det kan vara nyttigt att sätta antalet staplar \texttt{bins} för att få ett bättre histogram. Hur stort måste n vara för att ge en karaktäristisk klockform för histogrammet?
@@ -3654,7 +3550,7 @@ Ett annat vanligt alternativ för att grafisk undersöka om data följer en unge
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-167-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-160-1} \end{center}
 
 Punkterna ligger nära linjen. Vi kan återigen demonstrera med lite genererad data.
 
@@ -3666,7 +3562,7 @@ Punkterna ligger nära linjen. Vi kan återigen demonstrera med lite genererad d
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-168-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-161-1} \end{center}
 
 \begin{exercise}[Histogram för normalfördelning]
 Funktionen \texttt{runif()} ger slumpmässiga värden mellan 0 och 1. Testa att ändra i kodstycket ovan så att slumptal genereras med \texttt{runif()} istället för \texttt{rnorm()}. Hur påverkar det QQ-grafen?
@@ -3687,7 +3583,7 @@ Funktionen \texttt{runif()} ger slumpmässiga värden mellan 0 och 1. Testa att 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-169-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-162-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3695,7 +3591,7 @@ Funktionen \texttt{runif()} ger slumpmässiga värden mellan 0 och 1. Testa att 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-169-2} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-162-2} \end{center}
 
 Fördelningen för summan är inte likformig, men inte heller särskilt normalfördelad. Vad händer om vi ökar antal termer i summan?
 
@@ -3718,7 +3614,7 @@ Under en tidigare datorövning såg vi exempel på diskreta fördelningar: binom
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-170-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-163-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3726,7 +3622,7 @@ Under en tidigare datorövning såg vi exempel på diskreta fördelningar: binom
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-170-2} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-163-2} \end{center}
 
 Histogrammet visar på en typisk klockform och punkterna följer linjen \emph{ungefärligt}. QQ-grafens trappeffekt är typisk för diskret data. Det här tyder alltså på att t-testet är ett acceptabelt alternativ om man har en poissonfördelning med lambda runt tio och gör tio upprepningar.
 
@@ -3753,7 +3649,7 @@ Det kan också finnas situationer där någon matematisk transformation kan gör
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-171-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-164-1} \end{center}
 
 I grafen har vi den ursprungliga variabeln (befolkning per land 2007), den kvadratrot-transformerade variabeln (\texttt{sqrt()}) och den log-transformerade variabeln (\texttt{log10()}). De två första fallen påverkas kraftigt av extremvärden och är klart icke-normala medan den log-transformerade variabeln ger en ungefärlig normalkurva och följer diagonalen väl i QQ-grafen.
 
@@ -3778,13 +3674,13 @@ Följande kod simulerar ett dataset om tio observationer från en normalfördeln
 ##  One Sample t-test
 ## 
 ## data:  dat_sim$x
-## t = 0.96629, df = 9, p-value = 0.3591
+## t = -0.96834, df = 9, p-value = 0.3582
 ## alternative hypothesis: true mean is not equal to 7
 ## 95 percent confidence interval:
-##   5.111456 11.704993
+##  1.011508 9.398387
 ## sample estimates:
 ## mean of x 
-##  8.408225
+##  5.204947
 \end{verbatim}
 
 \begin{exercise}[Upprepad simulering]
@@ -3816,7 +3712,7 @@ Enligt statistisk teori ska t-värdet följa en t-fördelning med nio frihetsgra
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-174-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-167-1} \end{center}
 
 Den teoretiska t-fördelning passar histogrammet nästan perfekt.
 
@@ -3829,7 +3725,7 @@ Vidare ska p-värdet vara under fem procent fem procent av gångerna.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.048
+## [1] 0.044
 \end{verbatim}
 
 Även det stämmer någorlunda väl. Det här innebär alltså att om man har en signifikansnivå på fem procent kommer man förkasta nollhypotesen fem procent av gångerna även om nollhypotesen stämmer. Det kallas ett \emph{falskt positivt} utfall.
@@ -3950,7 +3846,7 @@ Ta som exempel följande data på jord-pH och låt oss anta att det är relevant
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-180-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-173-1} \end{center}
 
 Hypoteser ges av
 
@@ -3996,7 +3892,7 @@ En QQ-graf kan visa om det finns några avvikelser från normalantagandet. Med s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-182-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-175-1} \end{center}
 
 \hypertarget{proportioner-fruxe5n-binuxe4r-data}{%
 \section{Proportioner från binär data}\label{proportioner-fruxe5n-binuxe4r-data}}
@@ -4015,7 +3911,7 @@ Låt oss importera lite exempeldata och beräkna ett exempel. Följande rad impo
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-183-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-176-1} \end{center}
 
 \begin{exercise}[En interaktiv målgraf]
 
@@ -4150,7 +4046,7 @@ Därefter kan p-värdet räknas ut som arean under en standardiserad normalförd
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-189-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-182-1} \end{center}
 
 Areans yta kan tas fram med normalfördelningens fördelningsfunktion \texttt{pnorm()}.
 
@@ -4372,7 +4268,7 @@ P-värdet beräknas från en chi-två-fördelning. Antalet frihetsgrader ges av 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-201-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-194-1} \end{center}
 
 Man kan också beräkna ytan i svansen med \texttt{pchisq()}. Ett minus det resultatet ger den övre delen.
 
@@ -4470,7 +4366,7 @@ En vanlig tillämpning av goodness-of-fit-testet är för att testa om alla klas
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-207-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-200-1} \end{center}
 
 Använd de observerade värdena i kolumnen \texttt{Count} för att testa om alla godisfärger är lika vanliga.
 \end{exercise}
@@ -5036,7 +4932,7 @@ Datan kan illustreras med ett enkelt punktdiagram.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-231-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-224-1} \end{center}
 
 Ett t-test för två oberoende stickprov har nollhypotesen att grupperna har samma populationsmedelvärde och alternativhypotesen att populationsmedelvärdena är skilda (för det tvåsidiga fallet):
 
@@ -5323,7 +5219,7 @@ Datan tyder på att överlevnad är beroende av klass. Datan kan illustreras med
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-245-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-238-1} \end{center}
 
 Argumentet \texttt{position} i \texttt{geom\_bar} används för att skapa proportionella staplar.
 
@@ -5755,7 +5651,7 @@ Vi vill här testa om det finns en skillnad mellan arter och om det finns skilln
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-272-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-265-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5765,7 +5661,7 @@ Vi vill här testa om det finns en skillnad mellan arter och om det finns skilln
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-273-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-266-1} \end{center}
 
 För arterna har vi matchad data - varje observation av den ena arten är kopplad till en observation från den andra arten eftersom den kommer från samma båt - och vi kan testa om medelfångsterna av de två arterna är lika med ett t-test. Hypoteserna ges av
 
@@ -5950,7 +5846,7 @@ Datan har 30 observationer av vikt \texttt{weight} och varje observation tillhö
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-279-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-272-1} \end{center}
 
 Behandling 1 verkar vara något lägre än kontrollen medan behandling 2 verkar vara något högre.
 
@@ -6130,27 +6026,27 @@ Anledning till att vi justerar p-värden är att man vid varje test har en sanno
 
 \begin{verbatim}
 ## $emmeans
-##  group emmean    SE df lower.CL upper.CL
-##  a     -0.228 0.254 45   -0.738    0.283
-##  b      0.350 0.254 45   -0.161    0.860
-##  c      0.310 0.254 45   -0.201    0.820
-##  d     -0.105 0.254 45   -0.616    0.406
-##  e      0.117 0.254 45   -0.394    0.627
+##  group  emmean    SE df lower.CL upper.CL
+##  a     -0.4456 0.318 45   -1.086    0.195
+##  b      0.2589 0.318 45   -0.381    0.899
+##  c     -0.1303 0.318 45   -0.771    0.510
+##  d      0.0770 0.318 45   -0.563    0.717
+##  e     -0.0915 0.318 45   -0.732    0.549
 ## 
 ## Confidence level used: 0.95 
 ## 
 ## $contrasts
-##  contrast estimate    SE df t.ratio p.value
-##  a - b     -0.5773 0.359 45  -1.610  0.1144
-##  a - c     -0.5371 0.359 45  -1.498  0.1411
-##  a - d     -0.1227 0.359 45  -0.342  0.7338
-##  a - e     -0.3444 0.359 45  -0.960  0.3420
-##  b - c      0.0402 0.359 45   0.112  0.9113
-##  b - d      0.4546 0.359 45   1.268  0.2114
-##  b - e      0.2329 0.359 45   0.650  0.5192
-##  c - d      0.4144 0.359 45   1.156  0.2538
-##  c - e      0.1928 0.359 45   0.538  0.5935
-##  d - e     -0.2217 0.359 45  -0.618  0.5395
+##  contrast estimate   SE df t.ratio p.value
+##  a - b     -0.7045 0.45 45  -1.567  0.1242
+##  a - c     -0.3153 0.45 45  -0.701  0.4868
+##  a - d     -0.5226 0.45 45  -1.162  0.2513
+##  a - e     -0.3541 0.45 45  -0.787  0.4351
+##  b - c      0.3892 0.45 45   0.866  0.3913
+##  b - d      0.1820 0.45 45   0.405  0.6876
+##  b - e      0.3504 0.45 45   0.779  0.4398
+##  c - d     -0.2073 0.45 45  -0.461  0.6470
+##  c - e     -0.0388 0.45 45  -0.086  0.9316
+##  d - e      0.1685 0.45 45   0.375  0.7096
 \end{verbatim}
 
 Kör koden tio gånger. Hur många gånger av de tio ger de parvisa jämförelserna \emph{någon} signifikant skillnad (det vill säga något p-värde under 0.05)?
@@ -6241,7 +6137,7 @@ En vanlig illustration av ett blockförsök är ett punktdiagram kombinerat med 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-293-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-286-1} \end{center}
 
 Färg och linje sammanbinder observationer från samma block. Det finns tecken på en blockeffekt: block I är nästan alltid högst och block V är nästan alltid lägst. Det finns också en tydlig behandlingseffekt i att högre kväve ger högre skörd.
 
@@ -6447,7 +6343,7 @@ Exempeldata på havre tar med två förklarande faktorer och ett block. Datan ka
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-304-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-297-1} \end{center}
 
 Grafen visar samma kvävesamband som tidigare. Det finns inga tydliga skillnader mellan sorter, möjligen har sorten Victory givit något lägre skörd än övriga. Det finns fortfarande en tydlig blockeffekt, till exempel har block I höga värden och block V låga värden.
 
@@ -6602,7 +6498,7 @@ Normalfördelning kan undersökas grafiskt med ett histogram eller en QQ-graf.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-311-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-304-1} \end{center}
 
 Punkterna avviker något från normalfördelningen i svansarna, men det är förstås alltid en bedömningsfråga.
 
@@ -6616,7 +6512,7 @@ Lika varians undersöks ofta med ett spridningsdiagram med de skattade värdena 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-312-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-305-1} \end{center}
 
 Om datan är i linje med antaganden ska diagrammet se ut som slumpmässigt placerade punkter med ungefär lika stor spridning kring noll-linjen för samtliga nivåer på x-axeln. För det här exemplet ser det okej ut.
 
@@ -6734,7 +6630,7 @@ Vi kan illustrera data genom att pivotera till långt format och göra en graf m
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-321-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-314-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6743,7 +6639,7 @@ Vi kan illustrera data genom att pivotera till långt format och göra en graf m
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-321-2} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-314-2} \end{center}
 
 Ytterligare alternativ kan vara upprepade lådagram eller staplar med småfönster per art.
 
@@ -6777,7 +6673,7 @@ Ekologiska populationer kan analyseras genom \emph{heirarkisk klustring} - metod
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-323-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-316-1} \end{center}
 
 \begin{exercise}[Avståndsmått]
 Ta upp hjälpsidan till distansfunktionen med \texttt{?dist}. Under \texttt{method} finns flera möjliga avståndsmått. Vad måste ändras i kodstycket ovan för att ange ett Manhattan-avstånd? Har avståndet någon betydande effekt på träddiagrammet?
@@ -6795,7 +6691,7 @@ För att göra en klustring av arter kan man \emph{transponera} data så att rad
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-324-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-317-1} \end{center}
 
 Träddiagrammet tolkas så att enheter vars koppling ligger lågt är mer lika varandra - arterna förekommer ofta på samma plats.
 
@@ -6811,7 +6707,7 @@ I R kan en PCA göras med \texttt{prcomp()} och en biplot kan göras med \texttt
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-325-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-318-1} \end{center}
 
 Platserna illustreras med punkter och arterna med pilar. Pilar i samma riktning motsvarar arter som är lika (de finns på samma platser), närliggande punkter motsvarar lika platser (de har samma arter), och punkter i samma riktning som en pil har höga värden för den arten.
 
@@ -6850,7 +6746,7 @@ Diversitetsindexen kan sedan illustreras och analyseras som vilken numerisk vari
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-328-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-321-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6935,7 +6831,7 @@ Ta som exempel följande data på tandtillväxt (\texttt{len}) hos marsvin under
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-330-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-323-1} \end{center}
 
 Ett lådagram visar en klar skillnad mellan doser och en svagare skillnad mellan metoder. Det finns också tecken på att metoderna svarar olika på dos i att metoden \emph{VC} ligger lägre än \emph{OJ} vid de låga doserna men över (eller iallafall lika) vid den höga dosen.
 
@@ -6979,7 +6875,7 @@ En anovamodell bygger på antaganden om normalfördelning och lika varianser. No
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-332-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-325-1} \end{center}
 
 Punkterna ligger ungefär på linjen i QQ-grafen och punkterna har ungefär samma spridning för alla nivåer av det skattade värdet.
 
@@ -7069,7 +6965,7 @@ Ta som exempel data på förväntad medellivslängd och bnp per capita. Datan h�
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-335-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-328-1} \end{center}
 
 Datan visar ett positivt samband mellan variablerna - högre bnp per capita är kopplat till högre medellivslängd.
 
@@ -7138,7 +7034,7 @@ Man kan enkelt rita ut regressionlinjen i en graf med \texttt{geom\_smooth()} oc
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-338-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-331-1} \end{center}
 
 Den blå linjen illustrerar regressionlinjen 72.27 + 0.2146x. Det grå bandet kring linjen är ett konfidensintervall för skattningen av y-variabeln.
 
@@ -7178,7 +7074,7 @@ Testerna av en regressionsmodell bygger på ett normalfördelningsantagande och 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-340-1} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-333-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7186,7 +7082,7 @@ Testerna av en regressionsmodell bygger på ett normalfördelningsantagande och 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-340-2} \end{center}
+\begin{center}\includegraphics{R-anvisningar_files/figure-latex/unnamed-chunk-333-2} \end{center}
 
 Om data följer en normalfördelning bör histogrammet visa en ungefärlig normalkurva, QQ-plotten bör visa punkter på den diagonala linjen och spridningsdiagrammet bör visa en slumpmässig spridning av punkter. Graferna pekar i det här fallet inte på några tydliga avvikelser från normalfördelningsantagandet, möjligen pekar QQ-plotten på mindre spridning i svansarna än en teoretisk normalfördelning.
 

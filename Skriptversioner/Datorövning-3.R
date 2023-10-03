@@ -29,159 +29,131 @@ ggplot(dat_sum, aes(continent, Mean, fill = continent)) +
   geom_errorbar(aes(ymin = Mean - SD, ymax = Mean + SD), width = 0.3) +
   facet_wrap(~ year)
 
-## Diskreta fördelningar i allmänhet
+## Särskilda diskreta fördelningar: binomialfördelning
 
-dat_dice6 <- data.frame(x = c(1,2,3,4,5,6),
-                        p = 1/6)
-dat_dice6
+dbinom(3, size = 10, prob = 1/2)
 
-ggplot(dat_dice6, aes(x, p)) + geom_col()
+pbinom(3, size = 10, prob = 1/2)
+
+dat_bin <- data.frame(x = 0:10) %>% 
+  mutate(p = dbinom(x, size = 10, prob = 1/2),
+         P = pbinom(x, size = 10, prob = 1/2))
+
+g1 <- ggplot(dat_bin, aes(x, p, label = round(p, 3))) + 
+  geom_col() + 
+  geom_text(nudge_y = 0.01) +
+  labs(title = "Sannolikhetsfunktion, P(X = x)")
+g2 <- ggplot(dat_bin, aes(x, P, label = round(P, 3))) + 
+  geom_col() + 
+  geom_text(nudge_y = 0.01) +
+  labs(title = "Fördelningsfunktion, P(X ≤ x)")
+
+# install.packages("patchwork")
+library(patchwork)
+g1 / g2
 
 ##### Övningsuppgift 3.1 #####
-# Ta fram en tärning som *inte* har sex sidor. Följ exemplet ovan för att kodifiera din tärning som en slumpvariabel. Ett bra namn på det nya objektet kan vara `dat_diceN` där N anger antalet sidor på tärningen, t.ex. `dat_dice20` för en 20-sidig tärning.
+# Följande uppgift kan lösas på *klassiskt vis* genom att slå upp sannolikheter i en tabell. För en viss frösort är sannolikheten att gro 60 %. Om man sår 10 slumpmässigt valda frön, hur stor är då chansen att högst 6 frön gror? Att minst 8 frön gror?
 ##########
-
-dat_dice6 %>% 
-  mutate(x_times_p = x * p) %>% 
-  summarise(Expected_value = sum(x_times_p))
 
 ##### Övningsuppgift 3.2 #####
-# Upprepa beräkningen ovan, denna gång med den slumpvariabel du kodifierade i den tidigare uppgiften.
+# Vad måste läggas till i stycket nedan för att besvara frågan om grobarhet?
+
+pbinom(___, 10, prob = 0.6)
+1 - pbinom(7, size = ___, prob = ___)
+
 ##########
 
-pop_var <- function(x, p) sum(p * (x - sum(x * p))^2)
+dat_bin <- data.frame(x = 0:10) %>% 
+  mutate(p = dbinom(x, size = 10, prob = 0.6),
+         P = pbinom(x, size = 10, prob = 0.6))
 
-dat_dice6 %>% 
-  summarise(varians = pop_var(x, p))
+g1 <- ggplot(dat_bin, aes(x, p, label = round(p, 3), fill = x <= 6)) + 
+  geom_col() + 
+  geom_text(nudge_y = 0.01) +
+  labs(title = "Sannolikhetsfunktion, P(X = x)")
+g2 <- ggplot(dat_bin, aes(x, P, label = round(P, 3), fill = x == 6)) + 
+  geom_col() + 
+  geom_text(nudge_y = 0.01) +
+  labs(title = "Fördelningsfunktion, P(X ≤ x)")
+
+# install.packages("patchwork")
+library(patchwork)
+g1 / g2 & theme(legend.position = "none")
 
 ##### Övningsuppgift 3.3 #####
-# Upprepa beräkningen ovan, denna gång med den slumpvariabel du kodifierade i den tidigare uppgiften.
+# Gör lämpliga ändringar i kodstycket ovan för att illustrera sannolikheten att minst 8 frön gror.
 ##########
 
 ##### Övningsuppgift 3.4 #####
-# Kasta din tärning 20 gånger. Gärna på en mjuk yta. Skriv in utfallen i koden nedan och beräkna medelvärde och varians.
-
-utfall <- c(_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_)
-mean(utfall)
-var(utfall)
-sd(utfall)
-
-# Ligger medelvärde och varians från stickprovet nära de teoretiska beräkningarna?
-##########
-
-slumputfall <- sample(x = dat_dice6$x, size = 10000, replace = T)
-
-mean(slumputfall)
-var(slumputfall)
-
-##### Övningsuppgift 3.5 #####
-# Använd `sample()` för att dra tiotusen observationer från din egen tärning. Beräkna medelvärde och varians från det stickprovet. Är utfallen nära de teoretiska beräkningarna av populationsmedelvärde och -varians?
-##########
-
-## Särskilda diskreta fördelningar: binomialfördelning
-
-dbinom(3, size = 10, prob = 1/6)
-
-dat_bin <- data.frame(x = 0:10) %>% 
-  mutate(p = dbinom(x, size = 10, prob = 1/6))
-
-ggplot(dat_bin, aes(x, p)) + geom_col()
-
-##### Övningsuppgift 3.6 #####
-# Ta tärningen från tidigare uppgift. Om man kastar tärningen tjugo gånger, vad är fördelningen för antalet gånger man får tärningens lägsta utfall? (Till exempel, vad är fördelningen för antalet ettor vid tjugo kast med en sexsidig tärning?) Fyll i stycket nedan för att beräkna sannolikheterna i den fördelningen och illustrera med ett stapeldiagram.
-
-dat_bin <- data.frame(x = 0:20) %>% 
-  mutate(p = dbinom(x, size = 20, prob = ___))
-
-ggplot(dat_bin, aes(x, p)) + geom_col()
-
-##########
-
-##### Övningsuppgift 3.7 #####
-# I den fördelning du beräknade i uppgiften ovan. Vad är sannolikheten att få exakt tre positiva utfall? (Ledning: för en sexsidig tärning skulle det ges av `dbinom(3, size = 20, prob = 1/6))`.)
-##########
-
-dat_bin <- data.frame(x = 0:10) %>% 
-  mutate(p = dbinom(x, size = 10, prob = 1/6),
-         P = pbinom(x, size = 10, prob = 1/6))
-dat_bin
-
-##### Övningsuppgift 3.8 #####
-# Använd binomialfördelningen från den tidigare uppgiften till att beräkna sannolikheten att få *tre eller färre* positiva utfall.
-##########
-
-pbinom(4, size = 10, prob = 1/6)
-
-dat_bin <- data.frame(x = 0:10) %>% 
-  mutate(p = dbinom(x, size = 10, prob = 1/6),
-         P = pbinom(x, size = 10, prob = 1/6))
-
-ggplot(dat_bin, aes(x, p, fill = x <= 4)) +
-  geom_col()
-
-##### Övningsuppgift 3.9 #####
-# Gör lämpliga ändringar i exemplet ovan för att illustrera sannolikheten att få exakt tre positiva utfall i exemplet med tärningskastet. 
-##########
-
-##### Övningsuppgift 3.10 #####
-# I en tidigare uppgift kastade du tärningen tjugo gånger. Hur många gånger fick du det lägsta möjliga utfallet på tärningen (t.ex. en etta på en vanlig sex-sidig tärning)?
-##########
-
-##### Övningsuppgift 3.11 #####
-# Beräkna medelvärde och varians för antalet ettor om man kastar en 16-sidig tärning tjugo gånger.
-##########
-
-##### Övningsuppgift 3.12 #####
-# För en viss frösort är sannolikheten att gro 60%. Om man sår 10 slumpmässigt valda frön, hur stor är då chansen att
-
-# a. högst 6 frön gror?
-# b. minst 6 frön gror?
-# c. Beräkna populationsmedelvärde och populationsvrians för antalet frön som gror.
-
-# (Denna uppgift finns också i uppgiftsdokumentet och kan lösas för hand.)
-
+# Beräkna populationsmedelvärde och populationsvarians för antalet frön som gror.
 ##########
 
 ## Särskilda diskreta fördelningar: poissonfördelning
 
-##### Övningsuppgift 3.13 #####
-# Följande ger sannolikheten att få utfall 2 i en poissonfördelning med lambda satt till 4.
-
-dpois(2, lambda = 4)
-
-# Gör lämpliga ändringar för att beräkna sannolikheten för exakt 5 i en fördelning med lambda satt till 3.
+##### Övningsuppgift 3.5 #####
+# Följande uppgift kan lösas på *klassiskt vis* genom att slå upp sannolikheter i en tabell.
+# Sannolikheten att en individ i en viss population skall vara albino är 1/20000. 
+# Hur stor är sannolikheten att på 40 000 födslar ingen albino föds? Minst en albino föds?
 ##########
 
-##### Övningsuppgift 3.14 #####
-# Följande ger sannolikheten att få mindre än eller lika med 2 i en poissonfördelning med lambda satt till 4.
+dpois(2, lambda = 2)
 
-ppois(2, lambda = 4)
-
-# Gör lämpliga ändringar för att beräkna sannolikheten för *mindre än eller lika med 5* i en fördelning med lambda satt till 3.
-# Hur kan man beräkna sannolikheten att få mer än 5 i en fördelning med lambda satt till 3? 
+##### Övningsuppgift 3.6 #####
+# Använd `dpois()` och `ppois()` för att beräkna sannolikhterna för ingen albino och minst en albino.
 ##########
 
-##### Övningsuppgift 3.15 #####
-# Sannolikheten att en viss individ i en viss population skall vara albino är 1/20 000. Hur stor är sannolikheten att på 40 000 födslar
+dat_pois <- data.frame(x = 0:15) %>% 
+  mutate(p = dpois(x, lambda = 4),
+         P = ppois(x, lambda = 4))
 
-# a. ingen albino föds,
-# b. minst en albino föds.
-# c. Vilka antaganden skall vara uppfyllda för att sannolikheterna i a och b ska gälla?
+g1 <- ggplot(dat_pois, aes(x, p, label = round(p, 3), fill = x <= 3)) + 
+  geom_col() + 
+  geom_text(nudge_y = 0.01) +
+  labs(title = "Sannolikhetsfunktion, P(X = x)")
+g2 <- ggplot(dat_pois, aes(x, P, label = round(P, 3), fill = x == 3)) + 
+  geom_col() + 
+  geom_text(nudge_y = 0.01) +
+  labs(title = "Fördelningsfunktion, P(X ≤ x)")
 
-# (Denna uppgift finns också i uppgiftsdokumentet och kan lösas för hand.)
+g1 / g2 & theme(legend.position = "none")
 
+##### Övningsuppgift 3.7 #####
+# Gör ändringar i kodstycket ovan för att visa sannolikheterna från albinofrågan.
+##########
+
+dat_preus <- data.frame(Deaths = 0:6,
+                        Frequency = c(109, 65, 22, 3, 1, 0, 0))
+
+##### Övningsuppgift 3.8 #####
+# Fyll i det saknade lambda-värdet i stycket nedan. Ligger de förväntade värdena nära de faktiska?
+
+dat_preus <- dat_preus %>% 
+  mutate(Expected = 200 * dpois(Deaths, lambda = ___))
+dat_preus
+
+##########
+
+##### Övningsuppgift 3.9 #####
+# Utfallet kan illustreras med en graf med de faktiska värdena som staplar och de förväntade antalen som punkter.
+
+ggplot(dat_preus, aes(x = Deaths)) +
+  geom_col(aes(y = Frequency)) +
+  geom_point(aes(y = Expected))
+
+# Är poissonfördelningen en passande fördelning för datan?
 ##########
 
 ## Kontinuerliga fördelningar i allmänhet
 ## Särskilda kontinuerliga fördelningar: normalfördelningen
 
 ggplot() +
-  geom_function(fun = dnorm, args = list(mean = 5, sd = 2), color = "red", size = 2) +
-  geom_function(fun = dnorm, args = list(mean = 3, sd = 1), color = "blue", size = 2) +
-  geom_function(fun = dnorm, args = list(mean = 5, sd = 1), color = "green3", size = 2) +
+  geom_function(fun = dnorm, args = list(mean = 5, sd = 2), color = "red", linewidth = 2) +
+  geom_function(fun = dnorm, args = list(mean = 3, sd = 1), color = "blue", linewidth = 2) +
+  geom_function(fun = dnorm, args = list(mean = 5, sd = 1), color = "green3", linewidth = 2) +
   xlim(0, 10)
 
-##### Övningsuppgift 3.16 #####
+##### Övningsuppgift 3.10 #####
 # Gör lämpliga ändringar i stycken ovan för att illustrera två normalfördelningar: en med medelvärde 0 och standardavvikelse 1 och en med medelvärde 1 och standardavvikelse 2. Kan du utifrån kurvorna säga vilken av de två fördelningarna som ger störst sannolikhet att få ett utfall under minus två?
 ##########
 
@@ -209,61 +181,78 @@ g2 <- ggplot(dat_norm, aes(x, P)) +
   annotate("segment", x = x_value, y = P_value, xend = -Inf, yend = P_value) +
   labs(title = "Fördelningsfunktion")
 
-# install.packages("patchwork")
-library(patchwork)
 g1 / g2
 
-##### Övningsuppgift 3.17 #####
-# Fyll i kodstycket nedan för att beräkna sannolikheten att få ett värde under minus två i en normalfördelning med medelvärde 0 och standardavvikelse 1, och i en normalfördelning med medelvärde 1 och standardavvikelse 2.
+##### Övningsuppgift 3.11 #####
+# Följande uppgift kan lösas på *klassiskt vis* genom att slå upp sannolikheter i en tabell. 
+# Använd standardisering för att avgöra om det är rimligt att få en individ med vikten 150 kg om man slumpmässigt drar ur en population som är normalfördelad med populationsmedelvärdet 100 kg och populationsstandardavvikelsen 30 kg?
+##########
 
-pnorm(-2, mean = ___, sd = ___)
-pnorm(-2, mean = ___, sd = ___)
+##### Övningsuppgift 3.12 #####
+# Sannolikheten från viktfrågan kan antingen tas fram efter standardisering eller genom att ange populationsmedelvärde och -standardavvikelse i `pnorm()`. Fyll i de saknade delarna nedan för att få samma sannolikhet som i lösningen för hand.
+
+pnorm(___)
+pnorm(150, mean = ___, sd = ___)
 
 ##########
 
-pnorm(1, mean = 0, sd = 1) - pnorm(-1, mean = 0, sd = 1)
+##### Övningsuppgift 3.13 #####
+# I kodstycket ovan gavs en figur av normalfördelningen. Sätt värdena för `x_value`, `mu` och `sigma` så att grafen illustrerar övningen med vikter.
+##########
 
-x_values <- c(-1,1)
-mu <- 0
-sigma <- 1
+##### Övningsuppgift 3.14 #####
+# Använd en normalfördelningstabell för att ta fram följande sannolikheter. 
+# Z är en standardiserad normalfördelning (medelvärde 0 och standardavvikelse 1). Beräkna
 
-dat_norm <- data.frame(x = seq(from = mu - 4 * sigma, to = mu + 4 * sigma, 0.1)) %>% 
-  mutate(p = dnorm(x, mean = mu, sd = sigma))
+# - P(Z ≤ 0.75),
+# - P(Z < 0.75),
+# - P(Z > 0.75),
+# - P(Z > 0),
+# - P(0.30 < Z < 2.45).
 
-ggplot(dat_norm, aes(x, p)) +
-  geom_line() +
-  geom_ribbon(aes(ymin = 0, ymax = p), data = dat_norm %>% filter(x < max(x_values) & x > min(x_values)), fill = "salmon", color = "black") +
-  labs(title = "Täthetsfunktion")
+# Gör alltid en skiss av fördelningen och den sökta arean.
+##########
+
+##### Övningsuppgift 3.15 #####
+# Beräkna sannolikheterna i uppgiften ovan med hjälp av `pnorm()` i R.
+##########
+
+qnorm(0.01)
+
+##### Övningsuppgift 3.16 #####
+# Använd en normalfördelningstabell för att ta fram följande värden. 
+# Z är en standardiserad normalfördelning (medelvärde 0 och standardavvikelse 1).
+# Bestäm värdet på w så att P(-w < Z < w) = 0.99.
+##########
+
+##### Övningsuppgift 3.17 #####
+# Fyll i stycket nedan för att hitta w.
+
+qnorm(___)
+
+##########
 
 ##### Övningsuppgift 3.18 #####
-# Fyll i kodstycket nedan för att beräkna sannolikheten att få ett värde mellan *minus två* och tre i en normalfördelning med medelvärde 1 och standardavvikelse 2.
+# Slumpvariabeln Y är normalfördelad med medelvärde 2 och varians 9. Beräkna följande för hand.
 
-pnorm(___, mean = ___, sd = ___) - pnorm(___, mean = ___, sd = ___)
-
+# - P(Y ≤ 2.75),
+# - P(Y > 2.75),
+# - P(2.30 < Y < 2.45),
+# - P(Y > -0.02).
 ##########
 
-1 - pnorm(1.96)
+pnorm(1, mean = 2, sd = 3)
 
 ##### Övningsuppgift 3.19 #####
-# Fyll i kodstycket nedan för att beräkna sannolikheten att få ett värde över sju i en normalfördelning med medelvärde 3 och standardavvikelse 5.
-
-1 - pnorm(___, mean = ___, sd = ___)
-
+# Beräkna sannolikheterna från uppgiften ovan med `pnorm()`.
 ##########
 
-pnorm(7, mean = 8, sd = 4)
-
-pnorm(-0.25, mean = 0, sd = 1)
+qnorm(0.9, mean = 5, sd = 4)
 
 ##### Övningsuppgift 3.20 #####
-# En slumpvariabel Y följer en normalfördelning med medelvärde 2 och varians 9. Vad är sannolikheten att få
+# Y är normalfördelad med medelvärde 2 och varians 9. Bestäm värdet på a som uppfyller F(a) = 0.95. F(a) är kortform för P(Y < a).
 
-# - P(Y > 2.75),
-# - P(Y < 2.75),
-# - P(2.30 < Y < 2.45)?
-
-# Beräkna först sannolikheten för hand och sedan med `pnorm()`.
-# Notera att denna fråga finns bland instuderingsuppgifterna.
+# Gör först beräkningen för hand och sedan med `qnorm()`.
 ##########
 
 ## Bonus. Summan av två slumpvariabler med slumptal
