@@ -313,10 +313,12 @@ ggplot(dat_norm, aes(sample = x)) + geom_qq() + geom_qq_line()
 Funktionen `runif()` ger slumpmässiga värden mellan 0 och 1. Testa att ändra i kodstycket ovan så att slumptal genereras med `runif()` istället för `rnorm()`. Hur påverkar det QQ-grafen?
 :::
 
+## Centrala gränsvärdesatsen
+
 Även om data inte är normalfördelad kan t-testet vara ett lämpligt val av test. Detta beror på *centrala gränsvärdesatsen*, som säger att summor (och därmed även medelvärden) av lika slumpvariabler går mot en normalfördelning där antalet observationer ökar. Den tidigare uppgiften gav att `runif()` inte ger normalfördelad data. Vad händer om vi tar medelvärdet av flera observationer från `runif()`? Följande kod beräknar tiotusen medelvärden av två observationer.
 
 ```{r}
-n <- 20
+n <- 2
 
 dat_sim_unif <- expand_grid(Observation = 1:n, Upprepning = 1:10000) %>% 
   mutate(x = runif(n())) %>% 

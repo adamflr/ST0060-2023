@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-10-03" />
+<meta name="date" content="2023-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,7 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#test-av-medelvärde-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.2</b> Test av medelvärde för normalfördelad data</a></li>
 <li class="chapter" data-level="4.3" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#konfidensintervall-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.3</b> Konfidensintervall för normalfördelad data</a></li>
 <li class="chapter" data-level="4.4" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#normalfördelad-data-och-centrala-gränsvärdesatsen"><i class="fa fa-check"></i><b>4.4</b> Normalfördelad data och centrala gränsvärdesatsen</a></li>
-<li class="chapter" data-level="4.5" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall"><i class="fa fa-check"></i><b>4.5</b> Bonus. Simuleringar för t-test och konfidensintervall</a></li>
+<li class="chapter" data-level="4.5" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#centrala-gränsvärdesatsen"><i class="fa fa-check"></i><b>4.5</b> Centrala gränsvärdesatsen</a></li>
+<li class="chapter" data-level="4.6" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall"><i class="fa fa-check"></i><b>4.6</b> Bonus. Simuleringar för t-test och konfidensintervall</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html"><i class="fa fa-check"></i><b>5</b> Ett stickprov av icke-normalfördelad data</a>
 <ul>
@@ -491,8 +492,11 @@ Ett t-test bygger, som alla hypotestest, på en serie steg:</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-92" class="exercise"><strong>Uppgift 4.17  (Histogram för normalfördelning) </strong></span>Funktionen <code>runif()</code> ger slumpmässiga värden mellan 0 och 1. Testa att ändra i kodstycket ovan så att slumptal genereras med <code>runif()</code> istället för <code>rnorm()</code>. Hur påverkar det QQ-grafen?</p>
 </div>
+</div>
+<div id="centrala-gränsvärdesatsen" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Centrala gränsvärdesatsen<a href="ett-stickprov-av-normalfördelad-data.html#centrala-gränsvärdesatsen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Även om data inte är normalfördelad kan t-testet vara ett lämpligt val av test. Detta beror på <em>centrala gränsvärdesatsen</em>, som säger att summor (och därmed även medelvärden) av lika slumpvariabler går mot en normalfördelning där antalet observationer ökar. Den tidigare uppgiften gav att <code>runif()</code> inte ger normalfördelad data. Vad händer om vi tar medelvärdet av flera observationer från <code>runif()</code>? Följande kod beräknar tiotusen medelvärden av två observationer.</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="ett-stickprov-av-normalfördelad-data.html#cb254-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="ett-stickprov-av-normalfördelad-data.html#cb254-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">2</span></span>
 <span id="cb254-2"><a href="ett-stickprov-av-normalfördelad-data.html#cb254-2" tabindex="-1"></a></span>
 <span id="cb254-3"><a href="ett-stickprov-av-normalfördelad-data.html#cb254-3" tabindex="-1"></a>dat_sim_unif <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(<span class="at">Observation =</span> <span class="dv">1</span><span class="sc">:</span>n, <span class="at">Upprepning =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb254-4"><a href="ett-stickprov-av-normalfördelad-data.html#cb254-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x =</span> <span class="fu">runif</span>(<span class="fu">n</span>())) <span class="sc">%&gt;%</span> </span>
@@ -542,8 +546,8 @@ Ett t-test bygger, som alla hypotestest, på en serie steg:</p>
 <p><span id="exr:unlabeled-div-95" class="exercise"><strong>Uppgift 4.20  (Transformera medellivslängd) </strong></span>Använd kodstycket ovan som mall och ta fram grafer för medellivslängd (<code>lifeExp</code>) istället för befolkningsstorlek (<code>pop</code>). Visar grafen samma mönster som för befolkningsdatan?</p>
 </div>
 </div>
-<div id="bonus.-simuleringar-för-t-test-och-konfidensintervall" class="section level2 hasAnchor" number="4.5">
-<h2><span class="header-section-number">4.5</span> Bonus. Simuleringar för t-test och konfidensintervall<a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bonus.-simuleringar-för-t-test-och-konfidensintervall" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Bonus. Simuleringar för t-test och konfidensintervall<a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Följande kod simulerar ett dataset om tio observationer från en normalfördelning med medelvärde 7 och standardavvikelse 5, beräknar ett hypotestest med nollhypotesen att populationsmedelvärdet är 7, och beräknar ett konfidensintervall.</p>
 <div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="ett-stickprov-av-normalfördelad-data.html#cb259-1" tabindex="-1"></a>dat_sim <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">7</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
 <span id="cb259-2"><a href="ett-stickprov-av-normalfördelad-data.html#cb259-2" tabindex="-1"></a><span class="fu">t.test</span>(dat_sim<span class="sc">$</span>x, <span class="at">mu =</span> <span class="dv">7</span>)</span></code></pre></div>
@@ -551,13 +555,13 @@ Ett t-test bygger, som alla hypotestest, på en serie steg:</p>
 ##  One Sample t-test
 ## 
 ## data:  dat_sim$x
-## t = 0.67436, df = 9, p-value = 0.517
+## t = 0.75995, df = 9, p-value = 0.4667
 ## alternative hypothesis: true mean is not equal to 7
 ## 95 percent confidence interval:
-##   4.052095 12.451925
+##  5.571723 9.873372
 ## sample estimates:
 ## mean of x 
-##   8.25201</code></pre>
+##  7.722547</code></pre>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-96" class="exercise"><strong>Uppgift 4.21  (Upprepad simulering) </strong></span>Kör de två raderna i stycket ovan ett tiotal gånger. Du bör se att man ibland förkastar nollhypotesen trots att den ska stämma. Kan du få en känsla för hur stor andel av gångerna man felaktigt förkastar?</p>
 </div>
@@ -578,7 +582,7 @@ Ett t-test bygger, som alla hypotestest, på en serie steg:</p>
 <p>Den teoretiska t-fördelning passar histogrammet nästan perfekt.</p>
 <p>Vidare ska p-värdet vara under fem procent fem procent av gångerna.</p>
 <div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="ett-stickprov-av-normalfördelad-data.html#cb263-1" tabindex="-1"></a><span class="fu">mean</span>(dat_sim<span class="sc">$</span>p_value <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span></code></pre></div>
-<pre><code>## [1] 0.036</code></pre>
+<pre><code>## [1] 0.059</code></pre>
 <p>Även det stämmer någorlunda väl. Det här innebär alltså att om man har en signifikansnivå på fem procent kommer man förkasta nollhypotesen fem procent av gångerna även om nollhypotesen stämmer. Det kallas ett <em>falskt positivt</em> utfall.</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-97" class="exercise"><strong>Uppgift 4.22  (Simulerade konfidensintervall) </strong></span>Hur många av de simulerade konfidensintervallen täcker värdet 7?</p>

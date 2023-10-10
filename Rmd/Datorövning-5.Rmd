@@ -444,22 +444,21 @@ m <- leaflet() %>%
 m
 ```
 
-På canvassidan finns en excelfil med data tillgänglig på Artportalen - *Artportalen, SLU feromoninventering, 2011-2013.xlsx*. Datan kommer från från ett inventeringsprojekt vid SLU.
+På canvassidan finns en excelfil med data tillgänglig på Artportalen - *Artportalen, feromoninventering, 2011-2013.xlsx*. Datan kommer från från ett inventeringsprojekt vid SLU.
 
 ::: {.exercise name="Importera datan"}
 Ladda ner excelfilen och läs in datan med `read_excel()` från paketet `readxl`.
 
 ```{r, eval = F}
 library(readxl)
-read_excel("___")
+dat_leaf <- read_excel("___")
 ```
 :::
 
 Kartans utseende kan ändras genom att ange en källa och karttyp. Tillgängliga alternativ kan skrivas ut med `providers`. 
 
 ```{r, eval = F}
-dat_leaf %>% 
-  leaflet() %>% 
+leaflet() %>% 
   addTiles() %>% 
   addProviderTiles(providers$Stamen.Toner)
 ```
@@ -471,21 +470,19 @@ Skriv ut tillgängliga baskartor med `providers`. Välj ett alternativ slumpmäs
 För att lägga till datapunkter kan man använda `addCircleMarkers()`.
 
 ```{r, eval = F}
-dat_leaf %>% 
-  leaflet() %>% 
+leaflet() %>% 
   addTiles() %>% 
   addCircleMarkers(lng = dat_leaf$lng, lat = dat_leaf$lat, radius = 10)
 ```
 
 ::: {.exercise name="Cirkelstorlek"}
-Ändra storleken på cirklarna från `addCircleMarkers()` genom argumentet `radius`
+Ändra storleken på cirklarna från `addCircleMarkers()` genom argumentet `radius`.
 :::
 
 Slutligen kan vi lägga till en etikett för år med argumentet `popup`. Texten kommer upp när man klickar på en punkt.
 
 ```{r, eval = F}
-dat_leaf %>% 
-  leaflet() %>% 
+leaflet() %>% 
   addTiles() %>% 
   addCircleMarkers(lng = dat_leaf$lng, lat = dat_leaf$lat, radius = 10, popup = dat_leaf$Rödlistade)
 ```

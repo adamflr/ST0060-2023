@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-10-03" />
+<meta name="date" content="2023-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,7 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#test-av-medelvärde-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.2</b> Test av medelvärde för normalfördelad data</a></li>
 <li class="chapter" data-level="4.3" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#konfidensintervall-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.3</b> Konfidensintervall för normalfördelad data</a></li>
 <li class="chapter" data-level="4.4" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#normalfördelad-data-och-centrala-gränsvärdesatsen"><i class="fa fa-check"></i><b>4.4</b> Normalfördelad data och centrala gränsvärdesatsen</a></li>
-<li class="chapter" data-level="4.5" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall"><i class="fa fa-check"></i><b>4.5</b> Bonus. Simuleringar för t-test och konfidensintervall</a></li>
+<li class="chapter" data-level="4.5" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#centrala-gränsvärdesatsen"><i class="fa fa-check"></i><b>4.5</b> Centrala gränsvärdesatsen</a></li>
+<li class="chapter" data-level="4.6" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall"><i class="fa fa-check"></i><b>4.6</b> Bonus. Simuleringar för t-test och konfidensintervall</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html"><i class="fa fa-check"></i><b>5</b> Ett stickprov av icke-normalfördelad data</a>
 <ul>
@@ -487,27 +488,27 @@ H1: alla behandlingsgrupper har inte samma medelvärde</p>
 <span id="cb441-3"><a href="variansanalys.html#cb441-3" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> group, dat_sim)</span>
 <span id="cb441-4"><a href="variansanalys.html#cb441-4" tabindex="-1"></a><span class="fu">emmeans</span>(mod, pairwise <span class="sc">~</span> group, <span class="at">adjust =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <pre><code>## $emmeans
-##  group  emmean    SE df lower.CL upper.CL
-##  a     -0.0812 0.298 45   -0.682    0.520
-##  b      0.1656 0.298 45   -0.435    0.767
-##  c     -0.0496 0.298 45   -0.651    0.551
-##  d     -0.2478 0.298 45   -0.849    0.353
-##  e      0.4856 0.298 45   -0.115    1.087
+##  group emmean    SE df lower.CL upper.CL
+##  a      0.539 0.339 45   -0.143    1.222
+##  b      0.105 0.339 45   -0.577    0.788
+##  c      0.251 0.339 45   -0.432    0.933
+##  d      0.786 0.339 45    0.103    1.469
+##  e     -0.168 0.339 45   -0.850    0.515
 ## 
 ## Confidence level used: 0.95 
 ## 
 ## $contrasts
 ##  contrast estimate    SE df t.ratio p.value
-##  a - b     -0.2468 0.422 45  -0.585  0.5615
-##  a - c     -0.0316 0.422 45  -0.075  0.9406
-##  a - d      0.1665 0.422 45   0.395  0.6949
-##  a - e     -0.5669 0.422 45  -1.343  0.1859
-##  b - c      0.2152 0.422 45   0.510  0.6126
-##  b - d      0.4133 0.422 45   0.980  0.3325
-##  b - e     -0.3201 0.422 45  -0.759  0.4521
-##  c - d      0.1982 0.422 45   0.470  0.6409
-##  c - e     -0.5352 0.422 45  -1.268  0.2111
-##  d - e     -0.7334 0.422 45  -1.738  0.0890</code></pre>
+##  a - b       0.434 0.479 45   0.905  0.3702
+##  a - c       0.289 0.479 45   0.603  0.5498
+##  a - d      -0.246 0.479 45  -0.514  0.6097
+##  a - e       0.707 0.479 45   1.475  0.1472
+##  b - c      -0.145 0.479 45  -0.302  0.7637
+##  b - d      -0.680 0.479 45  -1.419  0.1627
+##  b - e       0.273 0.479 45   0.570  0.5717
+##  c - d      -0.535 0.479 45  -1.117  0.2700
+##  c - e       0.418 0.479 45   0.872  0.3877
+##  d - e       0.954 0.479 45   1.989  0.0528</code></pre>
 <p>Kör koden tio gånger. Hur många gånger av de tio ger de parvisa jämförelserna <em>någon</em> signifikant skillnad (det vill säga något p-värde under 0.05)?</p>
 <p>En passande xkcd-serie: <a href="https://xkcd.com/882/" class="uri">https://xkcd.com/882/</a></p>
 </div>

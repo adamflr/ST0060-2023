@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-10-03" />
+<meta name="date" content="2023-10-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,7 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#test-av-medelvärde-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.2</b> Test av medelvärde för normalfördelad data</a></li>
 <li class="chapter" data-level="4.3" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#konfidensintervall-för-normalfördelad-data"><i class="fa fa-check"></i><b>4.3</b> Konfidensintervall för normalfördelad data</a></li>
 <li class="chapter" data-level="4.4" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#normalfördelad-data-och-centrala-gränsvärdesatsen"><i class="fa fa-check"></i><b>4.4</b> Normalfördelad data och centrala gränsvärdesatsen</a></li>
-<li class="chapter" data-level="4.5" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall"><i class="fa fa-check"></i><b>4.5</b> Bonus. Simuleringar för t-test och konfidensintervall</a></li>
+<li class="chapter" data-level="4.5" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#centrala-gränsvärdesatsen"><i class="fa fa-check"></i><b>4.5</b> Centrala gränsvärdesatsen</a></li>
+<li class="chapter" data-level="4.6" data-path="ett-stickprov-av-normalfördelad-data.html"><a href="ett-stickprov-av-normalfördelad-data.html#bonus.-simuleringar-för-t-test-och-konfidensintervall"><i class="fa fa-check"></i><b>4.6</b> Bonus. Simuleringar för t-test och konfidensintervall</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ett-stickprov-av-icke-normalfördelad-data.html"><a href="ett-stickprov-av-icke-normalfördelad-data.html"><i class="fa fa-check"></i><b>5</b> Ett stickprov av icke-normalfördelad data</a>
 <ul>
@@ -619,33 +620,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb334-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb334-2" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb334-3"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb334-3" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">lng =</span> <span class="fl">174.768</span>, <span class="at">lat =</span> <span class="sc">-</span><span class="fl">36.852</span>, <span class="at">popup=</span><span class="st">&quot;The birthplace of R&quot;</span>)</span>
 <span id="cb334-4"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb334-4" tabindex="-1"></a>m</span></code></pre></div>
-<p>På canvassidan finns en excelfil med data tillgänglig på Artportalen - <em>Artportalen, SLU feromoninventering, 2011-2013.xlsx</em>. Datan kommer från från ett inventeringsprojekt vid SLU.</p>
+<p>På canvassidan finns en excelfil med data tillgänglig på Artportalen - <em>Artportalen, feromoninventering, 2011-2013.xlsx</em>. Datan kommer från från ett inventeringsprojekt vid SLU.</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-122" class="exercise"><strong>Uppgift 5.22  (Importera datan) </strong></span>Ladda ner excelfilen och läs in datan med <code>read_excel()</code> från paketet <code>readxl</code>.</p>
 <div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb335-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb335-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb335-2" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="st">&quot;___&quot;</span>)</span></code></pre></div>
+<span id="cb335-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb335-2" tabindex="-1"></a>dat_leaf <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;___&quot;</span>)</span></code></pre></div>
 </div>
 <p>Kartans utseende kan ändras genom att ange en källa och karttyp. Tillgängliga alternativ kan skrivas ut med <code>providers</code>.</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb336-1" tabindex="-1"></a>dat_leaf <span class="sc">%&gt;%</span> </span>
-<span id="cb336-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb336-2" tabindex="-1"></a>  <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb336-3"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb336-3" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb336-4"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb336-4" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>Stamen.Toner)</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb336-1" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb336-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb336-2" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb336-3"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb336-3" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(providers<span class="sc">$</span>Stamen.Toner)</span></code></pre></div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-123" class="exercise"><strong>Uppgift 5.23  (Baskarta) </strong></span>Skriv ut tillgängliga baskartor med <code>providers</code>. Välj ett alternativ slumpmässigt och ändra koden ovan för att se hur det ser ut.</p>
 </div>
 <p>För att lägga till datapunkter kan man använda <code>addCircleMarkers()</code>.</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb337-1" tabindex="-1"></a>dat_leaf <span class="sc">%&gt;%</span> </span>
-<span id="cb337-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb337-2" tabindex="-1"></a>  <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb337-3"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb337-3" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb337-4"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb337-4" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">lng =</span> dat_leaf<span class="sc">$</span>lng, <span class="at">lat =</span> dat_leaf<span class="sc">$</span>lat, <span class="at">radius =</span> <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb337-1" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb337-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb337-2" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb337-3"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb337-3" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">lng =</span> dat_leaf<span class="sc">$</span>lng, <span class="at">lat =</span> dat_leaf<span class="sc">$</span>lat, <span class="at">radius =</span> <span class="dv">10</span>)</span></code></pre></div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-124" class="exercise"><strong>Uppgift 5.24  (Cirkelstorlek) </strong></span>Ändra storleken på cirklarna från <code>addCircleMarkers()</code> genom argumentet <code>radius</code></p>
+<p><span id="exr:unlabeled-div-124" class="exercise"><strong>Uppgift 5.24  (Cirkelstorlek) </strong></span>Ändra storleken på cirklarna från <code>addCircleMarkers()</code> genom argumentet <code>radius</code>.</p>
 </div>
 <p>Slutligen kan vi lägga till en etikett för år med argumentet <code>popup</code>. Texten kommer upp när man klickar på en punkt.</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb338-1" tabindex="-1"></a>dat_leaf <span class="sc">%&gt;%</span> </span>
-<span id="cb338-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb338-2" tabindex="-1"></a>  <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb338-3"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb338-3" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb338-4"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb338-4" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">lng =</span> dat_leaf<span class="sc">$</span>lng, <span class="at">lat =</span> dat_leaf<span class="sc">$</span>lat, <span class="at">radius =</span> <span class="dv">10</span>, <span class="at">popup =</span> dat_leaf<span class="sc">$</span>Rödlistade)</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb338-1" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb338-2"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb338-2" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb338-3"><a href="ett-stickprov-av-icke-normalfördelad-data.html#cb338-3" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="at">lng =</span> dat_leaf<span class="sc">$</span>lng, <span class="at">lat =</span> dat_leaf<span class="sc">$</span>lat, <span class="at">radius =</span> <span class="dv">10</span>, <span class="at">popup =</span> dat_leaf<span class="sc">$</span>Rödlistade)</span></code></pre></div>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-125" class="exercise"><strong>Uppgift 5.25  (Artnamn) </strong></span>Ändra i koden ovan för att ange artnamn som popup-text istället för rödlistestatus. Funktionen <code>paste()</code> kan också vara intressant för att ta med mer information i texten: <code>paste(dat_leaf$Rödlistade, dat_leaf$Antal)</code> skulle exempelvis ge både status och antal individer vid den specifika observationen.</p>
 </div>

@@ -133,7 +133,7 @@
 
 \title{R-anvisningar till \emph{Grundläggande statistik}}
 \author{}
-\date{\vspace{-2.5em}2023-10-03}
+\date{\vspace{-2.5em}2023-10-09}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Sats}[chapter]
@@ -2972,7 +2972,7 @@ Pytagoras sats kan användas för att beräkna avståndet mellan en slumpmässig
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.28
+## [1] 3.08
 \end{verbatim}
 
 \begin{Shaded}
@@ -3568,11 +3568,14 @@ Punkterna ligger nära linjen. Vi kan återigen demonstrera med lite genererad d
 Funktionen \texttt{runif()} ger slumpmässiga värden mellan 0 och 1. Testa att ändra i kodstycket ovan så att slumptal genereras med \texttt{runif()} istället för \texttt{rnorm()}. Hur påverkar det QQ-grafen?
 \end{exercise}
 
+\hypertarget{centrala-gruxe4nsvuxe4rdesatsen}{%
+\section{Centrala gränsvärdesatsen}\label{centrala-gruxe4nsvuxe4rdesatsen}}
+
 Även om data inte är normalfördelad kan t-testet vara ett lämpligt val av test. Detta beror på \emph{centrala gränsvärdesatsen}, som säger att summor (och därmed även medelvärden) av lika slumpvariabler går mot en normalfördelning där antalet observationer ökar. Den tidigare uppgiften gav att \texttt{runif()} inte ger normalfördelad data. Vad händer om vi tar medelvärdet av flera observationer från \texttt{runif()}? Följande kod beräknar tiotusen medelvärden av två observationer.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{20}
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{2}
 
 \NormalTok{dat\_sim\_unif }\OtherTok{\textless{}{-}} \FunctionTok{expand\_grid}\NormalTok{(}\AttributeTok{Observation =} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n, }\AttributeTok{Upprepning =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10000}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{x =} \FunctionTok{runif}\NormalTok{(}\FunctionTok{n}\NormalTok{())) }\SpecialCharTok{\%\textgreater{}\%} 
@@ -3674,13 +3677,13 @@ Följande kod simulerar ett dataset om tio observationer från en normalfördeln
 ##  One Sample t-test
 ## 
 ## data:  dat_sim$x
-## t = -0.96834, df = 9, p-value = 0.3582
+## t = -0.12611, df = 9, p-value = 0.9024
 ## alternative hypothesis: true mean is not equal to 7
 ## 95 percent confidence interval:
-##  1.011508 9.398387
+##   2.928922 10.641141
 ## sample estimates:
 ## mean of x 
-##  5.204947
+##  6.785032
 \end{verbatim}
 
 \begin{exercise}[Upprepad simulering]
@@ -3725,7 +3728,7 @@ Vidare ska p-värdet vara under fem procent fem procent av gångerna.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.044
+## [1] 0.04
 \end{verbatim}
 
 Även det stämmer någorlunda väl. Det här innebär alltså att om man har en signifikansnivå på fem procent kommer man förkasta nollhypotesen fem procent av gångerna även om nollhypotesen stämmer. Det kallas ett \emph{falskt positivt} utfall.
@@ -4564,7 +4567,7 @@ Som en första kontroll kan vi köra den exempelkod som ges på hemsidan länkad
 \end{Highlighting}
 \end{Shaded}
 
-På canvassidan finns en excelfil med data tillgänglig på Artportalen - \emph{Artportalen, SLU feromoninventering, 2011-2013.xlsx}. Datan kommer från från ett inventeringsprojekt vid SLU.
+På canvassidan finns en excelfil med data tillgänglig på Artportalen - \emph{Artportalen, feromoninventering, 2011-2013.xlsx}. Datan kommer från från ett inventeringsprojekt vid SLU.
 
 \begin{exercise}[Importera datan]
 
@@ -4573,7 +4576,7 @@ Ladda ner excelfilen och läs in datan med \texttt{read\_excel()} från paketet 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(readxl)}
-\FunctionTok{read\_excel}\NormalTok{(}\StringTok{"\_\_\_"}\NormalTok{)}
+\NormalTok{dat\_leaf }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"\_\_\_"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4583,8 +4586,7 @@ Kartans utseende kan ändras genom att ange en källa och karttyp. Tillgängliga
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat\_leaf }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{leaflet}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+\FunctionTok{leaflet}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{addTiles}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{addProviderTiles}\NormalTok{(providers}\SpecialCharTok{$}\NormalTok{Stamen.Toner)}
 \end{Highlighting}
@@ -4598,23 +4600,21 @@ För att lägga till datapunkter kan man använda \texttt{addCircleMarkers()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat\_leaf }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{leaflet}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+\FunctionTok{leaflet}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{addTiles}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{addCircleMarkers}\NormalTok{(}\AttributeTok{lng =}\NormalTok{ dat\_leaf}\SpecialCharTok{$}\NormalTok{lng, }\AttributeTok{lat =}\NormalTok{ dat\_leaf}\SpecialCharTok{$}\NormalTok{lat, }\AttributeTok{radius =} \DecValTok{10}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{exercise}[Cirkelstorlek]
-Ändra storleken på cirklarna från \texttt{addCircleMarkers()} genom argumentet \texttt{radius}
+Ändra storleken på cirklarna från \texttt{addCircleMarkers()} genom argumentet \texttt{radius}.
 \end{exercise}
 
 Slutligen kan vi lägga till en etikett för år med argumentet \texttt{popup}. Texten kommer upp när man klickar på en punkt.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dat\_leaf }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{leaflet}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+\FunctionTok{leaflet}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{addTiles}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{addCircleMarkers}\NormalTok{(}\AttributeTok{lng =}\NormalTok{ dat\_leaf}\SpecialCharTok{$}\NormalTok{lng, }\AttributeTok{lat =}\NormalTok{ dat\_leaf}\SpecialCharTok{$}\NormalTok{lat, }\AttributeTok{radius =} \DecValTok{10}\NormalTok{, }\AttributeTok{popup =}\NormalTok{ dat\_leaf}\SpecialCharTok{$}\NormalTok{Rödlistade)}
 \end{Highlighting}
@@ -6026,27 +6026,27 @@ Anledning till att vi justerar p-värden är att man vid varje test har en sanno
 
 \begin{verbatim}
 ## $emmeans
-##  group  emmean    SE df lower.CL upper.CL
-##  a     -0.4456 0.318 45   -1.086    0.195
-##  b      0.2589 0.318 45   -0.381    0.899
-##  c     -0.1303 0.318 45   -0.771    0.510
-##  d      0.0770 0.318 45   -0.563    0.717
-##  e     -0.0915 0.318 45   -0.732    0.549
+##  group emmean    SE df lower.CL upper.CL
+##  a     -0.081 0.311 45  -0.7066    0.545
+##  b      0.165 0.311 45  -0.4606    0.791
+##  c      0.344 0.311 45  -0.2820    0.969
+##  d      0.222 0.311 45  -0.4033    0.848
+##  e      0.552 0.311 45  -0.0735    1.178
 ## 
 ## Confidence level used: 0.95 
 ## 
 ## $contrasts
-##  contrast estimate   SE df t.ratio p.value
-##  a - b     -0.7045 0.45 45  -1.567  0.1242
-##  a - c     -0.3153 0.45 45  -0.701  0.4868
-##  a - d     -0.5226 0.45 45  -1.162  0.2513
-##  a - e     -0.3541 0.45 45  -0.787  0.4351
-##  b - c      0.3892 0.45 45   0.866  0.3913
-##  b - d      0.1820 0.45 45   0.405  0.6876
-##  b - e      0.3504 0.45 45   0.779  0.4398
-##  c - d     -0.2073 0.45 45  -0.461  0.6470
-##  c - e     -0.0388 0.45 45  -0.086  0.9316
-##  d - e      0.1685 0.45 45   0.375  0.7096
+##  contrast estimate    SE df t.ratio p.value
+##  a - b     -0.2460 0.439 45  -0.560  0.5783
+##  a - c     -0.4246 0.439 45  -0.967  0.3389
+##  a - d     -0.3033 0.439 45  -0.691  0.4934
+##  a - e     -0.6331 0.439 45  -1.441  0.1564
+##  b - c     -0.1786 0.439 45  -0.407  0.6863
+##  b - d     -0.0573 0.439 45  -0.130  0.8968
+##  b - e     -0.3871 0.439 45  -0.881  0.3829
+##  c - d      0.1213 0.439 45   0.276  0.7838
+##  c - e     -0.2085 0.439 45  -0.475  0.6373
+##  d - e     -0.3298 0.439 45  -0.751  0.4567
 \end{verbatim}
 
 Kör koden tio gånger. Hur många gånger av de tio ger de parvisa jämförelserna \emph{någon} signifikant skillnad (det vill säga något p-värde under 0.05)?
