@@ -173,7 +173,9 @@ ggplot(dat_norm, aes(sample = x)) + geom_qq() + geom_qq_line()
 # Funktionen `runif()` ger slumpmässiga värden mellan 0 och 1. Testa att ändra i kodstycket ovan så att slumptal genereras med `runif()` istället för `rnorm()`. Hur påverkar det QQ-grafen?
 ##########
 
-n <- 20
+## Centrala gränsvärdesatsen
+
+n <- 2
 
 dat_sim_unif <- expand_grid(Observation = 1:n, Upprepning = 1:10000) %>% 
   mutate(x = runif(n())) %>% 

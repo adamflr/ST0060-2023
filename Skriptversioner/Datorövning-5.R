@@ -257,12 +257,11 @@ m
 # Ladda ner excelfilen och läs in datan med `read_excel()` från paketet `readxl`.
 
 library(readxl)
-read_excel("___")
+dat_leaf <- read_excel("___")
 
 ##########
 
-dat_leaf %>% 
-  leaflet() %>% 
+leaflet() %>% 
   addTiles() %>% 
   addProviderTiles(providers$Stamen.Toner)
 
@@ -270,17 +269,15 @@ dat_leaf %>%
 # Skriv ut tillgängliga baskartor med `providers`. Välj ett alternativ slumpmässigt och ändra koden ovan för att se hur det ser ut.
 ##########
 
-dat_leaf %>% 
-  leaflet() %>% 
+leaflet() %>% 
   addTiles() %>% 
   addCircleMarkers(lng = dat_leaf$lng, lat = dat_leaf$lat, radius = 10)
 
 ##### Övningsuppgift 5.24 #####
-# Ändra storleken på cirklarna från `addCircleMarkers()` genom argumentet `radius`
+# Ändra storleken på cirklarna från `addCircleMarkers()` genom argumentet `radius`.
 ##########
 
-dat_leaf %>% 
-  leaflet() %>% 
+leaflet() %>% 
   addTiles() %>% 
   addCircleMarkers(lng = dat_leaf$lng, lat = dat_leaf$lat, radius = 10, popup = dat_leaf$Rödlistade)
 
